@@ -19,14 +19,33 @@
       d3.select(this)
           .attr('fill', 'orange');
 
-      var xpos = parseFloat(d3.select(this).attr('x')) + x.bandwidth() / 2;
-      var ypos = parseFloat(d3.select(this).attr('y')) / 2 + h / 2;
+      var xpos = event.pageX;
+      var ypos = event.pageY;
 
       //Update the tooltip position and value
       d3.select('#tooltip')
           .style("left", xpos + "px")
           .style("top", ypos + "px")
-          .select("#value")
+          .select('#value')
+          .text(d.value);
+
+      //Show the tooltip
+      d3.select('#tooltip').classed("hidden", false);
+  };
+
+  //properties of mousemove
+  var barMouseMove = function(d) {
+      d3.select(this)
+          .attr('fill', 'orange');
+
+      var xpos = event.pageX;
+      var ypos = event.pageY + 10;
+
+      //Update the tooltip position and value
+      d3.select('#tooltip')
+          .style("left", xpos + "px")
+          .style("top", ypos + "px")
+          .select('#value')
           .text(d.value);
 
       //Show the tooltip
@@ -86,7 +105,7 @@
 
   //BARS
 
-  var svg = d3.select("body")
+  var svg = d3.select("#portfolio")
       .append("svg")
       .attr("width", w)
       .attr("height", h); //generate SVG element
@@ -110,6 +129,7 @@
           return "rgb(0,0, " + Math.floor(y(d.value)) + ")";
       })
       .on('mouseover', barMouseOver)
+      .on('mousemove', barMouseMove)
       .on('mouseout', barMouseOut);
 
   //LABELS

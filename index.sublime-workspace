@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"random",
+				"randomizeScatter"
+			],
+			[
+				"point",
+				"pointer-events"
+			],
+			[
+				"bars",
+				"bars-add-sub.js"
+			],
+			[
 				"max",
 				"max-height"
 			],
@@ -23,25 +35,25 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 9143,
+				"buffer_size": 8109,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "assets/css/main.css",
+			"file": "Random-scatter.html",
 			"settings":
 			{
-				"buffer_size": 45544,
+				"buffer_size": 4591,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/Zhangkin/Desktop/D3/streamgraphforbusinesscard.html",
+			"file": "random-scatter.js",
 			"settings":
 			{
-				"buffer_size": 2132,
+				"buffer_size": 4770,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -55,12 +67,28 @@
 	"command_palette":
 	{
 		"height": 588.0,
-		"last_filter": "Package Control: ",
+		"last_filter": "color",
 		"selected_items":
 		[
 			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
 				"Package Control: ",
-				"Package Control: Satisfy Dependencies"
+				"Package Control: Remove Channel"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
 			],
 			[
 				"Snippet: ",
@@ -87,7 +115,7 @@
 				"Package Control: Remove Package"
 			]
 		],
-		"width": 630.0
+		"width": 696.0
 	},
 	"console":
 	{
@@ -111,13 +139,17 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus"
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io"
 	],
 	"file_history":
 	[
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/main.css",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/bars-add-sub-styles.css",
+		"/F/Downloads/Resume - Mason Chinkin.htm",
+		"/C/Users/Zhangkin/Desktop/D3/streamgraphforbusinesscard.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3.js",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/bars-add-sub.html",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/bars-add-sub.js",
@@ -141,6 +173,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"header",
+			"toggle",
+			"#",
+			"%",
+			"value",
+			"hidden",
+			"btn",
+			"tooltip",
 			"layer",
 			"banner",
 			"top",
@@ -166,7 +206,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -175,54 +215,56 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9143,
+						"buffer_size": 8109,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3232,
-								3232
+								4657,
+								4664
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 69.0,
+						"translation.y": 2622.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "assets/css/main.css",
+					"file": "Random-scatter.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 45544,
+						"buffer_size": 4591,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								38542,
-								38542
+								2140,
+								2140
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"open_with_edit": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 58174.0,
+						"translation.y": 1147.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -230,32 +272,32 @@
 				},
 				{
 					"buffer": 2,
-					"file": "/C/Users/Zhangkin/Desktop/D3/streamgraphforbusinesscard.html",
+					"file": "random-scatter.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2132,
+						"buffer_size": 4770,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1946,
-								1946
+								1907,
+								1907
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 966.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -267,7 +309,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 53.0
 	},
 	"layout":
 	{
@@ -338,7 +380,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 75.0,
+	"side_bar_width": 392.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
