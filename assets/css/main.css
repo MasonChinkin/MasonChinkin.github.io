@@ -17,7 +17,6 @@
 
 
 
-
 /*
     Prologue by HTML5 UP
     html5up.net | @ajlkn
@@ -177,7 +176,6 @@ body {
 
 
 
-
 /* Box Model */
 
 *,
@@ -187,7 +185,6 @@ body {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-
 
 
 
@@ -358,7 +355,6 @@ body {
         width: 100% !important;
     }
 }
-
 
 
 
@@ -1793,7 +1789,6 @@ body {
 
 
 
-
 /* Basic */
 
 body {
@@ -1862,11 +1857,11 @@ h2 {
 }
 
 h2.alt {
-    color: black;
+    color: #888;
 }
 
 h2.alt strong {
-    color: black;
+    color: #666;
 }
 
 h3 {
@@ -1963,7 +1958,6 @@ br.clear {
 
 
 
-
 /* Sections/Article */
 
 section,
@@ -1984,7 +1978,6 @@ article:last-child {
 .row>article {
     margin-bottom: 0;
 }
-
 
 
 
@@ -2067,7 +2060,6 @@ article:last-child {
 
 
 
-
 /* List */
 
 ul.default {
@@ -2104,7 +2096,6 @@ ol.default {
 ol.default li {
     padding-left: 0.25em;
 }
-
 
 
 
@@ -2213,7 +2204,6 @@ form ::-moz-focus-inner {
 
 
 
-
 /* Table */
 
 table {
@@ -2248,7 +2238,6 @@ table.default thead {
 table.default tfoot {
     background: #eee;
 }
-
 
 
 
@@ -2324,7 +2313,6 @@ button:active,
 
 
 
-
 /* Item */
 
 .item {
@@ -2342,7 +2330,6 @@ button:active,
 .item header h3 {
     font-size: 1em;
 }
-
 
 
 
@@ -2381,7 +2368,6 @@ button:active,
 .icon>.label {
     display: none;
 }
-
 
 
 
@@ -2536,7 +2522,6 @@ button:active,
 
 
 
-
 /* Footer */
 
 #footer {
@@ -2566,7 +2551,6 @@ button:active,
     padding-left: 0;
     margin-left: 0;
 }
-
 
 
 
@@ -2653,7 +2637,6 @@ button:active,
 
 
 
-
 /* Wide */
 
 @media screen and (min-width: 961px) and (max-width: 1880px) {
@@ -2698,7 +2681,6 @@ button:active,
 
 
 
-
 /* Normal */
 
 @media screen and (min-width: 961px) and (max-width: 1620px) {
@@ -2712,7 +2694,6 @@ button:active,
         padding: 5em 0;
     }
 }
-
 
 
 
@@ -2792,7 +2773,6 @@ button:active,
         margin-left: 20%;
     }
 }
-
 
 
 
@@ -2997,7 +2977,6 @@ button:active,
         padding: 4em 0;
     }
 }
-
 
 
 

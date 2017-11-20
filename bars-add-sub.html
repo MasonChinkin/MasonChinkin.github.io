@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>D3 Page Template</title>
+    <script type="text/javascript" src="assets/js/d3.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div id="addButton">
+        <input name="addButton" type="button" value="add a bar!" onclick="addBar()" />
+    </div>
+    <div id="removeButton">
+        <input name="removeButton" type="button" value="remove a bar!" onclick="removeBar()" />
+    </div>
+    <div id="sortButton">
+        <input name="sortButton" type="button" value="sort the bars!" onclick="sortBars()" />
+    </div>
+    <div id="tooltip" class="hidden">
+        <p><strong>Important Label Heading</strong></p>
+        <p><span id="value">100</span>%</p>
+    </div>
+    <script src="bars-add-sub.js"></script>
+</body>
+
+</html>
