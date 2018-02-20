@@ -161,9 +161,7 @@
 
   function addBar() {
       var newNumber = Math.floor(Math.random() * maxValue);
-      var lastKeyNumber = d3.max(barDataset, function(d) {
-          return d.key;
-      });
+      var lastKeyNumber = barDataset[barDataset.length - 1].key;
       barDataset.push({
           key: lastKeyNumber + 1,
           value: newNumber, //Add new number to array
@@ -196,8 +194,8 @@
           .on('mouseover', barMouseOver)
           .on('mouseout', barMouseOut)
           .merge(bars)
-          .transition('barsAddBar')
-          .duration(750)
+          .transition()
+          .duration(500)
           .attr('x', function(d, i) {
               return x(i);
           })
@@ -239,8 +237,8 @@
               }
           })
           .merge(text)
-          .transition('textAddBar')
-          .duration(750)
+          .transition()
+          .duration(500)
           .text(function(d) {
               return d.value;
           })
@@ -263,18 +261,18 @@
           .data(barDataset, key);
 
       bars.exit() //EXIT
-          .transition('exitBars')
-          .duration(750)
-          .attr('x', -x.bandwidth()) //EXIT STAGE LEFT
+          .transition()
+          .duration(500)
+          .attr("x", -x.bandwidth()) //EXIT STAGE LEFT
           .remove();
 
       var text = svg.selectAll("text")
           .data(barDataset, key);
 
       text.exit() //EXIT
-          .transition('exitText')
-          .duration(750)
-          .attr('x', -x.bandwidth() / 2) //EXIT STAGE LEFT
+          .transition()
+          .duration(500)
+          .attr('x', -x.bandwidth()) //EXIT STAGE LEFT
           .remove();
 
       //UPDATE SCALES
@@ -283,8 +281,8 @@
           return d.value;
       })]);
 
-      bars.transition('barsRemoveBar')
-          .duration(750)
+      bars.transition()
+          .duration(500)
           .attr('x', function(d, i) {
               return x(i);
           })
@@ -299,8 +297,8 @@
               return "rgb(0,0, " + Math.floor(y(d.value)) + ")";
           });
 
-      text.transition('textRemoveBar')
-          .duration(750)
+      text.transition()
+          .duration(500)
           .text(function(d) {
               return d.value;
           })
@@ -323,8 +321,8 @@
           .sort(function(a, b) {
               return d3.ascending(a.value, b.value);
           })
-          .transition('sortBars')
-          .duration(750)
+          .transition()
+          .duration(500)
           .attr("x", function(d, i) {
               return x(i);
           });
@@ -333,8 +331,8 @@
           .sort(function(a, b) {
               return d3.ascending(a.value, b.value);
           })
-          .transition('sortText')
-          .duration(750)
+          .transition()
+          .duration(500)
           .attr("x", function(d, i) {
               return x(i) + x.bandwidth() / 2;
           });
