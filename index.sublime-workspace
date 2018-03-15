@@ -116,15 +116,6 @@
 	"buffers":
 	[
 		{
-			"file": "bars-add-sub.html",
-			"settings":
-			{
-				"buffer_size": 4650,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "bars-add-sub.js",
 			"settings":
 			{
@@ -137,7 +128,7 @@
 			"file": "assets/css/main.css",
 			"settings":
 			{
-				"buffer_size": 47197,
+				"buffer_size": 47196,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -241,11 +232,12 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.html",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/17_labels.html",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/16_combo_zoom_pan.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Random-scatter.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.html",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/14_zoom_with_buttons.html",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/dragging.html",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/13_zoom_pan_buttons_fixed.html",
@@ -277,7 +269,6 @@
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/random-scatter.html",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/random-bars.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/random-scatter.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/stackedgraphforbusinesscard.html",
 		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa26504.986/HIP readme.txt",
 		"/C/Users/Zhangkin/Desktop/D3/stocks.csv",
@@ -292,7 +283,7 @@
 	],
 	"find":
 	{
-		"height": 60.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -351,44 +342,11 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "bars-add-sub.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4650,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4052,
-								4052
-							]
-						],
-						"settings":
-						{
-							"SL.42.region_keys":
-							[
-							],
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1449.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "bars-add-sub.js",
 					"semi_transient": false,
 					"settings":
@@ -406,6 +364,12 @@
 						],
 						"settings":
 						{
+							"SL.16.region_keys":
+							[
+							],
+							"SL.17.region_keys":
+							[
+							],
 							"SL.45.region_keys":
 							[
 								"sublime_linter.protected_regions"
@@ -415,31 +379,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2877.0,
+						"translation.y": 1382.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "assets/css/main.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 47197,
+						"buffer_size": 47196,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								47145,
-								47145
+								47074,
+								47074
 							]
 						],
 						"settings":
 						{
+							"SL.17.region_keys":
+							[
+							],
+							"SL.18.region_keys":
+							[
+								"SL.csslint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Gutter.region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter.dot",
+								"sublime_linter.protected_regions"
+							],
 							"SL.44.region_keys":
 							[
 								"SL.csslint.Gutter.region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter.dot",
@@ -451,10 +424,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 80338.0,
+						"translation.y": 80730.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -464,7 +437,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/Zooming.html",
 					"semi_transient": false,
 					"settings":
@@ -490,6 +463,15 @@
 								"sublime_linter.protected_regions",
 								"SL.csslint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32"
 							],
+							"SL.18.region_keys":
+							[
+							],
+							"SL.19.region_keys":
+							[
+								"SL.csslint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Gutter.region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter.dot",
+								"sublime_linter.protected_regions"
+							],
 							"SL.22.region_keys":
 							[
 								"sublime_linter.protected_regions",
@@ -513,7 +495,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 58.0
+		"height": 35.0
 	},
 	"input":
 	{
