@@ -36,6 +36,10 @@
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /*
     Prologue by HTML5 UP
     html5up.net | @ajlkn
@@ -214,6 +218,10 @@ body {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Box Model */
 
 *,
@@ -259,6 +267,10 @@ body {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Containers */
 
 .container {
@@ -448,6 +460,10 @@ body {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Grid */
 
 .row {
@@ -1884,6 +1900,10 @@ body {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Basic */
 
 body {
@@ -2072,6 +2092,10 @@ br.clear {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Sections/Article */
 
 section,
@@ -2128,6 +2152,10 @@ article:last-child {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Image */
 
 .image {
@@ -2212,6 +2240,10 @@ article:last-child {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* List */
 
 ul.default {
@@ -2284,6 +2316,10 @@ ol.default li {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Form */
 
 form label {
@@ -2394,6 +2430,10 @@ form ::-moz-focus-inner {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Table */
 
 table {
@@ -2464,6 +2504,10 @@ table.default tfoot {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Button */
 
 input[type="button"],
@@ -2541,6 +2585,10 @@ button:active,
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Item */
 
 .item {
@@ -2594,6 +2642,10 @@ button:active,
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Icons */
 
 .icon {
@@ -2651,6 +2703,10 @@ button:active,
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Header */
 
 #header {
@@ -2807,6 +2863,10 @@ button:active,
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Footer */
 
 #footer {
@@ -2872,6 +2932,10 @@ button:active,
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Main */
 
 #main {
@@ -2960,6 +3024,10 @@ button:active,
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Wide */
 
 @media screen and (min-width: 961px) and (max-width: 1880px) {
@@ -3023,6 +3091,10 @@ button:active,
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Normal */
 
 @media screen and (min-width: 961px) and (max-width: 1620px) {
@@ -3072,6 +3144,10 @@ button:active,
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Narrow */
 
 @media screen and (min-width: 961px) and (max-width: 1320px) {
@@ -3170,6 +3246,10 @@ button:active,
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Narrower */
 
 #headerToggle {
@@ -3393,6 +3473,10 @@ button:active,
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /* Mobile */
 
 @media screen and (max-width: 736px) {
@@ -3467,7 +3551,14 @@ button:active,
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 /*DATA VIZ CSS*/
+
+
+/*bar chart*/
 
 .barLabel {
     text-anchor: middle;
@@ -3503,6 +3594,7 @@ button:active,
     line-height: 20px;
 }
 
+<<<<<<< HEAD
 #barSlider {
     height: 250px;
     width: 30px;
@@ -3514,4 +3606,38 @@ writing-mode: bt-lr;
 
 p.barSlider {
     display: inline-block;
+=======
+.ticks {
+    font: 10px sans-serif;
+}
+
+.track,
+.track-inset,
+.track-overlay {
+    stroke-linecap: round;
+}
+
+.track {
+    stroke: #000;
+    stroke-opacity: 0.3;
+    stroke-width: 10px;
+}
+
+.track-inset {
+    stroke: #ddd;
+    stroke-width: 8px;
+}
+
+.track-overlay {
+    pointer-events: stroke;
+    stroke-width: 50px;
+    stroke: transparent;
+}
+
+.handle {
+    fill: #fff;
+    stroke: #000;
+    stroke-opacity: 0.5;
+    stroke-width: 1.25px;
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 }
