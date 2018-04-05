@@ -3,12 +3,21 @@
   var h = 300; //svg height
   var margin = 60; //svg margin
 
+  var bars, barDataset, barMouseOut, barMouseOver, barMouseMove, key, maxValue, MaxRange, svg, text, x, y; //establish empty variables
+
   //properties of mouseout
   var barMouseOut = function(d) {
+
+      var threshold = +d3.select("#barSlider").node().value;
+
       d3.select(this)
-          .transition('orangeHover')
+          .transition()
           .duration(250)
-          .attr('fill', "rgb(0,0, " + Math.floor(y(d.value)) + ")");
+          .attr('fill', "rgb(0,0, " + Math.floor(y(d.value)) + ")")
+          .filter(function(d) {
+              return d.value <= threshold;
+          })
+          .attr("fill", "red");
 
       //Hide the tooltip
       d3.select("#tooltip").classed("hidden", true);
@@ -51,16 +60,6 @@
       //Show the tooltip
       d3.select('#tooltip').classed("hidden", false);
   };
-
-  //is it sorted?
-  var sorted = false;
-
-  /*var exitLeft = .exit() //EXIT
-      .transition()
-      .duration(750)
-      .ease(d3.easeElasticOut)
-      .attr('x', -x.bandwidth()) //EXIT STAGE LEFT
-      .remove();*/
 
   var maxValue = 40; //max value for any randomiz data
 
@@ -195,7 +194,7 @@
           .on('mouseout', barMouseOut)
           .merge(bars)
           .transition()
-          .duration(500)
+          .duration(200)
           .attr('x', function(d, i) {
               return x(i);
           })
@@ -238,7 +237,7 @@
           })
           .merge(text)
           .transition()
-          .duration(500)
+          .duration(200)
           .text(function(d) {
               return d.value;
           })
@@ -262,7 +261,7 @@
 
       bars.exit() //EXIT
           .transition()
-          .duration(500)
+          .duration(200)
           .attr("x", -x.bandwidth()) //EXIT STAGE LEFT
           .remove();
 
@@ -271,7 +270,7 @@
 
       text.exit() //EXIT
           .transition()
-          .duration(500)
+          .duration(200)
           .attr('x', -x.bandwidth()) //EXIT STAGE LEFT
           .remove();
 
@@ -282,7 +281,7 @@
       })]);
 
       bars.transition()
-          .duration(500)
+          .duration(200)
           .attr('x', function(d, i) {
               return x(i);
           })
@@ -298,7 +297,7 @@
           });
 
       text.transition()
-          .duration(500)
+          .duration(200)
           .text(function(d) {
               return d.value;
           })
@@ -315,14 +314,12 @@
   }
 
   function sortBars() {
-      sorted = true;
-
       svg.selectAll("rect")
           .sort(function(a, b) {
               return d3.ascending(a.value, b.value);
           })
           .transition()
-          .duration(500)
+          .duration(200)
           .attr("x", function(d, i) {
               return x(i);
           });
@@ -332,11 +329,35 @@
               return d3.ascending(a.value, b.value);
           })
           .transition()
-          .duration(500)
+          .duration(200)
           .attr("x", function(d, i) {
               return x(i) + x.bandwidth() / 2;
           });
       barDataset.sort(function(a, b) {
           return a.value - b.value;
       });
+  }
+
+  //SLIDER
+
+  d3.select("#barSlider")
+      .on("mousemove", function() {
+
+          var threshold = +d3.select(this).node().value;
+
+          svg.selectAll("rect")
+              .attr("fill", function(d) {
+                  return "rgb(0, 0, " + (d.value * 10) + ")";
+              })
+              .filter(function(d) {
+                  return d.value <= threshold;
+              })
+              .attr("fill", "red");
+
+      });
+
+  //Slider label
+
+  function outputUpdate(vol) {
+      document.querySelector('#volume').value = vol;
   }
