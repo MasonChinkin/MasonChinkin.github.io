@@ -33,24 +33,6 @@
       d3.select('#tooltip').classed("hidden", false);
   };
 
-<<<<<<< HEAD:d3-visualizations/swiss-army-bar-chart.js
-<<<<<<< HEAD
-=======
-  //is it sorted?
-  var sorted = false;
-
-  /*var exitLeft = .exit() //EXIT
-      .transition()
-      .duration(750)
-      .ease(d3.easeElasticOut)
-      .attr('x', -x.bandwidth()) //EXIT STAGE LEFT
-      .remove();*/
-
->>>>>>> parent of 3503f47... bar update:bars-add-sub.js
-  var maxValue = 40; //max value for any randomiz data
-
-=======
->>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
   var barDataset = [{ key: 0, value: 5 }, //dataset is now an array of objects.
       { key: 1, value: 10 }, //Each object has a 'key' and a 'value'.
       { key: 2, value: 13 },
@@ -171,55 +153,8 @@
       handle.attr("cy", y(h));
   }
 
-  //BUTTONS
-
-<<<<<<< HEAD
-      //UPDATE SCALES
-      x.domain(d3.range(barDataset.length));
-      y.domain([0, d3.max(barDataset, function(d) {
-          return d.value;
-      })]);
-
-      var bars = svg.selectAll("rect") //SELECT
-          .data(barDataset);
-
-      //Transition BARS
-
-      bars.enter() //ENTER
-          .append("rect")
-          .attr("x", w)
-          .attr("y", function(d) {
-              return h - y(d.value);
-          })
-          .attr("width", x.bandwidth())
-          .attr("height", function(d) {
-              return y(d.value);
-          })
-          .attr('fill', function(d) {
-              return "rgb(0,0, " + Math.floor(y(d.value)) + ")";
-          })
-          .on('mouseover', barMouseOver)
-          .on('mouseout', barMouseOut)
-          .merge(bars)
-          .transition()
-          .duration(500)
-          .attr('x', function(d, i) {
-              return x(i);
-          })
-          .attr("y", function(d) {
-              return h - y(d.value);
-          })
-          .attr("width", x.bandwidth())
-          .attr("height", function(d) {
-              return y(d.value);
-          })
-          .attr('fill', function(d) {
-              return "rgb(0,0, " + Math.floor(y(d.value)) + ")";
-          });
-=======
   d3.select("#add")
       .on("click", function() {
->>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 
           var maxValue = 40; //max value for any randomiz data
 
@@ -232,37 +167,9 @@
               value: newNumber, //Add new number to array
           });
 
-<<<<<<< HEAD
-      text.enter()
-          .append("text")
-          .text(function(d) {
-              return d.value;
-          })
-          .attr("x", w + (x.bandwidth() / 2))
-          .attr("y", function(d) {
-              if (d.value >= 6) {
-                  return h - y(d.value) + 14;
-              } else {
-                  return h - y(d.value) - 4;
-              }
-          })
-          .attr("class", "barLabel")
-          .attr("fill", function(d) {
-              if (d.value >= 6) {
-                  return "white";
-              } else {
-                  return "black";
-              }
-          })
-          .merge(text)
-          .transition()
-          .duration(500)
-          .text(function(d) {
-=======
           //UPDATE SCALES
           x.domain(d3.range(barDataset.length));
           y.domain([0, d3.max(barDataset, function(d) {
->>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
               return d.value;
           })]);
 
@@ -352,16 +259,8 @@
 
           barDataset.shift();
 
-<<<<<<< HEAD
-      bars.exit() //EXIT
-          .transition()
-          .duration(500)
-          .attr("x", -x.bandwidth()) //EXIT STAGE LEFT
-          .remove();
-=======
           var bars = svg.selectAll("rect") //SELECT
               .data(barDataset, key);
->>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 
           bars.exit() //EXIT
               .transition('exitBars')
@@ -369,109 +268,11 @@
               .attr('x', -x.bandwidth()) //EXIT STAGE LEFT
               .remove();
 
-<<<<<<< HEAD
-      text.exit() //EXIT
-          .transition()
-          .duration(500)
-          .attr('x', -x.bandwidth()) //EXIT STAGE LEFT
-          .remove();
-
-      //UPDATE SCALES
-      x.domain(d3.range(barDataset.length));
-      y.domain([0, d3.max(barDataset, function(d) {
-          return d.value;
-      })]);
-
-      bars.transition()
-          .duration(500)
-          .attr('x', function(d, i) {
-              return x(i);
-          })
-          .attr("y", function(d) {
-              return h - y(d.value);
-          })
-          .attr("width", x.bandwidth())
-          .attr("height", function(d) {
-              return y(d.value);
-          })
-          .attr('fill', function(d) {
-              return "rgb(0,0, " + Math.floor(y(d.value)) + ")";
-          });
-
-      text.transition()
-          .duration(500)
-          .text(function(d) {
-              return d.value;
-          })
-          .attr("x", function(d, i) {
-              return x(i) + x.bandwidth() / 2;
-          })
-          .attr("y", function(d) {
-              if (d.value >= 6) {
-                  return h - y(d.value) + 14;
-              } else {
-                  return h - y(d.value) - 4;
-              }
-          });
-  }
-
-  function sortBars() {
-      sorted = true;
-
-      svg.selectAll("rect")
-          .sort(function(a, b) {
-              return d3.ascending(a.value, b.value);
-          })
-          .transition()
-          .duration(500)
-          .attr("x", function(d, i) {
-              return x(i);
-          });
-
-      svg.selectAll("text")
-          .sort(function(a, b) {
-              return d3.ascending(a.value, b.value);
-          })
-          .transition()
-          .duration(500)
-          .attr("x", function(d, i) {
-              return x(i) + x.bandwidth() / 2;
-          });
-      barDataset.sort(function(a, b) {
-          return a.value - b.value;
-      });
-<<<<<<< HEAD:d3-visualizations/swiss-army-bar-chart.js
-  }
-
-  //SLIDER
-
-  d3.select("#barSlider")
-      .on("mousemove", function() {
-
-          var threshold = +d3.select(this).node().value;
-
-          svg.selectAll("rect")
-              .attr("fill", function(d) {
-                  return "rgb(0, 0, " + (d.value * 10) + ")";
-              })
-              .filter(function(d) {
-                  return d.value <= threshold;
-              })
-              .attr("fill", "red");
-
-      });
-
-  //Slider label
-
-  function outputUpdate(vol) {
-      document.querySelector('#volume').value = vol;
-  }
-=======
           var text = svg.selectAll("text")
               .data(barDataset, key);
 
           text.exit() //EXIT
-              .transition('exitText')
+              .transition()
               .duration(250)
               .attr('x', -x.bandwidth() / 2) //EXIT STAGE LEFT
               .remove();
@@ -515,6 +316,30 @@
               });
       });
 
+  //SLIDER
+
+  d3.select("#barSlider")
+      .on("mousemove", function() {
+
+          var threshold = +d3.select(this).node().value;
+
+          svg.selectAll("rect")
+              .attr("fill", function(d) {
+                  return "rgb(0, 0, " + (d.value * 10) + ")";
+              })
+              .filter(function(d) {
+                  return d.value <= threshold;
+              })
+              .attr("fill", "red");
+
+      });
+
+  //Slider label
+
+  function outputUpdate(vol) {
+      document.querySelector('#volume').value = vol;
+  }
+
   d3.select("#sort")
       .on("click", function() {
 
@@ -541,7 +366,3 @@
               return a.value - b.value;
           });
       });
->>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
-=======
-  }
->>>>>>> parent of 3503f47... bar update:bars-add-sub.js
