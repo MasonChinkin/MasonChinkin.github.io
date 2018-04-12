@@ -11,10 +11,44 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="assets/css/main.css" />
     <script type="text/javascript" src="assets/js/d3.js"></script>
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <style type="text/css">
+    .pan rect,
+    .zoom rect {
+        fill: black;
+        opacity: 0.2;
+    }
+
+    .zoom rect {
+        rx: 5;
+        /* Rounded corners */
+        ry: 5;
+    }
+
+    .pan text,
+    .zoom text {
+        fill: black;
+        font-size: 18px;
+        text-anchor: middle;
+    }
+
+    .pan:hover rect,
+    .pan:hover text,
+    .zoom:hover rect,
+    .zoom:hover text {
+        fill: blue;
+    }
+
+    .label {
+        font-family: Helvetica, sans-serif;
+        font-size: 11px;
+        fill: black;
+        text-anchor: middle;
+    }
+    </style>
+    <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
 <body>
@@ -71,15 +105,11 @@
             </div>
         </section>
         <section id="portfolio" class="two">
+            <h2>Zoomable map with d3.js</h2>
+            <ul>Color/label = USDA agricultural productivity relative to arbitrary baseline (Alabama in 1996 = 1). Circles = selected city populations.</ul>
             <div id="container">
-                <div class="btn-group">
-                    <button onclick="randomizeScatter()">randomize!</button>
-                    <script src="d3-visualizations/random-scatter.js"></script>
-                </div>
+                <script src="d3-visualizations/zoomable-us-map.js"></script>
             </div>
-            <ul>
-                <li>This visualization involves: transitioned vector lines, stacked transitions, clip path to keep dops from overlapping with axes</li>
-            </ul>
         </section>
     </div>
 </body>

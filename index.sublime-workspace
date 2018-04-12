@@ -116,30 +116,30 @@
 	"buffers":
 	[
 		{
-			"file": "bars-add-sub.js",
+			"file": "/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/01_initial_chart.html",
 			"settings":
 			{
-				"buffer_size": 9817,
+				"buffer_size": 6258,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "assets/css/main.css",
+			"file": "/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/02_color_by_type.html",
 			"settings":
 			{
-				"buffer_size": 47196,
+				"buffer_size": 7170,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/Zooming.html",
+			"file": "/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/04_types_only.html",
 			"settings":
 			{
-				"buffer_size": 9119,
+				"buffer_size": 10811,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -223,20 +223,19 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1"
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_13",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16"
 	],
 	"file_history":
 	[
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/Zooming.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/main.css",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.html",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/17_labels.html",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/16_combo_zoom_pan.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Random-scatter.html",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/14_zoom_with_buttons.html",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/dragging.html",
@@ -272,7 +271,6 @@
 		"/C/Users/Zhangkin/Desktop/D3/stackedgraphforbusinesscard.html",
 		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa26504.986/HIP readme.txt",
 		"/C/Users/Zhangkin/Desktop/D3/stocks.csv",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/main.css",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/bars-add-sub-styles.css",
 		"/F/Downloads/Resume - Mason Chinkin.htm",
 		"/C/Users/Zhangkin/Desktop/D3/streamgraphforbusinesscard.html",
@@ -342,89 +340,115 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "bars-add-sub.js",
+					"file": "/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/01_initial_chart.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9817,
+						"buffer_size": 6258,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4020,
-								4020
+								6182,
+								6182
 							]
 						],
 						"settings":
 						{
 							"SL.16.region_keys":
 							[
+								"SL.jshint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.jshint.Gutter.region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter.dot"
 							],
-							"SL.17.region_keys":
-							[
-							],
-							"SL.45.region_keys":
-							[
-								"sublime_linter.protected_regions"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1382.0,
+						"translation.y": 4072.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "assets/css/main.css",
+					"file": "/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/02_color_by_type.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 47196,
+						"buffer_size": 7170,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								47074,
-								47074
+								5899,
+								5899
+							]
+						],
+						"settings":
+						{
+							"SL.20.region_keys":
+							[
+								"SL.jshint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.jshint.Gutter.region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter.dot"
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 194.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/04_types_only.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10811,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2915,
+								2915
 							]
 						],
 						"settings":
 						{
 							"SL.17.region_keys":
 							[
-							],
-							"SL.18.region_keys":
-							[
-								"SL.csslint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
-								"SL.csslint.Gutter.region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter.dot",
+								"SL.jshint.Gutter.region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter.dot",
+								"SL.jshint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
 								"sublime_linter.protected_regions"
 							],
-							"SL.44.region_keys":
+							"SL.22.region_keys":
 							[
-								"SL.csslint.Gutter.region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter.dot",
+								"SL.jshint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
 								"sublime_linter.protected_regions",
-								"SL.csslint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32"
+								"SL.jshint.Gutter.region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter.dot"
 							],
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 80730.0,
+						"translation.y": 2185.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -433,63 +457,8 @@
 			]
 		},
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 2,
-					"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/Zooming.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9119,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								524,
-								524
-							]
-						],
-						"settings":
-						{
-							"SL.17.region_keys":
-							[
-								"SL.csslint.Gutter.region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter.dot",
-								"SL.jshint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
-								"SL.jshint.Gutter.region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter.dot",
-								"sublime_linter.protected_regions",
-								"SL.csslint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32"
-							],
-							"SL.18.region_keys":
-							[
-							],
-							"SL.19.region_keys":
-							[
-								"SL.csslint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
-								"SL.csslint.Gutter.region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter.dot",
-								"sublime_linter.protected_regions"
-							],
-							"SL.22.region_keys":
-							[
-								"sublime_linter.protected_regions",
-								"SL.jshint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
-								"SL.jshint.Gutter.region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter.dot"
-							],
-							"open_with_edit": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 70.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -512,21 +481,21 @@
 				1
 			],
 			[
-				1,
 				0,
-				2,
-				1
+				1,
+				1,
+				2
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.578754578755,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
+			0.878059836809,
 			1.0
 		]
 	},
@@ -585,7 +554,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 376.0,
+	"side_bar_width": 307.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

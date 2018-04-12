@@ -75,7 +75,7 @@
 
   //BARS
 
-  var svg = d3.select("#portfolio")
+  var svg = d3.select("#container")
       .append("svg")
       .attr("width", w)
       .attr("height", h); //generate SVG element
