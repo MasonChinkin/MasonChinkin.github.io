@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"scheme",
+				"schemeCategory20\td3.schemeCategory20"
+			],
+			[
 				"al",
 				"align\t(geomapping.html)"
 			],
@@ -131,6 +135,32 @@
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 9727,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "d3-visualizations/networks.js",
+			"settings":
+			{
+				"buffer_size": 7578,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "d3-visualizations/zoomable-us-map.js",
+			"settings":
+			{
+				"buffer_size": 8997,
+				"line_ending": "Windows"
+			}
 		}
 	],
 	"build_system": "",
@@ -215,6 +245,7 @@
 	[
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart",
@@ -222,6 +253,10 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/random-network.json",
+		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/User/.jsbeautifyrc",
+		"/F/Downloads/Forked from https___next.json-generator.com_VkbpYpuiV.json",
+		"/F/Downloads/Forked from https___next.json-generator.com_VJdXV6doV.json",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Misc.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/swiss-army-bar-chart.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
@@ -289,7 +324,7 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 77.0
 	},
 	"find_in_files":
 	{
@@ -303,6 +338,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"},\n",
+			"\"name\"",
+			"\"source\"",
+			"\"target\"",
+			"target",
+			"source",
+			"name",
+			"\"name\"",
+			"\"target\"",
+			"\"source\"",
 			"range",
 			"main",
 			"length",
@@ -344,6 +389,15 @@
 		"regex": false,
 		"replace_history":
 		[
+			"name",
+			"source",
+			"target",
+			"\"target\"",
+			"\"source\"",
+			"\"name\"",
+			"name",
+			"target",
+			"source"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -354,7 +408,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -376,6 +430,9 @@
 						],
 						"settings":
 						{
+							"SL.14.region_keys":
+							[
+							],
 							"SL.19.region_keys":
 							[
 								"sublime_linter.protected_regions"
@@ -388,7 +445,116 @@
 						"translation.y": 76.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9727,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5815,
+								5815
+							]
+						],
+						"settings":
+						{
+							"SL.16.region_keys":
+							[
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2070.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "d3-visualizations/networks.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7578,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6309,
+								6309
+							]
+						],
+						"settings":
+						{
+							"SL.17.region_keys":
+							[
+								"sublime_linter.protected_regions"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 138.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "d3-visualizations/zoomable-us-map.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8997,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"SL.21.region_keys":
+							[
+								"sublime_linter.protected_regions",
+								"SL.jshint.Gutter.region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter.dot",
+								"SL.jshint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3300.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -411,6 +577,12 @@
 				0,
 				1,
 				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
 			]
 		],
 		"cols":
@@ -421,6 +593,7 @@
 		"rows":
 		[
 			0.0,
+			0.5,
 			1.0
 		]
 	},
@@ -441,7 +614,7 @@
 	"project": "index.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 142.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -479,7 +652,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 366.0,
+	"side_bar_width": 319.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
