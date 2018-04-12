@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+<<<<<<< HEAD
+				"forma",
+				"foramtAsThousands〔variable〕"
+=======
 				"style",
 				"style()\td3-selection.style()"
 			],
@@ -94,6 +98,80 @@
 			[
 				"random",
 				"randomizeScatter"
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
+			],
+			[
+				"geoAlbe",
+				"geoAlbersUsa()\td3.geoAlbersUsa()"
+			],
+			[
+				"curve",
+				"curve()\td3-area.curve()"
+			],
+			[
+				"translate",
+				"interpolateTransformSvg\td3.interpolateTransformSvg()"
+			],
+			[
+				"transla",
+				"translate()\td3-projection.translate()"
+			],
+			[
+				"transform",
+				"transform()\td3-zoom.transform()"
+			],
+			[
+				"attr",
+<<<<<<< HEAD
+				"attr()\td3-transition.attr()"
+			],
+			[
+				"stackOrder",
+				"stackOrderDescending\td3.stackOrderDescending"
+			],
+			[
+				"stackO",
+				"stackOffsetWiggle\td3.stackOffsetWiggle"
+			],
+			[
+				"f",
+				"f\tAnonymous Function"
+			],
+			[
+				"grapes",
+				"grapes"
+			],
+			[
+				"target",
+				"target"
+			],
+			[
+				"att",
+				"attr()\td3-selection.merge()"
+			],
+			[
+				"x",
+				"x()\td3-force.x()"
+			],
+			[
+				"force",
+				"forceSimulation()\td3.forceSimulation()"
+			],
+			[
+				"at",
+				"attr()\td3-selection.merge()"
+			],
+			[
+				"tran",
+				"translate()\td3-zoomTransform.translate()"
+			],
+			[
+				"max",
+				"maxValue〔variable〕"
+			],
+			[
+				"random",
+				"randomizeScatter"
 			],
 			[
 				"point",
@@ -102,21 +180,26 @@
 			[
 				"bars",
 				"bars-add-sub.js"
-			],
-			[
-				"max",
-				"max-height"
-			],
-			[
-				"attr",
+=======
 				"attr()\td3-selection.merge()"
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+<<<<<<< HEAD
 			"file": "/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/01_initial_chart.html",
+=======
+<<<<<<< HEAD
+			"file": "/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Geomapping/vers1.html",
+			"settings":
+			{
+				"buffer_size": 3516,
+=======
+			"file": "bars-add-sub.js",
+>>>>>>> 751214b40e11fa6df9e0e0b692cb6c8b0e5fade0
 			"settings":
 			{
 				"buffer_size": 6258,
@@ -128,16 +211,35 @@
 			"file": "/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/02_color_by_type.html",
 			"settings":
 			{
+<<<<<<< HEAD
 				"buffer_size": 7170,
+=======
+				"buffer_size": 47196,
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
+>>>>>>> 751214b40e11fa6df9e0e0b692cb6c8b0e5fade0
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
+<<<<<<< HEAD
 			"file": "/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/04_types_only.html",
 			"settings":
 			{
 				"buffer_size": 10811,
+=======
+<<<<<<< HEAD
+			"file": "/C/Users/Mason/Desktop/Coding/d3-book/chapter_14/06_points.html",
+			"settings":
+			{
+				"buffer_size": 3422,
+=======
+			"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/Zooming.html",
+			"settings":
+			{
+				"buffer_size": 9119,
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
+>>>>>>> 751214b40e11fa6df9e0e0b692cb6c8b0e5fade0
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -151,12 +253,25 @@
 	"command_palette":
 	{
 		"height": 588.0,
+<<<<<<< HEAD
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Enable Package"
+			],
+			[
+				"Package Control: dis",
+				"Package Control: Disable Package"
+=======
 		"last_filter": "sublimel",
 		"selected_items":
 		[
 			[
 				"sublimel",
 				"SublimeLinter: Choose Tooltip Theme"
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 			],
 			[
 				"color",
@@ -165,10 +280,6 @@
 			[
 				"Package Control: in",
 				"Package Control: Install Package"
-			],
-			[
-				"Package Control: ",
-				"Package Control: Remove Channel"
 			],
 			[
 				"remo",
@@ -223,6 +334,7 @@
 	},
 	"expanded_folders":
 	[
+<<<<<<< HEAD
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_13",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16"
@@ -232,6 +344,50 @@
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/Zooming.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/main.css",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.js",
+=======
+<<<<<<< HEAD
+		"/C/Users/Mason/Desktop/Coding/d3-book",
+		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_14",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Geomapping",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts"
+=======
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1"
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
+	],
+	"file_history":
+	[
+		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_14/02_projection.html",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/stacked-area.html",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/06_stacked_area.html",
+		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_13/06_stacked_area.html",
+		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_13/03_stacked_bar.html",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/Stacked-bar.html",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/03_stacked_bar.html",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/Force.html",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/Pie.html",
+		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_13/01_pie.html",
+		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/Default (Windows).sublime-mousemap",
+		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
+		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_12/03_slider.html",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/bars-add-sub.js",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/assets/css/main.css",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/bars-add-sub.html",
+		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_12/06_each.html",
+		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_12/01_enter_merge_exit.html",
+		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
+		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/User/.jsbeautifyrc",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/line_chart/line_chart.js",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/random-scatter.js",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/Random-scatter.html",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/index.html",
+>>>>>>> 751214b40e11fa6df9e0e0b692cb6c8b0e5fade0
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.html",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/17_labels.html",
@@ -281,7 +437,7 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 60.0
 	},
 	"find_in_files":
 	{
@@ -295,6 +451,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+<<<<<<< HEAD
+			"column",
+			" p ",
+			"hover",
+			"input",
+			"barsAdd",
+			"add",
+			"save",
+=======
 			"margin",
 			"x",
 			"true",
@@ -307,6 +472,7 @@
 			"event",
 			";');",
 			";\n",
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
 			"header",
 			"toggle",
 			"#",
@@ -340,28 +506,251 @@
 	"groups":
 	[
 		{
+<<<<<<< HEAD
 			"selected": 2,
+=======
+<<<<<<< HEAD
+			"selected": 0,
+=======
+			"selected": 1,
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
+>>>>>>> 751214b40e11fa6df9e0e0b692cb6c8b0e5fade0
 			"sheets":
 			[
 				{
 					"buffer": 0,
+<<<<<<< HEAD
 					"file": "/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/01_initial_chart.html",
 					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 6258,
+=======
+<<<<<<< HEAD
+					"file": "/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Geomapping/vers1.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3516,
+=======
+					"file": "bars-add-sub.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9817,
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
+>>>>>>> 751214b40e11fa6df9e0e0b692cb6c8b0e5fade0
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								6182,
 								6182
+=======
+<<<<<<< HEAD
+								3121,
+								3121
+=======
+								4020,
+								4020
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
+>>>>>>> 751214b40e11fa6df9e0e0b692cb6c8b0e5fade0
 							]
 						],
 						"settings":
 						{
+<<<<<<< HEAD
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3125,
+										3126
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"region.greenish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										3118,
+										3119
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3125,
+										3126
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"region.greenish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										3118,
+										3119
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2758.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+=======
 							"SL.16.region_keys":
 							[
 								"SL.jshint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
@@ -375,29 +764,237 @@
 						"translation.y": 4072.0,
 						"zoom_level": 1.0
 					},
+<<<<<<< HEAD
 					"stack_index": 2,
+=======
+					"stack_index": 1,
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
+>>>>>>> 751214b40e11fa6df9e0e0b692cb6c8b0e5fade0
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+<<<<<<< HEAD
 					"file": "/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/02_color_by_type.html",
 					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 7170,
+=======
+<<<<<<< HEAD
+					"file": "/C/Users/Mason/Desktop/Coding/d3-book/chapter_14/06_points.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3422,
+=======
+					"file": "assets/css/main.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 47196,
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
+>>>>>>> 751214b40e11fa6df9e0e0b692cb6c8b0e5fade0
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< HEAD
 								5899,
 								5899
+=======
+<<<<<<< HEAD
+								2737,
+								2737
+=======
+								47074,
+								47074
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
+>>>>>>> 751214b40e11fa6df9e0e0b692cb6c8b0e5fade0
 							]
 						],
 						"settings":
 						{
+<<<<<<< HEAD
 							"SL.20.region_keys":
+=======
+<<<<<<< HEAD
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3362,
+										3363
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										2736,
+										2737
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3765.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+=======
+							"SL.17.region_keys":
+>>>>>>> 751214b40e11fa6df9e0e0b692cb6c8b0e5fade0
 							[
 								"SL.jshint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
 								"sublime_linter.protected_regions",
@@ -451,7 +1048,12 @@
 						"translation.y": 2185.0,
 						"zoom_level": 1.0
 					},
+<<<<<<< HEAD
 					"stack_index": 0,
+=======
+					"stack_index": 2,
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
+>>>>>>> 751214b40e11fa6df9e0e0b692cb6c8b0e5fade0
 					"type": "text"
 				}
 			]
@@ -464,11 +1066,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 35.0
+		"height": 39.0
 	},
 	"input":
 	{
-		"height": 53.0
+		"height": 60.0
 	},
 	"layout":
 	{
@@ -516,7 +1118,7 @@
 	"project": "index.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 72.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -554,7 +1156,15 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
+<<<<<<< HEAD
 	"side_bar_width": 307.0,
+=======
+<<<<<<< HEAD
+	"side_bar_width": 75.0,
+=======
+	"side_bar_width": 376.0,
+>>>>>>> 0de90d07e7acc48566ef4a7ad5782415c96e7571
+>>>>>>> 751214b40e11fa6df9e0e0b692cb6c8b0e5fade0
 	"status_bar_visible": true,
 	"template_settings":
 	{
