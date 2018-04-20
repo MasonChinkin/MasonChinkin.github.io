@@ -109,7 +109,8 @@ d3.csv('viz-data/trip.csv', function(data) {
             .attr("y", function(d) {
                 return projection([d.lon, d.lat])[1];
             })
-            .text('Start!');
+            .text('Start!')
+            .style('font-weight', 'bold');
     });
 });
 
