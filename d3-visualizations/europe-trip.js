@@ -1,46 +1,19 @@
-function getWidth() {
-    return Math.max(
-        document.body.scrollWidth,
-        document.documentElement.scrollWidth,
-        document.body.offsetWidth,
-        document.documentElement.offsetWidth,
-        document.documentElement.clientWidth
-    );
-}
-
-function getHeight() {
-    return Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight,
-        document.body.offsetHeight,
-        document.documentElement.offsetHeight,
-        document.documentElement.clientHeight
-    );
-}
-
-console.log('Width:  ' + getWidth());
-console.log('Height: ' + getHeight());
-
 //Width and height
-var w = (getWidth() * 0.67);
-var h = 500;
+var w = getWidth() * 0.75;
+var h = getHeight() * 0.6;
 var active = d3.select(null);
 
 //define projection
 var projection = d3.geoEquirectangular()
     .scale(900)
-    .translate([175, 900]);
+    .translate([300, 900]);
 
 //chloropleth from COLORBREWER
 //var colors = d3.scaleOrdinal(d3.schemeCategory20);
 
 //define drag behavior
 var zoom = d3.zoom()
-    .scaleExtent([1, 8])
-    .translateExtent([
-        [-100, -200],
-        [1000, 600]
-    ])
+    .scaleExtent([0.5, 8])
     .on('zoom', zooming);
 
 // define path
@@ -190,3 +163,26 @@ var bubbleMouseOut = function(d) {
     //Hide the tooltip
     d3.select("#tooltip").classed("hidden", true);
 };
+
+function getWidth() {
+    return Math.max(
+        document.body.scrollWidth,
+        document.documentElement.scrollWidth,
+        document.body.offsetWidth,
+        document.documentElement.offsetWidth,
+        document.documentElement.clientWidth
+    );
+}
+
+function getHeight() {
+    return Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight,
+        document.documentElement.clientHeight
+    );
+}
+
+//console.log('Width:  ' + getWidth());
+//console.log('Height: ' + getHeight());

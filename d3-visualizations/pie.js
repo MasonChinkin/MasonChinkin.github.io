@@ -1,6 +1,6 @@
     //svg size
-    var h = 300;
-    var w = 300;
+    var w = getWidth() * 0.4;
+    var h = getHeight() * 0.7;
 
     var dataset = [5, 10, 20, 45, 6, 25];
 
@@ -47,3 +47,23 @@
         .text(function(d) {
             return d.value;
         });
+
+    function getWidth() {
+        return Math.max(
+            document.body.scrollWidth,
+            document.documentElement.scrollWidth,
+            document.body.offsetWidth,
+            document.documentElement.offsetWidth,
+            document.documentElement.clientWidth
+        );
+    }
+
+    function getHeight() {
+        return Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.offsetHeight,
+            document.documentElement.clientHeight
+        );
+    }

@@ -9,8 +9,8 @@ for (var i = 0; i < numDataPoints; i++) { //Loop numDataPoints times
 
 //BOX
 
-var w = 500; //width
-var h = 300; //height
+var w = getWidth() * 0.7; //width
+var h = getHeight() * 0.7; //height
 var margin = 40;
 
 //DEFINE SCALES
@@ -204,4 +204,24 @@ function randomizeScatter() {
         .transition()
         .duration(500)
         .call(yaxis);
+}
+
+function getWidth() {
+    return Math.max(
+        document.body.scrollWidth,
+        document.documentElement.scrollWidth,
+        document.body.offsetWidth,
+        document.documentElement.offsetWidth,
+        document.documentElement.clientWidth
+    );
+}
+
+function getHeight() {
+    return Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight,
+        document.documentElement.clientHeight
+    );
 }

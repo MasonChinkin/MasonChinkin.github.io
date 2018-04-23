@@ -1,6 +1,6 @@
     //Width and height
-    var w = 800;
-    var h = 500;
+    var w = (getWidth() * 0.6);
+    var h = getHeight() * 0.7;
 
     //define projection
     var projection = d3.geoAlbersUsa()
@@ -282,3 +282,23 @@
                     .call(zoom.scaleBy, scaleFactor);
             });
     };
+
+    function getWidth() {
+        return Math.max(
+            document.body.scrollWidth,
+            document.documentElement.scrollWidth,
+            document.body.offsetWidth,
+            document.documentElement.offsetWidth,
+            document.documentElement.clientWidth
+        );
+    }
+
+    function getHeight() {
+        return Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.offsetHeight,
+            document.documentElement.clientHeight
+        );
+    }

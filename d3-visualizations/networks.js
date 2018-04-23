@@ -1,6 +1,6 @@
 //Width and height
-var w = 800;
-var h = 600;
+var w = getWidth() * 0.7;
+var h = getHeight() * 0.75;
 
 var dataset = {
     nodes: [{
@@ -427,4 +427,24 @@ function dragEnded(d) {
     if (!d3.event.active) force.alphaTarget(0);
     d.fx = null;
     d.fy = null;
+}
+
+function getWidth() {
+    return Math.max(
+        document.body.scrollWidth,
+        document.documentElement.scrollWidth,
+        document.body.offsetWidth,
+        document.documentElement.offsetWidth,
+        document.documentElement.clientWidth
+    );
+}
+
+function getHeight() {
+    return Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight,
+        document.documentElement.clientHeight
+    );
 }

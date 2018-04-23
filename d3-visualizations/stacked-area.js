@@ -1,6 +1,6 @@
         //Width and height
-        var w = 600;
-        var h = 400;
+        var w = getWidth() * 0.6;
+        var h = getHeight() * 0.6;
         var padding = 20;
 
         var dataset, xScale, yScale, xAxis, yAxis, area; //Empty, for now
@@ -123,3 +123,23 @@
                 .attr('transform', 'translate(' + (w - padding * 2) + ',0)')
                 .call(yAxis);
         });
+
+        function getWidth() {
+            return Math.max(
+                document.body.scrollWidth,
+                document.documentElement.scrollWidth,
+                document.body.offsetWidth,
+                document.documentElement.offsetWidth,
+                document.documentElement.clientWidth
+            );
+        }
+
+        function getHeight() {
+            return Math.max(
+                document.body.scrollHeight,
+                document.documentElement.scrollHeight,
+                document.body.offsetHeight,
+                document.documentElement.offsetHeight,
+                document.documentElement.clientHeight
+            );
+        }
