@@ -1,5 +1,28 @@
+function getWidth() {
+    return Math.max(
+        document.body.scrollWidth,
+        document.documentElement.scrollWidth,
+        document.body.offsetWidth,
+        document.documentElement.offsetWidth,
+        document.documentElement.clientWidth
+    );
+}
+
+function getHeight() {
+    return Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight,
+        document.documentElement.clientHeight
+    );
+}
+
+console.log('Width:  ' + getWidth());
+console.log('Height: ' + getHeight());
+
 //Width and height
-var w = 800;
+var w = (getWidth() * 0.67);
 var h = 500;
 var active = d3.select(null);
 
@@ -110,7 +133,8 @@ d3.csv('viz-data/trip.csv', function(data) {
                 return projection([d.lon, d.lat])[1];
             })
             .text('Start!')
-            .style('font-weight', 'bold');
+            .style('font-weight', 'bold')
+            .style('pointer-events', 'none');
     });
 });
 
