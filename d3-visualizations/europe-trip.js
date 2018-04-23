@@ -89,9 +89,7 @@ d3.csv('viz-data/trip.csv', function(data) {
             .attr('cy', function(d) {
                 return projection([d.lon, d.lat])[1];
             })
-            .attr('r', function(d) {
-                return d.stay_length * 2;
-            })
+            .attr('r', 4)
             .attr('fill', 'black')
             .on('mousemove', bubbleMouseMove)
             .on('mouseout', bubbleMouseOut);

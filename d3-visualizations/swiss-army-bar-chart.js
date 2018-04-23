@@ -1,5 +1,5 @@
 //Defined functions
-var w = (getWidth() * 0.75); //svg width
+var w = getWidth() * 0.75; //svg width
 var h = 300; //svg height
 var margin = { right: 50, left: 50, top: 25 }; //svg margin
 
@@ -349,7 +349,17 @@ d3.select("#subtract")
                 return y(d.value);
             })
             .attr('fill', function(d) {
-                return "rgb(0,0, " + Math.floor(y(d.value)) + ")";
+
+                //find cy of slider
+                var handleCy = document.getElementById("handle").getAttribute('cy');
+
+                if (d3.max(barDataset, function(d) {
+                        return d.value;
+                    }) - y.invert(+handleCy) >= d.value) {
+                    return 'orange';
+                } else {
+                    return "rgb(0,0, " + Math.floor(y(d.value)) + ")";
+                }
             });
 
         text.transition('textRemoveBar')

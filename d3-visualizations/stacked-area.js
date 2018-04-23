@@ -1,5 +1,5 @@
         //Width and height
-        var w = getWidth() * 0.6;
+        var w = getWidth() * 0.8;
         var h = getHeight() * 0.6;
         var padding = 20;
 
@@ -116,12 +116,14 @@
             svg.append('g')
                 .attr('class', 'axis')
                 .attr('transform', 'translate(0,' + (h - padding) + ')')
-                .call(xAxis);
+                .call(xAxis)
+                .style('pointer-events', 'none');
 
             svg.append('g')
                 .attr('class', 'axis')
                 .attr('transform', 'translate(' + (w - padding * 2) + ',0)')
-                .call(yAxis);
+                .call(yAxis)
+                .style('pointer-events', 'none');
         });
 
         function getWidth() {

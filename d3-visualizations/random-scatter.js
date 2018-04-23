@@ -10,7 +10,7 @@ for (var i = 0; i < numDataPoints; i++) { //Loop numDataPoints times
 //BOX
 
 var w = getWidth() * 0.7; //width
-var h = getHeight() * 0.7; //height
+var h = getHeight() * 0.5; //height
 var margin = 40;
 
 //DEFINE SCALES
@@ -124,12 +124,14 @@ svg.append('g')
 svg.append('g')
     .attr('class', 'x axis')
     .attr('transform', 'translate(0,' + (h - margin) + ')')
-    .call(xaxis);
+    .call(xaxis)
+    .style('pointer-events', 'none');
 
 svg.append('g')
     .attr('class', 'y axis')
     .attr('transform', 'translate(' + margin + ', 0)')
-    .call(yaxis);
+    .call(yaxis)
+    .style('pointer-events', 'none');
 
 //TRANSITION
 

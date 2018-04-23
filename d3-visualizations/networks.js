@@ -1,5 +1,5 @@
 //Width and height
-var w = getWidth() * 0.7;
+var w = getWidth() * 0.8;
 var h = getHeight() * 0.75;
 
 var dataset = {
@@ -368,8 +368,8 @@ var svg = d3.select('#container')
 //console.log(data[0]);
 
 var force = d3.forceSimulation(dataset.nodes)
-    .force('charge', d3.forceManyBody().strength(-20))
-    .force('link', d3.forceLink(dataset.edges).distance(20))
+    .force('charge', d3.forceManyBody().strength(-15))
+    .force('link', d3.forceLink(dataset.edges).distance(10))
     .force('center', d3.forceCenter().x(w / 2).y(h / 2));
 
 var colors = d3.scaleOrdinal(d3.schemeCategory20);
@@ -385,7 +385,7 @@ var nodes = svg.selectAll('circle')
     .data(dataset.nodes)
     .enter()
     .append('circle')
-    .attr('r', 10)
+    .attr('r', 5)
     .style('fill', function(d, i) {
         return colors(i);
     })
