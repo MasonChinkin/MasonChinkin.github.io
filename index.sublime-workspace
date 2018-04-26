@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"get",
+				"getHeight"
+			],
+			[
+				"handle",
+				"handleId"
+			],
+			[
+				"svg",
+				"svgElement"
+			],
+			[
+				"hand",
+				"handleCy"
+			],
+			[
 				"text",
 				"text-align"
 			],
@@ -140,20 +156,23 @@
 	"buffers":
 	[
 		{
-			"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip/europe-trip.html",
+			"file": "d3-visualizations/europe-trip.js",
 			"settings":
 			{
-				"buffer_size": 5889,
+				"buffer_size": 4637,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "d3-visualizations/europe-trip.js",
+			"contents": "Package Control Messages\n========================\n\nSublimeLinter\n-------------\n\n  SublimeLinter 4.3\n  =================\n  \n  - Now shows the active/assigned linters in the status bar.\n    SL will show e.g. 'eslint(ok)' if there were no errors, or 'eslint(1|2)' when\n    there is 1 warning and 2 errors.\n    If there is a hard error with the configuration it will state 'eslint(erred)'.\n    The counters_template setting is still applied, but different than before.\n    Check the default settings for more information.\n  \n  - Introduces a new setting called 'kill_old_processes'. If set it to true,\n    SL will send a 'terminate' signal to processes when SL won't use its output.\n    Use this if you're using slow linters that seem to hang ST a lot.\n    Related PR: https://github.com/SublimeLinter/SublimeLinter/pull/1250\n  \n  - For OSX we now wait (up to 1 minute) until the env has been loaded by Sublime.\n    This should prevent issues with SL not finding the executables.\n    Note that dev builds of ST also fix this issue for us.\n    Related ST issue: https://github.com/SublimeTextIssues/Core/issues/1877\n  \n  - Fixed a bug where hovering would sometimes not open the right tooltip.\n  - Fixed the visualization of multi-line errors in tooltips.\n  - Fixed a bug where not all gutter icons were drawn.\n  \n  - The debounce delay before a lint in background mode will now be set\n    automatically based on how fast your computer and your linters actually are.\n  - Added an upper limit for how many lint processes can run in parallel.\n  - Much improved logging about what command SL actually runs.\n  \n  \n  For plugin developers\n  ----------------------\n  \n  BREAKING CHANGES:\n  - For STREAM_BOTH linters we will call 'linter.on_stderr()' automatically if\n    there is any output on 'stderr' and only pass 'stdout' down.\n    Set 'on_stderr = None' to disable.\n  - Removed 'util.popen()'\n  - Removed 'linter.build_options()'\n  \n  DEPRECATED:\n  - 'util.communicate' has been deprecated,\n    The functionality is now in 'self._communicate'.\n    If you need to quickly run a command, use 'util.check_output'\n  \n  NEW:\n  - New API: popen calls now return an object, not just a string of the output\n    with the typical members '.stdout/.stderr/returncode'.\n    For compatibility, only the new 'linter.parse_output(proc, virtual_view)'\n    actually sees this 'proc'.\n  - If the linter failed, call 'self.notify_failure()'.\n    You should additionally log the error either as an error or a warning.\n  - In the 'defaults' setting we now support flags like \"{'--stdin': True|False}\".\n    You can also define e.g. \"{'--include': ''}\" instead of \"{'--include:': ''}\".\n  - You can now get the linter settings via 'get_linter_settings(linter, view)'.\n",
 			"settings":
 			{
-				"buffer_size": 4199,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"buffer_size": 2738,
+				"line_ending": "Windows",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
 			}
 		}
 	],
@@ -237,17 +256,29 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip"
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations"
 	],
 	"file_history":
 	[
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/random-scatter.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/stacked-area.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/main.css",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/swiss-army-bar-chart.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/swiss-army-bar-chart.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/networks.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/europe-trip.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/trip.csv",
+		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/zoomable-us-map.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Random-scatter.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/pie.js",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip/europe-trip.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/geomapping.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/swiss-army-bar-chart.js",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/us-states.json",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip/world.json",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/us-cities.csv",
@@ -255,22 +286,15 @@
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/Force.html",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip/europe-trip.js",
 		"/F/Downloads/ne_50m_admin_0_countries (1).json",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/zoomable-us-map.js",
 		"/F/Downloads/ne_50m_admin_0_countries.json",
 		"/F/Downloads/map.geojson",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/networks.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/random-network.json",
 		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/User/.jsbeautifyrc",
 		"/F/Downloads/Forked from https___next.json-generator.com_VkbpYpuiV.json",
 		"/F/Downloads/Forked from https___next.json-generator.com_VJdXV6doV.json",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Misc.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/pie.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Random-scatter.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/stacked-area.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/line-area-charts.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/networks.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/main.css",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/swiss-army-bar-chart.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/us-ag-productivity.csv",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/01_initial_chart.html",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/02_color_by_type.html",
@@ -302,7 +326,6 @@
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/New folder/line_chart.js",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/README.md",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/bars-add-sub.js",
-		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Assets/styles.css",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/random-bars.js",
 		"/C/Users/Zhangkin/Desktop/D3/Template.html",
@@ -338,6 +361,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"even",
+			"pointer",
+			"h2",
+			"#top",
+			"top",
+			"color",
+			"about",
+			"p ",
+			" p ",
+			" p",
+			" p ",
+			"'g",
+			"'g'",
+			"console",
 			"SVG",
 			"mouse",
 			"on.",
@@ -417,87 +454,73 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"sheets":
+			[
+			]
+		},
+		{
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip/europe-trip.html",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 5889,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								690,
-								690
-							]
-						],
-						"settings":
-						{
-							"SL.16.region_keys":
-							[
-								"SL.csslint.Gutter.region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter.dot",
-								"SL.csslint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
-								"sublime_linter.protected_regions"
-							],
-							"SL.36.region_keys":
-							[
-								"sublime_linter.protected_regions",
-								"SL.csslint.Gutter.region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter.dot",
-								"SL.csslint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32"
-							],
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 966.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 1,
 					"file": "d3-visualizations/europe-trip.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4199,
+						"buffer_size": 4637,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3786,
-								3786
+								3949,
+								3949
 							]
 						],
 						"settings":
 						{
-							"SL.17.region_keys":
-							[
-								"sublime_linter.protected_regions"
-							],
-							"SL.33.region_keys":
+							"SL.15.region_keys":
 							[
 							],
-							"open_with_edit": true,
+							"SL.18.region_keys":
+							[
+							],
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2898.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2738,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2738,
+								2738
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"default_dir": "C:\\Users\\Zhangkin\\Desktop\\D3\\MasonChinkin.github.io\\d3-visualizations",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -542,7 +565,7 @@
 		"rows":
 		[
 			0.0,
-			0.170183077842,
+			0.315621212148,
 			1.0
 		]
 	},
@@ -601,7 +624,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 356.0,
+	"side_bar_width": 330.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

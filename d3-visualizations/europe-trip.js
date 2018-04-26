@@ -154,9 +154,7 @@ var bubbleMouseOut = function(d) {
         .transition('orangeHover')
         .duration(250)
         .attr('fill', 'black')
-        .attr('r', function(d) {
-            return d.stay_length * 2;
-        });
+        .attr('r', 4);
 
     //Hide the tooltip
     d3.select("#tooltip").classed("hidden", true);
