@@ -45,7 +45,7 @@ map.append('rect')
 //trip data
 d3.csv('viz-data/trip.csv', function(data) {
     var dataset = data;
-    console.log(dataset);
+    //console.log(dataset);
 
     //map
     d3.json('viz-data/world.json', function(error, json) {
@@ -68,7 +68,8 @@ d3.csv('viz-data/trip.csv', function(data) {
             })
             .y(function(d) {
                 return projection([d.lon, d.lat])[1];
-            });
+            })
+            .curve(d3.curveCardinal.tension(0.4));
 
         //draw line
         map.append("path")

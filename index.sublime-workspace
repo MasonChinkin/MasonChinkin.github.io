@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"band",
+				"bandwidth()\td3-scale.bandwidth()"
+			],
+			[
+				"outer",
+				"paddingOuter()\td3-scaleBand.paddingOuter()"
+			],
+			[
+				"pointer",
+				"pointer-events"
+			],
+			[
+				"text",
+				"text()\td3.text()"
+			],
+			[
+				"console",
+				"console.log\t(stacked-area.html)"
+			],
+			[
+				"y",
+				"yTop"
+			],
+			[
+				"nest",
+				"nestDataset"
+			],
+			[
+				"net",
+				"nestDataset"
+			],
+			[
+				"pares",
+				"parseInt"
+			],
+			[
+				"growth",
+				"growth_type"
+			],
+			[
+				"gr",
+				"growth_annual_perc"
+			],
+			[
 				"get",
 				"getHeight"
 			],
@@ -18,10 +66,6 @@
 			[
 				"hand",
 				"handleCy"
-			],
-			[
-				"text",
-				"text-align"
 			],
 			[
 				"easeel",
@@ -156,23 +200,38 @@
 	"buffers":
 	[
 		{
-			"file": "d3-visualizations/europe-trip.js",
+			"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/old_attempts/gdp_growth_stacked_bar.html",
 			"settings":
 			{
-				"buffer_size": 4637,
+				"buffer_size": 21179,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "Package Control Messages\n========================\n\nSublimeLinter\n-------------\n\n  SublimeLinter 4.3\n  =================\n  \n  - Now shows the active/assigned linters in the status bar.\n    SL will show e.g. 'eslint(ok)' if there were no errors, or 'eslint(1|2)' when\n    there is 1 warning and 2 errors.\n    If there is a hard error with the configuration it will state 'eslint(erred)'.\n    The counters_template setting is still applied, but different than before.\n    Check the default settings for more information.\n  \n  - Introduces a new setting called 'kill_old_processes'. If set it to true,\n    SL will send a 'terminate' signal to processes when SL won't use its output.\n    Use this if you're using slow linters that seem to hang ST a lot.\n    Related PR: https://github.com/SublimeLinter/SublimeLinter/pull/1250\n  \n  - For OSX we now wait (up to 1 minute) until the env has been loaded by Sublime.\n    This should prevent issues with SL not finding the executables.\n    Note that dev builds of ST also fix this issue for us.\n    Related ST issue: https://github.com/SublimeTextIssues/Core/issues/1877\n  \n  - Fixed a bug where hovering would sometimes not open the right tooltip.\n  - Fixed the visualization of multi-line errors in tooltips.\n  - Fixed a bug where not all gutter icons were drawn.\n  \n  - The debounce delay before a lint in background mode will now be set\n    automatically based on how fast your computer and your linters actually are.\n  - Added an upper limit for how many lint processes can run in parallel.\n  - Much improved logging about what command SL actually runs.\n  \n  \n  For plugin developers\n  ----------------------\n  \n  BREAKING CHANGES:\n  - For STREAM_BOTH linters we will call 'linter.on_stderr()' automatically if\n    there is any output on 'stderr' and only pass 'stdout' down.\n    Set 'on_stderr = None' to disable.\n  - Removed 'util.popen()'\n  - Removed 'linter.build_options()'\n  \n  DEPRECATED:\n  - 'util.communicate' has been deprecated,\n    The functionality is now in 'self._communicate'.\n    If you need to quickly run a command, use 'util.check_output'\n  \n  NEW:\n  - New API: popen calls now return an object, not just a string of the output\n    with the typical members '.stdout/.stderr/returncode'.\n    For compatibility, only the new 'linter.parse_output(proc, virtual_view)'\n    actually sees this 'proc'.\n  - If the linter failed, call 'self.notify_failure()'.\n    You should additionally log the error either as an error or a warning.\n  - In the 'defaults' setting we now support flags like \"{'--stdin': True|False}\".\n    You can also define e.g. \"{'--include': ''}\" instead of \"{'--include:': ''}\".\n  - You can now get the linter settings via 'get_linter_settings(linter, view)'.\n",
+			"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/Stacked-bar.html",
 			"settings":
 			{
-				"buffer_size": 2738,
-				"line_ending": "Windows",
-				"name": "Package Control Messages",
-				"read_only": true,
-				"scratch": true
+				"buffer_size": 2086,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart/line_chart.js",
+			"settings":
+			{
+				"buffer_size": 3456,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/simple_gdp_growth.html",
+			"settings":
+			{
+				"buffer_size": 6670,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -183,10 +242,18 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 588.0,
-		"last_filter": "sublimel",
+		"height": 200.0,
+		"last_filter": "Package Control: inst",
 		"selected_items":
 		[
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: rem",
+				"Package Control: Remove Package"
+			],
 			[
 				"sublimel",
 				"SublimeLinter: Choose Tooltip Theme"
@@ -232,7 +299,7 @@
 				"Package Control: Remove Package"
 			]
 		],
-		"width": 954.0
+		"width": 879.0
 	},
 	"console":
 	{
@@ -256,20 +323,28 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations"
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth"
 	],
 	"file_history":
 	[
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/10_refine_styling.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/stacked-area.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/old_attempts/gdp_growth_stacked_bar.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/01_initial_chart.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/working-stacked-area.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/stacked-area.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/random-scatter.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/stacked-area.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/main.css",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/swiss-army-bar-chart.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/swiss-army-bar-chart.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/networks.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/europe-trip.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/trip.csv",
@@ -296,7 +371,6 @@
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/line-area-charts.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/networks.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/us-ag-productivity.csv",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/01_initial_chart.html",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/02_color_by_type.html",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/04_types_only.html",
 		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa9580.49170/index.html",
@@ -361,6 +435,35 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"gdpataset",
+			"domain",
+			"text",
+			"path",
+			"200",
+			"400",
+			".on",
+			"'end",
+			"delay",
+			"500",
+			"250",
+			"1000",
+			"dura",
+			"fill",
+			"console",
+			"-5",
+			"date",
+			"type",
+			"type ",
+			"type",
+			"dataset",
+			"defaultStack",
+			"individ",
+			"breakdown",
+			"for",
+			"scale",
+			"date",
+			"format",
+			"time",
 			"even",
 			"pointer",
 			"h2",
@@ -435,6 +538,21 @@
 		"regex": false,
 		"replace_history":
 		[
+			"125",
+			"300",
+			"400",
+			"200",
+			"500",
+			"typeStack",
+			"type",
+			"Type",
+			"type",
+			"Type",
+			"type",
+			"Type",
+			"type",
+			"Type",
+			"type",
 			"name",
 			"source",
 			"target",
@@ -454,76 +572,150 @@
 	"groups":
 	[
 		{
-			"sheets":
-			[
-			]
-		},
-		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "d3-visualizations/europe-trip.js",
+					"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/old_attempts/gdp_growth_stacked_bar.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4637,
+						"buffer_size": 21179,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3949,
-								3949
+								267,
+								269
 							]
 						],
 						"settings":
 						{
-							"SL.15.region_keys":
+							"SL.65.region_keys":
 							[
 							],
-							"SL.18.region_keys":
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/Stacked-bar.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2086,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1028,
+								1009
+							]
+						],
+						"settings":
+						{
+							"SL.39.region_keys":
 							[
 							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 597.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart/line_chart.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3456,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2609,
+								2609
+							]
+						],
+						"settings":
+						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2898.0,
+						"translation.y": 414.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
 				{
-					"buffer": 1,
+					"buffer": 3,
+					"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/simple_gdp_growth.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2738,
+						"buffer_size": 6670,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2738,
-								2738
+								2455,
+								2455
 							]
 						],
 						"settings":
 						{
-							"auto_indent": false,
-							"default_dir": "C:\\Users\\Zhangkin\\Desktop\\D3\\MasonChinkin.github.io\\d3-visualizations",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_width": 2,
-							"word_wrap": true
+							"SL.18.region_keys":
+							[
+								"SL.csslint.Highlights.|613d94ef7068849172a071a8b4f856e9e10c5b02a4fd7f900cf13f25daba0168|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.csslint.Highlights.|a87d67b3be56c2a4a040bbf1755cb7e903e9f18bf5ee20274a9e6309856ecfaf|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|536094070b3481046482312dd2706649d511eaffb1bb727b2c6b83915e805171|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|5ad8f0cf8d456db5a15d95210105faa66dfb8e0d45bd0ab7a3ec278586b5d1ef|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|d8a4472113c6bf2af8edbb62a1e0af7ebee7ba6419962c6624e896e75f31b007|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Gutter.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|dot",
+								"SL.csslint.Highlights.|d689666c63538509ddd1233345ceb38880449dc07db1b0de510537914110a432|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32"
+							],
+							"SL.62.region_keys":
+							[
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1907.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -565,7 +757,7 @@
 		"rows":
 		[
 			0.0,
-			0.315621212148,
+			0.5,
 			1.0
 		]
 	},
