@@ -209,27 +209,37 @@
 			}
 		},
 		{
-			"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/Stacked-bar.html",
+			"file": "gdp.html",
 			"settings":
 			{
-				"buffer_size": 2086,
+				"buffer_size": 5494,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart/line_chart.js",
+			"file": "swiss-army-bar-chart.html",
 			"settings":
 			{
-				"buffer_size": 3456,
+				"buffer_size": 6076,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/simple_gdp_growth.html",
+			"file": "d3-visualizations/gdp.js",
 			"settings":
 			{
-				"buffer_size": 6670,
+				"buffer_size": 12795,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/Stacked-bar.html",
+			"settings":
+			{
+				"buffer_size": 3340,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -323,16 +333,18 @@
 	},
 	"expanded_folders":
 	[
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth"
 	],
 	"file_history":
 	[
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/10_refine_styling.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/zoomable-us-map.js",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/Stacked-bar.html",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/stacked-area.html",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/old_attempts/gdp_growth_stacked_bar.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
@@ -349,7 +361,6 @@
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/europe-trip.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/trip.csv",
 		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/zoomable-us-map.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Random-scatter.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/pie.js",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip/europe-trip.html",
@@ -421,7 +432,7 @@
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -435,6 +446,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"vehicles",
+			"catDataset",
+			"dataset",
+			"data.",
+			"#",
+			"this",
+			"mousem",
+			"on",
+			"hover",
 			"gdpataset",
 			"domain",
 			"text",
@@ -588,12 +608,34 @@
 						"selection":
 						[
 							[
-								267,
-								269
+								13495,
+								13495
 							]
 						],
 						"settings":
 						{
+							"SL.14.region_keys":
+							[
+								"SL.csslint.Highlights.|613d94ef7068849172a071a8b4f856e9e10c5b02a4fd7f900cf13f25daba0168|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|e269dfde5981ed00c9edd1f8f901c98ee992f454473a1fada8dd6b20925e451d|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|b756a30557720d0beb78c7c22b625c9337f7e937138d29382e3df1dff0c94bd4|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|c967cd67d73e74c3c0f2767950795e5a15332db7e2820aa96a41b9fb465b3b8d|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Gutter.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|dot",
+								"SL.csslint.Highlights.|254bcf1940a4bc2e984d3d878e70ebbd5495bb6672b7e43b79e08fee4864fa60|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.csslint.Highlights.|a3b954ae6ee482778e71e0c8e7cd9d17fbec7c76bbcf28724e0dc279058d5510|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32"
+							],
+							"SL.15.region_keys":
+							[
+								"SL.csslint.Gutter.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|dot",
+								"SL.csslint.Highlights.|613d94ef7068849172a071a8b4f856e9e10c5b02a4fd7f900cf13f25daba0168|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|c967cd67d73e74c3c0f2767950795e5a15332db7e2820aa96a41b9fb465b3b8d|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|a3b954ae6ee482778e71e0c8e7cd9d17fbec7c76bbcf28724e0dc279058d5510|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|b756a30557720d0beb78c7c22b625c9337f7e937138d29382e3df1dff0c94bd4|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|e269dfde5981ed00c9edd1f8f901c98ee992f454473a1fada8dd6b20925e451d|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|254bcf1940a4bc2e984d3d878e70ebbd5495bb6672b7e43b79e08fee4864fa60|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions"
+							],
 							"SL.65.region_keys":
 							[
 							],
@@ -602,112 +644,152 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/Stacked-bar.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2086,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1028,
-								1009
-							]
-						],
-						"settings":
-						{
-							"SL.39.region_keys":
-							[
-							],
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 597.0,
+						"translation.y": 1654.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart/line_chart.js",
-					"semi_transient": true,
+					"buffer": 1,
+					"file": "gdp.html",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3456,
+						"buffer_size": 5494,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2609,
-								2609
+								941,
+								953
 							]
 						],
 						"settings":
 						{
+							"SL.24.region_keys":
+							[
+								"SL.csslint.Highlights.|7f26b30b4308c62d151ef8eae5811672e5de5d419817bb2888c5e3f5f824f929|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|8fb9f62a219a11b9a88ec2b4ac8b143dca34eaf49156dcb254290921c23e9c6d|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|1b0a1a11e3aad10e23c0ef81a571c140d588f1bead5057eed84a2faf482def1a|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|3ef03b6b73329fc76952ce328d10319518836cea45d6d283610b238eef6915e6|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|e6b522350a79ce37ffa1197f4c219c0251a209fa1711b082b5b38cab4e6f418b|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|733082e444032421ffc2fabbe8c6ddb86736e93e3f22cc41ef6236b932397e0c|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|e354dbb618c289c718310d91f4cf4918e725f75ab4ca40b042e26cdc1a486aa7|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Gutter.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|dot",
+								"sublime_linter.protected_regions",
+								"SL.csslint.Highlights.|300c45b51b1335cf1e8a72fddc45e757b7af521fddc08b8df92b17f1a77b748b|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32"
+							],
+							"open_with_edit": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 243.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "swiss-army-bar-chart.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6076,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4929,
+								4929
+							]
+						],
+						"settings":
+						{
+							"SL.29.region_keys":
+							[
+								"SL.csslint.Highlights.|a0d8a7e06a430c3d82dc54c31dc180500240ab813f768aee85228466d631a59c|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|7bac8868960709cd5f2b3072855030a7781f826b7c3c9b16290e668132200c48|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|f5f62267675b611ef0f84759f33fe9320b44e18fb0d195723759a7b16d8a147c|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|b6592ae2e696be15ec44542e1b7c989ba90ae9dfcef3d0e76b3f2a53b007439d|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|c776d2f77c43bafd9dff3ea9fa55ac9836ed8ed8ce003542e55c108b07bfc033|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Gutter.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|dot",
+								"SL.csslint.Highlights.|de956f8df9507a41211d2cb8283aee4ba652916d8a71514f60cee567d2b71fa1|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|38d38ce6ea81b73fc43d95e7352285487359f772e36f3e1c1c4e0e020214d4bb|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions"
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3159.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "d3-visualizations/gdp.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12795,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8668,
+								8668
+							]
+						],
+						"settings":
+						{
+							"SL.26.region_keys":
+							[
+							],
+							"open_with_edit": true,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 414.0,
+						"translation.y": 6453.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 3,
-					"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/simple_gdp_growth.html",
+					"buffer": 4,
+					"file": "/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/Stacked-bar.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6670,
+						"buffer_size": 3340,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2455,
-								2455
+								2159,
+								2159
 							]
 						],
 						"settings":
 						{
-							"SL.18.region_keys":
-							[
-								"SL.csslint.Highlights.|613d94ef7068849172a071a8b4f856e9e10c5b02a4fd7f900cf13f25daba0168|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
-								"sublime_linter.protected_regions",
-								"SL.csslint.Highlights.|a87d67b3be56c2a4a040bbf1755cb7e903e9f18bf5ee20274a9e6309856ecfaf|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|536094070b3481046482312dd2706649d511eaffb1bb727b2c6b83915e805171|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|5ad8f0cf8d456db5a15d95210105faa66dfb8e0d45bd0ab7a3ec278586b5d1ef|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|d8a4472113c6bf2af8edbb62a1e0af7ebee7ba6419962c6624e896e75f31b007|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
-								"SL.csslint.Gutter.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|dot",
-								"SL.csslint.Highlights.|d689666c63538509ddd1233345ceb38880449dc07db1b0de510537914110a432|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32"
-							],
-							"SL.62.region_keys":
+							"SL.37.region_keys":
 							[
 							],
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
@@ -715,10 +797,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1907.0,
+						"translation.y": 1539.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -726,11 +808,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 35.0
+		"height": 39.0
 	},
 	"input":
 	{
-		"height": 53.0
+		"height": 57.0
 	},
 	"layout":
 	{
@@ -741,12 +823,6 @@
 				0,
 				1,
 				1
-			],
-			[
-				0,
-				1,
-				1,
-				2
 			]
 		],
 		"cols":
@@ -757,7 +833,6 @@
 		"rows":
 		[
 			0.0,
-			0.5,
 			1.0
 		]
 	},
@@ -778,7 +853,7 @@
 	"project": "index.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 72.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -808,7 +883,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
@@ -816,7 +891,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 330.0,
+	"side_bar_width": 436.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -189,7 +189,7 @@ function randomizeScatter() {
             return yscale(d[1]);
         })
         .transition()
-        .duration(1000)
+        .duration(500)
         .attr('fill', 'black')
         .attr('r', 2);
 

@@ -11,79 +11,79 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="assets/css/main.css" />
     <script type="text/javascript" src="assets/js/d3.js"></script>
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <style type="text/css">
-    .barLabel {
-        text-anchor: middle;
-        pointer-events: none;
-        font-size: 11px;
-        font-family: sans-serif;
+    h1 {
+        font-family: Helvetica, sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        padding-left: 50px
+    }
+
+    .axis {
+        stroke-width: 1.5;
         pointer-events: none;
     }
 
-    #tooltip {
+    .line:hover {
+        stroke: yellow;
+    }
+
+    .textselected {
+        font: 15px arial;
+        pointer-events: none;
+        text-anchor: start;
+    }
+
+    .indivBars:hover {
+        stroke: black;
+        stroke-width: 3;
+    }
+
+    div.tooltip {
         position: absolute;
+        text-align: center;
         width: auto;
         height: auto;
-        padding: 10px;
-        background-color: white;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
-        -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-        -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        padding: 2px;
+        font: 16px sans-serif;
+        background: white;
+        border: 0px;
+        border-radius: 8px;
+        pointer-events: none;
+        color: black;
+    }
+
+    #backButton {
+        cursor: pointer;
+    }
+
+    #backButton rect {
+        fill: rgb(175, 240, 91);
+    }
+
+    #backButton text {
+        font-family: Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+        fill: black;
+    }
+
+    #backButton:hover rect {
+        fill: rgb(26, 199, 194);
+    }
+
+    #backButton:hover text {
+        fill: white;
+    }
+
+    .unclickable {
         pointer-events: none;
     }
-
-    #tooltip.hidden {
-        display: none;
-    }
-
-    #tooltip p {
-        margin: 0;
-        font-family: sans-serif;
-        font-size: 16px;
-        line-height: 20px;
-    }
-
-    .ticks {
-        font: 10px sans-serif;
-    }
-
-    .track,
-    .track-inset,
-    .track-overlay {
-        stroke-linecap: round;
-    }
-
-    .track {
-        stroke: #000;
-        stroke-opacity: 0.3;
-        stroke-width: 10px;
-    }
-
-    .track-inset {
-        stroke: #ddd;
-        stroke-width: 8px;
-    }
-
-    .track-overlay {
-        pointer-events: stroke;
-        stroke-width: 50px;
-        stroke: transparent;
-    }
-
-    .handle {
-        fill: #fff;
-        stroke: #000;
-        stroke-opacity: 0.5;
-        stroke-width: 1.25px;
-    }
     </style>
+    <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
 <body>
@@ -140,19 +140,13 @@
             </div>
         </section>
         <section id="portfolio" class="two">
-            <h2>The Swiss-Army Bar Chart</h2>
-            <ul>The goal: fit as many useless functions into a bar chart as possible without breaking it.</ul>
+            <h2>Contributions to Annual US GDP Growth: 1950-2017</h2>
+            <h1>Hover over and (coming soon: click) on the bars!</h1>
             <div id="container">
-                <div id="tooltip" class="hidden">
-                    <p><strong>Value</strong></p>
-                    <p><span id="value">100</span></p>
+                <div class="legend">
+                    <div class="legend"></div>
                 </div>
-                <div>
-                    <button id='add'>add a bar!</button>
-                    <button id='subtract'>remove a bar!</button>
-                    <button id='sort'>sort the bars!!!</button>
-                </div>
-                <script src="d3-visualizations/swiss-army-bar-chart.js"></script>
+                <script src="d3-visualizations/gdp.js"></script>
             </div>
         </section>
     </div>
