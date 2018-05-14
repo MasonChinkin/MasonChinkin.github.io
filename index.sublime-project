@@ -12,17 +12,10 @@
 			"path": "."
 		},
 		{
-			"file_exclude_patterns":
-			[
-				"favicon.ico",
-				"LICENSE",
-				"README.md",
-				".gitattributes"
-			],
-			"path": "C:\\Users\\Zhangkin\\Desktop\\D3\\D3.js-book-work-plus"
+			"path": "C:\\Users\\Zhangkin\\Desktop\\D3\\d3-book-2.0.1"
 		},
 		{
-			"path": "C:\\Users\\Zhangkin\\Desktop\\D3\\d3-book-2.0.1"
+			"path": "C:\\Users\\Mason\\Desktop\\Coding\\D3.js-book-work-plus"
 		}
 	]
 }

@@ -153,8 +153,8 @@ d3.csv('viz-data/growth_data_simple.csv', rowConverter, function(error, data) {
                             d3.csv('viz-data/growth_data_' + thisType + '.csv', rowConverter, function(error, thisGdpData) {
                                 if (error) throw error;
 
-                                var thisGdpDataset = thisGdpData;
-                                //console.log(thisGdpDataset);
+                                var thisDataset = thisGdpData;
+                                //console.log(thisDataset);
 
                                 //Generate a new data set with all-zero values, 
                                 //except for this type's data for beginning of transition
