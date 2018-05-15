@@ -430,7 +430,7 @@
 	],
 	"find":
 	{
-		"height": 40.8
+		"height": 27.0
 	},
 	"find_in_files":
 	{
@@ -629,12 +629,15 @@
 						"selection":
 						[
 							[
-								6581,
-								6581
+								10502,
+								10502
 							]
 						],
 						"settings":
 						{
+							"SL.13.region_keys":
+							[
+							],
 							"SL.15.region_keys":
 							[
 							],
@@ -643,7 +646,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3062.0,
+						"translation.y": 4923.33333333,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -699,7 +702,7 @@
 	"project": "index.sublime-project",
 	"replace":
 	{
-		"height": 72.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":

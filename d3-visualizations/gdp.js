@@ -1,5 +1,5 @@
 //Width and height
-margin = { top: 50, right: 30, bottom: 20, left: 50 },
+margin = { top: 50, right: 40, bottom: 20, left: 50 },
     w = getWidth() * 0.6,
     h = getHeight() * 0.6;
 
@@ -404,7 +404,7 @@ function drawGdpLine(data) {
         .attr("d", line)
         .style('fill', 'none')
         .style('stroke', 'black')
-        .style('stroke-width', 4);
+        .style('stroke-width', 3);
 };
 
 function drawThisLine(data) {
@@ -421,7 +421,7 @@ function drawThisLine(data) {
         .attr("d", thisLine)
         .style('fill', 'none')
         .style('stroke', 'black')
-        .style('stroke-width', 4)
+        .style('stroke-width', 3)
         .style('opacity', 0)
         .transition().delay(barTransition).duration(500)
         .style('opacity', 1);
