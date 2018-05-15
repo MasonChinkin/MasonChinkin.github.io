@@ -1,7 +1,7 @@
 //Width and height
 margin = { top: 50, right: 40, bottom: 20, left: 50 },
-    w = getWidth() * 0.6,
-    h = getHeight() * 0.6;
+    w = 950,
+    h = 550;
 
 var parseTime = d3.timeParse('%Y'); //convert strings to dates
 var formatTime = d3.timeFormat('%Y'); //date format
@@ -613,26 +613,6 @@ function stackMin(serie) {
 function stackMax(serie) {
     return d3.max(serie, function(d) { return d[1]; });
 };
-
-function getWidth() {
-    return Math.max(
-        document.body.scrollWidth,
-        document.documentElement.scrollWidth,
-        document.body.offsetWidth,
-        document.documentElement.offsetWidth,
-        document.documentElement.clientWidth
-    );
-}
-
-function getHeight() {
-    return Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight,
-        document.body.offsetHeight,
-        document.documentElement.offsetHeight,
-        document.documentElement.clientHeight
-    );
-}
 
 // % label for the y axis
 svg.append("text")

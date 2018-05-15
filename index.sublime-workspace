@@ -235,7 +235,16 @@
 			"file": "d3-visualizations/gdp.js",
 			"settings":
 			{
-				"buffer_size": 20161,
+				"buffer_size": 19608,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 10385,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -430,7 +439,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -444,6 +453,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"line",
 			" series",
 			"series",
 			"thisStack",
@@ -613,7 +623,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -622,15 +632,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 20161,
+						"buffer_size": 19608,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10502,
-								10502
+								84,
+								84
 							]
 						],
 						"settings":
@@ -646,7 +656,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4923.33333333,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10385,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6566,
+								6566
+							]
+						],
+						"settings":
+						{
+							"SL.16.region_keys":
+							[
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1458.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
