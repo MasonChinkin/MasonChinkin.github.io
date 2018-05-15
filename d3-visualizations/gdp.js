@@ -1,7 +1,7 @@
 //Width and height
 margin = { top: 50, right: 30, bottom: 20, left: 50 },
-    w = 900,
-    h = 550;
+    w = getWidth() * 0.6,
+    h = getHeight() * 0.6;
 
 var parseTime = d3.timeParse('%Y'); //convert strings to dates
 var formatTime = d3.timeFormat('%Y'); //date format
@@ -27,10 +27,11 @@ var colors = d3.scaleOrdinal(d3.schemeCategory10);
 var viewState = 0
 
 //bar transition duration
-var barTransition = 1000
+var barTransition = 750
 
 //define stacks
 var stack = d3.stack();
+var transitionStack = d3.stack();
 var thisStack = d3.stack();
 
 //create svg
@@ -53,7 +54,7 @@ d3.csv('viz-data/growth_data_simple.csv', rowConverter, function(error, data) {
         keys = dataset.columns.slice(1);
         stack.keys(keys)
             .offset(d3.stackOffsetDiverging)
-            .order(d3.stackOrderDescending);
+            .order(d3.stackOrderInsideOut);
 
         //data, stacked
         series = stack(dataset);
@@ -191,7 +192,11 @@ function drawGdp(data, series, keys) {
             }
             //console.log(transitionDataset);
 
-            var transitionSeries = stack(transitionDataset);
+            transitionStack.keys(keys)
+                .offset(d3.stackOffsetDiverging)
+                .order(d3.stackOrderAscending);
+
+            var transitionSeries = transitionStack(transitionDataset);
             //console.log(transitionSeries);
 
             //remove gdp line
@@ -255,7 +260,7 @@ function drawGdp(data, series, keys) {
             thisKeys = thisDataset.columns.slice(1);
             thisStack.keys(thisKeys)
                 .offset(d3.stackOffsetDiverging)
-                .order(d3.stackOrderDescending);
+                .order(d3.stackOrderInsideOut);
 
             thisSeries = thisStack(thisDataset);
             //console.log(thisSeries);
@@ -609,15 +614,35 @@ function stackMax(serie) {
     return d3.max(serie, function(d) { return d[1]; });
 };
 
+function getWidth() {
+    return Math.max(
+        document.body.scrollWidth,
+        document.documentElement.scrollWidth,
+        document.body.offsetWidth,
+        document.documentElement.offsetWidth,
+        document.documentElement.clientWidth
+    );
+}
+
+function getHeight() {
+    return Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight,
+        document.documentElement.clientHeight
+    );
+}
+
 // % label for the y axis
 svg.append("text")
     //.attr("x", margin.left / 2)
     //.attr("y", h / 2)
     .style("text-anchor", "middle")
     .text("%")
+    .attr('class', 'axis text')
     .attr("transform", "translate(" + margin.left / 4 + "," +
         h / 2 + ") rotate(0)")
-    .style('font-size', 16)
     .style('font-weight', 'bold')
     .style('pointer-events', 'none');
 

@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"transitionS",
+				"transitionStack"
+			],
+			[
+				"get",
+				"getWidth"
+			],
+			[
+				"gdp",
+				"gdpLineDataset"
+			],
+			[
+				"draw",
+				"drawGdpLine"
+			],
+			[
+				"bar",
+				"barOnClick"
+			],
+			[
+				"legen",
+				"legendVals"
+			],
+			[
 				"dis",
 				"display\tproperty"
 			],
@@ -62,10 +86,6 @@
 			[
 				"gr",
 				"growth_annual_perc"
-			],
-			[
-				"get",
-				"getHeight"
 			],
 			[
 				"handle",
@@ -211,6 +231,15 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "d3-visualizations/gdp.js",
+			"settings":
+			{
+				"buffer_size": 20161,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -302,14 +331,13 @@
 	[
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/images",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16"
 	],
 	"file_history":
 	[
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/transitioning_stacked_bars.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/gdp.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/transitioning_stacked_bars.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/random-scatter.js",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/10_refine_styling.html",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/example_transition_stacked_Bar.html",
@@ -402,7 +430,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 40.8
 	},
 	"find_in_files":
 	{
@@ -416,6 +444,19 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			" series",
+			"series",
+			"thisStack",
+			"gdpD",
+			"viewstat",
+			"#bars",
+			"thisSer",
+			"thisS",
+			"keys",
+			"thisSeries",
+			"window",
+			"dataset",
+			"key",
 			"button",
 			"toggle",
 			"hidden",
@@ -537,6 +578,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"data",
 			"125",
 			"300",
 			"400",
@@ -575,10 +617,37 @@
 			"sheets":
 			[
 				{
-					"file": "images/gdp.JPG",
-					"semi_transient": true,
+					"buffer": 0,
+					"file": "d3-visualizations/gdp.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20161,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6581,
+								6581
+							]
+						],
+						"settings":
+						{
+							"SL.15.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3062.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 0,
-					"type": "image"
+					"type": "text"
 				}
 			]
 		}
@@ -630,7 +699,7 @@
 	"project": "index.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 72.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -668,7 +737,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 256.0,
+	"side_bar_width": 146.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
