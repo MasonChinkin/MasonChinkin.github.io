@@ -4,80 +4,180 @@
 		"selected_items":
 		[
 			[
-				"row",
-				"rowConverter〔class〕"
+				"font",
+				"font-weight\t(europe-trip.html)"
 			],
 			[
-				"forma",
-				"foramtAsThousands〔variable〕"
+				"padd",
+				"padding-left"
 			],
 			[
-				"geoAlbe",
-				"geoAlbersUsa()\td3.geoAlbersUsa()"
+				"band",
+				"bandwidth()\td3-scale.bandwidth()"
 			],
 			[
-				"curve",
-				"curve()\td3-area.curve()"
+				"outer",
+				"paddingOuter()\td3-scaleBand.paddingOuter()"
 			],
 			[
-				"translate",
-				"interpolateTransformSvg\td3.interpolateTransformSvg()"
+				"pointer",
+				"pointer-events"
 			],
 			[
-				"transla",
-				"translate()\td3-projection.translate()"
+				"text",
+				"text()\td3.text()"
 			],
 			[
-				"transform",
-				"transform()\td3-zoom.transform()"
+				"console",
+				"console.log\t(stacked-area.html)"
 			],
 			[
-				"attr",
-				"attr()\td3-transition.attr()"
+				"y",
+				"yTop"
 			],
 			[
-				"stackOrder",
-				"stackOrderDescending\td3.stackOrderDescending"
+				"nest",
+				"nestDataset"
 			],
 			[
-				"stackO",
-				"stackOffsetWiggle\td3.stackOffsetWiggle"
+				"net",
+				"nestDataset"
+			],
+			[
+				"pares",
+				"parseInt"
+			],
+			[
+				"growth",
+				"growth_type"
+			],
+			[
+				"gr",
+				"growth_annual_perc"
+			],
+			[
+				"get",
+				"getHeight"
+			],
+			[
+				"handle",
+				"handleId"
+			],
+			[
+				"svg",
+				"svgElement"
+			],
+			[
+				"hand",
+				"handleCy"
+			],
+			[
+				"easeel",
+				"easeElasticOut\td3.easeElasticOut"
+			],
+			[
+				"bubble",
+				"bubbleMouseMove"
+			],
+			[
+				"scheme",
+				"schemeCategory20\td3.schemeCategory20"
+			],
+			[
+				"al",
+				"align\t(geomapping.html)"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"style",
+				"style()\td3-selection.style()"
+			],
+			[
+				"zoomIdentity",
+				"zoomIdentity\td3.zoomIdentity"
+			],
+			[
+				"elas",
+				"easeElasticInOut\td3.easeElasticInOut"
+			],
+			[
+				"create",
+				"createPanButtons"
+			],
+			[
+				"trans",
+				"transpose()\td3.transpose()"
+			],
+			[
+				"tickf",
+				"tickFormat()\td3-axis.tickFormat()"
+			],
+			[
+				"axisb",
+				"axisBottom()\td3.axisBottom()"
+			],
+			[
+				"timef",
+				"timeFormat()\td3.timeFormat()"
+			],
+			[
+				"datum",
+				"datum()\td3-selection.datum()"
+			],
+			[
+				"app",
+				"append()\td3-selection.append()"
+			],
+			[
+				"sele",
+				"select()\td3.select()"
 			],
 			[
 				"f",
 				"f\tAnonymous Function"
 			],
 			[
-				"grapes",
-				"grapes"
+				"x",
+				"x()\td3-line.x()"
 			],
 			[
-				"target",
-				"target"
+				"scaleLin",
+				"scaleLinear()\td3.scaleLinear()"
+			],
+			[
+				"range",
+				"range()\td3-scale.range()"
+			],
+			[
+				"dom",
+				"domain()\td3-scale.domain()"
+			],
+			[
+				"scaleti",
+				"scaleTime()\td3.scaleTime()"
+			],
+			[
+				"function",
+				"functions\t(01_line_chart.html)"
+			],
+			[
+				"scalet",
+				"scaleThreshold()\td3.scaleThreshold()"
+			],
+			[
+				"csv",
+				"csv()\td3.csv()-snippet"
 			],
 			[
 				"att",
-				"attr()\td3-selection.merge()"
-			],
-			[
-				"x",
-				"x()\td3-force.x()"
-			],
-			[
-				"force",
-				"forceSimulation()\td3.forceSimulation()"
+				"attr()\td3-transition.attr()"
 			],
 			[
 				"at",
-				"attr()\td3-selection.merge()"
-			],
-			[
-				"tran",
-				"translate()\td3-zoomTransform.translate()"
-			],
-			[
-				"max",
-				"maxValue〔variable〕"
+				"attr()\td3-transition.attr()"
 			],
 			[
 				"random",
@@ -90,16 +190,62 @@
 			[
 				"bars",
 				"bars-add-sub.js"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"attr",
+				"attr()\td3-selection.merge()"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 10385,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "d3-visualizations/gdp.js",
 			"settings":
 			{
 				"buffer_size": 12550,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE HTML>\n<!--\n  Prologue by HTML5 UP\n  html5up.net | @ajlkn\n  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)\n-->\n<html>\n\n<head>\n    <title>Mason's personal website</title>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <!--[if lte IE 8]><script src=\"assets/js/ie/html5shiv.js\"></script><![endif]-->\n    <script type=\"text/javascript\" src=\"assets/js/d3.js\"></script>\n    <!--[if lte IE 8]><link rel=\"stylesheet\" href=\"assets/css/ie8.css\" /><![endif]-->\n    <!--[if lte IE 9]><link rel=\"stylesheet\" href=\"assets/css/ie9.css\" /><![endif]-->\n    <style type=\"text/css\">\n    #tooltip {\n        position: absolute;\n        width: auto;\n        height: auto;\n        padding: 10px;\n        background-color: beige;\n        -webkit-border-radius: 10px;\n        -moz-border-radius: 10px;\n        border-radius: 10px;\n        -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);\n        -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);\n        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);\n        pointer-events: none;\n    }\n\n    #tooltip.hidden {\n        display: none;\n    }\n\n    #tooltip p {\n        margin: 0;\n        font-family: sans-serif;\n        font-size: 16px;\n        line-height: 20px;\n        text-align: left;\n        color: black;\n    }\n\n    #tooltip p strong {\n        margin: 0;\n        font-family: sans-serif;\n        font-size: 16px;\n        line-height: 20px;\n        text-align: left;\n        color: black;\n        font-weight: bold;\n    }\n\n    #pic {\n        height: 225px;\n    }\n    </style>\n    <link rel=\"stylesheet\" href=\"assets/css/main.css\" />\n</head>\n\n<body>\n    <!-- Header -->\n    <div id=\"header\">\n        <div class=\"top\">\n            <!-- Logo -->\n            <div id=\"logo\">\n                <span class=\"image avatar48\"><img src=\"images/avatar.jpg\" alt=\"\" /></span>\n                <h1 id=\"title\">Mason Chinkin</h1>\n                <p>Aspiring data vizzer</p>\n            </div>\n            <!-- Nav -->\n            <nav id=\"nav\">\n                <!--\n\n                Prologue's nav expects links in one of two formats:\n\n                1. Hash link (scrolls to a different section within the page)\n\n                   <li><a href=\"#foobar\" id=\"foobar-link\" class=\"icon fa-whatever-icon-you-want skel-layers-ignoreHref\"><span class=\"label\">Foobar</span></a></li>\n\n                2. Standard link (sends the user to another page/site)\n\n                   <li><a href=\"http://foobar.tld\" id=\"foobar-link\" class=\"icon fa-whatever-icon-you-want\"><span class=\"label\">Foobar</span></a></li>\n\n              -->\n                <ul>\n                    <li><a href=\"index.html#top\" id=\"top-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-home\">Intro</span></a></li>\n                    <li><a href=\"index.html#portfolio\" id=\"portfolio-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-th\">Portfolio</span></a></li>\n                    <li><a href=\"index.html#about\" id=\"about-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-user\">About Me</span></a></li>\n                    <li><a href=\"index.html#contact\" id=\"contact-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-envelope\">Contact</span></a></li>\n                </ul>\n            </nav>\n        </div>\n        <div class=\"bottom\">\n            <!-- Social Icons -->\n            <ul class=\"icons\">\n                <!--<li><a href=\"#\" class=\"icon fa-twitter\"><span class=\"label\">Twitter</span></a></li> NEED TO MAKE ONE-->\n                <li><a href=\"https://github.com/MasonChinkin\" class=\"icon fa-github\"><span class=\"label\">Github</span></a></li>\n                <li><a href=\"#contact\" class=\"icon fa-envelope\"><span class=\"label\">Email</span></a></li>\n                <li><a href=\"https://www.linkedin.com/in/mason-chinkin/\" class=\"icon fa-linkedin\"><span class=\"label\">LinkedIn</span></a></li>\n            </ul>\n        </div>\n    </div>\n    <!-- Main -->\n    <div id=\"main\">\n        <!-- Intro -->\n        <section id=\"top\" class=\"one dark cover\">\n            <div align=\"left\" class=\"container\">\n                <footer>\n                    <a href=\"index.html#portfolio\" class=\"button scrolly\">Return to portfolio</a>\n                </footer>\n            </div>\n        </section>\n        <section id=\"portfolio\" class=\"two\">\n            <h2>Interactive map of a 2017 trip to Europe with my girlfriend.</h2>\n            <ul>Zoom, pan, and hover over the bubbles!</ul>\n            <div id=\"container\">\n                <div id=\"tooltip\" class=\"hidden\">\n                    <p><strong>Location: </strong><span id=\"city\">100</span></p>\n                    <p><strong>How long we stayed: </strong><span id=\"days\">100</span> days</p>\n                    <p><strong>Memory: </strong><span id=\"memory\">100</span></p>\n                    <p><img id=\"pic\"></p>\n                </div>\n                <script src=\"d3-visualizations/europe-trip.js\"></script>\n            </div>\n        </section>\n    </div>\n</body>\n<div id=\"footer\">\n    <!-- Copyright -->\n    <ul class=\"copyright\">\n        <li>Design: <a href=\"http://html5up.net\">HTML5 UP</a></li>\n    </ul>\n</div>\n<!-- Scripts -->\n<script src=\"assets/js/jquery.min.js\"></script>\n<script src=\"assets/js/jquery.scrolly.min.js\"></script>\n<script src=\"assets/js/jquery.scrollzer.min.js\"></script>\n<script src=\"assets/js/skel.min.js\"></script>\n<script src=\"assets/js/util.js\"></script>\n<!--[if lte IE 8]><script src=\"assets/js/ie/respond.min.js\"></script><![endif]-->\n<script src=\"assets/js/main.js\"></script>\n</body>\n\n</html>",
+			"file": "europe-trip.html",
+			"file_size": 5720,
+			"file_write_time": 131689982319411154,
+			"settings":
+			{
+				"buffer_size": 5592,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "gdp.html",
+			"settings":
+			{
+				"buffer_size": 5586,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "geomapping.html",
+			"settings":
+			{
+				"buffer_size": 4905,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -112,17 +258,21 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 588.0,
-		"last_filter": "Package Control: ",
+		"height": 200.0,
+		"last_filter": "Package Control: inst",
 		"selected_items":
 		[
 			[
-				"Package Control: ",
-				"Package Control: Enable Package"
+				"Package Control: inst",
+				"Package Control: Install Package"
 			],
 			[
-				"Package Control: dis",
-				"Package Control: Disable Package"
+				"Package Control: rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"sublimel",
+				"SublimeLinter: Choose Tooltip Theme"
 			],
 			[
 				"color",
@@ -131,6 +281,10 @@
 			[
 				"Package Control: in",
 				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Channel"
 			],
 			[
 				"remo",
@@ -143,10 +297,6 @@
 			[
 				"Snippet: ",
 				"Snippet: Lorem ipsum"
-			],
-			[
-				"sublimel",
-				"SublimeLinter: Enable Inline Tooltips"
 			],
 			[
 				"prett",
@@ -165,7 +315,7 @@
 				"Package Control: Remove Package"
 			]
 		],
-		"width": 954.0
+		"width": 879.0
 	},
 	"console":
 	{
@@ -189,62 +339,108 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/d3-visualizations",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus"
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data"
 	],
 	"file_history":
 	[
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/d3-visualizations/zoomable-us-map.js",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Projects/gdp_growth/simple_gdp_growth.html",
-		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_14/06_points.html",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Geomapping/vers1.html",
-		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_14/02_projection.html",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/stacked-area.html",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/06_stacked_area.html",
-		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_13/06_stacked_area.html",
-		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_13/03_stacked_bar.html",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/Stacked-bar.html",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/03_stacked_bar.html",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/Force.html",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/Pie.html",
-		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_13/01_pie.html",
-		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/Default (Windows).sublime-mousemap",
-		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
-		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_12/03_slider.html",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/bars-add-sub.js",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/assets/css/main.css",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/bars-add-sub.html",
-		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_12/06_each.html",
-		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_12/01_enter_merge_exit.html",
-		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
-		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
-		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/User/.jsbeautifyrc",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/line_chart/line_chart.js",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/random-scatter.js",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/Random-scatter.html",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/index.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/Stacked-bar.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/gdp.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/swiss-army-bar-chart.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/old_attempts/gdp_growth_stacked_bar.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/random-scatter.js",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/10_refine_styling.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/zoomable-us-map.js",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/stacked-area.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/01_initial_chart.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/working-stacked-area.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/stacked-area.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/stacked-area.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/main.css",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/swiss-army-bar-chart.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/networks.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/europe-trip.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/trip.csv",
+		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Random-scatter.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/pie.js",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip/europe-trip.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/geomapping.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/us-states.json",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip/world.json",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/us-cities.csv",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/Zooming.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/Force.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip/europe-trip.js",
+		"/F/Downloads/ne_50m_admin_0_countries (1).json",
+		"/F/Downloads/ne_50m_admin_0_countries.json",
+		"/F/Downloads/map.geojson",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/random-network.json",
+		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/User/.jsbeautifyrc",
+		"/F/Downloads/Forked from https___next.json-generator.com_VkbpYpuiV.json",
+		"/F/Downloads/Forked from https___next.json-generator.com_VJdXV6doV.json",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Misc.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/line-area-charts.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/networks.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/us-ag-productivity.csv",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/02_color_by_type.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/04_types_only.html",
+		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa9580.49170/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/17_labels.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/16_combo_zoom_pan.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/14_zoom_with_buttons.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/dragging.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/13_zoom_pan_buttons_fixed.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/09_pan_transition.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/10_pan_draggable.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/10_pan_draggable.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/vers1.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/Pan-buttons.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/08_pan.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart/line_chart.js",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/06_area_chart.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/05_line_chart_labeled.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/04_line_chart_adjusted.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart/line_chart.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/03_line_chart_missing.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/02_line_chart_axes.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/bars-add-sub.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/01_line_chart.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/New folder/01_line_chart.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/New folder/line_chart.js",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/README.md",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/bars-add-sub.js",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Assets/styles.css",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/random-bars.js",
+		"/C/Users/Zhangkin/Desktop/D3/Template.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/old-projects/svg-text1.js",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/time-scale/time-scale.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/random-scatter.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/random-bars.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/random-scatter.js",
+		"/C/Users/Zhangkin/Desktop/D3/stackedgraphforbusinesscard.html",
+		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa26504.986/HIP readme.txt",
+		"/C/Users/Zhangkin/Desktop/D3/stocks.csv",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/bars-add-sub-styles.css",
 		"/F/Downloads/Resume - Mason Chinkin.htm",
 		"/C/Users/Zhangkin/Desktop/D3/streamgraphforbusinesscard.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3.js",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/bars-add-sub.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/bars-add-sub.js",
 		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
 		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
 		"/C/Users/Zhangkin/Desktop/D3/class-project/D3.js-book-work-plus/random-scatter.js"
 	],
 	"find":
 	{
-		"height": 28.0
+		"height": 27.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 156.0,
 		"where_history":
 		[
 		]
@@ -254,13 +450,98 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"column",
-			" p ",
+			"%",
+			"tooltip",
+			"line",
+			"vehicles",
+			"catDataset",
+			"dataset",
+			"data.",
+			"#",
+			"this",
+			"mousem",
+			"on",
 			"hover",
-			"input",
-			"barsAdd",
-			"add",
-			"save",
+			"gdpataset",
+			"domain",
+			"text",
+			"path",
+			"200",
+			"400",
+			".on",
+			"'end",
+			"delay",
+			"500",
+			"250",
+			"1000",
+			"dura",
+			"fill",
+			"console",
+			"-5",
+			"date",
+			"type",
+			"type ",
+			"type",
+			"dataset",
+			"defaultStack",
+			"individ",
+			"breakdown",
+			"for",
+			"scale",
+			"date",
+			"format",
+			"time",
+			"even",
+			"pointer",
+			"h2",
+			"#top",
+			"top",
+			"color",
+			"about",
+			"p ",
+			" p ",
+			" p",
+			" p ",
+			"'g",
+			"'g'",
+			"console",
+			"SVG",
+			"mouse",
+			"on.",
+			"on",
+			"click",
+			"scale",
+			"macedonia",
+			"israel",
+			"blue",
+			"},\n",
+			"\"name\"",
+			"\"source\"",
+			"\"target\"",
+			"target",
+			"source",
+			"name",
+			"\"name\"",
+			"\"target\"",
+			"\"source\"",
+			"range",
+			"main",
+			"length",
+			"mouse",
+			"hover",
+			"main",
+			"margin",
+			"x",
+			"true",
+			"margin",
+			"};",
+			"margin",
+			"')\n",
+			"zoom",
+			"750",
+			"event",
+			";');",
+			";\n",
 			"header",
 			"toggle",
 			"#",
@@ -284,6 +565,30 @@
 		"regex": false,
 		"replace_history":
 		[
+			"125",
+			"300",
+			"400",
+			"200",
+			"500",
+			"typeStack",
+			"type",
+			"Type",
+			"type",
+			"Type",
+			"type",
+			"Type",
+			"type",
+			"Type",
+			"type",
+			"name",
+			"source",
+			"target",
+			"\"target\"",
+			"\"source\"",
+			"\"name\"",
+			"name",
+			"target",
+			"source"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -294,11 +599,47 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10385,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5639,
+								5639
+							]
+						],
+						"settings":
+						{
+							"SL.14.region_keys":
+							[
+							],
+							"SL.22.region_keys":
+							[
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2901.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
 					"file": "d3-visualizations/gdp.js",
 					"semi_transient": false,
 					"settings":
@@ -310,188 +651,176 @@
 						"selection":
 						[
 							[
-								4452,
-								4452
+								9012,
+								9012
+							]
+						],
+						"settings":
+						{
+							"SL.15.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5285.33333333,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "europe-trip.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5592,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4431,
+								4431
 							]
 						],
 						"settings":
 						{
 							"SL.16.region_keys":
 							[
-								"SL.jshint.Highlights.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
-								"SL.jshint.Gutter.region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter.dot",
-								"sublime_linter.protected_regions"
 							],
-							"auto_complete": false,
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
+							"SL.24.region_keys":
 							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
+								"SL.csslint.Highlights.|8d0e5d4ea23f3262c1e3312b7e39a939326297da59ab8d70a17997c5e41101fa|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|526513c641ca7ff7874bb349059bb948c44bb952f67a0797058a71cc26941d55|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|6edbad2b237deca11a26eb74a079f5f903cb9c65146be12dfd0d32565359bd51|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|c776d2f77c43bafd9dff3ea9fa55ac9836ed8ed8ce003542e55c108b07bfc033|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.csslint.Highlights.|e23c3cc243c76c2e5c5c8b14db02ec9f7670ec5d38e8ba48e65bc0ba06f7e531|region.yellowish markup.warning.sublime_linter|32"
 							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										4451,
-										4452
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/round_bracket.png",
-										"region.yellowish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										4295,
-										4296
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.666666666667,
-						"translation.y": 2330.0,
+						"translation.x": 0.0,
+						"translation.y": 2620.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "gdp.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5586,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4746,
+								4746
+							]
+						],
+						"settings":
+						{
+							"SL.15.region_keys":
+							[
+								"SL.csslint.Highlights.|2c9ac406c145f49f13b5fac58f833b38f4a7a2daac4ce484a8764d4b798128ee|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|7e247ae938e5427edd9c5da209030128284172396f52c75083791e2ff74aea5d|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|e354dbb618c289c718310d91f4cf4918e725f75ab4ca40b042e26cdc1a486aa7|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|7f26b30b4308c62d151ef8eae5811672e5de5d419817bb2888c5e3f5f824f929|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|13f697cad11f6801218ae80d4004f116eb75f87fd2721b3c46cc3b56a6c8001c|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|3251cc36741f98335234c49fa02494ecb043ea5d18f3a173dde8fa13990243ff|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|7814d490a73d55f0fd9efadf45c82ec2d63ae628818d88bd01daf2dde02d6d9e|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.csslint.Highlights.|8fb9f62a219a11b9a88ec2b4ac8b143dca34eaf49156dcb254290921c23e9c6d|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot"
+							],
+							"SL.17.region_keys":
+							[
+							],
+							"SL.24.region_keys":
+							[
+								"SL.csslint.Highlights.|7f26b30b4308c62d151ef8eae5811672e5de5d419817bb2888c5e3f5f824f929|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|8fb9f62a219a11b9a88ec2b4ac8b143dca34eaf49156dcb254290921c23e9c6d|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|1b0a1a11e3aad10e23c0ef81a571c140d588f1bead5057eed84a2faf482def1a|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|3ef03b6b73329fc76952ce328d10319518836cea45d6d283610b238eef6915e6|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|e6b522350a79ce37ffa1197f4c219c0251a209fa1711b082b5b38cab4e6f418b|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|733082e444032421ffc2fabbe8c6ddb86736e93e3f22cc41ef6236b932397e0c|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|e354dbb618c289c718310d91f4cf4918e725f75ab4ca40b042e26cdc1a486aa7|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32",
+								"SL.csslint.Gutter.|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|dot",
+								"sublime_linter.protected_regions",
+								"SL.csslint.Highlights.|300c45b51b1335cf1e8a72fddc45e757b7af521fddc08b8df92b17f1a77b748b|region.yellowish markup.changed.sublime_linter markup.warning.sublime_linter|32"
+							],
+							"open_with_edit": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3022.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "geomapping.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4905,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4056,
+								4056
+							]
+						],
+						"settings":
+						{
+							"SL.18.region_keys":
+							[
+								"SL.csslint.Highlights.|699d7bcd4a37f75c1f9ad697cf961984c1606f9f2d950a4e8598bd1410727867|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|a8adb516fd466d1cc1e3e9fd9c2777f5c1e5ead51f2f2fa814fd041b95f9fe6e|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.csslint.Highlights.|1a22e25dd6da856f74bd43a6721421553e7c35140a35adc88165db2178170b9b|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions"
+							],
+							"SL.26.region_keys":
+							[
+								"SL.csslint.Highlights.|1a22e25dd6da856f74bd43a6721421553e7c35140a35adc88165db2178170b9b|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|a8adb516fd466d1cc1e3e9fd9c2777f5c1e5ead51f2f2fa814fd041b95f9fe6e|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.csslint.Highlights.|699d7bcd4a37f75c1f9ad697cf961984c1606f9f2d950a4e8598bd1410727867|region.yellowish markup.warning.sublime_linter|32"
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2491.33333333,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -502,11 +831,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 27.0
 	},
 	"input":
 	{
-		"height": 60.0
+		"height": 57.0
 	},
 	"layout":
 	{
@@ -517,6 +846,12 @@
 				0,
 				1,
 				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
 			]
 		],
 		"cols":
@@ -527,6 +862,7 @@
 		"rows":
 		[
 			0.0,
+			0.5,
 			1.0
 		]
 	},
@@ -534,6 +870,10 @@
 	"output.SublimeLinter":
 	{
 		"height": 0.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 126.0
 	},
 	"output.find_results":
 	{
@@ -543,7 +883,7 @@
 	"project": "index.sublime-project",
 	"replace":
 	{
-		"height": 52.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -573,7 +913,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
@@ -581,7 +921,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 417.0,
+	"side_bar_width": 256.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

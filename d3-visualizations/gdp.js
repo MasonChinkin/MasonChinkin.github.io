@@ -1,7 +1,7 @@
 //Width and height
-margin = { top: 20, right: 30, bottom: 20, left: 50 },
+margin = { top: 50, right: 30, bottom: 20, left: 50 },
     w = 900,
-    h = 500;
+    h = 550;
 
 var dataset, xScale, yScale, xAxis, yAxis, area; //Empty, for now
 
@@ -24,6 +24,9 @@ var rowConverter = function(d, i, cols) {
 
 //colors
 var colors = d3.scaleOrdinal(d3.schemeCategory10);
+
+//bar transition duration
+var barTransition = 1500
 
 //define stacks
 var stack = d3.stack();
@@ -98,11 +101,11 @@ d3.csv('viz-data/growth_data_simple.csv', rowConverter, function(error, data) {
         //.attr("id", "gdp"); needs fixing for transition
 
         //group data rows
-        var bars = svg.selectAll('#bars')
+        var bars = svg.selectAll('#originalBars')
             .data(series)
             .enter()
             .append('g')
-            .attr('class', 'bar')
+            .attr('id', 'originalBars')
             .style('fill', function(d, i) { return colors(i); })
             .attr("class", function(d, i) {
                 return d.key;
@@ -123,14 +126,17 @@ d3.csv('viz-data/growth_data_simple.csv', rowConverter, function(error, data) {
                 return yScale(d[0]) - yScale(d[1]);
             })
             .attr('width', xScale.bandwidth)
-            .attr('class', 'indivBars')
+            .attr('id', 'indivBars')
+            .attr('class', function(d, i) {
+                return "bar bar-" + d3.select(this.parentNode).attr('class');
+            })
             .on("mousemove", function(d, i) {
 
                 tooltipType = d3.select(this.parentNode).attr('class')
                 //console.log(d.data[tooltipType]);
 
                 tooltipDiv.transition()
-                    .duration(200)
+                    //.duration(200)
                     .style("opacity", .9);
 
                 tooltipDiv.html(tooltipType + "<br/>" + formatTime(d.data.year) + ': ' + d.data[tooltipType] + '%')
@@ -143,59 +149,199 @@ d3.csv('viz-data/growth_data_simple.csv', rowConverter, function(error, data) {
                     .style("opacity", 0)
             })
 
-        //
-        //LOADING SUBCATEGORY
-        //
-        /*
-                        .on('click', function(d, i) {
-                            var thisType = d3.select(this.parentNode).attr('class')
+            //
+            //LOADING SUBCATEGORY
+            //
 
-                            d3.csv('viz-data/growth_data_' + thisType + '.csv', rowConverter, function(error, thisGdpData) {
-                                if (error) throw error;
+            .on('click', function(d, i) {
+                var thisType = d3.select(this.parentNode).attr('class')
 
-                                var thisDataset = thisGdpData;
-                                //console.log(thisDataset);
+                d3.csv('viz-data/growth_data_' + thisType + '.csv', rowConverter, function(error, thisGdpData) {
+                    if (error) throw error;
 
-                                //Generate a new data set with all-zero values, 
-                                //except for this type's data for beginning of transition
-                                transitionDataset = [];
+                    var thisDataset = thisGdpData;
+                    //console.log(thisDataset);
 
-                                for (var i = 0; i < dataset.length; i++) {
-                                    transitionDataset[i] = {
-                                        year: dataset[i].year,
-                                        pers_cons: 0,
-                                        gross_private_domestic_inv: 0,
-                                        net_trade: 0,
-                                        government_consumption_and_gross_inv: 0,
-                                        [thisType]: dataset[i][thisType] //Overwrites the appropriate zero value above
-                                    }
-                                }
-                                //console.log(transitionDataset);
+                    //Generate a new data set with all-zero values, 
+                    //except for this type's data for beginning of transition
+                    transitionDataset = [];
 
-                                //Stack the data (even though there's now just one "layer") and log it out
-                                var transitionSeries = stack(transitionDataset);
-                                console.log(transitionSeries);
+                    for (var i = 0; i < dataset.length; i++) {
+                        transitionDataset[i] = {
+                            year: dataset[i].year,
+                            personal_consumption: 0,
+                            gross_private_domestic_inv: 0,
+                            net_trade: 0,
+                            gov_consumption_and_gross_inv: 0,
+                            [thisType]: dataset[i][thisType] //Overwrites the appropriate zero value above
+                        }
+                    }
+                    //console.log(transitionDataset);
 
-                                //Bind the new data set to paths, overwriting old bound data.
-                                var bars = d3.selectAll("#bars")
-                                    .data(transitionSeries)
-                                    .classed("unclickable", true)
-                                    .transition()
-                                    .duration(1000)
+                    //Stack the data (even though there's now just one "layer") and log it out
 
-                                var rects = bars.selectAll('rect')
-                                    .data(function(d) { return d; })
-                                    .enter()
-                                    .append('rect')
-                                    .attr('y', function(d) {
-                                        return yScale(d[1]);
-                                    })
-                                    .attr('height', function(d) {
-                                        return yScale(d[0]) - yScale(d[1]);
-                                    });
-                            });
-                        });;
-        */
+                    var transitionSeries = stack(transitionDataset);
+                    //console.log(transitionSeries);
+
+                    //remove gdp line
+                    d3.select('#line').classed("hidden", true);
+
+                    //update y scale
+                    var yScale = d3.scaleLinear()
+                        .domain([d3.min(transitionSeries, stackMin) - 0.5, d3.max(transitionSeries, stackMax) + 0.5])
+                        .range([h - margin.bottom, margin.top])
+                        .nice();
+
+                    //update y axes
+                    yAxisR = d3.axisRight()
+                        .scale(yScale)
+                        .ticks(8)
+                        .tickSizeOuter(0);
+
+                    yAxisL = d3.axisLeft()
+                        .scale(yScale)
+                        .ticks(8)
+                        .tickSizeOuter(0);
+
+                    yAxisGrid = d3.axisLeft()
+                        .scale(yScale)
+                        .ticks(8)
+                        .tickSizeOuter(0)
+                        .tickSizeInner(-w + margin.left + margin.right)
+                        .tickFormat("");
+
+                    svg.select(".axis.yl")
+                        .transition().duration(barTransition)
+                        .call(yAxisL);
+
+                    svg.select(".axis.yr")
+                        .transition().duration(barTransition)
+                        .call(yAxisR);
+
+                    svg.select(".axis.ygrid")
+                        .transition().duration(barTransition)
+                        .call(yAxisGrid);
+
+                    svg.select(".axis.x")
+                        .transition().duration(barTransition)
+                        .select('.domain').attr('transform', 'translate(' +
+                            0 + ',' + (yScale(0) - (h - margin.bottom)) + ')');
+
+                    //transition bars
+                    keys.forEach(function(key, key_index) {
+
+                        var bars = svg.selectAll(".bar-" + key)
+                            .data(transitionSeries[key_index])
+                            .transition().duration(barTransition)
+                            .attr("y", function(d) {
+                                return yScale(d[1]);
+                            })
+                            .attr("height", function(d) { return yScale(d[0]) - yScale(d[1]); })
+                            .transition()
+                            .delay(barTransition)
+                            .style('opacity', 0)
+                    });
+
+                    var thisKeys = thisDataset.columns.slice(1);
+                    thisStack.keys(thisKeys)
+                        .offset(d3.stackOffsetDiverging)
+                        .order(d3.stackOrderDescending);
+
+                    var thisSeries = thisStack(thisDataset);
+
+                    //group data rows
+                    var bars = svg.selectAll('#bars')
+                        .data(thisSeries)
+                        .enter()
+                        .append('g')
+                        .attr('id', 'bars')
+                        .style('fill', function(d, i) { return colors(i); })
+                        .attr("class", function(d, i) {
+                            return d.key;
+                        });
+
+                    //add rect for each data value
+                    var rects = bars.selectAll('rect')
+                        .data(function(d) { return d; })
+                        .enter()
+                        .append('rect')
+                        .attr('x', function(d, i) {
+                            return xScale(d.data.year);
+                        })
+                        .attr('y', function(d) {
+                            return yScale(d[1]);
+                        })
+                        .attr('height', function(d) {
+                            return yScale(d[0]) - yScale(d[1]);
+                        })
+                        .attr('width', xScale.bandwidth)
+                        .attr('id', 'indivBars')
+                        .attr('class', 'thisBar')
+                        .on("mousemove", function(d, i) {
+
+                            tooltipType = d3.select(this.parentNode).attr('class')
+                            //console.log(d.data[tooltipType]);
+
+                            tooltipDiv.transition()
+                                //.duration(200)
+                                .style("opacity", .9);
+
+                            tooltipDiv.html(tooltipType + "<br/>" + formatTime(d.data.year) + ': ' + d.data[tooltipType] + '%')
+                                .style("left", (d3.event.pageX + 5) + "px")
+                                .style("top", (d3.event.pageY - 38) + "px");
+                        })
+                        .on("mouseout", function(d) {
+                            tooltipDiv.transition()
+                                .duration(500)
+                                .style("opacity", 0)
+                        })
+                        .style('opacity', 0)
+                        .transition().delay(barTransition)
+                        .style('opacity', 1);
+
+                    //new legend
+                    d3.selectAll('.legend').classed('hidden', true);
+
+                    var legendVals = thisKeys
+
+                    //var legendVals = dataset.columns.slice(1); DYNAMIC LEGEND, not using because current column headers not pretty
+
+                    wLegend = w * 0.55;
+                    hLegend = h * 0.05;
+
+                    var legend = svg.selectAll('.thisLegend')
+                        .data(legendVals)
+                        .enter()
+                        .append('g')
+                        .attr("class", "thisLegend")
+                        .attr("transform", function(d, i) {
+                            {
+                                return "translate(0," + i * 20 + ")"
+                            }
+                        })
+
+                    legend.append('rect')
+                        .attr("x", wLegend)
+                        .attr("y", hLegend + 30)
+                        .attr("width", 12)
+                        .attr("height", 12)
+                        .style("fill", function(d, i) {
+                            return colors(i)
+                        })
+
+                    legend.append('text')
+                        .attr("x", wLegend + 20)
+                        .attr("y", hLegend + 42)
+                        //.attr("dy", ".35em")
+                        .text(function(d, i) {
+                            return d
+                        })
+                        .attr("class", "textselected")
+
+                    toggleBackButton()
+                });
+            });;
+
         //define line
         line = d3.line()
             .x(function(d) { return xScale(d.year) + (xScale.bandwidth() / 2); })
@@ -205,7 +351,7 @@ d3.csv('viz-data/growth_data_simple.csv', rowConverter, function(error, data) {
         //create line
         svg.append("path")
             .datum(gdpDataset)
-            .attr("class", "line")
+            .attr("id", "line")
             .attr("d", line)
             .style('fill', 'none')
             .style('stroke', 'black')
@@ -277,7 +423,7 @@ d3.csv('viz-data/growth_data_simple.csv', rowConverter, function(error, data) {
             .data(legendVals)
             .enter()
             .append('g')
-            .attr("class", "legends")
+            .attr("class", "legend")
             .attr("transform", function(d, i) {
                 {
                     return "translate(0," + i * 20 + ")"
@@ -286,7 +432,7 @@ d3.csv('viz-data/growth_data_simple.csv', rowConverter, function(error, data) {
 
         legend.append('rect')
             .attr("x", wLegend)
-            .attr("y", hLegend)
+            .attr("y", hLegend + 30)
             .attr("width", 12)
             .attr("height", 12)
             .style("fill", function(d, i) {
@@ -295,7 +441,7 @@ d3.csv('viz-data/growth_data_simple.csv', rowConverter, function(error, data) {
 
         legend.append('text')
             .attr("x", wLegend + 20)
-            .attr("y", hLegend + 12)
+            .attr("y", hLegend + 42)
             //.attr("dy", ".35em")
             .text(function(d, i) {
                 return d
@@ -305,23 +451,94 @@ d3.csv('viz-data/growth_data_simple.csv', rowConverter, function(error, data) {
         //Create back button
         var backButton = svg.append("g")
             .attr("id", "backButton")
-            .attr("opacity", 0) //Initially hidden
+            .style("opacity", 0) //Initially hidden
             .classed("unclickable", true) //Initially not clickable
             .attr("transform", "translate(" + xScale.range()[0] + "," + yScale.range()[1] + ")");
 
         backButton.append("rect")
-            .attr("x", 0)
-            .attr("y", 0)
+            .attr("x", 15)
+            .attr("y", -30)
             .attr("rx", 5)
             .attr("rx", 5)
             .attr("width", 70)
             .attr("height", 30);
 
         backButton.append("text")
-            .attr("x", 7)
-            .attr("y", 20)
+            .attr("x", 22)
+            .attr("y", -10)
             .html("&larr; Back");
 
+        //Define click behavior
+        backButton.on("click", function() {
+
+            //Hide the back button, as it was just clicked
+            toggleBackButton();
+
+            d3.selectAll("#indivBars").style('opacity', 1);
+
+            d3.selectAll(".thisBar").remove();
+
+            //Set y scale back to original domain
+            yScale = d3.scaleLinear()
+                .domain([d3.min(series, stackMin), d3.max(series, stackMax)])
+                .range([h - margin.bottom, margin.top])
+                .nice();
+
+            //update y axes
+            yAxisR = d3.axisRight()
+                .scale(yScale)
+                .ticks(8)
+                .tickSizeOuter(0);
+
+            yAxisL = d3.axisLeft()
+                .scale(yScale)
+                .ticks(8)
+                .tickSizeOuter(0);
+
+            yAxisGrid = d3.axisLeft()
+                .scale(yScale)
+                .ticks(8)
+                .tickSizeOuter(0)
+                .tickSizeInner(-w + margin.left + margin.right)
+                .tickFormat("");
+
+            svg.select(".axis.yl")
+                .transition().duration(barTransition)
+                .call(yAxisL);
+
+            svg.select(".axis.yr")
+                .transition().duration(barTransition)
+                .call(yAxisR);
+
+            svg.select(".axis.ygrid")
+                .transition().duration(barTransition)
+                .call(yAxisGrid);
+
+            svg.select(".axis.x")
+                .transition().duration(barTransition)
+                .select('.domain').attr('transform', 'translate(' +
+                    0 + ',' + (yScale(0) - (h - margin.bottom)) + ')');
+
+            //transition bars
+            keys.forEach(function(key, key_index) {
+
+                var bars = svg.selectAll(".bar-" + key)
+                    .data(series[key_index])
+                    .transition().duration(barTransition)
+                    .attr("y", function(d) {
+                        return yScale(d[1]);
+                    })
+                    .attr("height", function(d) { return yScale(d[0]) - yScale(d[1]); })
+            });
+
+            //original legend
+            d3.selectAll('.thisLegend').classed('hidden', true);
+            d3.selectAll('.legend').classed('hidden', false);
+
+            //original gdp line
+            d3.select('#line').classed("hidden", false);
+
+        });
     });
 });
 
@@ -360,7 +577,7 @@ function toggleBackButton() {
         backButton.classed("unclickable", false)
             .transition()
             .duration(500)
-            .attr("opacity", 1);
+            .style("opacity", 1);
 
     } else {
 
@@ -368,7 +585,7 @@ function toggleBackButton() {
         backButton.classed("unclickable", true)
             .transition()
             .duration(200)
-            .attr("opacity", 0);
+            .style("opacity", 0);
 
     }
 
