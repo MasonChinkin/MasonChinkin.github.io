@@ -128,7 +128,7 @@ d3.csv('viz-data/growth_data_simple.csv', rowConverter, function(error, data) {
             .attr('width', xScale.bandwidth)
             .attr('id', 'indivBars')
             .attr('class', function(d, i) {
-                return "bar bar-" + d3.select(this.parentNode).attr('class');
+                return "bar-" + d3.select(this.parentNode).attr('class');
             })
             .on("mousemove", function(d, i) {
 
@@ -238,7 +238,6 @@ d3.csv('viz-data/growth_data_simple.csv', rowConverter, function(error, data) {
                             })
                             .attr("height", function(d) { return yScale(d[0]) - yScale(d[1]); })
                             .transition()
-                            .delay(barTransition)
                             .style('opacity', 0)
                     });
 
