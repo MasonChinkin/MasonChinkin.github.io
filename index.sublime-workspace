@@ -277,7 +277,7 @@
 			"file": "networks.html",
 			"settings":
 			{
-				"buffer_size": 4877,
+				"buffer_size": 4895,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -488,7 +488,7 @@
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 27.0
 	},
 	"find_in_files":
 	{
@@ -717,7 +717,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 487.2,
+						"translation.y": 487.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
@@ -742,6 +742,9 @@
 						],
 						"settings":
 						{
+							"SL.15.region_keys":
+							[
+							],
 							"SL.69.region_keys":
 							[
 							],
@@ -759,7 +762,7 @@
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -790,10 +793,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 270.4,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -802,19 +805,29 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4877,
+						"buffer_size": 4895,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4152,
-								4152
+								615,
+								615
 							]
 						],
 						"settings":
 						{
+							"SL.17.region_keys":
+							[
+								"SL.csslint.Highlights.|e64105ab04a58d7ee9ae01fa9daa25d250609dda1e23da9408e301654b934e5e|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|d6758d9510cdbffd45b9a318f9a0d0601d3b4bc2977fdd760ed9c3ab1c77fef4|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|be5b326d81dbaf96de665f2eb7a7f2062e7dda637e4ed8e98c130aa541da4dad|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|957f265852ac2871e97dddee9fac9c08545e85930dfe5644a3ec4d7306496132|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.csslint.Highlights.|70880f505293f64e1443cc9a4bf2a3596b9d12d5f34823693aa2308ab6a24162|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot"
+							],
 							"SL.61.region_keys":
 							[
 								"sublime_linter.protected_regions",
@@ -830,10 +843,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1854.0,
+						"translation.y": 54.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -874,7 +887,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 40.0
+		"height": 27.0
 	},
 	"input":
 	{
@@ -926,7 +939,7 @@
 	"project": "index.sublime-project",
 	"replace":
 	{
-		"height": 72.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
