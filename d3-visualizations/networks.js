@@ -1,38 +1,46 @@
 //Width and height
-var w = getWidth() * 0.7;
-var h = getHeight() * 0.9;
-imageSize = 30
+var w = 1200;
+var h = 800;
+imageSize = 35
+
+greyedOpacity = 0.1
 
 var svg = d3.select('#container')
     .append('svg')
     .attr('height', h)
-    .attr('width', w);
+    .attr('width', w)
+    .style('background', '#e8e8e8')
+    .style('border-style', 'solid')
+    .style('border-color', 'black');
 
 var simulation = d3.forceSimulation()
     .force('link', d3.forceLink().id(function(d) { return d.id; }))
-    .force('charge', d3.forceManyBody().strength(-3500))
+    .force('charge', d3.forceManyBody().strength(-3000))
     .force('center', d3.forceCenter(w / 2, h / 2));
 
 d3.json('viz-data/syriaNetwork.json', function(error, data) {
     if (error) throw error;
 
-    //console.log(data)
+    console.log(data)
 
     var path = svg.append("g")
-        .attr("class", "links")
         .selectAll('path')
         .data(data.links)
         .enter()
         .append('path')
-        .attr('class', function(d) { return "link " + d.type; });
+        .attr('class', function(d) { return "link " + d.type; })
+        .attr('thisConnects', function(d) { return d.source + ' ' + d.target });
 
     path.filter(function(d) { return d.type != 'Enemy' })
-        .attr('marker-end', 'url(#arrowheadEnd)');
+        .attr('marker-end', 'url(#arrowheadEnd)')
+        .attr('marker-mid', 'url(#arrowheadEnd)');
 
-    var node = svg.selectAll('.nodes')
+    var node = svg.selectAll('.node')
         .data(data.nodes)
         .enter().append("g")
-        .attr("class", "nodes")
+        .attr("class", "node")
+        .on('mouseover', nodeMouseOver)
+        .on('mouseout', nodeMouseOut)
         .call(d3.drag()
             .on('start', dragStarted)
             .on('drag', dragged)
@@ -80,6 +88,48 @@ d3.json('viz-data/syriaNetwork.json', function(error, data) {
         .links(data.links);
 })
 
+
+//Legend
+wLegend = w * 0.02;
+hLegend = h * 0.05;
+
+svg.append('rect')
+    .attr("x", wLegend)
+    .attr("y", hLegend)
+    .attr("width", 20)
+    .attr("height", 20)
+    .style("fill", 'blue')
+
+svg.append('text')
+    .attr("x", wLegend + 30)
+    .attr("y", hLegend + 20)
+    //.attr("dy", ".35em")
+    .text('Providing financial and/or material support')
+    .attr("class", "labelText")
+
+svg.append('rect')
+    .attr("x", wLegend)
+    .attr("y", hLegend + 25)
+    .attr("width", 20)
+    .attr("height", 20)
+    .style("fill", 'red')
+
+svg.append('text')
+    .attr("x", wLegend + 30)
+    .attr("y", hLegend + 45)
+    //.attr("dy", ".35em")
+    .text('Direct conflict')
+    .attr("class", "labelText")
+
+// source
+svg.append("text")
+    .style("text-anchor", "middle")
+    .attr('class', 'labelText')
+    .text("Source: See link in description")
+    .attr("transform", "translate(" + (w * 0.75) + "," +
+        (h * 0.925) + ") rotate(0)")
+    .style('pointer-events', 'none');
+
 function dragStarted(d) {
     if (!d3.event.active) simulation.alphaTarget(0.3).restart();
     d.fx = d3.event.x;
@@ -88,8 +138,8 @@ function dragStarted(d) {
 
 
 function dragged(d) {
-    d.fx = Math.max(imageSize, Math.min(w - imageSize, d3.event.x));
-    d.fy = Math.max(imageSize, Math.min(h - imageSize, d3.event.y));
+    d.fx = Math.max(imageSize / 2, Math.min(w - imageSize / 2, d3.event.x));
+    d.fy = Math.max(imageSize / 2, Math.min(h - imageSize - 10, d3.event.y));
 }
 
 function dragEnded(d) {
@@ -105,22 +155,45 @@ function linkArc(d) {
     return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
 }
 
-function getWidth() {
-    return Math.max(
-        document.body.scrollWidth,
-        document.documentElement.scrollWidth,
-        document.body.offsetWidth,
-        document.documentElement.offsetWidth,
-        document.documentElement.clientWidth
-    );
+var nodeMouseOver = function(d) {
+
+    var thisConnections = d.targets;
+    console.log(thisConnections)
+
+    var thisType = d.id
+    //console.log(thisType)
+
+    d3.selectAll('.node').each(function(d) {
+
+        var thisNodeType = d.id
+        //console.log(thisType)
+
+        var isConnected = thisConnections.includes(thisNodeType);
+        //console.log(isConnected)
+
+        var node = d3.select(this);
+
+        if (isConnected == false) {
+            node.style('opacity', greyedOpacity)
+        }
+    })
+
+    d3.selectAll('.link').each(function(d) {
+        var thisConnects = d3.select(this).attr('thisConnects')
+        //console.log(thisConnects)
+
+        var isConnected = thisConnects.includes(thisType);
+        //console.log(isConnected)
+
+        var path = d3.select(this);
+
+        if (isConnected == false) {
+            path.style('opacity', greyedOpacity)
+        }
+    })
 }
 
-function getHeight() {
-    return Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight,
-        document.body.offsetHeight,
-        document.documentElement.offsetHeight,
-        document.documentElement.clientHeight
-    );
+var nodeMouseOut = function(d) {
+    d3.selectAll('.node').style('opacity', 1)
+    d3.selectAll('.link').style('opacity', 1)
 }

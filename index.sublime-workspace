@@ -283,6 +283,15 @@
 			}
 		},
 		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 10677,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "viz-data/syriaNetwork.json",
 			"settings":
 			{
@@ -720,7 +729,7 @@
 						"translation.y": 487.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -756,13 +765,13 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -796,7 +805,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -812,21 +821,21 @@
 						"selection":
 						[
 							[
-								615,
-								615
+								216,
+								216
 							]
 						],
 						"settings":
 						{
 							"SL.17.region_keys":
 							[
-								"SL.csslint.Highlights.|e64105ab04a58d7ee9ae01fa9daa25d250609dda1e23da9408e301654b934e5e|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|d6758d9510cdbffd45b9a318f9a0d0601d3b4bc2977fdd760ed9c3ab1c77fef4|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|be5b326d81dbaf96de665f2eb7a7f2062e7dda637e4ed8e98c130aa541da4dad|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|957f265852ac2871e97dddee9fac9c08545e85930dfe5644a3ec4d7306496132|region.yellowish markup.warning.sublime_linter|32",
 								"sublime_linter.protected_regions",
-								"SL.csslint.Highlights.|70880f505293f64e1443cc9a4bf2a3596b9d12d5f34823693aa2308ab6a24162|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot"
+								"SL.csslint.Highlights.|d6758d9510cdbffd45b9a318f9a0d0601d3b4bc2977fdd760ed9c3ab1c77fef4|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|e64105ab04a58d7ee9ae01fa9daa25d250609dda1e23da9408e301654b934e5e|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|957f265852ac2871e97dddee9fac9c08545e85930dfe5644a3ec4d7306496132|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.csslint.Highlights.|be5b326d81dbaf96de665f2eb7a7f2062e7dda637e4ed8e98c130aa541da4dad|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|70880f505293f64e1443cc9a4bf2a3596b9d12d5f34823693aa2308ab6a24162|region.yellowish markup.warning.sublime_linter|32"
 							],
 							"SL.61.region_keys":
 							[
@@ -846,11 +855,44 @@
 						"translation.y": 54.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10677,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7056,
+								7056
+							]
+						],
+						"settings":
+						{
+							"SL.20.region_keys":
+							[
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2214.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "viz-data/syriaNetwork.json",
 					"semi_transient": false,
 					"settings":
@@ -879,7 +921,7 @@
 						"translation.y": 3607.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]

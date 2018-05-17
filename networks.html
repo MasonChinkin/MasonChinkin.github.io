@@ -19,7 +19,7 @@
     <style type="text/css">
     .link {
         fill: none;
-        stroke: green;
+        stroke: blue;
         stroke-width: 1.5px;
     }
 
@@ -27,19 +27,23 @@
         stroke: red;
     }
 
-    .link.monetary {
-        stroke: gold;
-    }
-
-    .link.Supplying {
-        stroke: blue;
-    }
-
     .nodeLabel {
         text-anchor: middle;
         font-weight: bold;
         pointer-events: none;
         font: 12;
+    }
+
+    .labelText {
+        font: 25px arial;
+        pointer-events: none;
+        text-anchor: start;
+        color: black;
+    }
+
+    b {
+        font-weight: bold;
+        text-decoration: underline;
     }
     </style>
 </head>
@@ -99,7 +103,7 @@
         </section>
         <section id="portfolio" class="two">
             <h2>The diplomatic web in Syria</h2>
-            <h1>This is a WIP to make <a href="http://i.imgur.com/h8j3Frv.jpg">this infographic</a> interactive and easier to take in. When finished, hovering the mouse will highlight the selected country's relationships and fade out the rest.</h1>
+            <h1>An simplified, interactive, overall easier to understand version of <a href="http://i.imgur.com/h8j3Frv.jpg"><b>this infographic</b></a>. Hovering the mouse will highlight the selected country's relationships and fade out the rest.</h1>
             <div id="container">
                 <script src="d3-visualizations/networks.js"></script>
             </div>
