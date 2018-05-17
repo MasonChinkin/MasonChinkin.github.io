@@ -13,10 +13,34 @@
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <link rel="stylesheet" href="assets/css/main.css" />
     <script type="text/javascript" src="assets/js/d3.js"></script>
+    <script src="http://d3js.org/d3-selection-multi.v1.js"></script>
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <style type="text/css">
+    .link {
+        fill: none;
+        stroke: green;
+        stroke-width: 1.5px;
+    }
 
+    .link.Enemy {
+        stroke: red;
+    }
+
+    .link.monetary {
+        stroke: gold;
+    }
+
+    .link.Supplying {
+        stroke: blue;
+    }
+
+    .nodeLabel {
+        text-anchor: middle;
+        font-weight: bold;
+        pointer-events: none;
+        font: 12;
+    }
     </style>
 </head>
 
@@ -74,8 +98,8 @@
             </div>
         </section>
         <section id="portfolio" class="two">
-            <h2>Visualize networks with d3.js</h2>
-            <ul>Try dragging!</ul>
+            <h2>The diplomatic web in Syria</h2>
+            <h1>This is a WIP to make <a href="http://i.imgur.com/h8j3Frv.jpg">this infographic</a> interactive and easier to take in. When finished, hovering the mouse will highlight the selected country's relationships and fade out the rest.</h1>
             <div id="container">
                 <script src="d3-visualizations/networks.js"></script>
             </div>

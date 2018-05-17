@@ -1,432 +1,108 @@
 //Width and height
-var w = getWidth() * 0.8;
-var h = getHeight() * 0.75;
-
-var dataset = {
-    nodes: [{
-            name: "Macias"
-        },
-        {
-            name: "Jessica"
-        },
-        {
-            name: "Kate"
-        },
-        {
-            name: "Beasley"
-        },
-        {
-            name: "Valenzuela"
-        },
-        {
-            name: "Morgan"
-        },
-        {
-            name: "Ashley"
-        },
-        {
-            name: "Terri"
-        },
-        {
-            name: "Kathie"
-        },
-        {
-            name: "Madge"
-        },
-        {
-            name: "Brown"
-        },
-        {
-            name: "Massey"
-        },
-        {
-            name: "Jeanine"
-        },
-        {
-            name: "Douglas"
-        },
-        {
-            name: "England"
-        },
-        {
-            name: "Gilliam"
-        },
-        {
-            name: "Janet"
-        },
-        {
-            name: "Lenora"
-        },
-        {
-            name: "Angela"
-        },
-        {
-            name: "Schwartz"
-        },
-        {
-            name: "Mitchell"
-        },
-        {
-            name: "Sosa"
-        },
-        {
-            name: "Tonya"
-        },
-        {
-            name: "Sofia"
-        },
-        {
-            name: "Jackie"
-        },
-        {
-            name: "Schmidt"
-        },
-        {
-            name: "Weaver"
-        },
-        {
-            name: "Jane"
-        },
-        {
-            name: "Floyd"
-        },
-        {
-            name: "Peck"
-        },
-        {
-            name: "Bradley"
-        },
-        {
-            name: "Virgie"
-        },
-        {
-            name: "Sondra"
-        },
-        {
-            name: "Jones"
-        },
-        {
-            name: "Millie"
-        },
-        {
-            name: "Giles"
-        },
-        {
-            name: "Brooks"
-        },
-        {
-            name: "Sampson"
-        },
-        {
-            name: "Samantha"
-        },
-        {
-            name: "Jerry"
-        },
-        {
-            name: "Marta"
-        },
-        {
-            name: "Diaz"
-        },
-        {
-            name: "Galloway"
-        },
-        {
-            name: "Shirley"
-        },
-        {
-            name: "Lakisha"
-        },
-        {
-            name: "Mosley"
-        },
-        {
-            name: "Maryellen"
-        },
-        {
-            name: "Raquel"
-        },
-        {
-            name: "Mathis"
-        },
-        {
-            name: "Nola"
-        }
-    ],
-
-    edges: [{
-            source: 0,
-            target: 39
-        },
-        {
-            source: 1,
-            target: 11
-        },
-        {
-            source: 2,
-            target: 11
-        },
-        {
-            source: 3,
-            target: 6
-        },
-        {
-            source: 4,
-            target: 12
-        },
-        {
-            source: 5,
-            target: 49
-        },
-        {
-            source: 6,
-            target: 23
-        },
-        {
-            source: 7,
-            target: 11
-        },
-        {
-            source: 8,
-            target: 5
-        },
-        {
-            source: 9,
-            target: 24
-        },
-        {
-            source: 10,
-            target: 26
-        },
-        {
-            source: 11,
-            target: 6
-        },
-        {
-            source: 12,
-            target: 7
-        },
-        {
-            source: 13,
-            target: 32
-        },
-        {
-            source: 14,
-            target: 15
-        },
-        {
-            source: 15,
-            target: 28
-        },
-        {
-            source: 16,
-            target: 13
-        },
-        {
-            source: 17,
-            target: 14
-        },
-        {
-            source: 18,
-            target: 2
-        },
-        {
-            source: 19,
-            target: 23
-        },
-        {
-            source: 20,
-            target: 41
-        },
-        {
-            source: 21,
-            target: 26
-        },
-        {
-            source: 22,
-            target: 47
-        },
-        {
-            source: 23,
-            target: 49
-        },
-        {
-            source: 24,
-            target: 44
-        },
-        {
-            source: 25,
-            target: 31
-        },
-        {
-            source: 26,
-            target: 17
-        },
-        {
-            source: 27,
-            target: 5
-        },
-        {
-            source: 28,
-            target: 23
-        },
-        {
-            source: 29,
-            target: 15
-        },
-        {
-            source: 30,
-            target: 42
-        },
-        {
-            source: 31,
-            target: 14
-        },
-        {
-            source: 32,
-            target: 22
-        },
-        {
-            source: 33,
-            target: 30
-        },
-        {
-            source: 34,
-            target: 42
-        },
-        {
-            source: 35,
-            target: 19
-        },
-        {
-            source: 36,
-            target: 22
-        },
-        {
-            source: 37,
-            target: 48
-        },
-        {
-            source: 38,
-            target: 30
-        },
-        {
-            source: 39,
-            target: 46
-        },
-        {
-            source: 40,
-            target: 1
-        },
-        {
-            source: 41,
-            target: 21
-        },
-        {
-            source: 42,
-            target: 16
-        },
-        {
-            source: 43,
-            target: 18
-        },
-        {
-            source: 44,
-            target: 15
-        },
-        {
-            source: 45,
-            target: 37
-        },
-        {
-            source: 46,
-            target: 47
-        },
-        {
-            source: 47,
-            target: 24
-        },
-        {
-            source: 48,
-            target: 29
-        },
-        {
-            source: 49,
-            target: 43
-        }
-    ]
-};
+var w = getWidth() * 0.7;
+var h = getHeight() * 0.9;
+imageSize = 30
 
 var svg = d3.select('#container')
     .append('svg')
     .attr('height', h)
     .attr('width', w);
 
-//d3.json('viz-data/random-network.json', function(error, data) {
-//if (error) throw error;
-//console.log(data[0]);
+var simulation = d3.forceSimulation()
+    .force('link', d3.forceLink().id(function(d) { return d.id; }))
+    .force('charge', d3.forceManyBody().strength(-3500))
+    .force('center', d3.forceCenter(w / 2, h / 2));
 
-var force = d3.forceSimulation(dataset.nodes)
-    .force('charge', d3.forceManyBody().strength(-15))
-    .force('link', d3.forceLink(dataset.edges).distance(10))
-    .force('center', d3.forceCenter().x(w / 2).y(h / 2));
+d3.json('viz-data/syriaNetwork.json', function(error, data) {
+    if (error) throw error;
 
-var colors = d3.scaleOrdinal(d3.schemeCategory20);
+    //console.log(data)
 
-var edges = svg.selectAll('line')
-    .data(dataset.edges)
-    .enter()
-    .append('line')
-    .style('stroke', '#ccc')
-    .style('stroke-width', 1);
+    var path = svg.append("g")
+        .attr("class", "links")
+        .selectAll('path')
+        .data(data.links)
+        .enter()
+        .append('path')
+        .attr('class', function(d) { return "link " + d.type; });
 
-var nodes = svg.selectAll('circle')
-    .data(dataset.nodes)
-    .enter()
-    .append('circle')
-    .attr('r', 5)
-    .style('fill', function(d, i) {
-        return colors(i);
-    })
-    .call(d3.drag()
-        .on('start', dragStarted)
-        .on('drag', dragging)
-        .on('end', dragEnded));
+    path.filter(function(d) { return d.type != 'Enemy' })
+        .attr('marker-end', 'url(#arrowheadEnd)');
 
-nodes.append('title')
-    .text(function(d) {
-        return d.name;
-    });
+    var node = svg.selectAll('.nodes')
+        .data(data.nodes)
+        .enter().append("g")
+        .attr("class", "nodes")
+        .call(d3.drag()
+            .on('start', dragStarted)
+            .on('drag', dragged)
+            .on('end', dragEnded));
 
-force.on('tick', function() {
-    edges.attr('x1', function(d) { return d.source.x; })
-        .attr('y1', function(d) { return d.source.y; })
-        .attr('x2', function(d) { return d.target.x; })
-        .attr('y2', function(d) { return d.target.y; });
+    node.append("image")
+        .attr("xlink:href", function(d) { return d.image })
+        .attr("x", -imageSize / 2)
+        .attr("y", -imageSize / 2)
+        .attr("width", imageSize)
+        .attr("height", imageSize);
 
-    nodes.attr('cx', function(d) { return d.x; })
-        .attr('cy', function(d) { return d.y; });
-});
+    node.append('defs').append('marker')
+        .attrs({
+            'id': 'arrowheadEnd',
+            'viewBox': '-0 -5 10 10',
+            'refX': 20,
+            'refY': -0.5,
+            'orient': 'auto',
+            'markerWidth': 10,
+            'markerHeight': 10,
+            'xoverflow': 'visible'
+        })
+        .append('svg:path')
+        .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
+        .attr('fill', 'darkGrey')
+        .style('stroke', 'none');
 
-//});
+    node.append("text")
+        .attr('class', 'nodeLabel')
+        .attr("dy", imageSize)
+        .text(function(d) { return d.id });
+
+    simulation.nodes(data.nodes)
+        .on('tick', function() {
+            path.attr("d", linkArc);
+
+            node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+            /*node.attr('cx', function(d) { return d.x = Math.max(imageSize, Math.min(w - imageSize - 50, d.x)); })
+                .attr('cy', function(d) { return d.y = Math.max(imageSize, Math.min(h - imageSize - 50, d.y)); });*/
+        });
+
+    simulation.force("link")
+        .links(data.links);
+})
 
 function dragStarted(d) {
-    if (!d3.event.active) force.alphaTarget(0.3).restart();
+    if (!d3.event.active) simulation.alphaTarget(0.3).restart();
     d.fx = d3.event.x;
     d.fy = d3.event.y;
 }
 
 
-function dragging(d) {
-    d.fx = d3.event.x;
-    d.fy = d3.event.y;
+function dragged(d) {
+    d.fx = Math.max(imageSize, Math.min(w - imageSize, d3.event.x));
+    d.fy = Math.max(imageSize, Math.min(h - imageSize, d3.event.y));
 }
 
 function dragEnded(d) {
-    if (!d3.event.active) force.alphaTarget(0);
+    if (!d3.event.active) simulation.alphaTarget(0);
     d.fx = null;
     d.fy = null;
+}
+
+function linkArc(d) {
+    var dx = d.target.x - d.source.x,
+        dy = d.target.y - d.source.y,
+        dr = Math.sqrt(dx * dx + dy * dy);
+    return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
 }
 
 function getWidth() {

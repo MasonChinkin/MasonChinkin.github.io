@@ -1,0 +1,447 @@
+{
+    "nodes": [
+    {
+        "id": "Al Qaeda",
+        "image": "viz-data/networkImages/Al Qaeda.jpg"
+    },
+    {
+        "id": "Free Syria Army",
+        "image": "viz-data/networkImages/Free Syria Army.jpg"
+    },
+    {
+        "id": "ISIS",
+        "image": "viz-data/networkImages/ISIS.jpg"
+    },
+    {
+        "id": "Assad Government",
+        "image": "viz-data/networkImages/Assad Government.jpg"
+    },
+    {
+        "id": "Hezbollah",
+        "image": "viz-data/networkImages/Hezbollah.jpg"
+    },
+    {
+        "id": "USA",
+        "image": "viz-data/networkImages/USA.jpg"
+    },
+    {
+        "id": "Iraq",
+        "image": "viz-data/networkImages/Iraq.jpg"
+    },
+    {
+        "id": "Turkey",
+        "image": "viz-data/networkImages/Turkey.jpg"
+    },
+    {
+        "id": "Al-Nusra",
+        "image": "viz-data/networkImages/Al-Nusra.jpg"
+    },
+    {
+        "id": "Iran",
+        "image": "viz-data/networkImages/Iran.jpg"
+    },
+    {
+        "id": "Saudi Arabia",
+        "image": "viz-data/networkImages/Saudi Arabia.jpg"
+    },
+    {
+        "id": "Qatar",
+        "image": "viz-data/networkImages/Qatar.jpg"
+    },
+    {
+        "id": "Islamic Front",
+        "image": "viz-data/networkImages/Islamic Front.jpg"
+    }],
+
+    "links": [
+    {
+        "source": "Al Qaeda",
+        "target": "Al-Nusra",
+        "type": "Monetary Support",
+        "line": "solid"
+    },
+    {
+        "source": "Al Qaeda",
+        "target": "Al-Nusra",
+        "type": "Supplying Weapons and/or Fighters",
+        "line": "solid"
+    },
+    {
+        "source": "Al Qaeda",
+        "target": "USA",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Al Qaeda",
+        "target": "ISIS",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Free Syria Army",
+        "target": "Islamic Front",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Free Syria Army",
+        "target": "Saudi Arabia",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Free Syria Army",
+        "target": "Al-Nusra",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Free Syria Army",
+        "target": "ISIS",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Free Syria Army",
+        "target": "Assad Government",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Free Syria Army",
+        "target": "Hezbollah",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "ISIS",
+        "target": "Free Syria Army",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "ISIS",
+        "target": "Al Qaeda",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "ISIS",
+        "target": "Islamic Front",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "ISIS",
+        "target": "Al-Nusra",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "ISIS",
+        "target": "Turkey",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "ISIS",
+        "target": "Iraq",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "ISIS",
+        "target": "Hezbollah",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "ISIS",
+        "target": "Assad Government",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Assad Government",
+        "target": "ISIS",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Assad Government",
+        "target": "ISIS",
+        "type": "Monetary Support",
+        "line": "dotted"
+    },
+    {
+        "source": "Assad Government",
+        "target": "Free Syria Army",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Assad Government",
+        "target": "Islamic Front",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Assad Government",
+        "target": "Al-Nusra",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Hezbollah",
+        "target": "ISIS",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Hezbollah",
+        "target": "Free Syria Army",
+        "type": "",
+        "line": "solid"
+    },
+    {
+        "source": "Hezbollah",
+        "target": "Assad Government",
+        "type": "Monetary Support",
+        "line": "solid"
+    },
+    {
+        "source": "Hezbollah",
+        "target": "Assad Government",
+        "type": "Supplying Weapons and/or Fighters",
+        "line": "solid"
+    },
+    {
+        "source": "USA",
+        "target": "Al Qaeda",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "USA",
+        "target": "Iraq",
+        "type": "Monetary Support",
+        "line": "solid"
+    },
+    {
+        "source": "USA",
+        "target": "Iraq",
+        "type": "Supplying Weapons and/or Fighters",
+        "line": "solid"
+    },
+    {
+        "source": "USA",
+        "target": "Turkey",
+        "type": "Supplying Weapons and/or Fighters",
+        "line": "solid"
+    },
+    {
+        "source": "USA",
+        "target": "Saudi Arabia",
+        "type": "Supplying Weapons and/or Fighters",
+        "line": "solid"
+    },
+    {
+        "source": "USA",
+        "target": "Qatar",
+        "type": "Supplying Weapons and/or Fighters",
+        "line": "solid"
+    },
+    {
+        "source": "USA",
+        "target": "Free Syria Army",
+        "type": "Monetary Support",
+        "line": "solid"
+    },
+    {
+        "source": "USA",
+        "target": "Free Syria Army",
+        "type": "Supplying Weapons and/or Fighters",
+        "line": "solid"
+    },
+    {
+        "source": "Iraq",
+        "target": "ISIS",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Turkey",
+        "target": "ISIS",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Turkey",
+        "target": "Islamic Front",
+        "type": "Monetary Support",
+        "line": "solid"
+    },
+    {
+        "source": "Turkey",
+        "target": "Islamic Front",
+        "type": "Supplying Weapons and/or Fighters",
+        "line": "solid"
+    },
+    {
+        "source": "Turkey",
+        "target": "Free Syria Army",
+        "type": "Monetary Support",
+        "line": "solid"
+    },
+    {
+        "source": "Turkey",
+        "target": "Free Syria Army",
+        "type": "Supplying Weapons and/or Fighters",
+        "line": "solid"
+    },
+    {
+        "source": "Al-Nusra",
+        "target": "Assad Government",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Al-Nusra",
+        "target": "ISIS",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Al-Nusra",
+        "target": "Free Syria Army",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Al-Nusra",
+        "target": "Islamic Front",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Iran",
+        "target": "Assad Government",
+        "type": "Monetary Support",
+        "line": "solid"
+    },
+    {
+        "source": "Iran",
+        "target": "Assad Government",
+        "type": "Supplying Weapons and/or Fighters",
+        "line": "solid"
+    },
+    {
+        "source": "Iran",
+        "target": "Iraq",
+        "type": "Monetary Support",
+        "line": "solid"
+    },
+    {
+        "source": "Iran",
+        "target": "Iraq",
+        "type": "Supplying Weapons and/or Fighters",
+        "line": "solid"
+    },
+    {
+        "source": "Iran",
+        "target": "Hezbollah",
+        "type": "Monetary Support",
+        "line": "solid"
+    },
+    {
+        "source": "Iran",
+        "target": "Hezbollah",
+        "type": "Supplying Weapons and/or Fighters",
+        "line": "solid"
+    },
+    {
+        "source": "Saudi Arabia",
+        "target": "Islamic Front",
+        "type": "Monetary Support",
+        "line": "solid"
+    },
+    {
+        "source": "Saudi Arabia",
+        "target": "Islamic Front",
+        "type": "Supplying Weapons and/or Fighters",
+        "line": "solid"
+    },
+    {
+        "source": "Saudi Arabia",
+        "target": "Free Syria Army",
+        "type": "Monetary Support",
+        "line": "solid"
+    },
+    {
+        "source": "Saudi Arabia",
+        "target": "Free Syria Army",
+        "type": "Supplying Weapons and/or Fighters",
+        "line": "solid"
+    },
+    {
+        "source": "Saudi Arabia",
+        "target": "Free Syria Army",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Qatar",
+        "target": "Free Syria Army",
+        "type": "Monetary Support",
+        "line": "solid"
+    },
+    {
+        "source": "Qatar",
+        "target": "Free Syria Army",
+        "type": "Supplying Weapons and/or Fighters",
+        "line": "solid"
+    },
+    {
+        "source": "Qatar",
+        "target": "Islamic Front",
+        "type": "Monetary Support",
+        "line": "solid"
+    },
+    {
+        "source": "Qatar",
+        "target": "Islamic Front",
+        "type": "Supplying Weapons and/or Fighters",
+        "line": "solid"
+    },
+    {
+        "source": "Qatar",
+        "target": "Al-Nusra",
+        "type": "Monetary Support",
+        "line": "dotted"
+    },
+    {
+        "source": "Islamic Front",
+        "target": "Free Syria Army",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Islamic Front",
+        "target": "ISIS",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Islamic Front",
+        "target": "Assad Government",
+        "type": "Enemy",
+        "line": "solid"
+    },
+    {
+        "source": "Islamic Front",
+        "target": "Al-Nusra",
+        "type": "Enemy",
+        "line": "solid"
+    }]
+}
