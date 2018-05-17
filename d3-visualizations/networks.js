@@ -91,7 +91,7 @@ d3.json('viz-data/syriaNetwork.json', function(error, data) {
 
 //Legend
 wLegend = w * 0.02;
-hLegend = h * 0.05;
+hLegend = h * 0.03;
 
 svg.append('rect')
     .attr("x", wLegend)
@@ -102,7 +102,7 @@ svg.append('rect')
 
 svg.append('text')
     .attr("x", wLegend + 30)
-    .attr("y", hLegend + 20)
+    .attr("y", hLegend + 19)
     //.attr("dy", ".35em")
     .text('Providing financial and/or material support')
     .attr("class", "labelText")
@@ -116,7 +116,7 @@ svg.append('rect')
 
 svg.append('text')
     .attr("x", wLegend + 30)
-    .attr("y", hLegend + 45)
+    .attr("y", hLegend + 44)
     //.attr("dy", ".35em")
     .text('Direct conflict')
     .attr("class", "labelText")
@@ -126,8 +126,8 @@ svg.append("text")
     .style("text-anchor", "middle")
     .attr('class', 'labelText')
     .text("Source: See link in description")
-    .attr("transform", "translate(" + (w * 0.75) + "," +
-        (h * 0.925) + ") rotate(0)")
+    .attr("transform", "translate(" + (w * 0.82) + "," +
+        (h * 0.95) + ") rotate(0)")
     .style('pointer-events', 'none');
 
 function dragStarted(d) {
