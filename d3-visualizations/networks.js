@@ -174,7 +174,7 @@ var nodeMouseOver = function(d) {
         var node = d3.select(this);
 
         if (isConnected == false) {
-            node.style('opacity', greyedOpacity)
+            node.transition().duration(200).style('opacity', greyedOpacity)
         }
     })
 
@@ -188,12 +188,12 @@ var nodeMouseOver = function(d) {
         var path = d3.select(this);
 
         if (isConnected == false) {
-            path.style('opacity', greyedOpacity)
+            path.transition().duration(200).style('opacity', greyedOpacity)
         }
     })
 }
 
 var nodeMouseOut = function(d) {
-    d3.selectAll('.node').style('opacity', 1)
-    d3.selectAll('.link').style('opacity', 1)
+    d3.selectAll('.node').transition().duration(200).style('opacity', 1)
+    d3.selectAll('.link').transition().duration(200).style('opacity', 1)
 }

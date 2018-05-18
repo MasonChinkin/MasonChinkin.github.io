@@ -276,16 +276,7 @@
 			"file": "networks.html",
 			"settings":
 			{
-				"buffer_size": 5101,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 10765,
+				"buffer_size": 5100,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -389,9 +380,9 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/networks.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/syriaNetwork.json",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/example_force_layout.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/old-network.js",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/miserables.json",
@@ -490,7 +481,7 @@
 	],
 	"find":
 	{
-		"height": 40.8
+		"height": 27.0
 	},
 	"find_in_files":
 	{
@@ -692,7 +683,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -729,7 +720,7 @@
 						"translation.y": 1478.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -738,19 +729,28 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5101,
+						"buffer_size": 5100,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4266,
-								4266
+								4050,
+								4050
 							]
 						],
 						"settings":
 						{
+							"SL.14.region_keys":
+							[
+								"SL.csslint.Highlights.|70880f505293f64e1443cc9a4bf2a3596b9d12d5f34823693aa2308ab6a24162|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.csslint.Highlights.|179ba54613b5ec283efbd284714665eb7cd245afb1d7e530a0d11747ed2428df|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.csslint.Highlights.|58ea34f336a092db39d92ebdd29ebdb1256cf3f277ad9f38f27a5203f25695b1|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|8efa79a9f176b36ce3672187871033883b8539eb967e55b19d79da3bcc4257c6|region.yellowish markup.warning.sublime_linter|32"
+							],
 							"SL.29.region_keys":
 							[
 								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
@@ -765,40 +765,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1512.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10765,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6526,
-								6526
-							]
-						],
-						"settings":
-						{
-							"SL.30.region_keys":
-							[
-							],
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2160.0,
+						"translation.y": 1548.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
