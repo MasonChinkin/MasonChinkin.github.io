@@ -549,7 +549,7 @@ function drawLegend(data) {
             {
                 return "translate(0," + i * 20 + ")"
             }
-        })
+        });
 
     legend.append('rect')
         .attr("x", wLegend)
