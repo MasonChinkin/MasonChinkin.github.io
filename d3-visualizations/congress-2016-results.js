@@ -4,7 +4,7 @@ var h = getHeight() * 0.6;
 
 //define projection
 var projection = d3.geoAlbers()
-    .scale(700)
+    .scale(1200)
     .translate([w / 2, h / 2]);
 
 //define drag behavior
@@ -53,9 +53,10 @@ d3.csv('viz-data/congress_results_2016.csv', function(error, data) {
         for (var i = 0; i < data.length; i++) {
 
             var dataDistrict = data[i].state_fips + '-' + data[i].district;
-            var dataDistrictWinner = data[i].winner
-            var dataDistrictWinningParty = data[i].party
-            var dataDistrictWinningMargin = parseFloat(data[i].general_perc)
+            var dataDistrictWinner = data[i].winner;
+            var dataDistrictWinningParty = data[i].party;
+            var dataDistrictWinningMargin = parseFloat(data[i].general_perc);
+            var dataDistrictName = data[i].state + ' District ' + data[i].district;
 
             var dataParty = data[i].party;
 
@@ -68,6 +69,7 @@ d3.csv('viz-data/congress_results_2016.csv', function(error, data) {
                     json.features[j].properties.district = jsonDistrict;
                     json.features[j].properties.winningParty = dataDistrictWinningParty;
                     json.features[j].properties.winningMargin = dataDistrictWinningMargin;
+                    json.features[j].properties.name = dataDistrictName;
 
                     //stop looking through json
                     break;
@@ -84,13 +86,16 @@ d3.csv('viz-data/congress_results_2016.csv', function(error, data) {
             .append('path')
             .attr("d", path)
             .style('fill', function(d) {
-                if (d.properties.winningParty == 'R') { return 'red' } else { return 'blue' }
+                if (d.properties.winningParty == 'R') { return 'red' };
+                if (d.properties.winningParty == 'D') { return 'blue' }
+                if (d.properties.winningParty == null) { return 'white' } else { return 'grey' }
             })
             .style('opacity', function(d) {
                 return d.properties.winningMargin;
             })
             .style('stroke', 'white')
             .attr('class', function(d) { return d.properties.district })
+            .attr('name', function(d) { return d.properties.name })
             .on('mouseover', function(d) {
 
                 d3.select(this)
@@ -101,61 +106,45 @@ d3.csv('viz-data/congress_results_2016.csv', function(error, data) {
                 // Define the div for the tooltip
                 tooltipDiv = d3.select("body").append("div")
                     .attr("class", "tooltip")
-                    .style("opacity", 0);
+                    .style("opacity", 0)
+                    .style("left", (d3.event.pageX + 25) + "px")
+                    .style("top", (d3.event.pageY) + "px");
 
                 tooltipDiv.transition()
                     //.duration(200)
-                    .style("opacity", .9)
-                    .style("left", (d3.event.pageX + 5) + "px")
-                    .style("top", (d3.event.pageY - 38) + "px");
+                    .style("opacity", .9);
 
                 thisJsonDistrict = d3.select(this).attr('class');
                 //console.log(thisJsonDistrict);
+                thisJsonDistrictName = d3.select(this).attr('name');
+                //console.log(thisJsonDistrict);
+
+                resultsString = ''
 
                 for (var i = 0; i < data.length; i++) {
                     thisDataDistrict = data[i].state_fips + '-' + data[i].district;
-                    //console.log(thisDataDistrict);
 
-                    if (thisJsonDistrict == thisDataDistrict) {
-                        console.log(data[i].candidate + " " + i);
-
-                        //var iReset = i
-
-                        //tooltipDiv.data(data)
-                        //.enter()
-                        //.append('g')
-                        //.attr("class", "tooltip")
-                        //.attr("transform", function(d, i) { { return "translate(0," + i * 20 + ")"; }
-                        //})
-                        ;
-
-                        /*tooltipDiv.append('text')
-                            //.attr("dy", ".35em")
-                            .text(function(d, i) { data[i].candidate; })
-                            .attr("class", "tooltip text");
-                        
-                                                tooltip.append('rect')
-                                                    .attr("x", wLegend)
-                                                    .attr("y", hLegend + 30)
-                                                    .attr("width", 12)
-                                                    .attr("height", 12)
-                                                    .style("fill", function(d, i) {
-                                                        if (d.party == 'R' && d.winner == 'W') { return 'red' } else { return 'blue' }
-                                                    });*/
-
+                    if (thisJsonDistrict == thisDataDistrict && data[i].candidate != 'Total Votes') {
+                        resultsString = resultsString + ("<p>" + '(' + data[i].party + ')  ' + data[i].candidate + ': ' + d3.format(".1%")(data[i].general_perc) + "</p>");
                     }
                 }
+
+                if (thisJsonDistrictName == null) { tooltipDiv.html('N/A') } else {
+                    tooltipDiv.html("<strong>" + thisJsonDistrictName + "</strong>" + resultsString)
+                };
             })
             .on('mouseout', function(d) {
                 d3.select(this)
                     .transition()
                     .duration(100)
                     .style('fill', function(d) {
-                        if (d.properties.winningParty == 'R') { return 'red' } else { return 'blue' }
+                        if (d.properties.winningParty == 'R') { return 'red' };
+                        if (d.properties.winningParty == 'D') { return 'blue' }
+                        if (d.properties.winningParty == null) { return 'white' } else { return 'grey' }
                     });
 
                 d3.selectAll('.tooltip')
-                    .remove();
+                    .exit().remove();
 
                 tooltipDiv.transition()
                     //.duration(200)
@@ -163,6 +152,74 @@ d3.csv('viz-data/congress_results_2016.csv', function(error, data) {
             });
     });
 });
+
+wLegend = w * 0.1;
+hLegend = h * 0.5;
+
+map.append('rect')
+    .attr("x", wLegend)
+    .attr("y", hLegend + 25)
+    .attr("width", 15)
+    .attr("height", 15)
+    .style("fill", 'blue')
+
+map.append('rect')
+    .attr("x", wLegend)
+    .attr("y", hLegend + 25 + 30)
+    .attr("width", 15)
+    .attr("height", 15)
+    .style("fill", 'red')
+
+map.append('rect')
+    .attr("x", wLegend)
+    .attr("y", hLegend + 25 + 60)
+    .attr("width", 15)
+    .attr("height", 15)
+    .style("fill", 'grey')
+
+map.append('rect')
+    .attr("x", wLegend)
+    .attr("y", hLegend + 25 + 90)
+    .attr("width", 15)
+    .attr("height", 15)
+    .style("fill", 'white')
+
+map.append('text')
+    .attr("x", wLegend + 20)
+    .attr("y", hLegend + 40)
+    //.attr("dy", ".35em")
+    .text("Democrat")
+    .attr("class", "legend")
+
+map.append('text')
+    .attr("x", wLegend + 20)
+    .attr("y", hLegend + 70)
+    //.attr("dy", ".35em")
+    .text("Republican")
+    .attr("class", "legend")
+
+map.append('text')
+    .attr("x", wLegend + 20)
+    .attr("y", hLegend + 100)
+    //.attr("dy", ".35em")
+    .text('Other Party')
+    .attr("class", "legend")
+
+map.append('text')
+    .attr("x", wLegend + 20)
+    .attr("y", hLegend + 130)
+    //.attr("dy", ".35em")
+    .text('Pending special election')
+    .attr("class", "legend")
+
+//Source
+map.append('text')
+    .attr("x", w * 0.75)
+    .attr("y", h * 0.95)
+    //.attr("dy", ".35em")
+    .text('Source: Federal Election Committee (FEC)')
+    .attr("class", "legend")
+    .attr('font-size', 14)
 
 function getWidth() {
     return Math.max(

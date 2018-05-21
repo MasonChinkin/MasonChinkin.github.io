@@ -17,11 +17,12 @@
     <style type="text/css">
     div.tooltip {
         position: absolute;
-        text-align: center;
+        text-align: left;
+        display: table;
         width: auto;
         height: auto;
         padding: 2px;
-        font: 16px sans-serif;
+        font: 16px arial;
         background: white;
         border: 0px;
         border-radius: 8px;
@@ -29,23 +30,32 @@
         color: black;
     }
 
-    .tooltip text {
+    .tooltip p {
         margin: 0;
-        font-family: sans-serif;
+        font-family: arial;
         font-size: 16px;
         line-height: 20px;
         text-align: left;
         color: black;
     }
 
-    .tooltip text strong {
+    .tooltip strong {
         margin: 0;
-        font-family: sans-serif;
-        font-size: 16px;
+        font-family: arial;
+        font-size: 20px;
         line-height: 20px;
         text-align: left;
         color: black;
         font-weight: bold;
+    }
+
+    .legend {
+        margin: 0;
+        font-family: arial;
+        font-size: 20px;
+        text-align: left;
+        color: black;
+        pointer-events: none;
     }
     </style>
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -105,8 +115,8 @@
             </div>
         </section>
         <section id="portfolio" class="two">
-            <h2>Interactive map of our 2017 trip to Europe</h2>
-            <ul>Zoom, pan, and hover over the bubbles!</ul>
+            <h2>Zoomable, Tooltipped map of the 2016 Congressional Election</h2>
+            <ul>(Still need to make the tooltip prettier)</ul>
             <div id="container">
                 <script src="d3-visualizations/congress-2016-results.js"></script>
             </div>
