@@ -1,10 +1,10 @@
 //Width and height
-var w = 1500;
-var h = 700;
+var w = 1000;
+var h = 500;
 
 //define projection
 var projection = d3.geoAlbers()
-    .scale(1200)
+    .scale(1000)
     .translate([w / 2, h / 2]);
 
 //define drag behavior
@@ -103,7 +103,7 @@ d3.csv('viz-data/congress_results_2016.csv', function(error, data) {
                 tooltipDiv = d3.select("body").append("div")
                     .attr("class", "tooltip")
                     .style("opacity", 0)
-                    .style("left", (d3.event.pageX + 25) + "px")
+                    .style("left", (d3.event.pageX + 20) + "px")
                     .style("top", (d3.event.pageY) + "px");
 
                 tooltipDiv.transition()
@@ -129,6 +129,10 @@ d3.csv('viz-data/congress_results_2016.csv', function(error, data) {
                     tooltipDiv.html("<strong>" + thisJsonDistrictName + "</strong>" + resultsString)
                 };
             })
+            .on('mousemove', function(d) {
+                tooltipDiv.style("left", (d3.event.pageX + 20) + "px")
+                    .style("top", (d3.event.pageY) + "px");
+            })
             .on('mouseout', function(d) {
                 d3.select(this)
                     .transition()
@@ -145,8 +149,8 @@ d3.csv('viz-data/congress_results_2016.csv', function(error, data) {
     });
 });
 
-wLegend = w * 0.1;
-hLegend = h * 0.5;
+wLegend = w * 0.04;
+hLegend = h * 0.6;
 
 map.append('rect')
     .attr("x", wLegend)
@@ -192,10 +196,10 @@ map.append('text')
 
 //Source
 map.append('text')
-    .attr("x", w * 0.75)
+    .attr("x", w * 0.85)
     .attr("y", h * 0.95)
     .attr("dy", "0em")
-    .text('Source: Federal Election Committee (FEC)')
+    .text('Source: FEC')
     .attr("class", "legend")
     .attr('font-size', 14)
 
