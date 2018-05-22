@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"font",
+				"font-size\t(congress-2016-map.html)"
+			],
+			[
 				"thisR",
 				"thisResultsIndex"
 			],
@@ -82,10 +86,6 @@
 			[
 				"key",
 				"key_index"
-			],
-			[
-				"font",
-				"font-weight\t(europe-trip.html)"
 			],
 			[
 				"padd",
@@ -272,21 +272,20 @@
 	"buffers":
 	[
 		{
-			"contents": "<!DOCTYPE HTML>\n<!--\n  Prologue by HTML5 UP\n  html5up.net | @ajlkn\n  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)\n-->\n<html>\n\n<head>\n    <title>Mason's personal website</title>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <!--[if lte IE 8]><script src=\"assets/js/ie/html5shiv.js\"></script><![endif]-->\n    <script type=\"text/javascript\" src=\"assets/js/d3.js\"></script>\n    <!--[if lte IE 8]><link rel=\"stylesheet\" href=\"assets/css/ie8.css\" /><![endif]-->\n    <!--[if lte IE 9]><link rel=\"stylesheet\" href=\"assets/css/ie9.css\" /><![endif]-->\n    <style type=\"text/css\">\n    div.tooltip {\n        position: absolute;\n        text-align: left;\n        display: table;\n        width: auto;\n        height: auto;\n        padding: 2px;\n        font: 16px arial;\n        background: white;\n        border: 0px;\n        border-radius: 8px;\n        pointer-events: none;\n        color: black;\n    }\n\n    .tooltip p {\n        margin: 0;\n        font-family: arial;\n        font-size: 16px;\n        line-height: 20px;\n        text-align: left;\n        color: black;\n    }\n\n    .tooltip strong {\n        margin: 0;\n        font-family: arial;\n        font-size: 16px;\n        line-height: 20px;\n        text-align: left;\n        color: black;\n        font-weight: bold;\n    }\n    </style>\n    <link rel=\"stylesheet\" href=\"assets/css/main.css\" />\n</head>\n\n<body>\n    <!-- Header -->\n    <div id=\"header\">\n        <div class=\"top\">\n            <!-- Logo -->\n            <div id=\"logo\">\n                <span class=\"image avatar48\"><img src=\"images/avatar.jpg\" alt=\"\" /></span>\n                <h1 id=\"title\">Mason Chinkin</h1>\n                <p>Aspiring data vizzer</p>\n            </div>\n            <!-- Nav -->\n            <nav id=\"nav\">\n                <!--\n\n                Prologue's nav expects links in one of two formats:\n\n                1. Hash link (scrolls to a different section within the page)\n\n                   <li><a href=\"#foobar\" id=\"foobar-link\" class=\"icon fa-whatever-icon-you-want skel-layers-ignoreHref\"><span class=\"label\">Foobar</span></a></li>\n\n                2. Standard link (sends the user to another page/site)\n\n                   <li><a href=\"http://foobar.tld\" id=\"foobar-link\" class=\"icon fa-whatever-icon-you-want\"><span class=\"label\">Foobar</span></a></li>\n\n              -->\n                <ul>\n                    <li><a href=\"index.html#top\" id=\"top-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-home\">Intro</span></a></li>\n                    <li><a href=\"index.html#portfolio\" id=\"portfolio-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-th\">Portfolio</span></a></li>\n                    <li><a href=\"index.html#about\" id=\"about-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-user\">About Me</span></a></li>\n                    <li><a href=\"index.html#contact\" id=\"contact-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-envelope\">Contact</span></a></li>\n                </ul>\n            </nav>\n        </div>\n        <div class=\"bottom\">\n            <!-- Social Icons -->\n            <ul class=\"icons\">\n                <!--<li><a href=\"#\" class=\"icon fa-twitter\"><span class=\"label\">Twitter</span></a></li> NEED TO MAKE ONE-->\n                <li><a href=\"https://github.com/MasonChinkin\" class=\"icon fa-github\"><span class=\"label\">Github</span></a></li>\n                <li><a href=\"#contact\" class=\"icon fa-envelope\"><span class=\"label\">Email</span></a></li>\n                <li><a href=\"https://www.linkedin.com/in/mason-chinkin/\" class=\"icon fa-linkedin\"><span class=\"label\">LinkedIn</span></a></li>\n            </ul>\n        </div>\n    </div>\n    <!-- Main -->\n    <div id=\"main\">\n        <!-- Intro -->\n        <section id=\"top\" class=\"one dark cover\">\n            <div align=\"left\" class=\"container\">\n                <footer>\n                    <a href=\"index.html#portfolio\" class=\"button scrolly\">Return to portfolio</a>\n                </footer>\n            </div>\n        </section>\n        <section id=\"portfolio\" class=\"two\">\n            <h2>Interactive map of our 2017 trip to Europe</h2>\n            <ul>Zoom, pan, and hover over the bubbles!</ul>\n            <div id=\"container\">\n                <script src=\"d3-visualizations/congress-2016-results.js\"></script>\n            </div>\n        </section>\n    </div>\n</body>\n<div id=\"footer\">\n    <!-- Copyright -->\n    <ul class=\"copyright\">\n        <li>Design: <a href=\"http://html5up.net\">HTML5 UP</a></li>\n    </ul>\n</div>\n<!-- Scripts -->\n<script src=\"assets/js/jquery.min.js\"></script>\n<script src=\"assets/js/jquery.scrolly.min.js\"></script>\n<script src=\"assets/js/jquery.scrollzer.min.js\"></script>\n<script src=\"assets/js/skel.min.js\"></script>\n<script src=\"assets/js/util.js\"></script>\n<!--[if lte IE 8]><script src=\"assets/js/ie/respond.min.js\"></script><![endif]-->\n<script src=\"assets/js/main.js\"></script>\n</body>\n\n</html>",
 			"file": "congress-2016-map.html",
-			"file_size": 5109,
-			"file_write_time": 131714036177955174,
 			"settings":
 			{
-				"buffer_size": 4977,
+				"buffer_size": 5236,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "gdp.html",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 5639,
+				"buffer_size": 10859,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
@@ -294,8 +293,16 @@
 			"file": "d3-visualizations/congress-2016-results.js",
 			"settings":
 			{
-				"buffer_size": 5662,
+				"buffer_size": 7266,
 				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "d3-visualizations/gdp.js",
+			"settings":
+			{
+				"buffer_size": 19609,
 				"line_ending": "Windows"
 			}
 		}
@@ -514,6 +521,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"legend",
 			"zoom",
 			"attr",
 			"get",
@@ -640,8 +648,7 @@
 			"\"target\"",
 			"\"source\"",
 			"range",
-			"main",
-			"length"
+			"main"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -711,19 +718,29 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4977,
+						"buffer_size": 5236,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1232,
-								1232
+								4502,
+								4502
 							]
 						],
 						"settings":
 						{
+							"SL.14.region_keys":
+							[
+								"SL.csslint.Highlights.|7973dc3d6679f21ba8896ad60fa1f14def9a41c8aead14f0186c0c890ad34705|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|eece1d17c716fc5ab2269771ed94138f893d0d4e772f2fe4a19325584518617a|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.csslint.Highlights.|57d1a4f42b7ad9ddda4f55af692cb435efe2bd78c727ffe837a6e37447acd57b|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|9251095aa500969488782c17adecafae2e9928e0c00fe24dcb9f303eaf5fbdac|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.csslint.Highlights.|befa3aaead807cbcacb462e6fff1f7cc5eaa4b95ca15646c11367a6d2432905a|region.yellowish markup.warning.sublime_linter|32"
+							],
 							"SL.47.region_keys":
 							[
 								"SL.csslint.Highlights.|57d1a4f42b7ad9ddda4f55af692cb435efe2bd78c727ffe837a6e37447acd57b|region.yellowish markup.warning.sublime_linter|32",
@@ -738,52 +755,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 253.6,
+						"translation.y": 2620.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "gdp.html",
-					"semi_transient": true,
+					"file": "index.html",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5639,
+						"buffer_size": 10859,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								7420,
+								7420
 							]
 						],
 						"settings":
 						{
-							"SL.52.region_keys":
+							"SL.19.region_keys":
 							[
-								"SL.csslint.Highlights.|2e4f4e5d0c50bd446a57624b17b908d1e004275bd9ed70966a768a33a9371bb6|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|4103a1ad749d99a6df42074a54b92d9048a5fedd6dd278c37509eae6359eceda|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|60e29057aeac3d6111df0919174680ebf951fc7f9ad2b71d31ec4275ef4cf81c|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|94e2a9c5d904369d2af214588838e2589d0b5c4b564cf112d5e1b1daf248ab4c|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|ac8a68cea1b8994e78b941b13c4ff685ae98d3fe22043e56c507c0f582db9196|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|6fd29990b04b7c6c082406bbca326ec866457cb752d7d74633499030a0420b9c|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|d125144bed33ff48edcf1fb14b19622310cf7b411552667a4cf13d1aaaa2a403|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
-								"SL.csslint.Highlights.|6bfaafe28c44c453901fd1370f0ad9ecf3dc83057ec6a9d2e8a17b07e3d0def4|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|02efaad92bcc1a0f667291504b13480fd0dc1ddf9ebdce52f440a25da2314f91|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|15bc3b464b752c34beb5bfa88ba7baa34cc9d9d71194470688998c312f5147cf|region.yellowish markup.warning.sublime_linter|32",
-								"sublime_linter.protected_regions"
 							],
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 378.0,
+						"translation.y": 3996.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -801,19 +806,22 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5662,
+						"buffer_size": 7266,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3889,
-								3889
+								6225,
+								6225
 							]
 						],
 						"settings":
 						{
+							"SL.16.region_keys":
+							[
+							],
 							"SL.30.region_keys":
 							[
 							],
@@ -822,10 +830,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 810.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "d3-visualizations/gdp.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19609,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11455,
+								11731
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6124.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -864,7 +902,7 @@
 		"rows":
 		[
 			0.0,
-			0.5,
+			0.440152339499,
 			1.0
 		]
 	},
@@ -885,7 +923,7 @@
 	"project": "index.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 74.4
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -915,7 +953,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
@@ -923,7 +961,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 109.0,
+	"side_bar_width": 245.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -144,6 +144,7 @@ function drawGdp(data, series, keys) {
         .attr('class', function(d, i) {
             return "bar-" + d3.select(this.parentNode).attr('class');
         })
+        .style('cursor', 'pointer')
         .on("mousemove", function(d, i) {
 
             tooltipType = d3.select(this.parentNode).attr('class')
