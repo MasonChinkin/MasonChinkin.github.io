@@ -1,6 +1,6 @@
 //Width and height
-var w = getWidth() * 0.75;
-var h = getHeight() * 0.6;
+var w = 1200;
+var h = 600;
 var active = d3.select(null);
 
 //define projection
@@ -14,7 +14,10 @@ var projection = d3.geoEquirectangular()
 //define drag behavior
 var zoom = d3.zoom()
     .scaleExtent([0.5, 8])
-    .on('zoom', zooming);
+    .on('zoom', function(d) {
+        map.style("stroke-width", 1.5 / d3.event.transform.k + "px");
+        map.attr("transform", d3.event.transform);
+    });
 
 // define path
 var path = d3.geoPath()
@@ -109,12 +112,6 @@ d3.csv('viz-data/trip.csv', function(data) {
             .style('pointer-events', 'none');
     });
 });
-
-function zooming() {
-    map.style("stroke-width", 1.5 / d3.event.transform.k + "px");
-
-    map.attr("transform", d3.event.transform);
-}
 
 var bubbleMouseMove = function(d) {
     d3.select(this)
