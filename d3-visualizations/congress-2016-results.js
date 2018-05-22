@@ -85,11 +85,7 @@ d3.csv('viz-data/congress_results_2016.csv', function(error, data) {
             .enter()
             .append('path')
             .attr("d", path)
-            .style('fill', function(d) {
-                if (d.properties.winningParty == 'R') { return 'red' };
-                if (d.properties.winningParty == 'D') { return 'blue' }
-                if (d.properties.winningParty == null) { return 'white' } else { return 'grey' }
-            })
+            .style('fill', stateFill)
             .style('opacity', function(d) {
                 return d.properties.winningMargin;
             })
@@ -137,11 +133,7 @@ d3.csv('viz-data/congress_results_2016.csv', function(error, data) {
                 d3.select(this)
                     .transition()
                     .duration(100)
-                    .style('fill', function(d) {
-                        if (d.properties.winningParty == 'R') { return 'red' };
-                        if (d.properties.winningParty == 'D') { return 'blue' }
-                        if (d.properties.winningParty == null) { return 'white' } else { return 'grey' }
-                    });
+                    .style('fill', stateFill);
 
                 d3.selectAll('.tooltip')
                     .exit().remove();
@@ -177,13 +169,6 @@ map.append('rect')
     .attr("height", 15)
     .style("fill", 'grey')
 
-map.append('rect')
-    .attr("x", wLegend)
-    .attr("y", hLegend + 25 + 90)
-    .attr("width", 15)
-    .attr("height", 15)
-    .style("fill", 'white')
-
 map.append('text')
     .attr("x", wLegend + 20)
     .attr("y", hLegend + 40)
@@ -202,13 +187,6 @@ map.append('text')
     .attr("x", wLegend + 20)
     .attr("y", hLegend + 100)
     //.attr("dy", ".35em")
-    .text('Other Party')
-    .attr("class", "legend")
-
-map.append('text')
-    .attr("x", wLegend + 20)
-    .attr("y", hLegend + 130)
-    //.attr("dy", ".35em")
     .text('Pending special election')
     .attr("class", "legend")
 
@@ -216,10 +194,17 @@ map.append('text')
 map.append('text')
     .attr("x", w * 0.75)
     .attr("y", h * 0.95)
-    //.attr("dy", ".35em")
+    .attr("dy", "0em")
     .text('Source: Federal Election Committee (FEC)')
     .attr("class", "legend")
     .attr('font-size', 14)
+
+//define fill for all combo party names
+var stateFill = function(d) {
+    if (d.properties.winningParty == 'R' || d.properties.winningParty == 'R/IP' || d.properties.winningParty == 'R/TRP') { return 'rgb(235,25,28)' };
+    if (d.properties.winningParty == 'D' || d.properties.winningParty == 'DFL' || d.properties.winningParty == 'D/IP' || d.properties.winningParty == 'D/R' || d.properties.winningParty == 'D/PRO/WF/IP') { return 'rgb(28,25,235)' }
+    if (d.properties.winningParty == null) { return 'grey' }
+}
 
 function getWidth() {
     return Math.max(

@@ -270,21 +270,21 @@ CO,08,Colorado,07,George,Athanasopoulos,George Athanasopoulos,R,"144,066",0.3979
 CO,08,Colorado,07,Martin L.,Buchanan,Martin L. Buchanan,LIB  ,"18,186",0.050236181,,,,,
 CO,08,Colorado,07,,,Total Votes,,"362,010",,,,,,
 CT,09,Connecticut,01,John B.,Larson,John B. Larson,D,"200,686",0.641323001,,,"200,686",64.13%,W
-CT,09,Connecticut,01,John B.,Larson,John B. Larson,WF,"200,686",0.641323001,,,"200,686",64.13%,W
+CT,09,Connecticut,01,John B.,Larson,John B. Larson,WF,"200,686",0.641323001,,,"200,686",64.13%,
 CT,09,Connecticut,01,Matthew M.,Corey,Matthew M. Corey,R,"105,674",0.337697531,,,,,
 CT,09,Connecticut,01,S. Michael,DeRosa,S. Michael DeRosa,GRE,"6,563",0.020973077,,,,,
 CT,09,Connecticut,01,Charles ,Jackson,Charles  Jackson,W,1,0.0000032,,,,,
 CT,09,Connecticut,01,Mark ,Stewart,Mark  Stewart,W,1,0.0000032,,,,,
 CT,09,Connecticut,01,,,Total Votes,,"312,925",,,,,,
 CT,09,Connecticut,02,Joe,Courtney,Joe Courtney,D,"208,818",0.632289399,,,"208,818",63.23%,W
-CT,09,Connecticut,02,Joe,Courtney,Joe Courtney,WF,"208,818",0.632289399,,,"208,818",63.23%,W
+CT,09,Connecticut,02,Joe,Courtney,Joe Courtney,WF,"208,818",0.632289399,,,"208,818",63.23%,
 CT,09,Connecticut,02,Daria Irene,Novak,Daria Irene Novak,R,"111,149",0.336553048,,,,,
 CT,09,Connecticut,02,Jonathan,Pelto,Jonathan Pelto,GRE,"5,332",0.016145002,,,,,
 CT,09,Connecticut,02,Daniel,Reale,Daniel Reale,LIB,"4,949",0.014985299,,,,,
 CT,09,Connecticut,02,Elizabeth F.,Traceski,Elizabeth F. Traceski,W,9,0.0000273,,,,,
 CT,09,Connecticut,02,,,Total Votes,,"330,257",,,,,,
 CT,09,Connecticut,03,Rosa L.,DeLauro,Rosa L. DeLauro,D,"213,572",0.690324812,,,"213,572",69.03%,W
-CT,09,Connecticut,03,Rosa L.,DeLauro,Rosa L. DeLauro,WF,"213,572",0.690324812,,,"213,572",69.03%,W
+CT,09,Connecticut,03,Rosa L.,DeLauro,Rosa L. DeLauro,WF,"213,572",0.690324812,,,"213,572",69.03%,
 CT,09,Connecticut,03,Angel,Cadena,Angel Cadena,R,"95,786",0.30960731,,,,,
 CT,09,Connecticut,03,Christopher,Schaefer,Christopher Schaefer,W,18,0.0000582,,,,,
 CT,09,Connecticut,03,Andrew ,Rule,Andrew  Rule,W,3,0.0000097,,,,,
@@ -295,7 +295,7 @@ CT,09,Connecticut,04,John,Shaban,John Shaban,IP,"125,724",0.400982331,,,"125,724
 CT,09,Connecticut,04,Carl E. ,Vassar,Carl E.  Vassar,W,5,0.0000159,,,,,
 CT,09,Connecticut,04,,,Total Votes,,"313,540",,,,,,
 CT,09,Connecticut,05,Elizabeth,Esty,Elizabeth Esty,D,"179,252",0.579949657,,,"179,252",57.99%,W
-CT,09,Connecticut,05,Elizabeth,Esty,Elizabeth Esty,WF,"179,252",0.579949657,,,"179,252",57.99%,W
+CT,09,Connecticut,05,Elizabeth,Esty,Elizabeth Esty,WF,"179,252",0.579949657,,,"179,252",57.99%,
 CT,09,Connecticut,05,Clay,Cope,Clay Cope,IP,"129,801",0.419956516,,,"129,801",42.00%,
 CT,09,Connecticut,05,Clay,Cope,Clay Cope,R,"129,801",0.419956516,,,"129,801",42.00%,
 CT,09,Connecticut,05,John ,Pistone,John  Pistone,R/W,28,0.0000906,,,,,
@@ -401,10 +401,10 @@ FL,12,Florida,23,Don,Endriss,Don Endriss,NPA,"5,180",0.016031196,,,,,
 FL,12,Florida,23,Lyle ,Milstein,Lyle  Milstein,NPA,"3,897",0.012060535,,,,,
 FL,12,Florida,23,,,Total Votes,,"323,120",,,,,,
 FL,12,Florida,24,Frederica,Wilson,Frederica Wilson,D,Unopposed,,,,,,W
-FL,12,Florida,25,Mario ,Diaz-Balart,Mario  Diaz-Balart,R   ,"157,921",0.623602117,,,,,W
+FL,12,Florida,25,Mario ,Diaz-Balart,Mario  Diaz-Balart,R,"157,921",0.623602117,,,,,W
 FL,12,Florida,25,Alina,Valdes,Alina Valdes,D,"95,319",0.376397883,,,,,
 FL,12,Florida,25,,,Total Votes,,"253,240",,,,,,
-FL,12,Florida,26,Carlos,Curbelo,Carlos Curbelo,R  ,"148,547",0.529500039,,,,,W
+FL,12,Florida,26,Carlos,Curbelo,Carlos Curbelo,R,"148,547",0.529500039,,,,,W
 FL,12,Florida,26,Joe ,Garcia,Joe  Garcia,D,"115,493",0.411678109,,,,,
 FL,12,Florida,26,Jose ,Peixoto,Jose  Peixoto,NPA,"16,502",0.058821852,,,,,
 FL,12,Florida,26,,,Total Votes,,"280,542",,,,,,
@@ -593,20 +593,20 @@ IA,19,Iowa,04,Steve,King,Steve King,R,"226,719",0.612325426,,,,,W
 IA,19,Iowa,04,Kim,Weaver,Kim Weaver,D,"142,993",0.38619723,,,,,
 IA,19,Iowa,04,,Scattered,Scattered,W,547,0.001477344,,,,,
 IA,19,Iowa,04,,,Total Votes,,"370,259",,,,,,
-KS,20,Kansas,01,Roger,Marshall,Roger Marshall,R ,"169,992",0.65895779,,,,,W
+KS,20,Kansas,01,Roger,Marshall,Roger Marshall,R,"169,992",0.65895779,,,,,W
 KS,20,Kansas,01,Tim,Huelskamp,Tim Huelskamp,R/W,874,,,,,,
 KS,20,Kansas,01,Alan,LaPolice,Alan LaPolice,IND,"67,739",0.262583779,,,,,
 KS,20,Kansas,01,Kerry,Burt,Kerry Burt,LIB,"19,366",0.075070454,,,,,
 KS,20,Kansas,01,,,Total Votes,,"257,971",,,,,,
-KS,20,Kansas,02,Lynn,Jenkins,Lynn Jenkins,R ,"181,228",0.609372531,,,,,W
+KS,20,Kansas,02,Lynn,Jenkins,Lynn Jenkins,R,"181,228",0.609372531,,,,,W
 KS,20,Kansas,02,Britani,Potter,Britani Potter,D ,"96,840",0.325620963,,,,,
 KS,20,Kansas,02,James Houston,Bales,James Houston Bales,LIB,"19,333",0.065006506,,,,,
 KS,20,Kansas,02,,,Total Votes,,"297,401",,,,,,
-KS,20,Kansas,03,Kevin,Yoder,Kevin Yoder,R ,"176,022",0.513014663,,,,,W
+KS,20,Kansas,03,Kevin,Yoder,Kevin Yoder,R,"176,022",0.513014663,,,,,W
 KS,20,Kansas,03,Jay,Sidie,Jay Sidie,D ,"139,300",0.405988698,,,,,
 KS,20,Kansas,03,Steven A.,Hohe,Steven A. Hohe,LIB,"27,791",0.08099664,,,,,
 KS,20,Kansas,03,,,Total Votes,,"343,113",,,,,,
-KS,20,Kansas,04,Michael,Pompeo,Michael Pompeo,R ,"166,998",0.606711692,,,,,W
+KS,20,Kansas,04,Michael,Pompeo,Michael Pompeo,R,"166,998",0.606711692,,,,,W
 KS,20,Kansas,04,Daniel B.,Giroux,Daniel B. Giroux,D,"81,495",0.296075219,,,,,
 KS,20,Kansas,04,Miranda,Allen,Miranda Allen,IND,"19,021",0.069104199,,,,,
 KS,20,Kansas,04,Gorden J.,Bakken,Gorden J. Bakken,LIB,"7,737",0.02810889,,,,,
