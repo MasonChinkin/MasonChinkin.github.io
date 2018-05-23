@@ -120,7 +120,7 @@ d3.csv('viz-data/congress_results_2016.csv', function(error, data) {
                 for (var i = 0; i < data.length; i++) {
                     thisDataDistrict = data[i].state_fips + '-' + data[i].district;
 
-                    if (thisJsonDistrict == thisDataDistrict && data[i].candidate != 'Total Votes') {
+                    if (thisJsonDistrict == thisDataDistrict && data[i].candidate != 'Total Votes' && data[i].candidate != data[i - 1].candidate) {
                         resultsString = resultsString + ("<p>" + '(' + data[i].party + ')  ' + data[i].candidate + ': ' + d3.format(".1%")(data[i].general_perc) + "</p>");
                     }
                 }
