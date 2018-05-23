@@ -191,7 +191,7 @@ map.append('text')
     .attr("x", wLegend + 20)
     .attr("y", hLegend + 100)
     //.attr("dy", ".35em")
-    .text('Pending special election')
+    .text('Data Pending')
     .attr("class", "legend")
 
 //Source
