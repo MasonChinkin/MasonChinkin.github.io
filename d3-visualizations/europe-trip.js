@@ -15,7 +15,7 @@ var projection = d3.geoEquirectangular()
 var zoom = d3.zoom()
     .scaleExtent([0.5, 8])
     .on('zoom', function(d) {
-        map.style("stroke-width", 1.5 / d3.event.transform.k + "px");
+        map.style("stroke-width", 1 / d3.event.transform.k + "px");
         map.attr("transform", d3.event.transform);
     });
 
