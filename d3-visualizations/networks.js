@@ -1,5 +1,5 @@
 //Width and height
-var w = 1200;
+var w = 900;
 var h = 800;
 imageSize = 35
 
@@ -126,7 +126,7 @@ svg.append("text")
     .style("text-anchor", "middle")
     .attr('class', 'labelText')
     .text("Source: See link in description")
-    .attr("transform", "translate(" + (w * 0.82) + "," +
+    .attr("transform", "translate(" + (w * 0.75) + "," +
         (h * 0.95) + ") rotate(0)")
     .style('pointer-events', 'none');
 

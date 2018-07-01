@@ -4,248 +4,104 @@
 		"selected_items":
 		[
 			[
-				"font",
-				"font-size\t(congress-2016-map.html)"
-			],
-			[
-				"thisR",
-				"thisResultsIndex"
-			],
-			[
-				"f",
+				"for",
 				"for\tfor (…) {…}"
 			],
 			[
-				"tooltip",
-				"tooltipDiv"
+				"thisSt",
+				"thisStateFp〔variable〕"
 			],
 			[
-				"thisCon",
-				"thisConnects"
+				"toolt",
+				"tooltipDiv〔variable〕"
 			],
 			[
-				"select",
-				"selectAll"
+				"thisS",
+				"thisStateFp〔variable〕"
 			],
 			[
-				"this",
-				"thisType"
+				"f",
+				"f\tAnonymous Function"
 			],
 			[
-				"node",
-				"nodeMouseOver"
+				"dat",
+				"dataState"
 			],
 			[
-				"filter",
-				"filter()\td3-selection.filter()"
+				"mouse",
+				"mouseMove"
 			],
 			[
-				"image",
-				"imageSize"
+				"row",
+				"rowConverter〔class〕"
 			],
 			[
-				"imag",
-				"imageSize"
+				"forma",
+				"foramtAsThousands〔variable〕"
 			],
 			[
-				"data",
-				"dataset"
+				"geoAlbe",
+				"geoAlbersUsa()\td3.geoAlbersUsa()"
 			],
 			[
-				"transitionS",
-				"transitionStack"
+				"curve",
+				"curve()\td3-area.curve()"
 			],
 			[
-				"get",
-				"getWidth"
+				"translate",
+				"interpolateTransformSvg\td3.interpolateTransformSvg()"
 			],
 			[
-				"gdp",
-				"gdpLineDataset"
+				"transla",
+				"translate()\td3-projection.translate()"
 			],
 			[
-				"draw",
-				"drawGdpLine"
+				"transform",
+				"transform()\td3-zoom.transform()"
 			],
 			[
-				"bar",
-				"barOnClick"
+				"attr",
+				"attr()\td3-transition.attr()"
 			],
 			[
-				"legen",
-				"legendVals"
+				"stackOrder",
+				"stackOrderDescending\td3.stackOrderDescending"
 			],
 			[
-				"dis",
-				"display\tproperty"
+				"stackO",
+				"stackOffsetWiggle\td3.stackOffsetWiggle"
 			],
 			[
-				"console",
-				"console.log"
+				"grapes",
+				"grapes"
 			],
 			[
-				"key",
-				"key_index"
-			],
-			[
-				"padd",
-				"padding-left"
-			],
-			[
-				"band",
-				"bandwidth()\td3-scale.bandwidth()"
-			],
-			[
-				"outer",
-				"paddingOuter()\td3-scaleBand.paddingOuter()"
-			],
-			[
-				"pointer",
-				"pointer-events"
-			],
-			[
-				"text",
-				"text()\td3.text()"
-			],
-			[
-				"y",
-				"yTop"
-			],
-			[
-				"nest",
-				"nestDataset"
-			],
-			[
-				"net",
-				"nestDataset"
-			],
-			[
-				"pares",
-				"parseInt"
-			],
-			[
-				"growth",
-				"growth_type"
-			],
-			[
-				"gr",
-				"growth_annual_perc"
-			],
-			[
-				"handle",
-				"handleId"
-			],
-			[
-				"svg",
-				"svgElement"
-			],
-			[
-				"hand",
-				"handleCy"
-			],
-			[
-				"easeel",
-				"easeElasticOut\td3.easeElasticOut"
-			],
-			[
-				"bubble",
-				"bubbleMouseMove"
-			],
-			[
-				"scheme",
-				"schemeCategory20\td3.schemeCategory20"
-			],
-			[
-				"al",
-				"align\t(geomapping.html)"
-			],
-			[
-				"margin",
-				"margin-bottom"
-			],
-			[
-				"style",
-				"style()\td3-selection.style()"
-			],
-			[
-				"zoomIdentity",
-				"zoomIdentity\td3.zoomIdentity"
-			],
-			[
-				"elas",
-				"easeElasticInOut\td3.easeElasticInOut"
-			],
-			[
-				"create",
-				"createPanButtons"
-			],
-			[
-				"trans",
-				"transpose()\td3.transpose()"
-			],
-			[
-				"tickf",
-				"tickFormat()\td3-axis.tickFormat()"
-			],
-			[
-				"axisb",
-				"axisBottom()\td3.axisBottom()"
-			],
-			[
-				"timef",
-				"timeFormat()\td3.timeFormat()"
-			],
-			[
-				"datum",
-				"datum()\td3-selection.datum()"
-			],
-			[
-				"app",
-				"append()\td3-selection.append()"
-			],
-			[
-				"sele",
-				"select()\td3.select()"
-			],
-			[
-				"x",
-				"x()\td3-line.x()"
-			],
-			[
-				"scaleLin",
-				"scaleLinear()\td3.scaleLinear()"
-			],
-			[
-				"range",
-				"range()\td3-scale.range()"
-			],
-			[
-				"dom",
-				"domain()\td3-scale.domain()"
-			],
-			[
-				"scaleti",
-				"scaleTime()\td3.scaleTime()"
-			],
-			[
-				"function",
-				"functions\t(01_line_chart.html)"
-			],
-			[
-				"scalet",
-				"scaleThreshold()\td3.scaleThreshold()"
-			],
-			[
-				"csv",
-				"csv()\td3.csv()-snippet"
+				"target",
+				"target"
 			],
 			[
 				"att",
-				"attr()\td3-transition.attr()"
+				"attr()\td3-selection.merge()"
+			],
+			[
+				"x",
+				"x()\td3-force.x()"
+			],
+			[
+				"force",
+				"forceSimulation()\td3.forceSimulation()"
 			],
 			[
 				"at",
-				"attr()\td3-transition.attr()"
+				"attr()\td3-selection.merge()"
+			],
+			[
+				"tran",
+				"translate()\td3-zoomTransform.translate()"
+			],
+			[
+				"max",
+				"maxValue〔variable〕"
 			],
 			[
 				"random",
@@ -258,51 +114,53 @@
 			[
 				"bars",
 				"bars-add-sub.js"
-			],
-			[
-				"max",
-				"max-height"
-			],
-			[
-				"attr",
-				"attr()\td3-selection.merge()"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"file": "d3-visualizations/gdp.js",
+			"settings":
+			{
+				"buffer_size": 19645,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "d3-visualizations/networks.js",
+			"settings":
+			{
+				"buffer_size": 5512,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "swiss-army-bar-chart.html",
+			"settings":
+			{
+				"buffer_size": 6184,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 10605,
+				"buffer_size": 10618,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "d3-visualizations/congress-2016-results.js",
+			"file": "networks.html",
 			"settings":
 			{
-				"buffer_size": 7434,
+				"buffer_size": 5099,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "d3-visualizations/europe-trip.js",
-			"settings":
-			{
-				"buffer_size": 4655,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "d3-visualizations/pie.js",
-			"settings":
-			{
-				"buffer_size": 1823,
 				"line_ending": "Windows"
 			}
 		}
@@ -314,21 +172,17 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 200.0,
-		"last_filter": "Package Control: inst",
+		"height": 588.0,
+		"last_filter": "Package Control: ",
 		"selected_items":
 		[
 			[
-				"Package Control: inst",
-				"Package Control: Install Package"
+				"Package Control: ",
+				"Package Control: Enable Package"
 			],
 			[
-				"Package Control: rem",
-				"Package Control: Remove Package"
-			],
-			[
-				"sublimel",
-				"SublimeLinter: Choose Tooltip Theme"
+				"Package Control: dis",
+				"Package Control: Disable Package"
 			],
 			[
 				"color",
@@ -337,10 +191,6 @@
 			[
 				"Package Control: in",
 				"Package Control: Install Package"
-			],
-			[
-				"Package Control: ",
-				"Package Control: Remove Channel"
 			],
 			[
 				"remo",
@@ -353,6 +203,10 @@
 			[
 				"Snippet: ",
 				"Snippet: Lorem ipsum"
+			],
+			[
+				"sublimel",
+				"SublimeLinter: Enable Inline Tooltips"
 			],
 			[
 				"prett",
@@ -371,7 +225,7 @@
 				"Package Control: Remove Package"
 			]
 		],
-		"width": 879.0
+		"width": 954.0
 	},
 	"console":
 	{
@@ -395,123 +249,67 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts"
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/d3-visualizations"
 	],
 	"file_history":
 	[
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/congress-2016-results.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/congress-2016-map.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/europe-trip.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/d3-visualizations/congress-2016-results.js",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/congress-2016-map.html",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/d3-visualizations/gdp.js",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/viz-data/us_congress_2016_lower_48.json",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/d3-visualizations/zoomable-us-map.js",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/viz-data/world.json",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Projects/gdp_growth/simple_gdp_growth.html",
+		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_14/06_points.html",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Geomapping/vers1.html",
+		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_14/02_projection.html",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/stacked-area.html",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/06_stacked_area.html",
+		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_13/06_stacked_area.html",
+		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_13/03_stacked_bar.html",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/Stacked-bar.html",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/03_stacked_bar.html",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/Force.html",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/Pie.html",
+		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_13/01_pie.html",
+		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/Default (Windows).sublime-mousemap",
+		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
+		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_12/03_slider.html",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/bars-add-sub.js",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/assets/css/main.css",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/bars-add-sub.html",
+		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_12/06_each.html",
+		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_12/01_enter_merge_exit.html",
+		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
+		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/User/.jsbeautifyrc",
+		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/line_chart/line_chart.js",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/random-scatter.js",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/Random-scatter.html",
+		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/geomapping.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/zoomable-us-map.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/main.css",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/networks.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/gdp.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/gdp.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/networks.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/syriaNetwork.json",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/example_force_layout.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/old-network.js",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/miserables.json",
-		"/F/Downloads/syriaNetwork.json",
-		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
-		"/F/Downloads/network.json",
-		"/F/Downloads/mygeodata/gmlexperiment.gml",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/transitioning_stacked_bars.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/random-scatter.js",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/10_refine_styling.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/example_transition_stacked_Bar.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/Stacked-bar.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/swiss-army-bar-chart.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/old_attempts/gdp_growth_stacked_bar.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/stacked-area.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/01_initial_chart.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/working-stacked-area.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/stacked-area.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/stacked-area.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/swiss-army-bar-chart.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/trip.csv",
-		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Random-scatter.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/pie.js",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip/europe-trip.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/us-states.json",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip/world.json",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/us-cities.csv",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/Zooming.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/Force.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip/europe-trip.js",
-		"/F/Downloads/ne_50m_admin_0_countries (1).json",
-		"/F/Downloads/ne_50m_admin_0_countries.json",
-		"/F/Downloads/map.geojson",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/random-network.json",
-		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/User/.jsbeautifyrc",
-		"/F/Downloads/Forked from https___next.json-generator.com_VkbpYpuiV.json",
-		"/F/Downloads/Forked from https___next.json-generator.com_VJdXV6doV.json",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Misc.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/line-area-charts.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/us-ag-productivity.csv",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/02_color_by_type.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/04_types_only.html",
-		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa9580.49170/index.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/17_labels.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/16_combo_zoom_pan.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/14_zoom_with_buttons.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/dragging.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/13_zoom_pan_buttons_fixed.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/09_pan_transition.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/10_pan_draggable.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/10_pan_draggable.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/vers1.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/Pan-buttons.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/08_pan.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart/line_chart.js",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/06_area_chart.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/05_line_chart_labeled.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/04_line_chart_adjusted.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart/line_chart.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/03_line_chart_missing.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/02_line_chart_axes.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/bars-add-sub.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/01_line_chart.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/New folder/01_line_chart.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/New folder/line_chart.js",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/README.md",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/bars-add-sub.js",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Assets/styles.css",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/random-bars.js",
-		"/C/Users/Zhangkin/Desktop/D3/Template.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/old-projects/svg-text1.js",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/time-scale/time-scale.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/random-scatter.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/random-bars.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/random-scatter.js",
-		"/C/Users/Zhangkin/Desktop/D3/stackedgraphforbusinesscard.html",
-		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa26504.986/HIP readme.txt",
-		"/C/Users/Zhangkin/Desktop/D3/stocks.csv",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/main.css",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/bars-add-sub-styles.css",
 		"/F/Downloads/Resume - Mason Chinkin.htm",
 		"/C/Users/Zhangkin/Desktop/D3/streamgraphforbusinesscard.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3.js",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/bars-add-sub.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/bars-add-sub.js",
+		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
 		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
 		"/C/Users/Zhangkin/Desktop/D3/class-project/D3.js-book-work-plus/random-scatter.js"
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
-		"height": 156.0,
+		"height": 0.0,
 		"where_history":
 		[
 		]
@@ -521,134 +319,37 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"resume",
-			"portfolio",
+			"source",
 			"legend",
-			"zoom",
-			"attr",
-			"get",
-			"mousem",
-			"mouso",
-			"Islamic_Front",
-			"Assad_",
-			"Free_Syria_Army",
-			"Saudi_",
-			"Al_Qaeda",
-			"center",
-			"text",
-			"start",
-			"viz-data/",
-			"force",
-			"force.",
-			"link",
-			"edge",
-			"\"Assad Government\"",
-			"\"Islamic Front\"",
-			"\"Saudi Arabia\"",
-			"\"Free Syria Army\"",
-			"\"Al Qaeda\"",
-			"\"line\"",
-			"\"type\"",
-			"\"target\"",
-			"\"source\"",
-			"\"image\"",
-			"\"id\"",
-			"name",
-			"qae",
-			"line",
-			" series",
-			"series",
-			"thisStack",
-			"gdpD",
-			"viewstat",
-			"#bars",
-			"thisSer",
-			"thisS",
-			"keys",
-			"thisSeries",
-			"window",
-			"dataset",
-			"key",
-			"button",
-			"toggle",
-			"hidden",
-			"key",
-			"x_var",
-			"class",
-			"%",
+			"parse",
+			"STATEFP\":\"11",
+			"montana",
+			"STATEFP",
+			"active",
 			"tooltip",
-			"line",
-			"vehicles",
-			"catDataset",
-			"dataset",
-			"data.",
-			"#",
-			"this",
-			"mousem",
-			"on",
+			"column",
+			" p ",
 			"hover",
-			"gdpataset",
-			"domain",
-			"text",
-			"path",
-			"200",
-			"400",
-			".on",
-			"'end",
-			"delay",
-			"500",
-			"250",
-			"1000",
-			"dura",
-			"fill",
-			"console",
-			"-5",
-			"date",
-			"type",
-			"type ",
-			"type",
-			"dataset",
-			"defaultStack",
-			"individ",
-			"breakdown",
-			"for",
-			"scale",
-			"date",
-			"format",
-			"time",
-			"even",
-			"pointer",
-			"h2",
+			"input",
+			"barsAdd",
+			"add",
+			"save",
+			"header",
+			"toggle",
+			"#",
+			"%",
+			"value",
+			"hidden",
+			"btn",
+			"tooltip",
+			"layer",
+			"banner",
+			"top",
 			"#top",
 			"top",
-			"color",
-			"about",
-			"p ",
-			" p ",
-			" p",
-			" p ",
-			"'g",
-			"'g'",
-			"console",
-			"SVG",
-			"mouse",
-			"on.",
-			"on",
-			"click",
-			"scale",
-			"macedonia",
-			"israel",
-			"blue",
-			"},\n",
-			"\"name\"",
-			"\"source\"",
-			"\"target\"",
-			"target",
-			"source",
-			"name",
-			"\"name\"",
-			"\"target\"",
-			"\"source\""
+			"one dark cover",
+			"dark",
+			"height"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -656,49 +357,6 @@
 		"regex": false,
 		"replace_history":
 		[
-			"Islamic Front",
-			"Assad ",
-			"Free Syria Army",
-			"Saudi ",
-			"Al Qaeda",
-			"viz-data/networkImages/",
-			"\"Assad_Government\"",
-			"\"Islamic_Front\"",
-			"\"Saudi_Arabia\"",
-			"\"Free_Syria_Army\"",
-			"\"Al_Qaeda\"",
-			"Al_Qaeda",
-			"line",
-			"type",
-			"target",
-			"source",
-			"image",
-			"id",
-			"data",
-			"125",
-			"300",
-			"400",
-			"200",
-			"500",
-			"typeStack",
-			"type",
-			"Type",
-			"type",
-			"Type",
-			"type",
-			"Type",
-			"type",
-			"Type",
-			"type",
-			"name",
-			"source",
-			"target",
-			"\"target\"",
-			"\"source\"",
-			"\"name\"",
-			"name",
-			"target",
-			"source"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -714,55 +372,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "d3-visualizations/gdp.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10605,
+						"buffer_size": 19645,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3740,
-								3745
-							]
-						],
-						"settings":
-						{
-							"SL.13.region_keys":
-							[
-							],
-							"SL.15.region_keys":
-							[
-							],
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 864.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "d3-visualizations/congress-2016-results.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7434,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6522,
-								6522
+								85,
+								85
 							]
 						],
 						"settings":
@@ -770,42 +392,628 @@
 							"SL.14.region_keys":
 							[
 							],
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3078.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "d3-visualizations/europe-trip.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4655,
-						"regions":
-						{
-						},
-						"selection":
-						[
+							"SL.22.region_keys":
 							[
-								404,
-								404
-							]
-						],
-						"settings":
-						{
+								"SL.jshint.Highlights.|a3f5b4290e0cf45c911917a8274a89d9ffe25e9ae81dd11d55bb5447d46bf6f9|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|51506dd7343c2afd07eee4279ee60a41f7562f4a8289fa5cbd9df518870f99b6|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|0cd1a2216ee8bbfcba328c8e7d4edab989d3eeeb7b4a6577e219a027befdd16d|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|0e0e1375580c46be76fb80b5f87eec8323d67d863970871c2f2063bfa8b310c2|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|cd30c5718c224a7d7483afc68dd5e73686895082c350279c25e94abe42ab084b|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|41388cbafb6b9515445bf0e6fe56a72557ece196d95c750a3677ba67fba963dc|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|8d419d7284e02963ccac6a4092d6b0ef13b136c6e119c613119c9b0c23ce2151|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|6385cf812edf042cf5976ebec43ea8e38da7a77cac971518f23a14b01334b755|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|7be13ce43a705255c6c29475decc3851eb4cf1630cd36c426a3e70456680d57f|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|98bb5a6a72b33b3a9f9a04d6dc495da06818d9b312b04b16a02cd27196127502|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|ab4a17d72d28be679254ffe6e67a696d688051cb233206a4c7ed101d571edef1|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|ecd950d826ebd847f7ccee952e84dc54f4991b01156579778f82fe9b348cc8fa|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|510178d1146d7095e04a3bb7ef25d34b3b312a3cb8fd81a103a97da5707eba81|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.jshint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.jshint.Highlights.|c7356cee86a830dcbf05c01e5a5ce27dc6f191db794bd1c592959a1493ee8927|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|926df6131fc24bf0fd26f5b83166f5f3b46f03873fde00cc4d7b453eb3c1c5ac|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|79793b4897f7203fa96074b759b69d1956b9a5190a353e7f7a737cb30fde2dc1|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|4bfb83320f946f03c10777648aeec1acc3d7bfa4c8a5e1be4858891a0b717a45|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|e17028b1bc17796cf0e55a11409f47893ea7817d505d24b635f3edf793efc1de|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|0c6c5586a47f505ebbefe135d366249d75389160bc61badd3d08d008767f60e9|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|9771dc3137782bf69c04d52b662eb8b7b5711dc9519d1fc25ec181aa3ac4d7f8|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|26ab4c43e2522a09033d10b046e73a3afaccc68a754945dcdfc21fce10cd92da|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|9a216e5edb999995f2fb830de108120ec0cfe59926b8a9e4993b6426b15fdb93|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|be60d421953d4c6aec63c2ab92589d5b84efa8a4250d84d9d988d34a9f91a952|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|490a0ef896345954f796d8f867c255790a9841127a87b7452151f0aef86b9013|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|a5bb6c005a9583bc3981dd03a07e7076592bd5e163fba4b05cf67ae1394edc69|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|70174416874a85061d9897d4b46fb38a2ec8cff518c2461557c4083b196fd196|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|f8eb0d5db05114b487c049055acd68d35b8dc2600fc5d5a5649a6019632a1bd8|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|6072d38a76f22b5f08db106fe4a28ece2111f21297f6349f69457cd69cd64e76|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|38d539ab75e05e7de7ecbf4e2fdfb2a5e38b611129a47f57144c25f5f99899b7|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|75efd8fe609e5605871fc05457f19160eb2bc532b670a2c78842e50cf022c752|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|7c88618fc2b8e6d7d7c093c558840252304cb142772d54ca3f91424f79e5672f|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|4174a13ca9483f4b28398339cef71326a02ca1466f3447a99bd89728ca3c592c|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|1df14ae374843de3cb755839bf2896da8b5c18431b325afee1a02c079bde7bdf|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|e2e324d37e3893cb5e14bdb1b41a511e1d0358b252533a104dff9ccc681589a0|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|c9423fae76478586bac25cfae51cfeec75f97b137c91ceda418fb51ea7b14332|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|6ee79d62ba671811727f5a8cd71692b4eda89b436d7bd3b922b308c2fd59ef8c|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|e61e6b17521c6491935f5053a686881b3bdc5b2209e2c8913fa7f4aec2c6244b|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|2178c4af722dab5baba545cc6b6ca82efc1891dbad2d9acca3540b5635cc717d|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|a6acb27363a71260756497ac944db34475861b8961cf5dfe5da6b38cae9ccabc|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|ae906c09d0aa71484c27e4b88875b5743b4f2318773f208ceff3da846b078195|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|6859846126d07fe309d5ffbbb92f839a25904fd27fec7d8d850515a36d8aa654|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|08d3ad620b748ce6936ad159bab7348fcdfcac88118afbfc18a43d69bbd99b6f|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|677d1ec04fd89c417ba2bb372897de6f9a3d052721f32c246abbfcff76edeba6|region.yellowish markup.warning.sublime_linter|32",
+								"SL.jshint.Highlights.|3e18000a8745f0fb71efc41eb5c1e257c32f9d2b06fd78e95df975afdae6a978|region.yellowish markup.warning.sublime_linter|32"
+							],
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "d3-visualizations/networks.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5512,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3605,
+								3605
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3605,
+										3606
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"region.yellowish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										3596,
+										3597
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3605,
+										3606
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"region.yellowish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										3596,
+										3597
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1705.33333333,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "swiss-army-bar-chart.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6184,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5581,
+								5581
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										4932,
+										4934
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/tag.png",
+										"region.orangish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										4838,
+										4840
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										5583,
+										5585
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/tag.png",
+										"region.orangish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										5489,
+										5491
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 420.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -813,32 +1021,390 @@
 				},
 				{
 					"buffer": 3,
-					"file": "d3-visualizations/pie.js",
-					"semi_transient": true,
+					"file": "index.html",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1823,
+						"buffer_size": 10618,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								3551,
+								3551
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3551,
+										3553
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/tag.png",
+										"region.orangish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										3551,
+										3553
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3461.33333333,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "networks.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5099,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4379,
+								4379
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										14,
+										15
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/angle_bracket.png",
+										"region.orangish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										0,
+										1
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1702.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -846,11 +1412,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 25.0
 	},
 	"input":
 	{
-		"height": 57.0
+		"height": 60.0
 	},
 	"layout":
 	{
@@ -879,11 +1445,11 @@
 	{
 		"height": 0.0
 	},
-	"output.SublimeLinter Messages":
-	{
-		"height": 126.0
-	},
 	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
 	{
 		"height": 0.0
 	},
@@ -891,7 +1457,7 @@
 	"project": "index.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 46.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -929,7 +1495,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 245.0,
+	"side_bar_width": 183.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

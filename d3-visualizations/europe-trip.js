@@ -1,6 +1,6 @@
 //Width and height
-var w = 1200;
-var h = 600;
+var w = 1000;
+var h = 500;
 var active = d3.select(null);
 
 //define projection

@@ -1,6 +1,6 @@
 //Width and height
-var w = 1000;
-var h = 500;
+var w = 900;
+var h = 450;
 
 //define projection
 var projection = d3.geoAlbers()
