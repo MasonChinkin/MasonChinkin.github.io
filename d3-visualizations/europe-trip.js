@@ -6,7 +6,7 @@ var active = d3.select(null);
 //define projection
 var projection = d3.geoEquirectangular()
     .scale(900)
-    .translate([250, 900]);
+    .translate([250, 975]);
 
 //chloropleth from COLORBREWER
 //var colors = d3.scaleOrdinal(d3.schemeCategory20);
@@ -121,7 +121,7 @@ var bubbleMouseMove = function(d) {
         .attr('r', 12);
 
     var xpos = event.pageX;
-    var ypos = event.pageY - 650;
+    var ypos = event.pageY - 550;
 
     //Update the tooltip position and value
     d3.select('#tooltip')
