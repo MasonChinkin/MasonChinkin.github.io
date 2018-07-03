@@ -9,7 +9,7 @@ for (var i = 0; i < numDataPoints; i++) { //Loop numDataPoints times
 
 //BOX
 
-var w = getWidth() * 0.7; //width
+var w = container.offsetWidth; //width
 var h = getHeight() * 0.5; //height
 var margin = 40;
 
@@ -43,7 +43,7 @@ var yaxis = d3.axisLeft()
     .scale(yscale)
     .ticks(6);
 
-var svg = d3.select("#portfolio")
+var svg = d3.select("#container")
     .append("svg")
     .attr("width", w)
     .attr("height", h);

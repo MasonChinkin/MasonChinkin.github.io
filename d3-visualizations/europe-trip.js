@@ -1,12 +1,12 @@
 //Width and height
-var w = 1000;
+var w = container.offsetWidth;
 var h = 500;
 var active = d3.select(null);
 
 //define projection
 var projection = d3.geoEquirectangular()
     .scale(900)
-    .translate([300, 900]);
+    .translate([250, 900]);
 
 //chloropleth from COLORBREWER
 //var colors = d3.scaleOrdinal(d3.schemeCategory20);
@@ -157,26 +157,3 @@ var bubbleMouseOut = function(d) {
     //Hide the tooltip
     d3.select("#tooltip").classed("hidden", true);
 };
-
-function getWidth() {
-    return Math.max(
-        document.body.scrollWidth,
-        document.documentElement.scrollWidth,
-        document.body.offsetWidth,
-        document.documentElement.offsetWidth,
-        document.documentElement.clientWidth
-    );
-}
-
-function getHeight() {
-    return Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight,
-        document.body.offsetHeight,
-        document.documentElement.offsetHeight,
-        document.documentElement.clientHeight
-    );
-}
-
-//console.log('Width:  ' + getWidth());
-//console.log('Height: ' + getHeight());

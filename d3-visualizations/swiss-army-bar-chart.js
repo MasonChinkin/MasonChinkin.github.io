@@ -1,5 +1,5 @@
 //Defined functions
-var w = getWidth() * 0.75; //svg width
+var w = container.offsetWidth;
 var h = 300; //svg height
 var margin = { right: 50, left: 50, top: 25 }; //svg margin
 

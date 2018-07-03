@@ -1,5 +1,5 @@
         //Width and height
-        var w = getWidth() * 0.8;
+        var w = container.offsetWidth;
         var h = getHeight() * 0.6;
         var padding = 20;
 

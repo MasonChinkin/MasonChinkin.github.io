@@ -1,5 +1,5 @@
 //Width and height
-var w = 900;
+var w = container.offsetWidth;
 var h = 450;
 
 //define projection

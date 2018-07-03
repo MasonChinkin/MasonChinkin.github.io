@@ -1,5 +1,5 @@
     //svg size
-    var w = getWidth() * 0.4;
+    var w = container.offsetWidth;
     var h = getHeight() * 0.7;
 
     var dataset = [5, 10, 20, 45, 6, 25];
