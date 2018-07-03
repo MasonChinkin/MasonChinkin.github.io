@@ -1,6 +1,6 @@
 //Width and height
 var w = container.offsetWidth;
-var h = 450;
+var h = 550;
 
 //define projection
 var projection = d3.geoAlbers()
