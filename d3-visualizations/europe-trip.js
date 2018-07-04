@@ -121,7 +121,7 @@ var bubbleMouseMove = function(d) {
         .attr('r', 12);
 
     var xpos = event.pageX;
-    var ypos = event.pageY - 550;
+    var ypos = event.pageY - 375;
 
     //Update the tooltip position and value
     d3.select('#tooltip')
