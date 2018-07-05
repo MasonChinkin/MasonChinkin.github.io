@@ -2330,11 +2330,7 @@ button:active,
 #nav ul li a.active span:before {
     color: #e27689;
 }
-/* Narrower */
 
-#headerToggle {
-    display: none;
-}
 /* Header */
 
 #header {
@@ -2363,7 +2359,6 @@ button:active,
     background: #222729 url("images/overlay.png");
     box-shadow: inset -0.25em 0 0.25em 0 rgba(0, 0, 0, 0.125);
 }
-
 
 #headerToggle {
     -moz-backface-visibility: hidden;
