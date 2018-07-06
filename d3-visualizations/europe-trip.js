@@ -142,6 +142,17 @@ var bubbleMouseMove = function(d) {
         .select('#pic')
         .attr('src', d.pic_link);
 
+    //Attempt to dynamically size tooltip to image. Wasnt having any affect...
+    //var img = document.getElementById('pic')
+
+    // img.onload = function() {
+    //     var imgWidth = img.clientWidth;
+    //     console.log(imgWidth);
+
+    //     d3.select('#tooltip')
+    //         .attr('width', imgWidth);
+    // }
+
     //Show the tooltip
     d3.select('#tooltip').classed("hidden", false);
 };
