@@ -1,11 +1,13 @@
 @import url("font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
 
+
 /*
     Prologue by HTML5 UP
     html5up.net | @ajlkn
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+
 
 /* Reset */
 
@@ -147,10 +149,6 @@ body {
 
 
 
-
-
-
-
 /* Box Model */
 
 *,
@@ -161,13 +159,16 @@ body {
     box-sizing: border-box;
 }
 
+
+
+
+
 /* Containers */
 
 .container {
     margin-left: auto;
     margin-right: auto;
 }
-
 .container.\31 25\25 {
     width: 100%;
     max-width: 1500px;
@@ -185,7 +186,6 @@ body {
 .container.\32 5\25 {
     width: 300px;
 }
-
 .container {
     width: 1200px;
 }
@@ -264,6 +264,10 @@ body {
         width: 100% !important;
     }
 }
+
+
+
+
 
 /* Grid */
 
@@ -1675,6 +1679,10 @@ body {
 
 
 
+
+
+
+
 /* Basic */
 
 body {
@@ -1844,6 +1852,10 @@ br.clear {
 
 
 
+
+
+
+
 /* Sections/Article */
 
 section,
@@ -1873,11 +1885,19 @@ article:last-child {
 
 
 
+
+
+
+
 /*top*/
 
 #top p {
     color: white;
 }
+
+
+
+
 
 
 
@@ -1944,6 +1964,10 @@ article:last-child {
 
 
 
+
+
+
+
 /* List */
 
 ul.default {
@@ -1980,6 +2004,10 @@ ol.default {
 ol.default li {
     padding-left: 0.25em;
 }
+
+
+
+
 
 
 
@@ -2072,6 +2100,10 @@ form ::-moz-focus-inner {
 
 
 
+
+
+
+
 /* Table */
 
 table {
@@ -2106,6 +2138,10 @@ table.default thead {
 table.default tfoot {
     background: #eee;
 }
+
+
+
+
 
 
 
@@ -2157,6 +2193,10 @@ button:active,
     background-color: #7eaeac;
 }
 
+
+
+
+
 /* Item */
 
 .item {
@@ -2174,6 +2214,10 @@ button:active,
 .item header h3 {
     font-size: 1em;
 }
+
+
+
+
 /* Icons */
 
 .icon {
@@ -2195,6 +2239,10 @@ button:active,
 .icon>.label {
     display: none;
 }
+
+
+
+
 
 /* Header */
 
@@ -2331,6 +2379,10 @@ button:active,
     color: #e27689;
 }
 
+
+
+
+
 /* Header */
 
 #header {
@@ -2425,6 +2477,10 @@ body.header-visible #header {
     transform: translateX(0);
 }
 
+
+
+
+
 /* Main */
 
 #main {
@@ -2439,6 +2495,10 @@ body.header-visible #header {
     padding-bottom: 1px;
     margin-left: 0;
 }
+
+
+
+
 
 /* Footer */
 
@@ -2469,6 +2529,10 @@ body.header-visible #header {
     padding-left: 0;
     margin-left: 0;
 }
+
+
+
+
 
 /* Main */
 
@@ -2536,6 +2600,10 @@ body.header-visible #header {
 #main>section.four {
     background-color: #e8edec;
 }
+
+
+
+
 
 /* Normal */
 
@@ -2620,6 +2688,10 @@ body.header-visible #header {
 
 
 
+
+
+
+
 /* Mobile */
 
 @media screen and (max-width: 736px) {
@@ -2674,6 +2746,10 @@ body.header-visible #header {
         margin-top: 0;
     }
 }
+
+
+
+
 
 /*BUTTONS*/
 

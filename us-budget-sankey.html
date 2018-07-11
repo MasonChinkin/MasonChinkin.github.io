@@ -9,81 +9,35 @@
 <head>
     <title>Mason's personal website</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=1000" />
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="assets/css/main.css" />
     <script type="text/javascript" src="assets/js/d3.js"></script>
+    <script type="text/javascript" src="assets/js/sankey.js"></script>
+    <script type="text/javascript" src="assets/js/d3-annotation.min.js"></script>
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <style type="text/css">
-    .barLabel {
-        text-anchor: middle;
+    .node rect {
+        cursor: move;
+        fill-opacity: .9;
+        shape-rendering: crispEdges;
+    }
+    .node text {
         pointer-events: none;
-        font-size: 11px;
-        font-family: sans-serif;
-        pointer-events: none;
+        text-shadow: 0px 0px 2px #fff;
+        font-weight: 1000;
     }
 
-    #tooltip {
-        position: absolute;
-        width: auto;
-        height: auto;
-        padding: 10px;
-        background-color: white;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        border-radius: 10px;
-        -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-        -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-        pointer-events: none;
-    }
-
-    #tooltip.hidden {
-        display: none;
-    }
-
-    #tooltip p {
-        margin: 0;
-        font-family: sans-serif;
-        font-size: 16px;
-        line-height: 20px;
-    }
-
-    .ticks {
-        font: 10px sans-serif;
-    }
-
-    .track,
-    .track-inset,
-    .track-overlay {
-        stroke-linecap: round;
-    }
-
-    .track {
+    .link {
+        fill: none;
         stroke: #000;
-        stroke-opacity: 0.3;
-        stroke-width: 10px;
+        stroke-opacity: .5;
     }
-
-    .track-inset {
-        stroke: #ddd;
-        stroke-width: 8px;
-    }
-
-    .track-overlay {
-        pointer-events: stroke;
-        stroke-width: 50px;
-        stroke: transparent;
-    }
-
-    .handle {
-        fill: #fff;
-        stroke: #000;
-        stroke-opacity: 0.5;
-        stroke-width: 1.25px;
+    .link:hover {
+        stroke-opacity: 1;
     }
     </style>
+    <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
 <body>
@@ -141,20 +95,16 @@
         </section>
         <section id="portfolio" class="two">
             <div id="container" class="container">
-                <h2>The Swiss-Army Bar Chart</h2>
-                <p>The goal: fit as many useless functions into a bar chart as possible without breaking it.</p>
-                <div id="tooltip" class="hidden">
-                    <p><strong>Value</strong></p>
-                    <p><span id="value">100</span></p>
-                </div>
-                <div align="center">
-                    <button id='add'>add a bar!</button>
-                    <button id='subtract'>remove a bar!</button>
-                    <button id='sort'>sort the bars!!!</button>
-                </div>
-                <script src="d3-visualizations/swiss-army-bar-chart.js"></script>
-                <ul>Currently includes: add, remove, sort, tooltip, hovering, draggable track that highlights</ul>
+                <h2>Sankey-fied 2017 US Federal Budget Balance</h2>
+                <p align="left">With the base finished, my ambition is to <a href="https://bl.ocks.org/syntagmatic/77c7f7e8802e8824eed473dd065c450b"><b>make this animated</b></a> with a slider for the user to look at all years between 1968 and 2017. Also the bars are draggable for funsies.</p>
+                <script src="d3-visualizations/us-budget-sankey.js"></script>
             </div>
+            <!--  <div id="timeline-container" class="container">
+                <script src="d3-visualizations/XXX.js"></script>
+            </div>
+            <div id="line-container" class="container">
+                <script src="d3-visualizations/XXX.js"></script>
+            </div> -->
         </section>
     </div>
 </body>
