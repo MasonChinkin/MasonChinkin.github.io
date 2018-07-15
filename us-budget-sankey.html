@@ -14,11 +14,11 @@
     <script type="text/javascript" src="assets/js/d3.js"></script>
     <script type="text/javascript" src="assets/js/sankey.js"></script>
     <script type="text/javascript" src="assets/js/d3-annotation.min.js"></script>
+    <script type="text/javascript" src="assets/js/d3-simple-slider.min.js"></script>
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <style type="text/css">
     .node rect {
-        cursor: move;
         fill-opacity: .9;
         shape-rendering: crispEdges;
     }
@@ -95,8 +95,11 @@
         </section>
         <section id="portfolio" class="two">
             <div id="container" class="container">
-                <h2>Sankey-fied 2017 US Federal Budget Balance</h2>
-                <p align="left">With the base finished, my ambition is to <a href="https://bl.ocks.org/syntagmatic/77c7f7e8802e8824eed473dd065c450b"><b>make this animated</b></a> with a slider for the user to look at all years between 1968 and 2017. Also the bars are draggable for funsies.</p>
+                <h2>US Federal Budget Balance, 1968-2017</h2>
+                <p align="left">Remaining goals for this piece: 1) animated transitions between years, 2) line or bar chart below which will show a time series of the budget item selected by the user by clicking on the sankey, 3) adjust discretionary/mandetory arrangement so the net interest link doesnt overlap.</p>
+                <div class="row align-items-center">
+                    <div id="slider"></div>
+                </div>
                 <script src="d3-visualizations/us-budget-sankey.js"></script>
             </div>
             <!--  <div id="timeline-container" class="container">

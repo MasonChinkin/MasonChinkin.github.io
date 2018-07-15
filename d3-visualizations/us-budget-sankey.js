@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
-var margin = { top: 0, right: 0, bottom: 100, left: 0 },
+var margin = { top: 40, right: 10, bottom: 100, left: 10 },
     width = container.offsetWidth - margin.left - margin.right,
-    height = 800 - margin.top - margin.bottom;
+    height = 600 - margin.top - margin.bottom;
 
 var fontScale = d3.scaleLinear()
     .range([14, 22]);
@@ -15,55 +15,89 @@ var formatNumber = d3.format(".1f"), // zero decimal places
 var svg = d3.select("#container").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
+    .style('background', '#e8e8e8')
     .append("g")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
 
+//transition time
+transition = 1000
+
+//starting year
+thisYear = 1968
+
 // Set the sankey diagram properties
 var sankey = d3.sankey()
     .nodeWidth(60)
-    .nodePadding(30)
+    .nodePadding(20)
     .size([width, height]);
 
 var path = sankey.link();
 
 // load the data
-d3.queue()
-    .defer(d3.csv, "viz-data/us-budget-sankey.csv")
-    .await(ready);
+d3.csv("viz-data/us-budget-sankey-years-col.csv", function(error, csv) {
+    if (error) throw error;
 
-function ready(error, csv) {
+    // load deficit data
+    d3.csv("viz-data/us-budget-sankey-deficit.csv", function(error, deficit) {
+        if (error) throw error;
 
-    // create an array to push all sources and targets, before making them unique
-    var arr = [];
-    csv.forEach(function(d) {
+        newData(csv, deficit, thisYear);
+        drawSankey()
+        drawDeficit()
+        drawNotes()
+        drawSlider()
+    });
+});
 
-        arr.push(d.source);
-        arr.push(d.target);
-
+function newData(csv, deficit, thisYear) {
+    thisYearCsv = csv.filter(function(d) {
+        if (d['year'] == thisYear) {
+            return d
+        }
     });
 
+    thisYearDeficit = deficit.filter(function(d) {
+        if (d['year'] == thisYear) {
+            return d
+        }
+    });
+    //console.log(thisYearDeficit)
+
+    // create an array to push all sources and targets, before making them unique
+    arr = [];
+    thisYearCsv.forEach(function(d) {
+        arr.push(d.source);
+        arr.push(d.target);
+    }); //console.log(arr)
+
     // create nodes array
-    var nodes = arr.filter(onlyUnique).map(function(d, i) {
+    nodes = arr.filter(onlyUnique).map(function(d, i) {
         return {
             node: i,
             name: d
         }
     });
-
+    //console.log(nodes)
     // create links array
-    var links = csv.map(function(csv_row) {
+    links = thisYearCsv.map(function(thisYearCsv_row) {
         return {
             source: getNode("source"),
             target: getNode("target"),
-            value: +csv_row.value
+            value: +thisYearCsv_row.value
         }
 
         function getNode(type) {
-            return nodes.filter(function(node_object) { return node_object.name == csv_row[type]; })[0].node;
+            return nodes.filter(function(node_object) { return node_object.name == thisYearCsv_row[type]; })[0].node;
         }
-
     });
+    //console.log(links)
+};
+
+function drawSankey() {
+    d3.selectAll(".node").remove();
+    d3.selectAll(".link").remove();
+    d3.selectAll(".deficitLabel").remove();
 
     sankey.nodes(nodes)
         .links(links)
@@ -73,7 +107,7 @@ function ready(error, csv) {
 
     // add in the links
     link = svg.append("g").selectAll(".link")
-        .data(links)
+        .data(links, function(d) { return d.id; })
         .enter().append("path")
         .attr("class", "link")
         .attr("d", path)
@@ -82,31 +116,14 @@ function ready(error, csv) {
         })
         .style("stroke-width", function(d) { return Math.max(1, d.dy); });
 
-    // add the link titles
-    link.append("title")
-        .text(function(d) {
-            return d.source.name + " → " +
-                d.target.name + "\n" + format(d.value);
-        });
-
     // add in the nodes
     var node = svg.append("g").selectAll(".node")
         .data(nodes)
         .enter().append("g")
         .attr("class", "node")
         .attr("transform", function(d) {
-            // if (d.name == 'Discretionary') { return "translate(" + d.x + "," + (d.y - 100) + ")" } else {
             return "translate(" + d.x + "," + d.y + ")"
-            // };
-        })
-        .call(d3.drag()
-            .subject(function(d) {
-                return d;
-            })
-            .on("start", function() {
-                this.parentNode.appendChild(this);
-            })
-            .on("drag", dragmove));
+        });
 
     // add the rectangles for the nodes
     node.append("rect")
@@ -117,13 +134,13 @@ function ready(error, csv) {
         .attr('class', function(d) {
             return d.name;
         })
+        .attr('value', function(d) {
+            return d.value;
+        })
         .style("fill", 'lightgrey')
+        .style("opacity", 0.4)
         .style("stroke", function(d) {
             return d3.rgb(d.color).darker(2);
-        })
-        .append("title")
-        .text(function(d) {
-            return format(d.value);
         });
 
     // title for the nodes
@@ -139,98 +156,186 @@ function ready(error, csv) {
         .text(function(d) { return d.name; })
         .filter(function(d) { return d.x < width / 2; })
         .attr("x", 6 + sankey.nodeWidth())
-        .attr("text-anchor", "start");
+        .attr("text-anchor", "start")
+        .attr('class', 'nodeLabel');
 
     // % for the nodes
     node.append("text")
         .attr("text-anchor", "middle")
         .attr("x", 30)
         .attr("y", function(d) { return d.dy / 2; })
-        .style("font-size", 20)
+        .style("font-size", 18)
         .attr("dy", ".35em")
         .filter(function(d) { return d.value > 1 })
-        .text(function(d) { return format(d.value) + "%" });
-
-    // the function for moving the nodes
-    function dragmove(d) {
-        d3.select(this).attr("transform", "translate(" + d.x + "," + (d.y =
-            Math.max(0, Math.min(height - d.dy, d3.event.y))) + ")");
-        //sankey.relayout(); reorders as dragging, but I think its clearer without
-        link.attr("d", path);
-    }
+        .text(function(d) { return format(d.value) + "%" })
+        .attr('class', 'nodePercent');
 };
 
-//PERCENT OF GDP
-svg.append('text')
-    .attr("x", 0)
-    .attr("y", 30)
-    .attr("dy", "0em")
-    .text('PERCENT OF GDP')
-    .attr("class", "legend")
-    .attr('font-size', 25)
-    .attr('font-weight', 'bold')
+function drawDeficit() {
 
-//Source and * and ** notes
-svg.append('text')
-    .attr("x", width * 0.65)
-    .attr("y", height + 50)
-    .attr("dy", "0em")
-    .text("* Originally in the spending side of the data as a negative value")
-    .attr("class", "legend")
-    .attr('font-size', 16)
+    //highlight deficit
+    barHeight = d3.select('.Spending').attr('height');
+    barVal = d3.select('.Spending').attr('value');
+    deficitVal = thisYearDeficit[0].deficit
 
-svg.append('text')
-    .attr("x", width * 0.65)
-    .attr("y", height + 70)
-    .attr("dy", "0em")
-    .text('** Called "Programmatic" in the dataset')
-    .attr("class", "legend")
-    .attr('font-size', 16)
+    //get deficit bar size with ratio of spending value to bar height
+    deficitBarRatio = (barHeight * (deficitVal)) / barVal;
+    //console.log(deficitBarRatio)
+
+    deficitBar = d3.select('.Spending')
+        .select(function() { return this.parentNode })
+        .append('rect')
+        .attr("height", function() { if (deficitBarRatio < 0) { return -deficitBarRatio } else { return deficitBarRatio } })
+        .attr("width", sankey.nodeWidth())
+        .attr("y", function(d) { if (deficitBarRatio < 0) { return d.dy + deficitBarRatio; } else { return d.dy - deficitBarRatio } })
+        .style('fill', function() {
+            if (deficitBarRatio < 0) { return 'red' } else { return 'blue' }
+        })
+        .style('opacity', 0.8)
+        .attr('class', 'deficit');
 
 
-svg.append('text')
-    .attr("x", width * 0.65)
-    .attr("y", height + 90)
-    .attr("dy", "0em")
-    .text('Source: OMB')
-    .attr("class", "legend")
-    .attr('font-size', 16)
+    function deficitType() { if (thisYearDeficit[0].deficit < 0) { return "Deficit" } else { return "Surplus" } };
 
-//Deficit annotation using annotation plugin
-const annotations = [{
-    note: {
-        label: "3.5% of GDP",
-        title: "Deficit"
-    },
-    //can use x, y directly instead of data
-    x: width / 2 + 30,
-    y: 508,
-    dy: 80,
-    dx: -100,
-    subject: {
-        width: -60,
-        height: 68
-    }
-}]
+    svg.append('text')
+        .attr("text-anchor", "middle")
+        .attr("x", width / 2)
+        .attr("y", height * .92)
+        .style("font-size", 25)
+        .style("font-weight", 'bold')
+        .attr('class', 'deficitLabel')
+        .text(function() {
+            if (thisYearDeficit[0].deficit < 0) { return format(thisYearDeficit[0].deficit) + "% " + "Deficit" } else { return format(thisYearDeficit[0].deficit) + " " + "Surplus" }
+        })
+        .style('fill', function() {
+            if (deficitBarRatio < 0) { return 'red' } else { return 'blue' }
+        });
+};
 
-const makeAnnotations = d3.annotation()
-    .editMode(false)
-    //also can set and override in the note.padding property
-    //of the annotation object
-    .notePadding(5)
-    .type(d3.annotationCalloutRect)
-    .annotations(annotations)
+//animated update is WIP, labels arent repositioning correctly
+// function updateSankey() {
+//     sankey.nodes(nodes)
+//         .links(links)
+//         .layout(1000);
 
-d3.select("svg")
-    .append("g")
-    .attr("class", "annotation-group")
-    .call(makeAnnotations);
+//     //sankey.relayout(); PURPOSE???
+//     fontScale.domain(d3.extent(nodes, function(d) { return d.value }));
 
-d3.select(".subject")
-    .style('fill', 'red')
-    .style('fill-opacity', '0.5');
+//     // add in the links
+//     svg.selectAll(".link")
+//         .data(links)
+//         .transition()
+//         .duration(transition)
+//         .attr("d", path)
+//         .style("stroke-width", function(d) { return Math.max(1, d.dy); });
+
+//     // add in the nodes
+//     svg.selectAll(".node")
+//         .data(nodes)
+//         .transition()
+//         .duration(transition)
+//         .attr("transform", function(d) {
+//             return "translate(" + d.x + "," + d.y + ")"
+//         });
+
+//     // add the rectangles for the nodes
+//     svg.selectAll(".node rect")
+//         .data(nodes)
+//         .transition()
+//         .duration(transition)
+//         .attr("height", function(d) {
+//             return d.dy < 0 ? .1 : d.dy;
+//         });
+
+//     //     // title for the nodes
+//     //     svg.selectAll(".nodeLabel")
+//     //         .data(nodes)
+//     //         .transition()
+//     //         .duration(transition)
+//     //         .style("font-size", function(d) {
+//     //             return Math.floor(fontScale(d.value)) + "px";
+//     //         });
+
+//     //     // % for the nodes
+//     //     svg.selectAll(".nodePercent")
+//     //         .data(nodes)
+//     //         .text(function(d) { return format(d.value) + "%" });
+// }
+
+function drawSlider() {
+    //Slider
+    var slider = d3.sliderHorizontal()
+        .min(1968)
+        .max(2017)
+        .step(1)
+        .width(container.offsetWidth - 75)
+        .tickFormat(d3.format(".4"))
+        .on('end', val => { //use end instead of onchange, is when user releases mouse
+            thisYear = val;
+
+            d3.csv("viz-data/us-budget-sankey-years-col.csv", function(error, csv) {
+                if (error) throw error;
+
+                d3.csv("viz-data/us-budget-sankey-deficit.csv", function(error, deficit) {
+                    if (error) throw error;
+                    newData(csv, deficit, thisYear);
+                    drawSankey()
+                    drawDeficit()
+                });
+            });
+        });
+
+    var g = d3.select("div#slider").append("svg")
+        .attr("width", container.offsetWidth)
+        .attr("height", 100)
+        .append("g")
+        .attr("transform", "translate(30,30)");
+
+    g.call(slider);
+    d3.selectAll('#slider')
+        .style('font-size', 20)
+}
+
+function drawNotes() {
+
+    //PERCENT OF GDP
+    svg.append('text')
+        .attr("x", 0)
+        .attr("y", -15)
+        .attr("dy", "0em")
+        .text('PERCENT OF GDP')
+        .attr('font-size', 25)
+        .attr('font-weight', 'bold')
+        .attr('class', 'percent');
+
+    //Source and * and ** notes
+    svg.append('text')
+        .attr("x", width * 0.65)
+        .attr("y", height + 50)
+        .attr("dy", "0em")
+        .text("* Originally in the spending side of the data as a negative value")
+        .attr("class", "legend")
+        .attr('font-size', 16);
+
+    svg.append('text')
+        .attr("x", width * 0.65)
+        .attr("y", height + 70)
+        .attr("dy", "0em")
+        .text('** Called "Programmatic" in the dataset')
+        .attr("class", "legend")
+        .attr('font-size', 16);
+
+
+    svg.append('text')
+        .attr("x", width * 0.65)
+        .attr("y", height + 90)
+        .attr("dy", "0em")
+        .text('Source: OMB')
+        .attr("class", "legend")
+        .attr('font-size', 16);
+};
 
 // unique values of an array
 function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
-}
+};

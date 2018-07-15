@@ -1,22 +1,22 @@
-source,target,value
-Income Tax,Revenue,8.3
-Payroll Tax,Revenue,6.1
-Corporate Tax,Revenue,1.5
-Excise Tax,Revenue,0.4
-Estate/Gift Tax,Revenue,0.1
-Customs Duties,Revenue,0.2
-Miscellaneous,Revenue,0.7
-Offsetting Receipts*,Revenue,1.3
-Revenue,Spending,18.6
-Spending,Net Interest,1.4
-Spending,Discretionary,6.3
-Spending,Mandatory**,14.5
-Discretionary,Defense,3.1
-Discretionary,Nondefense,3.2
-Mandatory**,Social Security,4.9
-Mandatory**,Medicare,3.7
-Mandatory**,Medicaid,2
-Mandatory**,Income Security,1.5
-Mandatory**,Federal Retirement,0.8
-Mandatory**,Veterans' Programs,0.5
-Mandatory**,Other,1
+source,target,value,year
+Income Tax,Revenue,8.3,2000
+Payroll Tax,Revenue,6.1,2000
+Corporate Tax,Revenue,1.5,2000
+Excise Tax,Revenue,0.4,2000
+Estate/Gift Tax,Revenue,0.1,2000
+Customs Duties,Revenue,0.2,2000
+Miscellaneous,Revenue,0.7,2000
+Offsetting Receipts*,Revenue,1.3,2000
+Revenue,Spending,18.6,2000
+Spending,Net Interest,1.4,2005
+Spending,Discretionary,6.3,2005
+Spending,Mandatory**,14.5,2005
+Discretionary,Defense,3.1,2005
+Discretionary,Nondefense,3.2,2005
+Mandatory**,Social Security,4.9,2005
+Mandatory**,Medicare,3.7,2005
+Mandatory**,Medicaid,2,2005
+Mandatory**,Income Security,1.5,2005
+Mandatory**,Federal Retirement,0.8,2005
+Mandatory**,Veterans' Programs,0.5,2005
+Mandatory**,Other,1,2005

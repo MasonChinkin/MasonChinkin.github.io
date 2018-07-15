@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"fonts",
+				"font-size\tproperty"
+			],
+			[
+				"deficit",
+				"deficitLabel"
+			],
+			[
+				"defici",
+				"deficitPercent"
+			],
+			[
+				"this",
+				"thisYearDeficit"
+			],
+			[
+				"def",
+				"deficitVal"
+			],
+			[
+				"thisY",
+				"thisYearDeficit"
+			],
+			[
+				"selectAll",
+				"svg.selectAll(\".nodePercent"
+			],
+			[
+				"cvs",
+				"csv_row"
+			],
+			[
+				"tick",
+				"tickFormat\t(index.html)"
+			],
+			[
+				"us",
+				"us-budget-sankey.js\t(us-budget-sankey.html)"
+			],
+			[
 				"f",
 				"f\tAnonymous Function"
 			],
@@ -38,10 +78,6 @@
 			[
 				"select",
 				"selectAll"
-			],
-			[
-				"this",
-				"thisType"
 			],
 			[
 				"node",
@@ -283,6 +319,24 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 10804,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "d3-visualizations/us-budget-sankey.js",
+			"settings":
+			{
+				"buffer_size": 10393,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -296,16 +350,16 @@
 		"selected_items":
 		[
 			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
 				"package control ",
 				"Package Control: Enable Package"
 			],
 			[
 				"Package Control: dia",
 				"Package Control: Disable Package"
-			],
-			[
-				"Package Control: ",
-				"Package Control: Enable Package"
 			],
 			[
 				"package control: d",
@@ -388,15 +442,37 @@
 	},
 	"expanded_folders":
 	[
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16",
 		"/C/Users/Zhangkin/Desktop/D3/workspace",
-		"/C/Users/Zhangkin/Desktop/D3/workspace/demo sankey"
+		"/C/Users/Zhangkin/Desktop/D3/workspace/slider"
 	],
 	"file_history":
 	[
-		"/C/Users/Zhangkin/Desktop/D3/workspace/demo sankey/data.csv",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/us-budget-sankey.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/us_budget_sankey.json",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3-simple-slider.min.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/us-budget-sankey.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/us-budget-sankey.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/sankey.js",
+		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa15620.21776/d3-simple-slider.js",
+		"/C/Users/Zhangkin/Desktop/D3/workspace/slider/index.html",
+		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa19548.5391/d3-simple-slider.js",
+		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa19108.19245/d3-simple-slider.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/sankey-slider.js",
+		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa376.46970/d3-simple-slider.min.js",
+		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa376.46482/d3-simple-slider.min.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3-simple-slider.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/main.css",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3-annotation.min.js",
+		"/C/Users/Zhangkin/Desktop/D3/workspace/demo sankey/us-budget-sankey.js",
+		"/C/Users/Zhangkin/Desktop/D3/workspace/demo sankey/index.html",
+		"/C/Users/Zhangkin/Desktop/D3/workspace/demo sankey/data.csv",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/us_budget_sankey.json",
 		"/F/Downloads/json_exp.json",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/state_budget_sankey",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/swiss-army-bar-chart.html",
@@ -405,9 +481,7 @@
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/europe-trip.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/congress-2016-results.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/main.css",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/gdp.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/random-scatter.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Random-scatter.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/swiss-army-bar-chart.js",
@@ -506,7 +580,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -520,6 +594,29 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"percent",
+			"font-s",
+			"parameter",
+			"parameter-value",
+			"font",
+			"background",
+			"width",
+			"sort",
+			" )",
+			"sort",
+			"csv",
+			"source",
+			"parameter-value",
+			"slice",
+			"500",
+			"relayout",
+			"container",
+			"//.",
+			"d.x",
+			"node",
+			"csv",
+			"data",
+			"arguments",
 			">\n",
 			" 0,",
 			"FIELD1",
@@ -624,30 +721,7 @@
 			"domain",
 			"text",
 			"path",
-			"200",
-			"400",
-			".on",
-			"'end",
-			"delay",
-			"500",
-			"250",
-			"1000",
-			"dura",
-			"fill",
-			"console",
-			"-5",
-			"date",
-			"type",
-			"type ",
-			"type",
-			"dataset",
-			"defaultStack",
-			"individ",
-			"breakdown",
-			"for",
-			"scale",
-			"date",
-			"format"
+			"200"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -655,6 +729,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"data",
 			"name",
 			"300",
 			"Islamic Front",
@@ -710,14 +785,78 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10804,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7023,
+								7023
+							]
+						],
+						"settings":
+						{
+							"SL.18.region_keys":
+							[
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2106.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "d3-visualizations/us-budget-sankey.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10393,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3387,
+								3387
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1512.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 39.0
 	},
 	"input":
 	{
@@ -800,7 +939,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 245.0,
+	"side_bar_width": 334.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
