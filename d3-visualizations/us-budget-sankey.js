@@ -205,7 +205,7 @@ function drawDeficit() {
         .style("font-weight", 'bold')
         .attr('class', 'deficitLabel')
         .text(function() {
-            if (thisYearDeficit[0].deficit < 0) { return format(thisYearDeficit[0].deficit) + "% " + "Deficit" } else { return format(thisYearDeficit[0].deficit) + " " + "Surplus" }
+            if (thisYearDeficit[0].deficit < 0) { return format(-thisYearDeficit[0].deficit) + "% " + "Deficit" } else { return format(thisYearDeficit[0].deficit) + "% " + "Surplus" }
         })
         .style('fill', function() {
             if (deficitBarRatio < 0) { return 'red' } else { return 'blue' }
