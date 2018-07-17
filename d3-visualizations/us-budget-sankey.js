@@ -303,7 +303,7 @@ function drawNotes() {
         .attr("x", 0)
         .attr("y", -15)
         .attr("dy", "0em")
-        .text('PERCENT OF GDP')
+        .text('Percent of GDP (May not add up due to rounding)')
         .attr('font-size', 25)
         .attr('font-weight', 'bold')
         .attr('class', 'percent');
