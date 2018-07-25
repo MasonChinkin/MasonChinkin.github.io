@@ -320,10 +320,11 @@
 	"buffers":
 	[
 		{
-			"file": "d3-visualizations/congress-2016-results.js",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 7451,
+				"buffer_size": 10551,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
@@ -452,9 +453,6 @@
 	[
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16",
 		"/C/Users/Zhangkin/Desktop/D3/workspace",
@@ -801,29 +799,32 @@
 			[
 				{
 					"buffer": 0,
-					"file": "d3-visualizations/congress-2016-results.js",
-					"semi_transient": true,
+					"file": "index.html",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7451,
+						"buffer_size": 10551,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								3655,
+								3655
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"SL.17.region_keys":
+							[
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 378.0,
+						"translation.y": 972.8,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
