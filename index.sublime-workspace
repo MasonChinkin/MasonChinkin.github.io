@@ -4,104 +4,296 @@
 		"selected_items":
 		[
 			[
-				"for",
-				"for\tfor (…) {…}"
+				"fonts",
+				"font-size\tproperty"
 			],
 			[
-				"thisSt",
-				"thisStateFp〔variable〕"
+				"deficit",
+				"deficitLabel"
 			],
 			[
-				"toolt",
-				"tooltipDiv〔variable〕"
+				"defici",
+				"deficitPercent"
 			],
 			[
-				"thisS",
-				"thisStateFp〔variable〕"
+				"this",
+				"thisYearDeficit"
+			],
+			[
+				"def",
+				"deficitVal"
+			],
+			[
+				"thisY",
+				"thisYearDeficit"
+			],
+			[
+				"selectAll",
+				"svg.selectAll(\".nodePercent"
+			],
+			[
+				"cvs",
+				"csv_row"
+			],
+			[
+				"tick",
+				"tickFormat\t(index.html)"
+			],
+			[
+				"us",
+				"us-budget-sankey.js\t(us-budget-sankey.html)"
 			],
 			[
 				"f",
 				"f\tAnonymous Function"
 			],
 			[
-				"dat",
-				"dataState"
+				"img",
+				"imgWidth"
 			],
 			[
-				"mouse",
-				"mouseMove"
+				"di",
+				"div\tTag"
 			],
 			[
-				"row",
-				"rowConverter〔class〕"
+				"tex",
+				"text-align\tproperty"
 			],
 			[
-				"forma",
-				"foramtAsThousands〔variable〕"
+				"font",
+				"font-size\t(congress-2016-map.html)"
 			],
 			[
-				"geoAlbe",
-				"geoAlbersUsa()\td3.geoAlbersUsa()"
+				"thisR",
+				"thisResultsIndex"
 			],
 			[
-				"curve",
-				"curve()\td3-area.curve()"
+				"tooltip",
+				"tooltipDiv"
 			],
 			[
-				"translate",
-				"interpolateTransformSvg\td3.interpolateTransformSvg()"
+				"thisCon",
+				"thisConnects"
 			],
 			[
-				"transla",
-				"translate()\td3-projection.translate()"
+				"select",
+				"selectAll"
 			],
 			[
-				"transform",
-				"transform()\td3-zoom.transform()"
+				"node",
+				"nodeMouseOver"
 			],
 			[
-				"attr",
-				"attr()\td3-transition.attr()"
+				"filter",
+				"filter()\td3-selection.filter()"
 			],
 			[
-				"stackOrder",
-				"stackOrderDescending\td3.stackOrderDescending"
+				"image",
+				"imageSize"
 			],
 			[
-				"stackO",
-				"stackOffsetWiggle\td3.stackOffsetWiggle"
+				"imag",
+				"imageSize"
 			],
 			[
-				"grapes",
-				"grapes"
+				"data",
+				"dataset"
 			],
 			[
-				"target",
-				"target"
+				"transitionS",
+				"transitionStack"
 			],
 			[
-				"att",
-				"attr()\td3-selection.merge()"
+				"get",
+				"getWidth"
+			],
+			[
+				"gdp",
+				"gdpLineDataset"
+			],
+			[
+				"draw",
+				"drawGdpLine"
+			],
+			[
+				"bar",
+				"barOnClick"
+			],
+			[
+				"legen",
+				"legendVals"
+			],
+			[
+				"dis",
+				"display\tproperty"
+			],
+			[
+				"console",
+				"console.log"
+			],
+			[
+				"key",
+				"key_index"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"band",
+				"bandwidth()\td3-scale.bandwidth()"
+			],
+			[
+				"outer",
+				"paddingOuter()\td3-scaleBand.paddingOuter()"
+			],
+			[
+				"pointer",
+				"pointer-events"
+			],
+			[
+				"text",
+				"text()\td3.text()"
+			],
+			[
+				"y",
+				"yTop"
+			],
+			[
+				"nest",
+				"nestDataset"
+			],
+			[
+				"net",
+				"nestDataset"
+			],
+			[
+				"pares",
+				"parseInt"
+			],
+			[
+				"growth",
+				"growth_type"
+			],
+			[
+				"gr",
+				"growth_annual_perc"
+			],
+			[
+				"handle",
+				"handleId"
+			],
+			[
+				"svg",
+				"svgElement"
+			],
+			[
+				"hand",
+				"handleCy"
+			],
+			[
+				"easeel",
+				"easeElasticOut\td3.easeElasticOut"
+			],
+			[
+				"bubble",
+				"bubbleMouseMove"
+			],
+			[
+				"scheme",
+				"schemeCategory20\td3.schemeCategory20"
+			],
+			[
+				"al",
+				"align\t(geomapping.html)"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"style",
+				"style()\td3-selection.style()"
+			],
+			[
+				"zoomIdentity",
+				"zoomIdentity\td3.zoomIdentity"
+			],
+			[
+				"elas",
+				"easeElasticInOut\td3.easeElasticInOut"
+			],
+			[
+				"create",
+				"createPanButtons"
+			],
+			[
+				"trans",
+				"transpose()\td3.transpose()"
+			],
+			[
+				"tickf",
+				"tickFormat()\td3-axis.tickFormat()"
+			],
+			[
+				"axisb",
+				"axisBottom()\td3.axisBottom()"
+			],
+			[
+				"timef",
+				"timeFormat()\td3.timeFormat()"
+			],
+			[
+				"datum",
+				"datum()\td3-selection.datum()"
+			],
+			[
+				"app",
+				"append()\td3-selection.append()"
+			],
+			[
+				"sele",
+				"select()\td3.select()"
 			],
 			[
 				"x",
-				"x()\td3-force.x()"
+				"x()\td3-line.x()"
 			],
 			[
-				"force",
-				"forceSimulation()\td3.forceSimulation()"
+				"scaleLin",
+				"scaleLinear()\td3.scaleLinear()"
+			],
+			[
+				"range",
+				"range()\td3-scale.range()"
+			],
+			[
+				"dom",
+				"domain()\td3-scale.domain()"
+			],
+			[
+				"scaleti",
+				"scaleTime()\td3.scaleTime()"
+			],
+			[
+				"function",
+				"functions\t(01_line_chart.html)"
+			],
+			[
+				"scalet",
+				"scaleThreshold()\td3.scaleThreshold()"
+			],
+			[
+				"csv",
+				"csv()\td3.csv()-snippet"
+			],
+			[
+				"att",
+				"attr()\td3-transition.attr()"
 			],
 			[
 				"at",
-				"attr()\td3-selection.merge()"
-			],
-			[
-				"tran",
-				"translate()\td3-zoomTransform.translate()"
-			],
-			[
-				"max",
-				"maxValue〔variable〕"
+				"attr()\td3-transition.attr()"
 			],
 			[
 				"random",
@@ -114,16 +306,41 @@
 			[
 				"bars",
 				"bars-add-sub.js"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"attr",
+				"attr()\td3-selection.merge()"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "index.html",
+			"file": "d3-visualizations/congress-2016-results.js",
 			"settings":
 			{
-				"buffer_size": 10725,
+				"buffer_size": 7451,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "d3-visualizations/us-budget-sankey.js",
+			"settings":
+			{
+				"buffer_size": 10428,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "us-budget-sankey.html",
+			"settings":
+			{
+				"buffer_size": 5523,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -136,17 +353,41 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 588.0,
-		"last_filter": "Package Control: ",
+		"height": 200.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
 				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"package control ",
 				"Package Control: Enable Package"
 			],
 			[
-				"Package Control: dis",
+				"Package Control: dia",
 				"Package Control: Disable Package"
+			],
+			[
+				"package control: d",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"sublimel",
+				"SublimeLinter: Choose Tooltip Theme"
 			],
 			[
 				"color",
@@ -169,10 +410,6 @@
 				"Snippet: Lorem ipsum"
 			],
 			[
-				"sublimel",
-				"SublimeLinter: Enable Inline Tooltips"
-			],
-			[
 				"prett",
 				"HTMLPrettify: Set Plugin Options"
 			],
@@ -189,7 +426,7 @@
 				"Package Control: Remove Package"
 			]
 		],
-		"width": 954.0
+		"width": 879.0
 	},
 	"console":
 	{
@@ -213,70 +450,152 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/d3-visualizations"
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16",
+		"/C/Users/Zhangkin/Desktop/D3/workspace",
+		"/C/Users/Zhangkin/Desktop/D3/workspace/slider"
 	],
 	"file_history":
 	[
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/networks.html",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/swiss-army-bar-chart.html",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/d3-visualizations/networks.js",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/d3-visualizations/gdp.js",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/d3-visualizations/congress-2016-results.js",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/congress-2016-map.html",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/viz-data/us_congress_2016_lower_48.json",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/d3-visualizations/zoomable-us-map.js",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/viz-data/world.json",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Projects/gdp_growth/simple_gdp_growth.html",
-		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_14/06_points.html",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Geomapping/vers1.html",
-		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_14/02_projection.html",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/stacked-area.html",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/06_stacked_area.html",
-		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_13/06_stacked_area.html",
-		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_13/03_stacked_bar.html",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/Stacked-bar.html",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/03_stacked_bar.html",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/Force.html",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/Layouts/Pie.html",
-		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_13/01_pie.html",
-		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/Default (Windows).sublime-mousemap",
-		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
-		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_12/03_slider.html",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/bars-add-sub.js",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/assets/css/main.css",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/bars-add-sub.html",
-		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_12/06_each.html",
-		"/C/Users/Mason/Desktop/Coding/d3-book/chapter_12/01_enter_merge_exit.html",
-		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
-		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
-		"/C/Users/Mason/AppData/Roaming/Sublime Text 3/Packages/User/.jsbeautifyrc",
-		"/C/Users/Mason/Desktop/Coding/D3.js-book-work-plus/line_chart/line_chart.js",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/random-scatter.js",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/Random-scatter.html",
-		"/C/Users/Mason/Desktop/Coding/MasonChinkin.github.io/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.html",
+		"/F/Google Drive/STATA/Aggragated & Combined/IMPORTANT ONE- Cpn by Industry.do",
+		"/F/Google Drive/STATA/Aggragated & Combined/Combine countries and mark duplicates.do",
+		"/F/Google Drive/STATA/Aggragated & Combined/Final_aggragated.csv",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3-simple-slider.min.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/us-budget-sankey.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/us-budget-sankey.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/sankey.js",
+		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa15620.21776/d3-simple-slider.js",
+		"/C/Users/Zhangkin/Desktop/D3/workspace/slider/index.html",
+		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa19548.5391/d3-simple-slider.js",
+		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa19108.19245/d3-simple-slider.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/sankey-slider.js",
+		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa376.46970/d3-simple-slider.min.js",
+		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa376.46482/d3-simple-slider.min.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3-simple-slider.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/main.css",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3-annotation.min.js",
+		"/C/Users/Zhangkin/Desktop/D3/workspace/demo sankey/us-budget-sankey.js",
+		"/C/Users/Zhangkin/Desktop/D3/workspace/demo sankey/index.html",
+		"/C/Users/Zhangkin/Desktop/D3/workspace/demo sankey/data.csv",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/us_budget_sankey.json",
+		"/F/Downloads/json_exp.json",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/state_budget_sankey",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/swiss-army-bar-chart.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/gdp.html",
+		"/F/Downloads/csv2json.json",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/europe-trip.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/congress-2016-results.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/gdp.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/random-scatter.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Random-scatter.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/swiss-army-bar-chart.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/stacked-area.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/pie.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/networks.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/congress-2016-map.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/line-area-charts.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/networks.html",
+		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
+		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/C/Users/Zhangkin/Saved Games/DCS/Config/options.lua",
+		"/C/Program Files (x86)/Steam/steamapps/common/DCSWorld/Mods/aircraft/A-10C/Cockpit/Scripts/MFCD/indicator/MFCD_fonts.lua",
+		"/C/Users/Zhangkin/Desktop/New AutoHotkey Script.ahk",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/geomapping.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/zoomable-us-map.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/syriaNetwork.json",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/example_force_layout.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/old-network.js",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/miserables.json",
+		"/F/Downloads/syriaNetwork.json",
+		"/F/Downloads/network.json",
+		"/F/Downloads/mygeodata/gmlexperiment.gml",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/transitioning_stacked_bars.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/10_refine_styling.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/example_transition_stacked_Bar.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/Stacked-bar.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/old_attempts/gdp_growth_stacked_bar.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/stacked-area.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/01_initial_chart.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/gdp_growth/working-stacked-area.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/stacked-area.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/trip.csv",
+		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip/europe-trip.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/us-states.json",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip/world.json",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/us-cities.csv",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/Zooming.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Layouts/Force.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Projects/europe_trip/europe-trip.js",
+		"/F/Downloads/ne_50m_admin_0_countries (1).json",
+		"/F/Downloads/ne_50m_admin_0_countries.json",
+		"/F/Downloads/map.geojson",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/random-network.json",
+		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/User/.jsbeautifyrc",
+		"/F/Downloads/Forked from https___next.json-generator.com_VkbpYpuiV.json",
+		"/F/Downloads/Forked from https___next.json-generator.com_VJdXV6doV.json",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Misc.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/us-ag-productivity.csv",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/02_color_by_type.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/04_types_only.html",
+		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa9580.49170/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/17_labels.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/16_combo_zoom_pan.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/14_zoom_with_buttons.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/dragging.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/13_zoom_pan_buttons_fixed.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/09_pan_transition.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/10_pan_draggable.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/10_pan_draggable.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/vers1.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/Pan-buttons.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/08_pan.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart/line_chart.js",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/06_area_chart.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/05_line_chart_labeled.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/04_line_chart_adjusted.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart/line_chart.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/03_line_chart_missing.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/02_line_chart_axes.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/bars-add-sub.html",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/01_line_chart.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/New folder/01_line_chart.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/New folder/line_chart.js",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/README.md",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/bars-add-sub.js",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Assets/styles.css",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/random-bars.js",
+		"/C/Users/Zhangkin/Desktop/D3/Template.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/old-projects/svg-text1.js",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/time-scale/time-scale.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/random-scatter.html",
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/random-bars.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/random-scatter.js",
+		"/C/Users/Zhangkin/Desktop/D3/stackedgraphforbusinesscard.html",
+		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa26504.986/HIP readme.txt",
+		"/C/Users/Zhangkin/Desktop/D3/stocks.csv",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/bars-add-sub-styles.css",
 		"/F/Downloads/Resume - Mason Chinkin.htm",
 		"/C/Users/Zhangkin/Desktop/D3/streamgraphforbusinesscard.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3.js",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/bars-add-sub.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/bars-add-sub.js",
-		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
-		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
 		"/C/Users/Zhangkin/Desktop/D3/class-project/D3.js-book-work-plus/random-scatter.js"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 40.8
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 156.0,
 		"where_history":
 		[
 		]
@@ -286,37 +605,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"percent",
+			"font-s",
+			"parameter",
+			"parameter-value",
+			"font",
+			"background",
+			"width",
+			"sort",
+			" )",
+			"sort",
+			"csv",
 			"source",
-			"legend",
-			"parse",
-			"STATEFP\":\"11",
-			"montana",
-			"STATEFP",
-			"active",
-			"tooltip",
-			"column",
-			" p ",
-			"hover",
-			"input",
-			"barsAdd",
-			"add",
-			"save",
+			"parameter-value",
+			"slice",
+			"500",
+			"relayout",
+			"container",
+			"//.",
+			"d.x",
+			"node",
+			"csv",
+			"data",
+			"arguments",
+			">\n",
+			" 0,",
+			"FIELD1",
+			"state",
+			"\"source\": 1",
+			"\"source\": 0",
+			"touch",
 			"header",
+			"275",
+			"300",
+			"header",
+			"offset",
+			"portfolio",
+			"two",
+			"container",
+			"    \ncontainer",
+			"    \n",
+			"margin",
+			"container",
+			"main",
 			"toggle",
-			"#",
-			"%",
-			"value",
+			"1880",
+			"13",
+			"right",
+			"align",
+			"200",
+			"300",
+			"header",
+			"f",
+			"header",
+			"side",
+			"sidebar",
+			"resume",
+			"save",
+			"resume",
+			"portfolio",
+			"legend",
+			"zoom",
+			"attr",
+			"get",
+			"mousem",
+			"mouso",
+			"Islamic_Front",
+			"Assad_",
+			"Free_Syria_Army",
+			"Saudi_",
+			"Al_Qaeda",
+			"center",
+			"text",
+			"start",
+			"viz-data/",
+			"force",
+			"force.",
+			"link",
+			"edge",
+			"\"Assad Government\"",
+			"\"Islamic Front\"",
+			"\"Saudi Arabia\"",
+			"\"Free Syria Army\"",
+			"\"Al Qaeda\"",
+			"\"line\"",
+			"\"type\"",
+			"\"target\"",
+			"\"source\"",
+			"\"image\"",
+			"\"id\"",
+			"name",
+			"qae",
+			"line",
+			" series",
+			"series",
+			"thisStack",
+			"gdpD",
+			"viewstat",
+			"#bars",
+			"thisSer",
+			"thisS",
+			"keys",
+			"thisSeries",
+			"window",
+			"dataset",
+			"key",
+			"button",
+			"toggle",
 			"hidden",
-			"btn",
+			"key",
+			"x_var",
+			"class",
+			"%",
 			"tooltip",
-			"layer",
-			"banner",
-			"top",
-			"#top",
-			"top",
-			"one dark cover",
-			"dark",
-			"height"
+			"line",
+			"vehicles",
+			"catDataset",
+			"dataset",
+			"data.",
+			"#",
+			"this",
+			"mousem",
+			"on",
+			"hover",
+			"gdpataset",
+			"domain",
+			"text",
+			"path",
+			"200"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -324,6 +740,52 @@
 		"regex": false,
 		"replace_history":
 		[
+			"data",
+			"name",
+			"300",
+			"Islamic Front",
+			"Assad ",
+			"Free Syria Army",
+			"Saudi ",
+			"Al Qaeda",
+			"viz-data/networkImages/",
+			"\"Assad_Government\"",
+			"\"Islamic_Front\"",
+			"\"Saudi_Arabia\"",
+			"\"Free_Syria_Army\"",
+			"\"Al_Qaeda\"",
+			"Al_Qaeda",
+			"line",
+			"type",
+			"target",
+			"source",
+			"image",
+			"id",
+			"data",
+			"125",
+			"300",
+			"400",
+			"200",
+			"500",
+			"typeStack",
+			"type",
+			"Type",
+			"type",
+			"Type",
+			"type",
+			"Type",
+			"type",
+			"Type",
+			"type",
+			"name",
+			"source",
+			"target",
+			"\"target\"",
+			"\"source\"",
+			"\"name\"",
+			"name",
+			"target",
+			"source"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -339,199 +801,107 @@
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
-					"semi_transient": false,
+					"file": "d3-visualizations/congress-2016-results.js",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 10725,
+						"buffer_size": 7451,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4508,
-								4508
+								0,
+								0
 							]
 						],
 						"settings":
 						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 378.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "d3-visualizations/us-budget-sankey.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10428,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9458,
+								9458
+							]
+						],
+						"settings":
+						{
+							"SL.14.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 54.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "us-budget-sankey.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5523,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4353,
+								4353
+							]
+						],
+						"settings":
+						{
+							"SL.15.region_keys":
+							[
+							],
 							"SL.16.region_keys":
 							[
-							],
-							"auto_complete": false,
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										8568,
-										8569
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/tag.png",
-										"region.orangish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										8120,
-										8121
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
+								"SL.csslint.Highlights.|d82965b9a598f1753152023caa89dd84cc4d26c3bf77a7ff57c435897fc2cb0f|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.csslint.Highlights.|54ae4511ea9df0240b0f9447a79ad8a5cd8138fad50a9d0ae8be4705e0ca576d|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|ff591e99fbac2c527c523cb766464ef48444943c56824283c67e5866e9821898|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|5bf29c972e18457e3380e76f586b0d061af658bb92eb83d607581b86647881d5|region.yellowish markup.warning.sublime_linter|32"
 							],
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1325.33333333,
+						"translation.y": 864.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -539,11 +909,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 39.0
 	},
 	"input":
 	{
-		"height": 60.0
+		"height": 57.0
 	},
 	"layout":
 	{
@@ -572,11 +942,11 @@
 	{
 		"height": 0.0
 	},
-	"output.find_results":
+	"output.SublimeLinter Messages":
 	{
-		"height": 0.0
+		"height": 126.0
 	},
-	"output.mdpopups":
+	"output.find_results":
 	{
 		"height": 0.0
 	},
@@ -584,7 +954,7 @@
 	"project": "index.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -622,7 +992,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 183.0,
+	"side_bar_width": 334.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
