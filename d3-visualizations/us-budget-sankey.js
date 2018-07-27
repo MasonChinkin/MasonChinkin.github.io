@@ -12,7 +12,7 @@ var formatNumber = d3.format(".1f"), // zero decimal places
     color = d3.scaleOrdinal(d3.schemeCategory20);
 
 // append the svg object to the body of the page
-var svg = d3.select("#container").append("svg")
+var sankeySvg = d3.select("#container").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .style('background', '#e8e8e8')
@@ -35,7 +35,7 @@ var sankey = d3.sankey()
 var path = sankey.link();
 
 // load the data
-d3.csv("viz-data/us-budget-sankey-years-col.csv", function(error, csv) {
+d3.csv("viz-data/us-budget-sankey-main.csv", function(error, csv) {
     if (error) throw error;
 
     // load deficit data
@@ -47,6 +47,7 @@ d3.csv("viz-data/us-budget-sankey-years-col.csv", function(error, csv) {
         drawDeficit()
         drawNotes()
         drawSlider()
+        drawLines();
     });
 });
 
@@ -56,6 +57,7 @@ function newData(csv, deficit, thisYear) {
             return d
         }
     });
+    //console.log(thisYearCsv)
 
     thisYearDeficit = deficit.filter(function(d) {
         if (d['year'] == thisYear) {
@@ -64,12 +66,13 @@ function newData(csv, deficit, thisYear) {
     });
     //console.log(thisYearDeficit)
 
-    // create an array to push all sources and targets, before making them unique
+    //create an array to push all sources and targets, before making them unique
+    //because starting nodes are not targets and end nodes are not sources
     arr = [];
     thisYearCsv.forEach(function(d) {
         arr.push(d.source);
         arr.push(d.target);
-    }); //console.log(arr)
+    }); //console.log(arr.filter(onlyUnique))
 
     // create nodes array
     nodes = arr.filter(onlyUnique).map(function(d, i) {
@@ -78,6 +81,7 @@ function newData(csv, deficit, thisYear) {
             name: d
         }
     });
+
     //console.log(nodes)
     // create links array
     links = thisYearCsv.map(function(thisYearCsv_row) {
@@ -92,6 +96,16 @@ function newData(csv, deficit, thisYear) {
         }
     });
     //console.log(links)
+
+    // format line data
+    var timeParse = d3.timeParse("%Y")
+
+    lineData = csv
+    lineData.forEach(function(d) {
+        d.year = timeParse(d.year);
+        d.value = +d.value;
+    });
+    console.log(lineData)
 };
 
 function drawSankey() {
@@ -106,7 +120,7 @@ function drawSankey() {
     fontScale.domain(d3.extent(nodes, function(d) { return d.value }));
 
     // add in the links
-    link = svg.append("g").selectAll(".link")
+    link = sankeySvg.append("g").selectAll(".link")
         .data(links, function(d) { return d.id; })
         .enter().append("path")
         .attr("class", "link")
@@ -117,7 +131,7 @@ function drawSankey() {
         .style("stroke-width", function(d) { return Math.max(1, d.dy); });
 
     // add in the nodes
-    var node = svg.append("g").selectAll(".node")
+    var node = sankeySvg.append("g").selectAll(".node")
         .data(nodes)
         .enter().append("g")
         .attr("class", "node")
@@ -167,7 +181,21 @@ function drawSankey() {
         .style("font-size", 18)
         .attr("dy", ".35em")
         .filter(function(d) { return d.value > 1 })
+        .filter(function(d) { return d.node != 20 }) //do spending seperately to correctly show surplus
         .text(function(d) { return format(d.value) + "%" })
+        .attr('class', 'nodePercent');
+
+    // % for spending in times of surplus using seperate data
+    node.append("text")
+        .attr("text-anchor", "middle")
+        .attr("x", 30)
+        .attr("y", function(d) { return d.dy / 2; })
+        .style("font-size", 18)
+        .attr("dy", ".35em")
+        .filter(function(d) { return d.node == 20 })
+        .text(function() {
+            return format(thisYearDeficit[0].spending) + "%"
+        })
         .attr('class', 'nodePercent');
 };
 
@@ -197,7 +225,7 @@ function drawDeficit() {
 
     function deficitType() { if (thisYearDeficit[0].deficit < 0) { return "Deficit" } else { return "Surplus" } };
 
-    svg.append('text')
+    sankeySvg.append('text')
         .attr("text-anchor", "middle")
         .attr("x", width / 2)
         .attr("y", height * .92)
@@ -212,56 +240,6 @@ function drawDeficit() {
         });
 };
 
-//animated update is WIP, labels arent repositioning correctly
-// function updateSankey() {
-//     sankey.nodes(nodes)
-//         .links(links)
-//         .layout(1000);
-
-//     //sankey.relayout(); PURPOSE???
-//     fontScale.domain(d3.extent(nodes, function(d) { return d.value }));
-
-//     // add in the links
-//     svg.selectAll(".link")
-//         .data(links)
-//         .transition()
-//         .duration(transition)
-//         .attr("d", path)
-//         .style("stroke-width", function(d) { return Math.max(1, d.dy); });
-
-//     // add in the nodes
-//     svg.selectAll(".node")
-//         .data(nodes)
-//         .transition()
-//         .duration(transition)
-//         .attr("transform", function(d) {
-//             return "translate(" + d.x + "," + d.y + ")"
-//         });
-
-//     // add the rectangles for the nodes
-//     svg.selectAll(".node rect")
-//         .data(nodes)
-//         .transition()
-//         .duration(transition)
-//         .attr("height", function(d) {
-//             return d.dy < 0 ? .1 : d.dy;
-//         });
-
-//     //     // title for the nodes
-//     //     svg.selectAll(".nodeLabel")
-//     //         .data(nodes)
-//     //         .transition()
-//     //         .duration(transition)
-//     //         .style("font-size", function(d) {
-//     //             return Math.floor(fontScale(d.value)) + "px";
-//     //         });
-
-//     //     // % for the nodes
-//     //     svg.selectAll(".nodePercent")
-//     //         .data(nodes)
-//     //         .text(function(d) { return format(d.value) + "%" });
-// }
-
 function drawSlider() {
     //Slider
     var slider = d3.sliderHorizontal()
@@ -273,7 +251,7 @@ function drawSlider() {
         .on('end', val => { //use end instead of onchange, is when user releases mouse
             thisYear = val;
 
-            d3.csv("viz-data/us-budget-sankey-years-col.csv", function(error, csv) {
+            d3.csv("viz-data/us-budget-sankey-main.csv", function(error, csv) {
                 if (error) throw error;
 
                 d3.csv("viz-data/us-budget-sankey-deficit.csv", function(error, deficit) {
@@ -299,7 +277,7 @@ function drawSlider() {
 function drawNotes() {
 
     //PERCENT OF GDP
-    svg.append('text')
+    sankeySvg.append('text')
         .attr("x", 0)
         .attr("y", -15)
         .attr("dy", "0em")
@@ -309,24 +287,24 @@ function drawNotes() {
         .attr('class', 'percent');
 
     //Source and * and ** notes
-    svg.append('text')
+    sankeySvg.append('text')
         .attr("x", width * 0.65)
         .attr("y", height + 50)
         .attr("dy", "0em")
-        .text("* Originally in the spending side of the data as a negative value")
+        .text('* Originally under "Mandatory" as a negative value')
         .attr("class", "legend")
         .attr('font-size', 16);
 
-    svg.append('text')
+    sankeySvg.append('text')
         .attr("x", width * 0.65)
         .attr("y", height + 70)
         .attr("dy", "0em")
-        .text('** Called "Programmatic" in the dataset')
+        .text('** Technically called "Programmatic"')
         .attr("class", "legend")
         .attr('font-size', 16);
 
 
-    svg.append('text')
+    sankeySvg.append('text')
         .attr("x", width * 0.65)
         .attr("y", height + 90)
         .attr("dy", "0em")
@@ -335,7 +313,93 @@ function drawNotes() {
         .attr('font-size', 16);
 };
 
-// unique values of an array
+function drawLines() {
+    // append the svg object to the body of the page
+    // set the dimensions and margins of the graph
+    var lineMargin = { top: 0, right: 0, bottom: 0, left: 0 },
+        lineWidth = container.offsetWidth - lineMargin.left - lineMargin.right,
+        lineHeight = 200 - lineMargin.top - lineMargin.bottom;
+
+    var lineSvg = d3.select("#line-container").append("svg")
+        .attr("width", lineWidth + lineMargin.left + lineMargin.right)
+        .attr("height", lineHeight + lineMargin.top + lineMargin.bottom)
+        .style('background', '#e8e8e8')
+        .append("g")
+        .attr("transform",
+            "translate(" + lineMargin.left + "," + lineMargin.top + ")");
+
+    // set the domain and range
+    var lineX = d3.scaleTime()
+        .domain(d3.extent(lineData, function(d) { return d.year; }))
+        .range([0, lineWidth]);
+
+    var lineY = d3.scaleLinear()
+        .domain([0, d3.max(lineData, function(d) { return d.value; })])
+        .range([lineHeight, 0]); //need to filter out categorical values*****
+
+    // define the line
+    var lines = d3.line()
+        .x(function(d) { return x(d.year); })
+        .y(function(d) { return y(d.value); });
+
+    // Add the lines
+    lineSvg.append("path")
+        .data(lineData)
+        .attr("class", "line")
+        .attr("d", lines);
+}
+
 function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
 };
+
+//***UNUSED***
+//animated update is WIP, labels arent repositioning correctly, likely because nodes don't reorder when data does
+function updateSankey() {
+    sankey.nodes(nodes)
+        .links(links)
+        .layout(1000);
+
+    //sankey.relayout(); PURPOSE???
+    fontScale.domain(d3.extent(nodes, function(d) { return d.value }));
+
+    // add in the links
+    sankeySvg.selectAll(".link")
+        .data(links)
+        .transition()
+        .duration(transition)
+        .attr("d", path)
+        .style("stroke-width", function(d) { return Math.max(1, d.dy); });
+
+    // add in the nodes
+    sankeySvg.selectAll(".node")
+        .data(nodes)
+        .transition()
+        .duration(transition)
+        .attr("transform", function(d) {
+            return "translate(" + d.x + "," + d.y + ")"
+        });
+
+    // add the rectangles for the nodes
+    sankeySvg.selectAll(".node rect")
+        .data(nodes)
+        .transition()
+        .duration(transition)
+        .attr("height", function(d) {
+            return d.dy < 0 ? .1 : d.dy;
+        });
+
+    // title for the nodes
+    sankeySvg.selectAll(".nodeLabel")
+        .data(nodes)
+        .transition()
+        .duration(transition)
+        .style("font-size", function(d) {
+            return Math.floor(fontScale(d.value)) + "px";
+        });
+
+    // % for the nodes
+    sankeySvg.selectAll(".nodePercent")
+        .data(nodes)
+        .text(function(d) { return format(d.value) + "%" });
+}
