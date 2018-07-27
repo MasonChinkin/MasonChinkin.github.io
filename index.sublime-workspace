@@ -320,19 +320,13 @@
 	"buffers":
 	[
 		{
+			"contents": "// set the dimensions and margins of the graph\nvar margin = { top: 40, right: 10, bottom: 100, left: 10 },\n    width = container.offsetWidth - margin.left - margin.right,\n    height = 600 - margin.top - margin.bottom;\n\nvar fontScale = d3.scaleLinear()\n    .range([14, 22]);\n\n// format variables\nvar formatNumber = d3.format(\".1f\"), // zero decimal places\n    format = function(d) { return formatNumber(d); },\n    color = d3.scaleOrdinal(d3.schemeCategory20);\n\n// append the svg object to the body of the page\nvar sankeySvg = d3.select(\"#container\").append(\"svg\")\n    .attr(\"width\", width + margin.left + margin.right)\n    .attr(\"height\", height + margin.top + margin.bottom)\n    .style('background', '#e8e8e8')\n    .append(\"g\")\n    .attr(\"transform\",\n        \"translate(\" + margin.left + \",\" + margin.top + \")\");\n\n//transition time\ntransition = 1000\n\n//starting year\nthisYear = 1968\n\n// Set the sankey diagram properties\nvar sankey = d3.sankey()\n    .nodeWidth(60)\n    .nodePadding(20)\n    .size([width, height]);\n\nvar path = sankey.link();\n\n// load the data\nd3.csv(\"viz-data/us-budget-sankey-main.csv\", function(error, csv) {\n    if (error) throw error;\n\n    // load deficit data\n    d3.csv(\"viz-data/us-budget-sankey-deficit.csv\", function(error, deficit) {\n        if (error) throw error;\n\n        newData(csv, deficit, thisYear);\n        drawSankey()\n        drawDeficit()\n        drawNotes()\n        drawSlider()\n        drawLines();\n    });\n});\n\nfunction newData(csv, deficit, thisYear) {\n    thisYearCsv = csv.filter(function(d) {\n        if (d['year'] == thisYear) {\n            return d\n        }\n    });\n    //console.log(thisYearCsv)\n\n    thisYearDeficit = deficit.filter(function(d) {\n        if (d['year'] == thisYear) {\n            return d\n        }\n    });\n    //console.log(thisYearDeficit)\n\n    //create an array to push all sources and targets, before making them unique\n    //because starting nodes are not targets and end nodes are not sources\n    arr = [];\n    thisYearCsv.forEach(function(d) {\n        arr.push(d.source);\n        arr.push(d.target);\n    }); //console.log(arr.filter(onlyUnique))\n\n    // create nodes array\n    nodes = arr.filter(onlyUnique).map(function(d, i) {\n        return {\n            node: i,\n            name: d\n        }\n    });\n\n    //console.log(nodes)\n    // create links array\n    links = thisYearCsv.map(function(thisYearCsv_row) {\n        return {\n            source: getNode(\"source\"),\n            target: getNode(\"target\"),\n            value: +thisYearCsv_row.value\n        }\n\n        function getNode(type) {\n            return nodes.filter(function(node_object) { return node_object.name == thisYearCsv_row[type]; })[0].node;\n        }\n    });\n    //console.log(links)\n\n    // format line data\n    var timeParse = d3.timeParse(\"%Y\")\n\n    lineData = csv\n    lineData.forEach(function(d) {\n        d.year = timeParse(d.year);\n        d.value = +d.value;\n    });\n    //console.log(lineData)\n};\n\nfunction drawSankey() {\n    d3.selectAll(\".node\").remove();\n    d3.selectAll(\".link\").remove();\n    d3.selectAll(\".deficitLabel\").remove();\n\n    sankey.nodes(nodes)\n        .links(links)\n        .layout(1000);\n\n    fontScale.domain(d3.extent(nodes, function(d) { return d.value }));\n\n    // add in the links\n    link = sankeySvg.append(\"g\").selectAll(\".link\")\n        .data(links, function(d) { return d.id; })\n        .enter().append(\"path\")\n        .attr(\"class\", \"link\")\n        .attr(\"d\", path)\n        .style(\"stroke\", function(d) {\n            return color(d.source.name.replace(/ .*/, \"\"));\n        })\n        .style(\"stroke-width\", function(d) { return Math.max(1, d.dy); });\n\n    // add in the nodes\n    var node = sankeySvg.append(\"g\").selectAll(\".node\")\n        .data(nodes)\n        .enter().append(\"g\")\n        .attr(\"class\", \"node\")\n        .attr(\"transform\", function(d) {\n            return \"translate(\" + d.x + \",\" + d.y + \")\"\n        });\n\n    // add the rectangles for the nodes\n    node.append(\"rect\")\n        .attr(\"height\", function(d) {\n            return d.dy < 0 ? .1 : d.dy;\n        })\n        .attr(\"width\", sankey.nodeWidth())\n        .attr('class', function(d) {\n            return d.name;\n        })\n        .attr('value', function(d) {\n            return d.value;\n        })\n        .style(\"fill\", 'lightgrey')\n        .style(\"opacity\", 0.4)\n        .style(\"stroke\", function(d) {\n            return d3.rgb(d.color).darker(2);\n        });\n\n    // title for the nodes\n    node.append(\"text\")\n        .attr(\"x\", -6)\n        .attr(\"y\", function(d) { return d.dy / 2; })\n        .attr(\"dy\", \".35em\")\n        .attr(\"text-anchor\", \"end\")\n        .attr(\"transform\", null)\n        .style(\"font-size\", function(d) {\n            return Math.floor(fontScale(d.value)) + \"px\";\n        })\n        .text(function(d) { return d.name; })\n        .filter(function(d) { return d.x < width / 2; })\n        .attr(\"x\", 6 + sankey.nodeWidth())\n        .attr(\"text-anchor\", \"start\")\n        .attr('class', 'nodeLabel');\n\n    // % for the nodes\n    node.append(\"text\")\n        .attr(\"text-anchor\", \"middle\")\n        .attr(\"x\", 30)\n        .attr(\"y\", function(d) { return d.dy / 2; })\n        .style(\"font-size\", 18)\n        .attr(\"dy\", \".35em\")\n        .filter(function(d) { return d.value > 1 })\n        .filter(function(d) { return d.node != 20 }) //do spending seperately to correctly show surplus\n        .text(function(d) { return format(d.value) + \"%\" })\n        .attr('class', 'nodePercent');\n\n    // % for spending in times of surplus using seperate data\n    node.append(\"text\")\n        .attr(\"text-anchor\", \"middle\")\n        .attr(\"x\", 30)\n        .attr(\"y\", function(d) { return d.dy / 2; })\n        .style(\"font-size\", 18)\n        .attr(\"dy\", \".35em\")\n        .filter(function(d) { return d.node == 20 })\n        .text(function() {\n            return format(thisYearDeficit[0].spending) + \"%\"\n        })\n        .attr('class', 'nodePercent');\n};\n\nfunction drawDeficit() {\n\n    //highlight deficit\n    barHeight = d3.select('.Spending').attr('height');\n    barVal = d3.select('.Spending').attr('value');\n    deficitVal = thisYearDeficit[0].deficit\n\n    //get deficit bar size with ratio of spending value to bar height\n    deficitBarRatio = (barHeight * (deficitVal)) / barVal;\n    //console.log(deficitBarRatio)\n\n    deficitBar = d3.select('.Spending')\n        .select(function() { return this.parentNode })\n        .append('rect')\n        .attr(\"height\", function() { if (deficitBarRatio < 0) { return -deficitBarRatio } else { return deficitBarRatio } })\n        .attr(\"width\", sankey.nodeWidth())\n        .attr(\"y\", function(d) { if (deficitBarRatio < 0) { return d.dy + deficitBarRatio; } else { return d.dy - deficitBarRatio } })\n        .style('fill', function() {\n            if (deficitBarRatio < 0) { return 'red' } else { return 'blue' }\n        })\n        .style('opacity', 0.8)\n        .attr('class', 'deficit');\n\n\n    function deficitType() { if (thisYearDeficit[0].deficit < 0) { return \"Deficit\" } else { return \"Surplus\" } };\n\n    sankeySvg.append('text')\n        .attr(\"text-anchor\", \"middle\")\n        .attr(\"x\", width / 2)\n        .attr(\"y\", height * .92)\n        .style(\"font-size\", 25)\n        .style(\"font-weight\", 'bold')\n        .attr('class', 'deficitLabel')\n        .text(function() {\n            if (thisYearDeficit[0].deficit < 0) { return format(-thisYearDeficit[0].deficit) + \"% \" + \"Deficit\" } else { return format(thisYearDeficit[0].deficit) + \"% \" + \"Surplus\" }\n        })\n        .style('fill', function() {\n            if (deficitBarRatio < 0) { return 'red' } else { return 'blue' }\n        });\n};\n\nfunction drawSlider() {\n    //Slider\n    var slider = d3.sliderHorizontal()\n        .min(1968)\n        .max(2017)\n        .step(1)\n        .width(container.offsetWidth - 75)\n        .tickFormat(d3.format(\".4\"))\n        .on('end', val => { //use end instead of onchange, is when user releases mouse\n            thisYear = val;\n\n            d3.csv(\"viz-data/us-budget-sankey-main.csv\", function(error, csv) {\n                if (error) throw error;\n\n                d3.csv(\"viz-data/us-budget-sankey-deficit.csv\", function(error, deficit) {\n                    if (error) throw error;\n                    newData(csv, deficit, thisYear);\n                    drawSankey()\n                    drawDeficit()\n                });\n            });\n        });\n\n    var g = d3.select(\"div#slider\").append(\"svg\")\n        .attr(\"width\", container.offsetWidth)\n        .attr(\"height\", 100)\n        .append(\"g\")\n        .attr(\"transform\", \"translate(30,30)\");\n\n    g.call(slider);\n    d3.selectAll('#slider')\n        .style('font-size', 20)\n}\n\nfunction drawNotes() {\n\n    //PERCENT OF GDP\n    sankeySvg.append('text')\n        .attr(\"x\", 0)\n        .attr(\"y\", -15)\n        .attr(\"dy\", \"0em\")\n        .text('Percent of GDP (May not add up due to rounding)')\n        .attr('font-size', 25)\n        .attr('font-weight', 'bold')\n        .attr('class', 'percent');\n\n    //Source and * and ** notes\n    sankeySvg.append('text')\n        .attr(\"x\", width * 0.65)\n        .attr(\"y\", height + 50)\n        .attr(\"dy\", \"0em\")\n        .text('* Originally under \"Mandatory\" as a negative value')\n        .attr(\"class\", \"legend\")\n        .attr('font-size', 16);\n\n    sankeySvg.append('text')\n        .attr(\"x\", width * 0.65)\n        .attr(\"y\", height + 70)\n        .attr(\"dy\", \"0em\")\n        .text('** Technically called \"Programmatic\"')\n        .attr(\"class\", \"legend\")\n        .attr('font-size', 16);\n\n\n    sankeySvg.append('text')\n        .attr(\"x\", width * 0.65)\n        .attr(\"y\", height + 90)\n        .attr(\"dy\", \"0em\")\n        .text('Source: OMB')\n        .attr(\"class\", \"legend\")\n        .attr('font-size', 16);\n};\n\nfunction drawLines() {\n    //seperate datasets filtered by type\n    revLineData = lineData.filter(function(d) { return d.type == 'Revenue' });\n    spendLineData = lineData.filter(function(d) { return d.type == 'Spending' });\n    //console.log(revLineData)\n    //console.log(spendLineData)\n\n    //Dimensions\n    var lineMargin = { top: 5, right: 10, bottom: 5, left: 10, middle: 10 },\n        lineWidth = container.offsetWidth - lineMargin.left - lineMargin.right,\n        lineHeight = 300 - lineMargin.top - lineMargin.bottom;\n\n    var lineSvg = d3.select(\"#line-container\").append(\"svg\")\n        .attr(\"width\", lineWidth + lineMargin.left + lineMargin.right)\n        .attr(\"height\", lineHeight + lineMargin.top + lineMargin.bottom)\n        .style('background', '#e8e8e8')\n        .append(\"g\")\n        .attr(\"transform\",\n            \"translate(\" + lineMargin.left + \",\" + lineMargin.top + \")\");\n\n    // set the domain and range\n    var revLineX = d3.scaleTime()\n        .domain(d3.extent(lineData, function(d) { return d.year; }))\n        .range([lineMargin.left, lineWidth / 2 - lineMargin.middle]);\n\n    var spendLineX = d3.scaleTime()\n        .domain(d3.extent(lineData, function(d) { return d.year; }))\n        .range([lineWidth / 2 + lineMargin.middle, lineWidth - lineMargin.right]);\n\n    var lineY = d3.scaleLinear()\n        .domain([0, d3.max(revLineData, function(d) { return d.value; })])\n        .range([lineHeight - lineMargin.bottom, lineMargin.top]);\n\n    // define the line\n    var revLines = d3.line()\n        .x(function(d) { return revLineX(d.year); })\n        .y(function(d) { return lineY(d.value); });\n\n    var spendLines = d3.line()\n        .x(function(d) { return spendLineX(d.year); })\n        .y(function(d) { return lineY(d.value); });\n\n    // Add the lines\n    lineSvg.selectAll('line revLine')\n        .data([revLineData])\n        .enter().append(\"path\")\n        .attr('class', function(d) { return \"line revLine\" })\n        .attr(\"d\", revLines);\n\n    // Add the lines\n    lineSvg.selectAll('line spendLine')\n        .data([spendLineData])\n        .enter().append(\"path\")\n        .attr('class', function(d) { return \"line spendLine\" })\n        .attr(\"d\", spendLines);\n}\n\nfunction onlyUnique(value, index, self) {\n    return self.indexOf(value) === index;\n};\n\n//***UNUSED***\n//animated update is WIP, labels arent repositioning correctly, likely because nodes don't reorder when data does\nfunction updateSankey() {\n    sankey.nodes(nodes)\n        .links(links)\n        .layout(1000);\n\n    //sankey.relayout(); PURPOSE???\n    fontScale.domain(d3.extent(nodes, function(d) { return d.value }));\n\n    // add in the links\n    sankeySvg.selectAll(\".link\")\n        .data(links)\n        .transition()\n        .duration(transition)\n        .attr(\"d\", path)\n        .style(\"stroke-width\", function(d) { return Math.max(1, d.dy); });\n\n    // add in the nodes\n    sankeySvg.selectAll(\".node\")\n        .data(nodes)\n        .transition()\n        .duration(transition)\n        .attr(\"transform\", function(d) {\n            return \"translate(\" + d.x + \",\" + d.y + \")\"\n        });\n\n    // add the rectangles for the nodes\n    sankeySvg.selectAll(\".node rect\")\n        .data(nodes)\n        .transition()\n        .duration(transition)\n        .attr(\"height\", function(d) {\n            return d.dy < 0 ? .1 : d.dy;\n        });\n\n    // title for the nodes\n    sankeySvg.selectAll(\".nodeLabel\")\n        .data(nodes)\n        .transition()\n        .duration(transition)\n        .style(\"font-size\", function(d) {\n            return Math.floor(fontScale(d.value)) + \"px\";\n        });\n\n    // % for the nodes\n    sankeySvg.selectAll(\".nodePercent\")\n        .data(nodes)\n        .text(function(d) { return format(d.value) + \"%\" });\n}",
 			"file": "d3-visualizations/us-budget-sankey.js",
+			"file_size": 13854,
+			"file_write_time": 131771979592219043,
 			"settings":
 			{
-				"buffer_size": 10479,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "us-budget-sankey.html",
-			"settings":
-			{
-				"buffer_size": 5523,
+				"buffer_size": 13427,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -448,13 +442,24 @@
 	[
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations"
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations",
+		"/C/Users/Zhangkin/Desktop/D3",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1",
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11",
+		"/C/Users/Zhangkin/Desktop/D3/line",
+		"/C/Users/Zhangkin/Desktop/D3/workspace",
+		"/C/Users/Zhangkin/Desktop/D3/workspace/demo"
 	],
 	"file_history":
 	[
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/us-budget-sankey.html",
+		"/C/Users/Zhangkin/Desktop/D3/line/data.csv",
+		"/C/Users/Zhangkin/Desktop/D3/line/index.html",
+		"/C/Users/Zhangkin/Desktop/D3/workspace/demo/demo.js",
+		"/C/Users/Zhangkin/Desktop/D3/workspace/demo/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/us-budget-sankey.js",
+		"/F/Downloads/Book1.csv",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
 		"/F/Google Drive/STATA/Aggragated & Combined/IMPORTANT ONE- Cpn by Industry.do",
 		"/F/Google Drive/STATA/Aggragated & Combined/Combine countries and mark duplicates.do",
 		"/F/Google Drive/STATA/Aggragated & Combined/Final_aggragated.csv",
@@ -574,10 +579,7 @@
 		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa26504.986/HIP readme.txt",
 		"/C/Users/Zhangkin/Desktop/D3/stocks.csv",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/bars-add-sub-styles.css",
-		"/F/Downloads/Resume - Mason Chinkin.htm",
-		"/C/Users/Zhangkin/Desktop/D3/streamgraphforbusinesscard.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3.js",
-		"/C/Users/Zhangkin/Desktop/D3/class-project/D3.js-book-work-plus/random-scatter.js"
+		"/F/Downloads/Resume - Mason Chinkin.htm"
 	],
 	"find":
 	{
@@ -595,6 +597,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"-",
+			"Apr",
+			"12",
+			"1-May-",
+			"Apr",
+			"12",
+			"svg",
+			"console",
 			"getnode",
 			"getnodes",
 			"thisYearD",
@@ -714,15 +724,7 @@
 			"line",
 			"vehicles",
 			"catDataset",
-			"dataset",
-			"data.",
-			"#",
-			"this",
-			"mousem",
-			"on",
-			"hover",
-			"gdpataset",
-			"domain"
+			"dataset"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -795,20 +797,23 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10479,
+						"buffer_size": 13427,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1390,
-								1390
+								11890,
+								11890
 							]
 						],
 						"settings":
 						{
-							"SL.18.region_keys":
+							"SL.13.region_keys":
+							[
+							],
+							"SL.50.region_keys":
 							[
 							],
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
@@ -816,49 +821,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1126.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "us-budget-sankey.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5523,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								623,
-								623
-							]
-						],
-						"settings":
-						{
-							"SL.17.region_keys":
-							[
-								"SL.csslint.Highlights.|d82965b9a598f1753152023caa89dd84cc4d26c3bf77a7ff57c435897fc2cb0f|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|ff591e99fbac2c527c523cb766464ef48444943c56824283c67e5866e9821898|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|54ae4511ea9df0240b0f9447a79ad8a5cd8138fad50a9d0ae8be4705e0ca576d|region.yellowish markup.warning.sublime_linter|32",
-								"sublime_linter.protected_regions",
-								"SL.csslint.Highlights.|5bf29c972e18457e3380e76f586b0d061af658bb92eb83d607581b86647881d5|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot"
-							],
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -949,7 +915,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 168.0,
+	"side_bar_width": 292.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

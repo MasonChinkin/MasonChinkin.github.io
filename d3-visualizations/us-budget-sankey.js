@@ -105,7 +105,7 @@ function newData(csv, deficit, thisYear) {
         d.year = timeParse(d.year);
         d.value = +d.value;
     });
-    console.log(lineData)
+    //console.log(lineData)
 };
 
 function drawSankey() {
@@ -314,11 +314,27 @@ function drawNotes() {
 };
 
 function drawLines() {
-    // append the svg object to the body of the page
-    // set the dimensions and margins of the graph
-    var lineMargin = { top: 0, right: 0, bottom: 0, left: 0 },
+    //seperate datasets filtered by type
+    var revLineData = lineData.filter(function(d) { return d.type == 'Revenue' });
+    var spendLineData = lineData.filter(function(d) { return d.type == 'Spending' });
+    //console.log(revLineData)
+    //console.log(spendLineData)
+
+    var revDataNested = d3.nest()
+        .key(function(d) { return d.source })
+        .entries(revLineData);
+
+    var spendDataNested = d3.nest()
+        .key(function(d) { return d.target })
+        .entries(revLineData);
+    //console.log(revDataNested)
+    //console.log(spendDataNested)
+
+
+    //Dimensions
+    var lineMargin = { top: 5, right: 10, bottom: 5, left: 10, middle: 10 },
         lineWidth = container.offsetWidth - lineMargin.left - lineMargin.right,
-        lineHeight = 200 - lineMargin.top - lineMargin.bottom;
+        lineHeight = 300 - lineMargin.top - lineMargin.bottom;
 
     var lineSvg = d3.select("#line-container").append("svg")
         .attr("width", lineWidth + lineMargin.left + lineMargin.right)
@@ -329,24 +345,38 @@ function drawLines() {
             "translate(" + lineMargin.left + "," + lineMargin.top + ")");
 
     // set the domain and range
-    var lineX = d3.scaleTime()
+    var revLineX = d3.scaleTime()
         .domain(d3.extent(lineData, function(d) { return d.year; }))
-        .range([0, lineWidth]);
+        .range([lineMargin.left, lineWidth / 2 - lineMargin.middle]);
+
+    var spendLineX = d3.scaleTime()
+        .domain(d3.extent(lineData, function(d) { return d.year; }))
+        .range([lineWidth / 2 + lineMargin.middle, lineWidth - lineMargin.right]);
 
     var lineY = d3.scaleLinear()
-        .domain([0, d3.max(lineData, function(d) { return d.value; })])
-        .range([lineHeight, 0]); //need to filter out categorical values*****
+        .domain([0, d3.max(revLineData, function(d) { return d.value; })])
+        .range([lineHeight - lineMargin.bottom, lineMargin.top]);
 
     // define the line
-    var lines = d3.line()
-        .x(function(d) { return x(d.year); })
-        .y(function(d) { return y(d.value); });
+    var revLines = d3.line()
+        .x(function(d) { return revLineX(d.year); })
+        .y(function(d) { return lineY(d.value); });
+
+    var spendLines = d3.line()
+        .x(function(d) { return spendLineX(d.year); })
+        .y(function(d) { return lineY(d.value); });
 
     // Add the lines
-    lineSvg.append("path")
-        .data(lineData)
-        .attr("class", "line")
-        .attr("d", lines);
+    lineSvg.append('path')
+        .data([revLineData])
+        .attr('class', "line revLine")
+        .attr("d", revLines);
+
+    // Add the lines
+    lineSvg.append('path')
+        .data([spendLineData])
+        .attr('class', "line spendLine")
+        .attr("d", spendLines);
 }
 
 function onlyUnique(value, index, self) {
