@@ -326,13 +326,14 @@ function drawLines() {
 
     var spendDataNested = d3.nest()
         .key(function(d) { return d.target })
-        .entries(revLineData);
-    //console.log(revDataNested)
-    //console.log(spendDataNested)
+        .entries(spendLineData);
+    console.log(revDataNested)
+    console.log(spendDataNested)
 
+    var colors = d3.scaleOrdinal(d3.schemeCategory20);
 
     //Dimensions
-    var lineMargin = { top: 5, right: 10, bottom: 5, left: 10, middle: 10 },
+    var lineMargin = { top: 30, right: 15, bottom: 10, left: 15, middle: 15 },
         lineWidth = container.offsetWidth - lineMargin.left - lineMargin.right,
         lineHeight = 300 - lineMargin.top - lineMargin.bottom;
 
@@ -346,11 +347,11 @@ function drawLines() {
 
     // set the domain and range
     var revLineX = d3.scaleTime()
-        .domain(d3.extent(lineData, function(d) { return d.year; }))
+        .domain(d3.extent(revLineData, function(d) { return d.year; }))
         .range([lineMargin.left, lineWidth / 2 - lineMargin.middle]);
 
     var spendLineX = d3.scaleTime()
-        .domain(d3.extent(lineData, function(d) { return d.year; }))
+        .domain(d3.extent(spendLineData, function(d) { return d.year; }))
         .range([lineWidth / 2 + lineMargin.middle, lineWidth - lineMargin.right]);
 
     var lineY = d3.scaleLinear()
@@ -358,25 +359,54 @@ function drawLines() {
         .range([lineHeight - lineMargin.bottom, lineMargin.top]);
 
     // define the line
-    var revLines = d3.line()
+    var revLine = d3.line()
         .x(function(d) { return revLineX(d.year); })
         .y(function(d) { return lineY(d.value); });
 
-    var spendLines = d3.line()
+    var spendLine = d3.line()
         .x(function(d) { return spendLineX(d.year); })
         .y(function(d) { return lineY(d.value); });
 
     // Add the lines
-    lineSvg.append('path')
-        .data([revLineData])
+    var revLines = lineSvg.selectAll('revCats')
+        .data(revDataNested)
+        .enter().append('g')
+        .attr('class', "revCats");
+
+    revLines.append('path')
         .attr('class', "line revLine")
-        .attr("d", revLines);
+        .attr("d", function(d) { return revLine(d.values) })
+        .attr('category', function(d) { return d.source });
 
     // Add the lines
-    lineSvg.append('path')
-        .data([spendLineData])
+    var spendLines = lineSvg.selectAll('spendCats')
+        .data(spendDataNested)
+        .enter().append('g')
+        .attr('class', "spendCats");
+
+    spendLines.append('path')
         .attr('class', "line spendLine")
-        .attr("d", spendLines);
+        .attr("d", function(d) { return spendLine(d.values) })
+        .attr('value', function(d) { return d.target });
+
+    //headers
+    lineSvg.append('text')
+        .attr("x", lineWidth * .25)
+        .attr("y", lineMargin.top * .25)
+        .style('text-anchor', 'middle')
+        .attr('font-size', 25)
+        .attr('font-weight', 'bold')
+        .attr('class', 'lineTitle')
+        .text('Revenue');
+
+    lineSvg.append('text')
+        .attr("x", lineWidth * .75)
+        .attr("y", lineMargin.top * .25)
+        .style('text-anchor', 'middle')
+        .attr('font-size', 25)
+        .attr('font-weight', 'bold')
+        .attr('class', 'lineTitle')
+        .text('Spending');
 }
 
 function onlyUnique(value, index, self) {
