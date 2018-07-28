@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
-var margin = { top: 40, right: 10, bottom: 100, left: 10 },
+var margin = { top: 40, right: 10, bottom: 80, left: 10 },
     width = container.offsetWidth - margin.left - margin.right,
-    height = 600 - margin.top - margin.bottom;
+    height = 550 - margin.top - margin.bottom;
 
 var fontScale = d3.scaleLinear()
     .range([14, 22]);
@@ -88,7 +88,8 @@ function newData(csv, deficit, thisYear) {
         return {
             source: getNode("source"),
             target: getNode("target"),
-            value: +thisYearCsv_row.value
+            value: +thisYearCsv_row.value,
+            type: thisYearCsv_row.type //to alow for proper keying
         }
 
         function getNode(type) {
@@ -128,7 +129,10 @@ function drawSankey() {
         .style("stroke", function(d) {
             return color(d.source.name.replace(/ .*/, ""));
         })
-        .style("stroke-width", function(d) { return Math.max(1, d.dy); });
+        .style("stroke-width", function(d) { return Math.max(1, d.dy); })
+        .attr('key', function(d) { if (d.type == 'Revenue') { return d.source.name.split(' ').join('_') } else { return d.target.name.split(' ').join('_') } })
+        .on('mouseover', highlight)
+        .on('mouseout', unHighlightLink);
 
     // add in the nodes
     var node = sankeySvg.append("g").selectAll(".node")
@@ -145,8 +149,8 @@ function drawSankey() {
             return d.dy < 0 ? .1 : d.dy;
         })
         .attr("width", sankey.nodeWidth())
-        .attr('class', function(d) {
-            return d.name;
+        .attr('key', function(d) {
+            return d.name.split(' ').join('_');
         })
         .attr('value', function(d) {
             return d.value;
@@ -155,7 +159,9 @@ function drawSankey() {
         .style("opacity", 0.4)
         .style("stroke", function(d) {
             return d3.rgb(d.color).darker(2);
-        });
+        })
+        .on('mouseover', highlight)
+        .on('mouseout', unHighlightLink);
 
     // title for the nodes
     node.append("text")
@@ -202,15 +208,15 @@ function drawSankey() {
 function drawDeficit() {
 
     //highlight deficit
-    barHeight = d3.select('.Spending').attr('height');
-    barVal = d3.select('.Spending').attr('value');
+    barHeight = d3.select('rect[key=Spending]').attr('height');
+    barVal = d3.select('rect[key=Spending]').attr('value');
     deficitVal = thisYearDeficit[0].deficit
 
     //get deficit bar size with ratio of spending value to bar height
-    deficitBarRatio = (barHeight * (deficitVal)) / barVal;
+    deficitBarRatio = (barHeight * deficitVal) / barVal;
     //console.log(deficitBarRatio)
 
-    deficitBar = d3.select('.Spending')
+    deficitBar = d3.select('rect[key=Spending]')
         .select(function() { return this.parentNode })
         .append('rect')
         .attr("height", function() { if (deficitBarRatio < 0) { return -deficitBarRatio } else { return deficitBarRatio } })
@@ -289,7 +295,7 @@ function drawNotes() {
     //Source and * and ** notes
     sankeySvg.append('text')
         .attr("x", width * 0.65)
-        .attr("y", height + 50)
+        .attr("y", height + 35)
         .attr("dy", "0em")
         .text('* Originally under "Mandatory" as a negative value')
         .attr("class", "legend")
@@ -297,7 +303,7 @@ function drawNotes() {
 
     sankeySvg.append('text')
         .attr("x", width * 0.65)
-        .attr("y", height + 70)
+        .attr("y", height + 55)
         .attr("dy", "0em")
         .text('** Technically called "Programmatic"')
         .attr("class", "legend")
@@ -306,7 +312,7 @@ function drawNotes() {
 
     sankeySvg.append('text')
         .attr("x", width * 0.65)
-        .attr("y", height + 90)
+        .attr("y", height + 75)
         .attr("dy", "0em")
         .text('Source: OMB')
         .attr("class", "legend")
@@ -327,8 +333,8 @@ function drawLines() {
     var spendDataNested = d3.nest()
         .key(function(d) { return d.target })
         .entries(spendLineData);
-    console.log(revDataNested)
-    console.log(spendDataNested)
+    //console.log(revDataNested)
+    //console.log(spendDataNested)
 
     var colors = d3.scaleOrdinal(d3.schemeCategory20);
 
@@ -374,9 +380,11 @@ function drawLines() {
         .attr('class', "revCats");
 
     revLines.append('path')
-        .attr('class', "line revLine")
+        .attr('class', function(d) { return "line " + d.key })
         .attr("d", function(d) { return revLine(d.values) })
-        .attr('category', function(d) { return d.source });
+        .attr('key', function(d) { return d.key.split(' ').join('_') })
+        .on('mouseover', highlight)
+        .on('mouseout', unHighlightLink);
 
     // Add the lines
     var spendLines = lineSvg.selectAll('spendCats')
@@ -385,9 +393,11 @@ function drawLines() {
         .attr('class', "spendCats");
 
     spendLines.append('path')
-        .attr('class', "line spendLine")
+        .attr('class', function(d) { return "line " + d.key })
         .attr("d", function(d) { return spendLine(d.values) })
-        .attr('value', function(d) { return d.target });
+        .attr('key', function(d) { return d.key.split(' ').join('_') })
+        .on('mouseover', highlight)
+        .on('mouseout', unHighlightLink);
 
     //headers
     lineSvg.append('text')
@@ -409,11 +419,39 @@ function drawLines() {
         .text('Spending');
 }
 
+function highlight() {
+    var key = d3.select(this).attr('key')
+    //console.log(key)
+
+    d3.selectAll('.line')
+        .filter(function(d) { return d3.select(this).attr('key') == key })
+        .style('opacity', 1)
+
+    d3.selectAll('.line')
+        .filter(function(d) { return d3.select(this).attr('key') != key })
+        .style('opacity', 0.2)
+
+    d3.selectAll('.link')
+        .filter(function(d) { return d3.select(this).attr('key') == key })
+        .style('stroke-opacity', 1)
+}
+
+//seperate unhighlights because line chart just flickered in an ugly way
+function unHighlightLink() {
+    d3.selectAll('.link')
+        .style('stroke-opacity', 0.4)
+}
+
+function unHighlightLine() {
+    d3.selectAll('.line')
+        .style('opacity', 1)
+}
+
 function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
 };
 
-//***UNUSED***
+//***BELOW IS UNUSED***
 //animated update is WIP, labels arent repositioning correctly, likely because nodes don't reorder when data does
 function updateSankey() {
     sankey.nodes(nodes)
