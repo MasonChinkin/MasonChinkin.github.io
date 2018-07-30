@@ -38,6 +38,7 @@
         fill: none;
         stroke: steelblue;
         stroke-width: 3px;
+        opacity: .3;
     }
     </style>
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -97,17 +98,19 @@
             </div>
         </section>
         <section id="portfolio" class="two">
-            <div id="container" class="container">
+            <div id="bars-container" class="container">
                 <h2>US Federal Budget Balance, 1968-2017</h2>
-                <!-- <p align="left">Remaining goals for this piece: 1) animated transitions, 2) line or bar chart below which will show a time series of the budget item selected by the user by clicking on the sankey, 3) adjust discretionary/mandatory arrangement so the net interest link doesnt overlap.</p> -->
+                <p>Hover over the categories!</p>
                 <div class="row align-items-center">
                     <div id="slider"></div>
                 </div>
-                <script src="d3-visualizations/us-budget-sankey.js"></script>
-                <div id="line-container" class="container">
-                </div>
+            </div>
+            <div id="container" class="container">
+            </div>
+            <div id="line-container" class="container">
+            </div>
+            <script src="d3-visualizations/us-budget-sankey.js"></script>
         </section>
-        </div>
 </body>
 <div id="footer">
     <!-- Copyright -->

@@ -331,8 +331,16 @@
 			"file": "d3-visualizations/us-budget-sankey.js",
 			"settings":
 			{
-				"buffer_size": 16053,
+				"buffer_size": 21255,
 				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "d3-visualizations/gdp.js",
+			"settings":
+			{
+				"buffer_size": 19652,
 				"line_ending": "Windows"
 			}
 		},
@@ -340,16 +348,7 @@
 			"file": "us-budget-sankey.html",
 			"settings":
 			{
-				"buffer_size": 5334,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Zhangkin/Desktop/D3/multiple lines/index.html",
-			"settings":
-			{
-				"buffer_size": 2836,
+				"buffer_size": 5159,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -471,6 +470,8 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/gdp.js",
+		"/C/Users/Zhangkin/Desktop/D3/multiple lines/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/us-budget-sankey.html",
 		"/C/Users/Zhangkin/Desktop/D3/line/data.csv",
 		"/C/Users/Zhangkin/Desktop/D3/line/index.html",
@@ -506,7 +507,6 @@
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/europe-trip.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/congress-2016-results.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/gdp.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/random-scatter.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Random-scatter.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/swiss-army-bar-chart.js",
@@ -597,8 +597,7 @@
 		"/C/Users/Zhangkin/Desktop/D3/stackedgraphforbusinesscard.html",
 		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa26504.986/HIP readme.txt",
 		"/C/Users/Zhangkin/Desktop/D3/stocks.csv",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/bars-add-sub-styles.css",
-		"/F/Downloads/Resume - Mason Chinkin.htm"
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/bars-add-sub-styles.css"
 	],
 	"find":
 	{
@@ -616,6 +615,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			" w",
+			"dataset",
+			"yScale",
+			"xScale",
+			"stackMin",
+			"paddingInner",
+			"margin",
+			" width",
+			"width",
+			"line",
+			"colors",
+			"color",
+			"simple",
+			"unHighlightLink",
+			"unHighlightLine",
 			"unhighlightL",
 			"oout",
 			"drawd",
@@ -728,22 +742,7 @@
 			"\"image\"",
 			"\"id\"",
 			"name",
-			"qae",
-			"line",
-			" series",
-			"series",
-			"thisStack",
-			"gdpD",
-			"viewstat",
-			"#bars",
-			"thisSer",
-			"thisS",
-			"keys",
-			"thisSeries",
-			"window",
-			"dataset",
-			"key",
-			"button"
+			"qae"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -817,15 +816,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16053,
+						"buffer_size": 21255,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								14509,
-								14509
+								6731,
+								6731
 							]
 						],
 						"settings":
@@ -841,7 +840,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 198.0,
+						"translation.y": 162.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -849,31 +848,62 @@
 				},
 				{
 					"buffer": 1,
-					"file": "us-budget-sankey.html",
-					"semi_transient": false,
+					"file": "d3-visualizations/gdp.js",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 5334,
+						"buffer_size": 19652,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1153,
-								1167
+								12161,
+								12161
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 297.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "us-budget-sankey.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5159,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4210,
+								4210
 							]
 						],
 						"settings":
 						{
 							"SL.14.region_keys":
 							[
-								"sublime_linter.protected_regions",
 								"SL.csslint.Highlights.|d82965b9a598f1753152023caa89dd84cc4d26c3bf77a7ff57c435897fc2cb0f|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.csslint.Highlights.|54ae4511ea9df0240b0f9447a79ad8a5cd8138fad50a9d0ae8be4705e0ca576d|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|962fca4d5d88c2a9415618690180e5d6893b85fd4b37d8256011a11bf16a8dff|region.yellowish markup.warning.sublime_linter|32",
 								"SL.csslint.Highlights.|5bf29c972e18457e3380e76f586b0d061af658bb92eb83d607581b86647881d5|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|ff591e99fbac2c527c523cb766464ef48444943c56824283c67e5866e9821898|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|54ae4511ea9df0240b0f9447a79ad8a5cd8138fad50a9d0ae8be4705e0ca576d|region.yellowish markup.warning.sublime_linter|32"
+								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"sublime_linter.protected_regions",
+								"SL.csslint.Highlights.|ff591e99fbac2c527c523cb766464ef48444943c56824283c67e5866e9821898|region.yellowish markup.warning.sublime_linter|32"
 							],
 							"SL.19.region_keys":
 							[
@@ -889,43 +919,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 108.0,
+						"translation.y": 1368.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Users/Zhangkin/Desktop/D3/multiple lines/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2836,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								608,
-								608
-							]
-						],
-						"settings":
-						{
-							"SL.15.region_keys":
-							[
-							],
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 432.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]

@@ -41,7 +41,7 @@ var svg = d3.select('#container')
     .attr('height', h);
 
 //load data
-d3.csv('viz-data/growth_data_simple.csv', rowConverter, function(error, data) {
+d3.csv('viz-data/growth_data.csv', rowConverter, function(error, data) {
     if (error) throw error;
     dataset = data;
     //console.table(dataset);
