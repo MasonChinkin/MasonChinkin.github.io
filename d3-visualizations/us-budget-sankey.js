@@ -6,6 +6,10 @@ var formatNumber = d3.format(".1f"), // zero decimal places
     format = function(d) { return formatNumber(d); },
     color = d3.scaleOrdinal(d3.schemeCategory20);
 
+// format date
+var timeParse = d3.timeParse("%Y")
+var formatYear = d3.timeFormat("%Y")
+
 //starting year
 thisYear = 1968
 
@@ -74,9 +78,6 @@ function newData(csv, deficit, thisYear) {
     });
     //console.log(links)
 
-    // format line data
-    var timeParse = d3.timeParse("%Y")
-
     lineData = csv
     lineData.forEach(function(d) {
         d.year = timeParse(d.year);
@@ -84,135 +85,6 @@ function newData(csv, deficit, thisYear) {
     });
     //console.log(lineData)
 };
-
-// function drawBars(csv, deficit) {
-
-//     var barData = csv
-
-//     //define stacks
-//     var stack = d3.stack();
-
-//     barsKeys = barData.columns.slice(1);
-
-//     stack.keys(barsKeys)
-//         .offset(d3.stackOffsetDiverging)
-//         .order(d3.stackOrderInsideOut);
-
-//     //data, stacked
-//     series = stack(csv);
-//     //console.log(series);
-
-//     //Dimensions
-//     barsMargin = { top: 10, right: 30, bottom: 10, left: 30 },
-//         barsWidth = container.offsetWidth - barsMargin.left - barsMargin.right,
-//         barsHeight = 250 - barsMargin.top - barsMargin.bottom;
-
-//     barsSvg = d3.select("#bars-container").append("svg")
-//         .attr("width", barsWidth + barsMargin.left + barsMargin.right)
-//         .attr("height", barsHeight + barsMargin.top + barsMargin.bottom)
-//         .style('background', '#e8e8e8')
-//         .append("g")
-//         .attr("transform",
-//             "translate(" + barsMargin.left + "," + barsMargin.top + ")");
-
-//     barsXScale = d3.scaleBand()
-//         .domain(csv.map(function(d) { return d.year }))
-//         .range([barsMargin.left, barsWidth - barsMargin.right])
-//         .paddingInner(0.1)
-//         .paddingOuter(0.75);
-
-//     barsYScale = d3.scaleLinear()
-//         .domain([d3.min(series, stackMin), d3.max(series, stackMax)])
-//         .range([barsHeight - barsMargin.bottom, barsMargin.top])
-//         .nice();
-
-//     //Define axes
-//     barsXAxis = d3.axisBottom()
-//         .scale(barsXScale)
-//         .tickValues(barsXScale.domain().filter(function(d, i) { return !(i % 10) }))
-//         .tickFormat(d3.timeFormat('%Y'))
-//         .tickSize(0);
-
-//     //Define right Y axis
-//     barsYAxisR = d3.axisRight()
-//         .scale(barsYScale)
-//         .ticks(5)
-//         .tickSizeOuter(0)
-//         .tickFormat(format);
-
-//     //Define left Y axis
-//     barsYAxisL = d3.axisLeft()
-//         .scale(barsYScale)
-//         .ticks(5)
-//         .tickSizeOuter(0);
-
-//     //Define grey y axis lines
-//     barsYAxisGrid = d3.axisLeft()
-//         .scale(barsYScale)
-//         .ticks(5)
-//         .tickSizeOuter(0)
-//         .tickSizeInner(-barsWidth + barsMargin.left + barsMargin.right)
-//         .tickFormat("");
-
-//     //group data rows
-//     var bars = barsSvg.selectAll('#originalBars')
-//         .data(series)
-//         .enter()
-//         .append('g')
-//         .attr('id', 'originalBars')
-//         .style('fill', function(d, i) { return color(i); })
-//         .attr("class", function(d, i) {
-//             return d.key;
-//         });
-
-//     //add rect for each data value
-//     var rects = bars.selectAll('rect')
-//         .data(function(d) { return d; })
-//         .enter()
-//         .append('rect')
-//         .attr('x', function(d, i) {
-//             return barsXScale(d.data.year);
-//         })
-//         .attr('y', function(d) {
-//             return barsYScale(d[1]);
-//         })
-//         .attr('height', function(d) {
-//             return barsYScale(d[0]) - barsYScale(d[1]);
-//         })
-//         .attr('width', barsXScale.bandwidth)
-//         .attr('id', 'indivBars')
-//         .attr('class', function(d, i) {
-//             return "bar-" + d3.select(this.parentNode).attr('class');
-//         })
-//         .style('cursor', 'pointer');
-
-//     //create axes
-//     barsSvg.append('g')
-//         .attr('class', 'axis x')
-//         .attr('transform', 'translate(0,' + (barsHeight - barsMargin.bottom) + ')')
-//         .call(barsXAxis)
-//         .style('font-size', 14)
-//         .select('.domain').attr('transform', 'translate(' +
-//             0 + ',' + (barsYScale(0) - (barsHeight - barsMargin.bottom)) + ')');
-
-//     barsSvg.append('g')
-//         .attr('class', 'axis yl')
-//         .attr('transform', 'translate(' + barsMargin.left + ',0)')
-//         .call(barsYAxisL)
-//         .style('font-size', 14);
-
-//     barsSvg.append('g')
-//         .attr('class', 'axis yr')
-//         .attr('transform', 'translate(' + (barsWidth - barsMargin.right) + ',0)')
-//         .call(barsYAxisR)
-//         .style('font-size', 14);
-
-//     barsSvg.append('g')
-//         .attr('class', 'axis ygrid')
-//         .attr('transform', 'translate(' + barsMargin.left + ',0)')
-//         .call(barsYAxisGrid)
-//         .style('opacity', .2);
-// }
 
 function drawSankey() {
     d3.selectAll(".sankeyCanvas").remove();
@@ -458,7 +330,7 @@ function drawLines() {
     //console.log(spendDataNested)
 
     //Dimensions
-    var lineMargin = { top: 30, right: 15, bottom: 10, left: 15, middle: 15 },
+    lineMargin = { top: 30, right: 15, bottom: 10, left: 15, middle: 15 },
         lineWidth = container.offsetWidth - lineMargin.left - lineMargin.right,
         lineHeight = 225 - lineMargin.top - lineMargin.bottom;
 
@@ -471,15 +343,15 @@ function drawLines() {
             "translate(" + lineMargin.left + "," + lineMargin.top + ")");
 
     // set the domain and range
-    var revLineX = d3.scaleTime()
+    revLineX = d3.scaleTime()
         .domain(d3.extent(revLineData, function(d) { return d.year; }))
         .range([lineMargin.left, lineWidth / 2 - lineMargin.middle]);
 
-    var spendLineX = d3.scaleTime()
+    spendLineX = d3.scaleTime()
         .domain(d3.extent(spendLineData, function(d) { return d.year; }))
         .range([lineWidth / 2 + lineMargin.middle, lineWidth - lineMargin.right]);
 
-    var lineY = d3.scaleLinear()
+    lineY = d3.scaleLinear()
         .domain([0, d3.max(revLineData, function(d) { return d.value; })])
         .range([lineHeight - lineMargin.bottom, lineMargin.top]);
 
@@ -493,10 +365,11 @@ function drawLines() {
         .y(function(d) { return lineY(d.value); });
 
     // revenue lines
-    var revLines = lineSvg.selectAll('revCats')
+    var revLines = lineSvg.selectAll('lineNode')
         .data(revDataNested)
         .enter().append('g')
-        .attr('class', "revCats");
+        .attr('class', "lineNode")
+        .attr('key', function(d) { return d.key.split(' ').join('_') });
 
     revLines.append('path')
         .attr('class', function(d) { return "line " + d.key })
@@ -507,10 +380,11 @@ function drawLines() {
         .on('mouseover', highlight);
 
     // revenue lines
-    var spendLines = lineSvg.selectAll('spendCats')
+    var spendLines = lineSvg.selectAll('lineNode')
         .data(spendDataNested)
         .enter().append('g')
-        .attr('class', "spendCats");
+        .attr('class', "lineNode")
+        .attr('key', function(d) { return d.key.split(' ').join('_') });
 
     spendLines.append('path')
         .attr('class', function(d) { return "line " + d.key })
@@ -538,11 +412,42 @@ function drawLines() {
         .attr('font-weight', 'bold')
         .attr('class', 'lineTitle')
         .text('Spending');
+
+    //Define axes
+    var revXAxis = d3.axisBottom()
+        .scale(revLineX)
+        .tickValues(revLineX.domain().filter(function(d, i) { return !(i % 10) }))
+        .tickFormat(d3.timeFormat('%Y'))
+        .tickSize(0);
+
+    var spendXAxis = d3.axisBottom()
+        .scale(spendLineX)
+        .tickValues(spendLineX.domain().filter(function(d, i) { return !(i % 10) }))
+        .tickFormat(d3.timeFormat('%Y'))
+        .tickSize(0);
+
+    //create axes
+    lineSvg.append('g')
+        .attr('class', 'revAxis x')
+        .attr('transform', 'translate(0,' + (lineHeight - lineMargin.bottom) + ')')
+        .call(revXAxis)
+        .style('font-size', 16)
+        .select('.domain').style('opacity', 0);
+
+    //create axes
+    lineSvg.append('g')
+        .attr('class', 'spendAxis x')
+        .attr('transform', 'translate(0,' + (lineHeight - lineMargin.bottom) + ')')
+        .call(spendXAxis)
+        .style('font-size', 16)
+        .select('.domain').style('opacity', 0);
 }
 
 function highlight() {
     var key = d3.select(this).attr('key')
     //console.log(key)
+
+    var lineLabelData = lineData.filter(function(d) { return d.source.split(' ').join('_') == key || d.target.split(' ').join('_') == key })
 
     var highightTransition = 150
 
@@ -581,6 +486,26 @@ function highlight() {
         .transition()
         .duration(highightTransition)
         .style('opacity', 0.4);
+
+    //data points
+    d3.selectAll('.lineLabel').remove()
+
+    d3.selectAll('.lineNode').filter(function(d, i) { return d3.select(this).attr('key') == key })
+        .append('g')
+        .selectAll('text')
+        .data(lineLabelData)
+        .enter()
+
+        .append('text')
+        .filter(function(d, i) { return i === 0 || i === (lineLabelData.length - 1) })
+        .attr("x", function(d, i) { if (d.type == 'Revenue') { return revLineX(d.year) } else { return spendLineX(d.year) } })
+        .attr("y", function(d) { return lineY(d.value) - 12 })
+        .text(function(d, i) { return formatNumber(d.value); })
+        .attr('class', 'lineLabel')
+        .style('text-anchor', 'middle')
+        .attr('font-size', 18)
+        .style('fill', 'black')
+        .attr('font-weight', 'bold');
 }
 
 function onlyUnique(value, index, self) {
