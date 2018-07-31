@@ -21,13 +21,17 @@ d3.csv("viz-data/us-budget-sankey-main.csv", function(error, csv) {
     d3.csv("viz-data/us-budget-sankey-deficit.csv", function(error, deficit) {
         if (error) throw error;
 
-        newData(csv, deficit, thisYear);
-        // drawBars(csv, deficit)
-        drawSankey()
-        drawDeficit()
-        drawNotes()
-        drawSlider()
-        drawLines();
+        // load bars data
+        d3.csv("viz-data/us-budget-sankey-bars.csv", function(error, barData) {
+            if (error) throw error;
+
+            newData(csv, deficit, thisYear);
+            drawBars(barData)
+            drawSankey()
+            drawDeficit()
+            drawSlider()
+            drawLines();
+        });
     });
 });
 
@@ -80,22 +84,143 @@ function newData(csv, deficit, thisYear) {
 
     lineData = csv
     lineData.forEach(function(d) {
-        d.year = timeParse(d.year);
+        d.year = +d.year;
         d.value = +d.value;
     });
     //console.log(lineData)
 };
 
+function drawBars(barData) {
+    // set the dimensions and margins of the graph
+    barsMargin = { top: 10, right: 5, bottom: 10, left: 5 },
+        barsWidth = barsContainer.offsetWidth - barsMargin.left - barsMargin.right,
+        barsHeight = 100 - barsMargin.top - barsMargin.bottom;
+
+    // append the svg object to the body of the page
+    barsSvg = d3.select("#barsContainer").append("svg")
+        .attr("width", barsWidth + barsMargin.left + barsMargin.right)
+        .attr("height", barsHeight + barsMargin.top + barsMargin.bottom)
+        .attr('class', 'barsCanvas')
+        .style('background', '#e8e8e8')
+        .append("g")
+        .attr("transform",
+            "translate(" + barsMargin.left + "," + barsMargin.top + ")");
+
+    barData.forEach(function(d) {
+        d.year = +d.year;
+    });
+
+    //console.log(barData)
+
+    var stack = d3.stack();
+    var keys = barData.columns.slice(2);
+    stack.keys(keys)
+        .offset(d3.stackOffsetDiverging)
+
+    //data, stacked
+    series = stack(barData);
+    //console.log(series)
+
+    //scales
+    barsXScale = d3.scaleBand()
+        .domain(barData.map(function(d) { return d.year }))
+        .range([barsMargin.left, barsWidth - barsMargin.right])
+        .paddingInner(0.1)
+        .paddingOuter(0.75);
+
+    barsYScale = d3.scaleLinear()
+        .domain([d3.min(series, stackMin), d3.max(series, stackMax)])
+        .range([barsHeight - barsMargin.bottom, barsMargin.top])
+        .nice();
+
+    //group data rows
+    var bars = barsSvg.selectAll('#bars')
+        .data(series)
+        .enter()
+        .append('g')
+        .attr('id', 'bars')
+        .attr("class", function(d, i) {
+            return d.key;
+        });
+
+    //add rect for each data value
+    rects = bars.selectAll('rect')
+        .data(function(d) { return d; })
+        .enter()
+        .append('rect')
+        .attr('x', function(d, i) {
+            return barsXScale(d.data.year);
+        })
+        .attr('y', function(d) {
+            return barsYScale(d[1]);
+        })
+        .attr('height', function(d) {
+            return barsYScale(d[0]) - barsYScale(d[1]);
+        })
+        .attr('class', 'bar')
+        .attr('year', function(d) { return d.data.year })
+        .attr('width', barsXScale.bandwidth)
+        .style('fill', function(d) { if (d3.select(this.parentNode).attr('class') === 'Revenue') { return 'green' } else { return 'red' } })
+        .style('opacity', function(d) { if (d.data.year === thisYear) { return 0.8 } else { return 0.6 } })
+        .style('stroke', function(d) { if (d.data.year === thisYear) { return 'black' } })
+        .style('stroke-width', function(d) { if (d.data.year === thisYear) { return '2px' } });
+
+    //net line//
+
+    //define line
+    line = d3.line()
+        .x(function(d) { return barsXScale(d.year) + (barsXScale.bandwidth() / 2); })
+        .y(function(d) { return barsYScale(d.Balance); });
+
+    //create line
+    barsSvg.append("path")
+        .datum(barData)
+        .attr("id", "line")
+        .attr("d", line)
+        .style('fill', 'none')
+        .style('stroke', 'black')
+        .style('stroke-width', 3);
+
+    //labels
+    barsSvg.append('text')
+        .attr("x", barsWidth / 2)
+        .attr("y", barsMargin.top * .5)
+        .attr("dy", "0em")
+        .text('Revenue/Surplus')
+        .attr('font-size', 16)
+        .attr('font-weight', 'bold')
+        .style('text-anchor', 'middle');
+
+    barsSvg.append('text')
+        .attr("x", barsWidth / 2)
+        .attr("y", barsHeight + barsMargin.bottom * .5)
+        .attr("dy", "0em")
+        .text('Spending/Deficit')
+        .attr('font-size', 16)
+        .attr('font-weight', 'bold')
+        .style('text-anchor', 'middle');
+}
+
+function updateBars(thisYear) {
+    var transition = 50
+
+    rects.transition()
+        .duration(transition)
+        .style('opacity', function(d) { if (d.data.year === thisYear) { return 0.8 } else { return 0.6 } })
+        .style('stroke', function(d) { if (d.data.year === thisYear) { return 'black' } })
+        .style('stroke-width', function(d) { if (d.data.year === thisYear) { return '2px' } });
+}
+
 function drawSankey() {
     d3.selectAll(".sankeyCanvas").remove();
 
     // set the dimensions and margins of the graph
-    sankeyMargin = { top: 40, right: 10, bottom: 10, left: 10 },
-        sankeyWidth = container.offsetWidth - sankeyMargin.left - sankeyMargin.right,
-        sankeyHeight = 450 - sankeyMargin.top - sankeyMargin.bottom;
+    sankeyMargin = { top: 30, right: 10, bottom: 10, left: 10 },
+        sankeyWidth = sankeyContainer.offsetWidth - sankeyMargin.left - sankeyMargin.right,
+        sankeyHeight = 425 - sankeyMargin.top - sankeyMargin.bottom;
 
     // append the svg object to the body of the page
-    sankeySvg = d3.select("#container").append("svg")
+    sankeySvg = d3.select("#sankeyContainer").append("svg")
         .attr("width", sankeyWidth + sankeyMargin.left + sankeyMargin.right)
         .attr("height", sankeyHeight + sankeyMargin.top + sankeyMargin.bottom)
         .attr('class', 'sankeyCanvas')
@@ -177,12 +302,22 @@ function drawSankey() {
         .attr("text-anchor", "middle")
         .attr("x", 30)
         .attr("y", function(d) { return d.dy / 2; })
-        .style("font-size", 18)
+        .style("font-size", 16)
         .attr("dy", ".35em")
         .filter(function(d) { return d.value > 1 })
         .filter(function(d) { return d.node != 20 }) //do spending seperately to correctly show surplus
         .text(function(d) { return format(d.value) + "%" })
         .attr('class', 'nodePercent');
+
+    //PERCENT OF GDP
+    sankeySvg.append('text')
+        .attr("x", 0)
+        .attr("y", -5)
+        .attr("dy", "0em")
+        .text('Percent of GDP (May not add up due to rounding)')
+        .attr('font-size', 20)
+        .attr('font-weight', 'bold')
+        .attr('class', 'percent');
 
     // % for spending in times of surplus using seperate data
     node.append("text")
@@ -228,7 +363,7 @@ function drawDeficit() {
         .attr("text-anchor", "middle")
         .attr("x", sankeyWidth / 2)
         .attr("y", sankeyHeight * .92)
-        .style("font-size", 35)
+        .style("font-size", 28)
         .style("font-weight", 'bold')
         .attr('class', 'deficitLabel')
         .text(function() {
@@ -245,7 +380,7 @@ function drawSlider() {
         .min(1968)
         .max(2017)
         .step(1)
-        .width(container.offsetWidth - 75)
+        .width(barsContainer.offsetWidth - 62)
         .tickFormat(d3.format(".4"))
         .on('end', val => { //use end instead of onchange, is when user releases mouse
             thisYear = val;
@@ -258,12 +393,19 @@ function drawSlider() {
                     newData(csv, deficit, thisYear);
                     drawSankey()
                     drawDeficit()
+                    // updateThisYearLine(thisYear)
+                    // updateBars(thisYear)
                 });
             });
+        })
+        .on('onchange', val => { //use end instead of onchange, is when user releases mouse
+            thisYear = val;
+            updateThisYearLine(thisYear)
+            updateBars(thisYear)
         });
 
     var g = d3.select("div#slider").append("svg")
-        .attr("width", container.offsetWidth)
+        .attr("width", barsContainer.offsetWidth)
         .attr("height", 100)
         .append("g")
         .attr("transform", "translate(30,30)");
@@ -272,45 +414,6 @@ function drawSlider() {
     d3.selectAll('#slider')
         .style('font-size', 20)
 }
-
-function drawNotes() {
-
-    //PERCENT OF GDP
-    sankeySvg.append('text')
-        .attr("x", 0)
-        .attr("y", -15)
-        .attr("dy", "0em")
-        .text('Percent of GDP (May not add up due to rounding)')
-        .attr('font-size', 25)
-        .attr('font-weight', 'bold')
-        .attr('class', 'percent');
-
-    // //Source and * and ** notes
-    // sankeySvg.append('text')
-    //     .attr("x", sankeyWidth * 0.65)
-    //     .attr("y", sankeyHeight + 35)
-    //     .attr("dy", "0em")
-    //     .text('* Originally under "Mandatory" as a negative value')
-    //     .attr("class", "legend")
-    //     .attr('font-size', 16);
-
-    // sankeySvg.append('text')
-    //     .attr("x", sankeyWidth * 0.65)
-    //     .attr("y", sankeyHeight + 55)
-    //     .attr("dy", "0em")
-    //     .text('** Technically called "Programmatic"')
-    //     .attr("class", "legend")
-    //     .attr('font-size', 16);
-
-
-    // sankeySvg.append('text')
-    //     .attr("x", sankeyWidth * 0.65)
-    //     .attr("y", sankeyHeight + 75)
-    //     .attr("dy", "0em")
-    //     .text('Source: OMB')
-    //     .attr("class", "legend")
-    //     .attr('font-size', 16);
-};
 
 function drawLines() {
     //seperate datasets filtered by type
@@ -330,11 +433,11 @@ function drawLines() {
     //console.log(spendDataNested)
 
     //Dimensions
-    lineMargin = { top: 30, right: 15, bottom: 10, left: 15, middle: 15 },
-        lineWidth = container.offsetWidth - lineMargin.left - lineMargin.right,
-        lineHeight = 225 - lineMargin.top - lineMargin.bottom;
+    lineMargin = { top: 20, right: 20, bottom: 10, left: 20, middle: 20 },
+        lineWidth = linesContainer.offsetWidth - lineMargin.left - lineMargin.right,
+        lineHeight = 160 - lineMargin.top - lineMargin.bottom;
 
-    lineSvg = d3.select("#line-container").append("svg")
+    lineSvg = d3.select("#linesContainer").append("svg")
         .attr("width", lineWidth + lineMargin.left + lineMargin.right)
         .attr("height", lineHeight + lineMargin.top + lineMargin.bottom)
         .style('background', '#e8e8e8')
@@ -343,12 +446,12 @@ function drawLines() {
             "translate(" + lineMargin.left + "," + lineMargin.top + ")");
 
     // set the domain and range
-    revLineX = d3.scaleTime()
-        .domain(d3.extent(revLineData, function(d) { return d.year; }))
+    revLineX = d3.scaleBand()
+        .domain(revLineData.map(function(d) { return d.year }))
         .range([lineMargin.left, lineWidth / 2 - lineMargin.middle]);
 
-    spendLineX = d3.scaleTime()
-        .domain(d3.extent(spendLineData, function(d) { return d.year; }))
+    spendLineX = d3.scaleBand()
+        .domain(spendLineData.map(function(d) { return d.year }))
         .range([lineWidth / 2 + lineMargin.middle, lineWidth - lineMargin.right]);
 
     lineY = d3.scaleLinear()
@@ -397,18 +500,18 @@ function drawLines() {
     //headers
     lineSvg.append('text')
         .attr("x", lineWidth * .25)
-        .attr("y", lineMargin.top * .25)
+        .attr("y", lineMargin.top / 4)
         .style('text-anchor', 'middle')
-        .attr('font-size', 25)
+        .attr('font-size', 20)
         .attr('font-weight', 'bold')
         .attr('class', 'lineTitle')
         .text('Revenue');
 
     lineSvg.append('text')
         .attr("x", lineWidth * .75)
-        .attr("y", lineMargin.top * .25)
+        .attr("y", lineMargin.top / 4)
         .style('text-anchor', 'middle')
-        .attr('font-size', 25)
+        .attr('font-size', 20)
         .attr('font-weight', 'bold')
         .attr('class', 'lineTitle')
         .text('Spending');
@@ -416,31 +519,101 @@ function drawLines() {
     //Define axes
     var revXAxis = d3.axisBottom()
         .scale(revLineX)
-        .tickValues(revLineX.domain().filter(function(d, i) { return !(i % 10) }))
-        .tickFormat(d3.timeFormat('%Y'))
+        .tickValues(revLineX.domain().filter(function(d, i) { return i === 0 || i === 49 })) //first and last year
         .tickSize(0);
 
     var spendXAxis = d3.axisBottom()
         .scale(spendLineX)
-        .tickValues(spendLineX.domain().filter(function(d, i) { return !(i % 10) }))
-        .tickFormat(d3.timeFormat('%Y'))
+        .tickValues(revLineX.domain().filter(function(d, i) { return i === 0 || i === 49 }))
         .tickSize(0);
 
     //create axes
     lineSvg.append('g')
         .attr('class', 'revAxis x')
-        .attr('transform', 'translate(0,' + (lineHeight - lineMargin.bottom) + ')')
+        .attr('transform', 'translate(-7,' + (lineHeight - lineMargin.bottom) + ')')
         .call(revXAxis)
-        .style('font-size', 16)
-        .select('.domain').style('opacity', 0);
+        .style('font-size', 12)
+        .style('font-weight', 'bold')
+        .select('.domain')
+        .style('opacity', 0)
 
     //create axes
     lineSvg.append('g')
         .attr('class', 'spendAxis x')
-        .attr('transform', 'translate(0,' + (lineHeight - lineMargin.bottom) + ')')
+        .attr('transform', 'translate(-7,' + (lineHeight - lineMargin.bottom) + ')')
         .call(spendXAxis)
-        .style('font-size', 16)
-        .select('.domain').style('opacity', 0);
+        .style('font-size', 12)
+        .style('font-weight', 'bold')
+        .select('.domain')
+        .style('opacity', 0);
+
+    //lines and labels indicating current year
+    lineSvg.append('g')
+        .attr("class", "thisYearLine rev")
+        .append('line')
+        .attr("x1", revLineX(thisYear))
+        .attr("x2", revLineX(thisYear))
+        .attr("y1", lineMargin.top)
+        .attr("y2", lineHeight - lineMargin.bottom);
+
+    d3.select('.thisYearLine.rev')
+        .append('text')
+        .text(function(d) { return thisYear })
+        .attr("x", revLineX(thisYear))
+        .attr("y", lineHeight + lineMargin.bottom * .2)
+        .style('font-size', 14)
+        .style('text-anchor', 'middle')
+        .style('font-weight', 'bold')
+        .style('opacity', 0);
+
+    lineSvg.append('g')
+        .attr('class', 'thisYearLine spend')
+        .append("line")
+        .attr("x1", spendLineX(thisYear))
+        .attr("x2", spendLineX(thisYear))
+        .attr("y1", lineMargin.top)
+        .attr("y2", lineHeight - lineMargin.bottom);
+
+    d3.select('.thisYearLine.spend')
+        .append('text')
+        .text(function(d) { return thisYear })
+        .attr("x", spendLineX(thisYear))
+        .attr("y", lineHeight + lineMargin.bottom * .2)
+        .style('font-size', 14)
+        .style('text-anchor', 'middle')
+        .style('font-weight', 'bold')
+        .style('opacity', 0);
+}
+
+function updateThisYearLine(thisYear) {
+    var transition = 50
+
+    //line indicating current year
+    d3.select(".thisYearLine.rev line")
+        .transition()
+        .duration(transition)
+        .attr("x1", revLineX(thisYear))
+        .attr("x2", revLineX(thisYear));
+
+    d3.select('.thisYearLine.rev text')
+        .transition()
+        .duration(transition)
+        .text(function(d) { return thisYear })
+        .attr("x", revLineX(thisYear))
+        .style('opacity', function(d) { if (thisYear == 1968 || thisYear == 2017) { return 0 } else { return 1 } });
+
+    d3.select(".thisYearLine.spend line")
+        .transition()
+        .duration(transition)
+        .attr("x1", spendLineX(thisYear))
+        .attr("x2", spendLineX(thisYear));
+
+    d3.select('.thisYearLine.spend text')
+        .transition()
+        .duration(transition)
+        .text(function(d) { return thisYear })
+        .attr("x", spendLineX(thisYear))
+        .style('opacity', function(d) { if (thisYear == 1968 || thisYear == 2017) { return 0 } else { return 1 } });;
 }
 
 function highlight() {
@@ -449,7 +622,7 @@ function highlight() {
 
     var lineLabelData = lineData.filter(function(d) { return d.source.split(' ').join('_') == key || d.target.split(' ').join('_') == key })
 
-    var highightTransition = 150
+    var highightTransition = 0
 
     d3.selectAll('.line')
         .filter(function(d) { return d3.select(this).attr('key') == key })
@@ -467,7 +640,7 @@ function highlight() {
         .filter(function(d) { return d3.select(this).attr('key') == key })
         .transition()
         .duration(highightTransition)
-        .style('stroke-opacity', 1);
+        .style('stroke-opacity', 0.7);
 
     d3.selectAll('.link')
         .filter(function(d) { return d3.select(this).attr('key') != key })
@@ -497,13 +670,13 @@ function highlight() {
         .enter()
 
         .append('text')
-        .filter(function(d, i) { return i === 0 || i === (lineLabelData.length - 1) })
+        .filter(function(d, i) { return i === 0 || i === (lineLabelData.length - 1) || d.year === thisYear })
         .attr("x", function(d, i) { if (d.type == 'Revenue') { return revLineX(d.year) } else { return spendLineX(d.year) } })
-        .attr("y", function(d) { return lineY(d.value) - 12 })
+        .attr("y", function(d) { return lineY(d.value) - 14 })
         .text(function(d, i) { return formatNumber(d.value); })
         .attr('class', 'lineLabel')
         .style('text-anchor', 'middle')
-        .attr('font-size', 18)
+        .attr('font-size', 14)
         .style('fill', 'black')
         .attr('font-weight', 'bold');
 }

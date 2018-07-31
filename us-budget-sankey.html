@@ -36,9 +36,15 @@
 
     .line {
         fill: none;
-        stroke: steelblue;
         stroke-width: 3px;
         opacity: .3;
+    }
+
+    .thisYearLine line {
+        fill: none;
+        stroke: steelblue;
+        stroke-width: 1;
+        opacity: 0.5;
     }
     </style>
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -98,16 +104,21 @@
             </div>
         </section>
         <section id="portfolio" class="two">
-            <div id="bars-container" class="container">
+            <div id="barsContainer" class="container">
                 <h2>US Federal Budget Balance, 1968-2017</h2>
                 <p>Hover over the categories!</p>
                 <div class="row align-items-center">
                     <div id="slider"></div>
                 </div>
             </div>
-            <div id="container" class="container">
+            <div id="sankeyContainer" class="container">
             </div>
-            <div id="line-container" class="container">
+            <div id="linesContainer" class="container">
+            </div>
+            <div id="notes" class="container">
+                <p>* Originally under "Mandatory" as a negative value
+                    <br>** Technically called "Programmatic"
+                    <br>Source: OMB</p>
             </div>
             <script src="d3-visualizations/us-budget-sankey.js"></script>
         </section>
