@@ -6,6 +6,8 @@ var formatNumber = d3.format(".1f"), // zero decimal places
     format = function(d) { return formatNumber(d); },
     color = d3.scaleOrdinal(d3.schemeCategory20);
 
+var key; //initialize
+
 // format date
 var timeParse = d3.timeParse("%Y")
 var formatYear = d3.timeFormat("%Y")
@@ -411,8 +413,8 @@ function drawSlider() {
         })
         .on('onchange', val => { //use end instead of onchange, is when user releases mouse
             thisYear = val;
-            updateThisYearLine(thisYear)
             updateBars(thisYear)
+            updateThisYearLine(thisYear)
         });
 
     var g = d3.select("div#slider").append("svg")

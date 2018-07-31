@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"lineLab",
+				"lineLabelData"
+			],
+			[
 				"fun",
 				"function"
 			],
@@ -351,16 +355,7 @@
 			"file": "d3-visualizations/us-budget-sankey.js",
 			"settings":
 			{
-				"buffer_size": 25084,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "us-budget-sankey.html",
-			"settings":
-			{
-				"buffer_size": 5500,
+				"buffer_size": 26414,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -370,6 +365,15 @@
 			"settings":
 			{
 				"buffer_size": 10482,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "us-budget-sankey.html",
+			"settings":
+			{
+				"buffer_size": 5500,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -493,16 +497,16 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/us-budget-sankey.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/gdp.js",
 		"/C/Users/Zhangkin/Desktop/D3/multiple lines/index.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/us-budget-sankey.html",
 		"/C/Users/Zhangkin/Desktop/D3/line/data.csv",
 		"/C/Users/Zhangkin/Desktop/D3/line/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/workspace/demo/demo.js",
 		"/C/Users/Zhangkin/Desktop/D3/workspace/demo/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/us-budget-sankey.js",
 		"/F/Downloads/Book1.csv",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
 		"/F/Google Drive/STATA/Aggragated & Combined/IMPORTANT ONE- Cpn by Industry.do",
 		"/F/Google Drive/STATA/Aggragated & Combined/Combine countries and mark duplicates.do",
 		"/F/Google Drive/STATA/Aggragated & Combined/Final_aggragated.csv",
@@ -840,15 +844,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 25084,
+						"buffer_size": 26414,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								21314,
-								21314
+								899,
+								899
 							]
 						],
 						"settings":
@@ -872,66 +876,6 @@
 				},
 				{
 					"buffer": 1,
-					"file": "us-budget-sankey.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5500,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4549,
-								4563
-							]
-						],
-						"settings":
-						{
-							"SL.14.region_keys":
-							[
-								"SL.csslint.Highlights.|d82965b9a598f1753152023caa89dd84cc4d26c3bf77a7ff57c435897fc2cb0f|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|54ae4511ea9df0240b0f9447a79ad8a5cd8138fad50a9d0ae8be4705e0ca576d|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|962fca4d5d88c2a9415618690180e5d6893b85fd4b37d8256011a11bf16a8dff|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|5bf29c972e18457e3380e76f586b0d061af658bb92eb83d607581b86647881d5|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
-								"sublime_linter.protected_regions",
-								"SL.csslint.Highlights.|ff591e99fbac2c527c523cb766464ef48444943c56824283c67e5866e9821898|region.yellowish markup.warning.sublime_linter|32"
-							],
-							"SL.15.region_keys":
-							[
-								"sublime_linter.protected_regions",
-								"SL.csslint.Highlights.|962fca4d5d88c2a9415618690180e5d6893b85fd4b37d8256011a11bf16a8dff|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|5bf29c972e18457e3380e76f586b0d061af658bb92eb83d607581b86647881d5|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|d82965b9a598f1753152023caa89dd84cc4d26c3bf77a7ff57c435897fc2cb0f|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|54ae4511ea9df0240b0f9447a79ad8a5cd8138fad50a9d0ae8be4705e0ca576d|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|0a82fc755b74208b7fad4d89ddebf54645d9f99888afb116db9265631cacd289|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|ff591e99fbac2c527c523cb766464ef48444943c56824283c67e5866e9821898|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot"
-							],
-							"SL.19.region_keys":
-							[
-								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
-								"SL.csslint.Highlights.|ff591e99fbac2c527c523cb766464ef48444943c56824283c67e5866e9821898|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|d82965b9a598f1753152023caa89dd84cc4d26c3bf77a7ff57c435897fc2cb0f|region.yellowish markup.warning.sublime_linter|32",
-								"sublime_linter.protected_regions",
-								"SL.csslint.Highlights.|5bf29c972e18457e3380e76f586b0d061af658bb92eb83d607581b86647881d5|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|54ae4511ea9df0240b0f9447a79ad8a5cd8138fad50a9d0ae8be4705e0ca576d|region.yellowish markup.warning.sublime_linter|32"
-							],
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 468.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "index.html",
 					"semi_transient": false,
 					"settings":
@@ -943,13 +887,13 @@
 						"selection":
 						[
 							[
-								7231,
-								7231
+								4669,
+								4669
 							]
 						],
 						"settings":
 						{
-							"SL.22.region_keys":
+							"SL.15.region_keys":
 							[
 							],
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
@@ -957,7 +901,59 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1890.0,
+						"translation.y": 1404.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "us-budget-sankey.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5500,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								500,
+								500
+							]
+						],
+						"settings":
+						{
+							"SL.15.region_keys":
+							[
+								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.csslint.Highlights.|54ae4511ea9df0240b0f9447a79ad8a5cd8138fad50a9d0ae8be4705e0ca576d|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|0a82fc755b74208b7fad4d89ddebf54645d9f99888afb116db9265631cacd289|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|d82965b9a598f1753152023caa89dd84cc4d26c3bf77a7ff57c435897fc2cb0f|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|ff591e99fbac2c527c523cb766464ef48444943c56824283c67e5866e9821898|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.csslint.Highlights.|962fca4d5d88c2a9415618690180e5d6893b85fd4b37d8256011a11bf16a8dff|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|5bf29c972e18457e3380e76f586b0d061af658bb92eb83d607581b86647881d5|region.yellowish markup.warning.sublime_linter|32"
+							],
+							"SL.16.region_keys":
+							[
+								"SL.csslint.Highlights.|ff591e99fbac2c527c523cb766464ef48444943c56824283c67e5866e9821898|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|5bf29c972e18457e3380e76f586b0d061af658bb92eb83d607581b86647881d5|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|d82965b9a598f1753152023caa89dd84cc4d26c3bf77a7ff57c435897fc2cb0f|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|962fca4d5d88c2a9415618690180e5d6893b85fd4b37d8256011a11bf16a8dff|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|54ae4511ea9df0240b0f9447a79ad8a5cd8138fad50a9d0ae8be4705e0ca576d|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.csslint.Highlights.|0a82fc755b74208b7fad4d89ddebf54645d9f99888afb116db9265631cacd289|region.yellowish markup.warning.sublime_linter|32"
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 378.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
