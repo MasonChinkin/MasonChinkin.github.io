@@ -393,8 +393,19 @@ function drawSlider() {
                     newData(csv, deficit, thisYear);
                     drawSankey()
                     drawDeficit()
-                    // updateThisYearLine(thisYear)
-                    // updateBars(thisYear)
+
+                    //keep sasnkey node highlighted on redraw
+                    d3.selectAll('.link')
+                        .filter(function(d) { return d3.select(this).attr('key') == key })
+                        .transition()
+                        .duration(highightTransition)
+                        .style('stroke-opacity', 0.7);
+
+                    d3.selectAll('.nodeRect')
+                        .filter(function(d) { return d3.select(this).attr('key') == key })
+                        .transition()
+                        .duration(highightTransition)
+                        .style('opacity', 1);
                 });
             });
         })
@@ -614,15 +625,35 @@ function updateThisYearLine(thisYear) {
         .text(function(d) { return thisYear })
         .attr("x", spendLineX(thisYear))
         .style('opacity', function(d) { if (thisYear == 1968 || thisYear == 2017) { return 0 } else { return 1 } });;
+
+    //data points
+    d3.selectAll('.lineLabel').remove()
+
+    d3.selectAll('.lineNode').filter(function(d, i) { return d3.select(this).attr('key') == key })
+        .append('g')
+        .selectAll('text')
+        .data(lineLabelData)
+        .enter()
+
+        .append('text')
+        .filter(function(d, i) { return i === 0 || i === (lineLabelData.length - 1) || d.year === thisYear })
+        .attr("x", function(d, i) { if (d.type == 'Revenue') { return revLineX(d.year) } else { return spendLineX(d.year) } })
+        .attr("y", function(d) { return lineY(d.value) - 14 })
+        .text(function(d, i) { return formatNumber(d.value); })
+        .attr('class', 'lineLabel')
+        .style('text-anchor', 'middle')
+        .attr('font-size', 14)
+        .style('fill', 'black')
+        .attr('font-weight', 'bold');
 }
 
 function highlight() {
-    var key = d3.select(this).attr('key')
+    key = d3.select(this).attr('key')
     //console.log(key)
 
-    var lineLabelData = lineData.filter(function(d) { return d.source.split(' ').join('_') == key || d.target.split(' ').join('_') == key })
+    lineLabelData = lineData.filter(function(d) { return d.source.split(' ').join('_') == key || d.target.split(' ').join('_') == key })
 
-    var highightTransition = 0
+    highightTransition = 0
 
     d3.selectAll('.line')
         .filter(function(d) { return d3.select(this).attr('key') == key })
@@ -658,7 +689,7 @@ function highlight() {
         .filter(function(d) { return d3.select(this).attr('key') != key })
         .transition()
         .duration(highightTransition)
-        .style('opacity', 0.4);
+        .style('opacity', 0.5);
 
     //data points
     d3.selectAll('.lineLabel').remove()
