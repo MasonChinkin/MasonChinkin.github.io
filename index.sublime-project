@@ -2,16 +2,6 @@
 	"folders":
 	[
 		{
-			"file_exclude_patterns":
-			[
-				"LICENSE",
-				"LICENSE.txt",
-				"README.md",
-				"README.txt"
-			],
-			"path": "."
-		},
-		{
 			"path": "C:\\Users\\Zhangkin\\Desktop\\D3"
 		}
 	]

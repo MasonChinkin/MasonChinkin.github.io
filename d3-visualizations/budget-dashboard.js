@@ -7,13 +7,17 @@ var formatNumber = d3.format(".1f"), // zero decimal places
     color = d3.scaleOrdinal(d3.schemeCategory20);
 
 var key; //initialize
-
+console.log(key)
 // format date
 var timeParse = d3.timeParse("%Y")
 var formatYear = d3.timeFormat("%Y")
 
+//transition times
+var highightTransition = 50
+var lineTransition = 50
+
 //starting year
-thisYear = 1968
+var thisYear = 1968
 
 // load the data
 d3.csv("viz-data/us-budget-sankey-main.csv", function(error, csv) {
@@ -599,54 +603,57 @@ function drawLines() {
 }
 
 function updateThisYearLine(thisYear) {
-    var transition = 50
 
     //line indicating current year
     d3.select(".thisYearLine.rev line")
         .transition()
-        .duration(transition)
+        .duration(lineTransition)
         .attr("x1", revLineX(thisYear))
         .attr("x2", revLineX(thisYear));
 
     d3.select('.thisYearLine.rev text')
         .transition()
-        .duration(transition)
+        .duration(lineTransition)
         .text(function(d) { return thisYear })
         .attr("x", revLineX(thisYear))
         .style('opacity', function(d) { if (thisYear == 1968 || thisYear == 2017) { return 0 } else { return 1 } });
 
     d3.select(".thisYearLine.spend line")
         .transition()
-        .duration(transition)
+        .duration(lineTransition)
         .attr("x1", spendLineX(thisYear))
         .attr("x2", spendLineX(thisYear));
 
     d3.select('.thisYearLine.spend text')
         .transition()
-        .duration(transition)
+        .duration(lineTransition)
         .text(function(d) { return thisYear })
         .attr("x", spendLineX(thisYear))
         .style('opacity', function(d) { if (thisYear == 1968 || thisYear == 2017) { return 0 } else { return 1 } });;
 
-    //data points
-    d3.selectAll('.lineLabel').remove()
+    (function(d) {
+        if (key != undefined) { //data points
+            d3.selectAll('.lineLabel').remove()
 
-    d3.selectAll('.lineNode').filter(function(d, i) { return d3.select(this).attr('key') == key })
-        .append('g')
-        .selectAll('text')
-        .data(lineLabelData)
-        .enter()
+            d3.selectAll('.lineNode').filter(function(d, i) { return d3.select(this).attr('key') == key })
+                .append('g')
+                .selectAll('text')
+                .data(lineLabelData)
+                .enter()
 
-        .append('text')
-        .filter(function(d, i) { return i === 0 || i === (lineLabelData.length - 1) || d.year === thisYear })
-        .attr("x", function(d, i) { if (d.type == 'Revenue') { return revLineX(d.year) } else { return spendLineX(d.year) } })
-        .attr("y", function(d) { return lineY(d.value) - 14 })
-        .text(function(d, i) { return formatNumber(d.value); })
-        .attr('class', 'lineLabel')
-        .style('text-anchor', 'middle')
-        .attr('font-size', 14)
-        .style('fill', 'black')
-        .attr('font-weight', 'bold');
+                .append('text')
+                .filter(function(d, i) { return i === 0 || i === (lineLabelData.length - 1) || d.year === thisYear })
+                .attr("x", function(d, i) { if (d.type == 'Revenue') { return revLineX(d.year) } else { return spendLineX(d.year) } })
+                .attr("y", function(d) { return lineY(d.value) - 14 })
+                .text(function(d, i) { return formatNumber(d.value); })
+                .attr('class', 'lineLabel')
+                .style('text-anchor', 'middle')
+                .attr('font-size', 14)
+                .style('fill', 'black')
+                .attr('font-weight', 'bold');
+        }
+    })()
+
 }
 
 function highlight() {
@@ -654,8 +661,6 @@ function highlight() {
     //console.log(key)
 
     lineLabelData = lineData.filter(function(d) { return d.source.split(' ').join('_') == key || d.target.split(' ').join('_') == key })
-
-    highightTransition = 0
 
     d3.selectAll('.line')
         .filter(function(d) { return d3.select(this).attr('key') == key })

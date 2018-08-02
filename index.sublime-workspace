@@ -352,30 +352,20 @@
 	"buffers":
 	[
 		{
-			"file": "d3-visualizations/us-budget-sankey.js",
+			"file": "/C/Users/Zhangkin/Desktop/D3/workspace/demo/index.html",
 			"settings":
 			{
-				"buffer_size": 26437,
+				"buffer_size": 490,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "index.html",
+			"file": "/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_04/01_empty_page_template.html",
 			"settings":
 			{
-				"buffer_size": 10482,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "budget-dashboard.html",
-			"settings":
-			{
-				"buffer_size": 5500,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"buffer_size": 330,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -390,6 +380,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"package con",
+				"Package Control: Install Package"
+			],
 			[
 				"enable",
 				"Package Control: Enable Package"
@@ -487,25 +485,25 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations",
 		"/C/Users/Zhangkin/Desktop/D3",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11",
-		"/C/Users/Zhangkin/Desktop/D3/multiple lines"
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_04",
+		"/C/Users/Zhangkin/Desktop/D3/workspace"
 	],
 	"file_history":
 	[
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/us-budget-sankey.html",
+		"/F/Downloads/subreddits_basic.meta",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/budget-dashboard.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/budget-dashboard.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/us-budget-sankey.js",
+		"/C/Users/Zhangkin/Desktop/D3/workspace/demo/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/us-budget-sankey.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/gdp.js",
 		"/C/Users/Zhangkin/Desktop/D3/multiple lines/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/line/data.csv",
 		"/C/Users/Zhangkin/Desktop/D3/line/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/workspace/demo/demo.js",
-		"/C/Users/Zhangkin/Desktop/D3/workspace/demo/index.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/us-budget-sankey.js",
 		"/F/Downloads/Book1.csv",
 		"/F/Google Drive/STATA/Aggragated & Combined/IMPORTANT ONE- Cpn by Industry.do",
 		"/F/Google Drive/STATA/Aggragated & Combined/Combine countries and mark duplicates.do",
@@ -621,10 +619,7 @@
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/random-scatter.html",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/random-bars.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/random-scatter.js",
-		"/C/Users/Zhangkin/Desktop/D3/stackedgraphforbusinesscard.html",
-		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa26504.986/HIP readme.txt",
-		"/C/Users/Zhangkin/Desktop/D3/stocks.csv",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/bars-add-sub-styles.css"
+		"/C/Users/Zhangkin/Desktop/D3/stackedgraphforbusinesscard.html"
 	],
 	"find":
 	{
@@ -642,6 +637,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"transition",
 			"revenue",
 			"d.data.ye",
 			"year",
@@ -768,8 +764,7 @@
 			"center",
 			"text",
 			"start",
-			"viz-data/",
-			"force"
+			"viz-data/"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -835,24 +830,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "d3-visualizations/us-budget-sankey.js",
+					"file": "/C/Users/Zhangkin/Desktop/D3/workspace/demo/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 26437,
+						"buffer_size": 490,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								245,
-								245
+								242,
+								242
 							]
 						],
 						"settings":
@@ -860,10 +855,41 @@
 							"SL.13.region_keys":
 							[
 							],
-							"SL.50.region_keys":
+							"SL.16.region_keys":
 							[
 							],
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_04/01_empty_page_template.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 330,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								114
+							]
+						],
+						"settings":
+						{
+							"SL.17.region_keys":
+							[
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -871,95 +897,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10482,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4721,
-								4737
-							]
-						],
-						"settings":
-						{
-							"SL.14.region_keys":
-							[
-							],
-							"SL.15.region_keys":
-							[
-							],
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1062.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "budget-dashboard.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5500,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								500,
-								500
-							]
-						],
-						"settings":
-						{
-							"SL.15.region_keys":
-							[
-								"SL.csslint.Highlights.|5bf29c972e18457e3380e76f586b0d061af658bb92eb83d607581b86647881d5|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|ff591e99fbac2c527c523cb766464ef48444943c56824283c67e5866e9821898|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|962fca4d5d88c2a9415618690180e5d6893b85fd4b37d8256011a11bf16a8dff|region.yellowish markup.warning.sublime_linter|32",
-								"sublime_linter.protected_regions",
-								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
-								"SL.csslint.Highlights.|d82965b9a598f1753152023caa89dd84cc4d26c3bf77a7ff57c435897fc2cb0f|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|54ae4511ea9df0240b0f9447a79ad8a5cd8138fad50a9d0ae8be4705e0ca576d|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|0a82fc755b74208b7fad4d89ddebf54645d9f99888afb116db9265631cacd289|region.yellowish markup.warning.sublime_linter|32"
-							],
-							"SL.16.region_keys":
-							[
-								"SL.csslint.Highlights.|ff591e99fbac2c527c523cb766464ef48444943c56824283c67e5866e9821898|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|5bf29c972e18457e3380e76f586b0d061af658bb92eb83d607581b86647881d5|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|d82965b9a598f1753152023caa89dd84cc4d26c3bf77a7ff57c435897fc2cb0f|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|962fca4d5d88c2a9415618690180e5d6893b85fd4b37d8256011a11bf16a8dff|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|54ae4511ea9df0240b0f9447a79ad8a5cd8138fad50a9d0ae8be4705e0ca576d|region.yellowish markup.warning.sublime_linter|32",
-								"sublime_linter.protected_regions",
-								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
-								"SL.csslint.Highlights.|0a82fc755b74208b7fad4d89ddebf54645d9f99888afb116db9265631cacd289|region.yellowish markup.warning.sublime_linter|32"
-							],
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 72.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1003,6 +941,10 @@
 	"output.SublimeLinter Messages":
 	{
 		"height": 126.0
+	},
+	"output.exec":
+	{
+		"height": 88.0
 	},
 	"output.find_results":
 	{
@@ -1050,7 +992,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 292.0,
+	"side_bar_width": 218.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
