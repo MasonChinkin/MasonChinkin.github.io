@@ -14,7 +14,6 @@ var formatYear = d3.timeFormat("%Y")
 
 //transition times
 var highightTransition = 50
-var lineTransition = 50
 
 //starting year
 var thisYear = 1968
@@ -606,27 +605,19 @@ function updateThisYearLine(thisYear) {
 
     //line indicating current year
     d3.select(".thisYearLine.rev line")
-        .transition()
-        .duration(lineTransition)
         .attr("x1", revLineX(thisYear))
         .attr("x2", revLineX(thisYear));
 
     d3.select('.thisYearLine.rev text')
-        .transition()
-        .duration(lineTransition)
         .text(function(d) { return thisYear })
         .attr("x", revLineX(thisYear))
         .style('opacity', function(d) { if (thisYear == 1968 || thisYear == 2017) { return 0 } else { return 1 } });
 
     d3.select(".thisYearLine.spend line")
-        .transition()
-        .duration(lineTransition)
         .attr("x1", spendLineX(thisYear))
         .attr("x2", spendLineX(thisYear));
 
     d3.select('.thisYearLine.spend text')
-        .transition()
-        .duration(lineTransition)
         .text(function(d) { return thisYear })
         .attr("x", spendLineX(thisYear))
         .style('opacity', function(d) { if (thisYear == 1968 || thisYear == 2017) { return 0 } else { return 1 } });;
@@ -640,7 +631,6 @@ function updateThisYearLine(thisYear) {
                 .selectAll('text')
                 .data(lineLabelData)
                 .enter()
-
                 .append('text')
                 .filter(function(d, i) { return i === 0 || i === (lineLabelData.length - 1) || d.year === thisYear })
                 .attr("x", function(d, i) { if (d.type == 'Revenue') { return revLineX(d.year) } else { return spendLineX(d.year) } })
