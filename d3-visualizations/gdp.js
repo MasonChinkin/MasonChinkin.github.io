@@ -1,7 +1,7 @@
 //Width and height
 margin = { top: 50, right: 40, bottom: 20, left: 50 },
     w = container.offsetWidth;
-h = 700;
+h = 550;
 
 var parseTime = d3.timeParse('%Y'); //convert strings to dates
 var formatTime = d3.timeFormat('%Y'); //date format

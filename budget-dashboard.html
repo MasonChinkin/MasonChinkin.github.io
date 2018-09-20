@@ -13,11 +13,13 @@
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <script type="text/javascript" src="assets/js/d3.js"></script>
     <script type="text/javascript" src="assets/js/sankey.js"></script>
-    <script type="text/javascript" src="assets/js/d3-annotation.min.js"></script>
-    <script type="text/javascript" src="assets/js/d3-simple-slider.min.js"></script>
+    <script type="text/javascript" src="assets/js/d3-simple-slider.js"></script>
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <style type="text/css">
+    p {
+        fill: black;
+    }
     .node rect {
         fill-opacity: .9;
         shape-rendering: crispEdges;
@@ -103,22 +105,25 @@
                 </footer>
             </div>
         </section>
-        <section id="portfolio" class="two">
+        <section id="portfolio" class="two" style="
+        line-height: 1;">
             <div id="barsContainer" class="container">
                 <h2>US Federal Budget Balance, 1968-2017</h2>
-                <p>Hover over the categories!</p>
-                <div class="row align-items-center">
-                    <div id="slider"></div>
-                </div>
+                <div id="slider" class="container"></div>
             </div>
             <div id="sankeyContainer" class="container">
             </div>
             <div id="linesContainer" class="container">
             </div>
-            <div id="notes" class="container">
-                <p>* Originally under "Mandatory" as a negative value
-                    <br>** Technically called "Programmatic"
-                    <br>Source: OMB</p>
+            <div id="notes" class="container"><!-- <p>
+    <br>
+    <font size="5">XXX</font>
+</p> -->
+                <p>
+                    <font size="2">* Originally under "Mandatory" as a negative value
+                        <br>** Technically called "Programmatic"
+                        <br>Source: OMB</font>
+                </p>
             </div>
             <script src="d3-visualizations/budget-dashboard.js"></script>
         </section>
