@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"f",
+				"for\tfor (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"tran",
+				"transition"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"mouse",
+				"mouseover"
+			],
+			[
+				"point",
+				"pointer-events\t(budget-dashboard.html)"
+			],
+			[
+				"hover",
+				"hoverButton"
+			],
+			[
+				"sank",
+				"sankeyWidth"
+			],
+			[
+				"line",
+				"line-height\tproperty"
+			],
+			[
 				"defci",
 				"deficitLabel"
 			],
@@ -18,14 +54,6 @@
 			[
 				"fun",
 				"function"
-			],
-			[
-				"tran",
-				"transform"
-			],
-			[
-				"font",
-				"font-size\t(us-budget-sankey.js)"
 			],
 			[
 				"thisYear",
@@ -90,10 +118,6 @@
 			[
 				"us",
 				"us-budget-sankey.js\t(us-budget-sankey.html)"
-			],
-			[
-				"f",
-				"f\tAnonymous Function"
 			],
 			[
 				"img",
@@ -340,10 +364,6 @@
 				"randomizeScatter"
 			],
 			[
-				"point",
-				"pointer-events"
-			],
-			[
 				"bars",
 				"bars-add-sub.js"
 			],
@@ -360,38 +380,19 @@
 	"buffers":
 	[
 		{
-			"file": "d3-visualizations/budget-dashboard test.js",
+			"file": "budget-dashboard.html",
 			"settings":
 			{
-				"buffer_size": 9231,
+				"buffer_size": 5563,
 				"encoding": "UTF-8",
-				"line_ending": "Windows",
-				"name": "const fontScale = d3.scaleLinear().range([14, 22])"
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "d3-visualizations/budget-dashboard.js",
 			"settings":
 			{
-				"buffer_size": 25672,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "budget-dashboard.html",
-			"settings":
-			{
-				"buffer_size": 5361,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "assets/js/d3-simple-slider.js",
-			"settings":
-			{
-				"buffer_size": 11288,
+				"buffer_size": 27221,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -515,10 +516,13 @@
 	[
 		"/C/Users/Zhangkin/Desktop/D3",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets"
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations"
 	],
 	"file_history":
 	[
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/gdp.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3-simple-slider.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/budget-dashboard test.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/budget-dashboard.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/budget-dashboard.js",
 		"/C/Users/Zhangkin/Desktop/D3/transition sankey help/budget-dashboard.js",
@@ -528,7 +532,6 @@
 		"/C/Users/Zhangkin/Desktop/D3/congressional map/congress-2016-results.js",
 		"/C/Users/Zhangkin/Desktop/D3/stacked bar/gdp.js",
 		"/C/Users/Zhangkin/Desktop/D3/congressional map/gdp.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/gdp.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/congress-2016-results.js",
 		"/C/Users/Zhangkin/Desktop/D3/congressional map/README.md",
 		"/C/Users/Zhangkin/Desktop/D3/stacked bar/README.md",
@@ -562,7 +565,6 @@
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/sankey-slider.js",
 		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa376.46970/d3-simple-slider.min.js",
 		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa376.46482/d3-simple-slider.min.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3-simple-slider.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/main.css",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3-annotation.min.js",
 		"/C/Users/Zhangkin/Desktop/D3/workspace/demo sankey/us-budget-sankey.js",
@@ -645,8 +647,7 @@
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/05_line_chart_labeled.html",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/04_line_chart_adjusted.html",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart/line_chart.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/03_line_chart_missing.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/02_line_chart_axes.html"
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/03_line_chart_missing.html"
 	],
 	"find":
 	{
@@ -664,6 +665,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			" =",
+			"highightTransition",
 			"font",
 			"val",
 			"font-size",
@@ -789,9 +792,7 @@
 			"csv",
 			"source",
 			"parameter-value",
-			"slice",
-			"500",
-			"relayout"
+			"slice"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -799,6 +800,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"highlightTransition",
 			"`translate(${d.x},${d.y})`",
 			"'",
 			"const ",
@@ -865,109 +867,44 @@
 			[
 				{
 					"buffer": 0,
-					"file": "d3-visualizations/budget-dashboard test.js",
+					"file": "budget-dashboard.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9231,
+						"buffer_size": 5563,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1984,
-								1984
+								4291,
+								4291
 							]
 						],
 						"settings":
 						{
 							"SL.14.region_keys":
 							[
+								"SL.csslint.Highlights.|31c61211794fbc013d1ec22a11341aff596dfd3962dab1b7329df0aa83ffaaa2|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|1c5130ca308e0ec6460b87b0ea11a9ae25f9c8742760d086fa6ce3e55182860e|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|c4da0cedc44fc899d465d5f1bf953c930fbaf764302c012b80299a755fd66dab|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|e7c74db2af31215f869920a90880571a757ec0a93690ff25ad743728d0f5b634|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.csslint.Highlights.|145e6b7085be15eb0801ed4efd9d411c107b75a6853c1e0ed91aa6a70b680ba6|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.csslint.Highlights.|a07cec07cb4965aed229d789e85198e6bb364130911724bc6d0f165e02e70acf|region.yellowish markup.warning.sublime_linter|32"
 							],
-							"auto_name": "const fontScale = d3.scaleLinear().range([14, 22])",
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 810.4,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
-				{
-					"buffer": 1,
-					"file": "d3-visualizations/budget-dashboard.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 25672,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								393,
-								393
-							]
-						],
-						"settings":
-						{
-							"SL.15.region_keys":
-							[
-							],
-							"SL.19.region_keys":
-							[
-							],
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 648.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "budget-dashboard.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5361,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4620,
-								4620
-							]
-						],
-						"settings":
-						{
 							"SL.16.region_keys":
 							[
-								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
-								"SL.csslint.Highlights.|244f261481bf92ff0706af305b093d7c6206cdd764c01cabe64234e2c6872edf|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|2970852a498630caf04675fd6d76979d38a1423e6f812c117ec8c24394a63d31|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|e7c74db2af31215f869920a90880571a757ec0a93690ff25ad743728d0f5b634|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|1c5130ca308e0ec6460b87b0ea11a9ae25f9c8742760d086fa6ce3e55182860e|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|31c61211794fbc013d1ec22a11341aff596dfd3962dab1b7329df0aa83ffaaa2|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|a07cec07cb4965aed229d789e85198e6bb364130911724bc6d0f165e02e70acf|region.yellowish markup.warning.sublime_linter|32",
 								"sublime_linter.protected_regions",
-								"SL.csslint.Highlights.|d442b0039d39796d9fc60d9fc36b994263ad69e2e8c447e869cec65677a062d7|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|19e2623f13fafa6878ad464cd8b6aa5d8e50a76e1f7d98cb22d0e2c665ce3734|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|6769f6b1f67412e50639fd28fe88cadc1f757c9df54e4cf7253bf5a4cca76ac1|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|913dcf3058fc1965f9fa9134cc46263c665a2fefe9f8d341a372bcbaa45877fd|region.yellowish markup.warning.sublime_linter|32"
+								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.csslint.Highlights.|c4da0cedc44fc899d465d5f1bf953c930fbaf764302c012b80299a755fd66dab|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|145e6b7085be15eb0801ed4efd9d411c107b75a6853c1e0ed91aa6a70b680ba6|region.yellowish markup.warning.sublime_linter|32"
 							],
 							"SL.18.region_keys":
 							[
@@ -985,38 +922,52 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1711.2,
+						"translation.y": 1884.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
 				{
-					"buffer": 3,
-					"file": "assets/js/d3-simple-slider.js",
+					"buffer": 1,
+					"file": "d3-visualizations/budget-dashboard.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11288,
+						"buffer_size": 27221,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4257,
-								4257
+								390,
+								394
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"SL.15.region_keys":
+							[
+							],
+							"SL.19.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1080.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1110,7 +1061,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
