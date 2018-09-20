@@ -12,7 +12,7 @@ const highlightTransition = 50
 const newYearTransition = 800
 
 //starting year
-let thisYear = 1968
+let thisYear = 2017
 
 // load the data
 d3.csv('viz-data/us-budget-sankey-main.csv', (error, csv) => {
@@ -518,7 +518,7 @@ function drawSlider() {
         .step(1)
         .width(barsContainer.offsetWidth - 62)
         .tickFormat(d3.format('.4'))
-        .default(1968)
+        .default(2017)
         .on('end', val => { //use end instead of onchange, is when user releases mouse
             thisYear = val
 
