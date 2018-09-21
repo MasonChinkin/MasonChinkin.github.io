@@ -1,18 +1,18 @@
 //Width and height
-var w = container.offsetWidth
-var h = 600
-var active = d3.select(null)
+const w = container.offsetWidth
+const h = 600
+const active = d3.select(null)
 
 //define projection
-var projection = d3.geoEquirectangular()
+const projection = d3.geoEquirectangular()
     .scale(900)
     .translate([250, 975])
 
 //chloropleth from COLORBREWER
-//var colors = d3.scaleOrdinal(d3.schemeCategory20)
+//const colors = d3.scaleOrdinal(d3.schemeCategory20)
 
 //define drag behavior
-var zoom = d3.zoom()
+const zoom = d3.zoom()
     .scaleExtent([0.5, 8])
     .on('zoom', d => {
         map.style('stroke-width', 1 / d3.event.transform.k + 'px')
@@ -20,11 +20,11 @@ var zoom = d3.zoom()
     })
 
 // define path
-var path = d3.geoPath()
+const path = d3.geoPath()
     .projection(projection)
 
 //create SVG
-var svg = d3.select('#container')
+const svg = d3.select('#container')
     .append('svg')
     .attr('width', w)
     .attr('height', h)
@@ -33,7 +33,7 @@ var svg = d3.select('#container')
     .style('border-color', 'grey')
 
 //create container for all pannable/zoomable elements
-var map = svg.append('g')
+const map = svg.append('g')
 
 svg.call(zoom)
 
@@ -47,13 +47,13 @@ map.append('rect')
 
 //trip data
 d3.csv('viz-data/trip.csv', (data) => {
-    var dataset = data
+    const dataset = data
     //console.log(dataset)
 
     //map
     d3.json('viz-data/world.json', (error, json) => {
         if (error) throw error
-        var jsonDataset = json
+        const jsonDataset = json
 
         //bind data and create one path per json feature (state)
         map.selectAll('path')
@@ -65,7 +65,7 @@ d3.csv('viz-data/trip.csv', (data) => {
             .style('stroke', 'grey')
 
         //define travel line
-        line = d3.line()
+        const line = d3.line()
             .x(d => projection([d.lon, d.lat])[0])
             .y(d => projection([d.lon, d.lat])[1])
             .curve(d3.curveCardinal.tension(0.4))
@@ -101,15 +101,15 @@ d3.csv('viz-data/trip.csv', (data) => {
     })
 })
 
-var bubbleMouseMove = function(d) {
+const bubbleMouseMove = function(d) {
     d3.select(this)
         .transition('orangeHover')
         .duration(75)
         .attr('fill', 'orange')
         .attr('r', 12)
 
-    var xpos = event.pageX
-    var ypos = event.pageY - 375
+    const xpos = event.pageX
+    const ypos = event.pageY - 375
 
     //Update the tooltip position and value
     d3.select('#tooltip')
@@ -135,7 +135,7 @@ var bubbleMouseMove = function(d) {
 }
 
 //properties of mouseout
-var bubbleMouseOut = function(d) {
+const bubbleMouseOut = function(d) {
     d3.select(this)
         .transition('orangeHover')
         .duration(250)

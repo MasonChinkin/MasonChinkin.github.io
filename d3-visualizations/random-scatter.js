@@ -1,41 +1,41 @@
 //Random dataset
-var scatterDataset = []
-var numDataPoints = 40
-var maxRange = Math.random() * 100
-for (var i = 0; i < numDataPoints; i++) {
-    var newNumber1 = Math.random() * maxRange
-    var newNumber2 = Math.random() * maxRange
+let scatterDataset = []
+let numDataPoints = 40
+let maxRange = Math.random() * 100
+for (let i = 0; i < numDataPoints; i++) {
+    let newNumber1 = Math.random() * maxRange
+    let newNumber2 = Math.random() * maxRange
     scatterDataset.push([newNumber1, newNumber2])
 }
 
 //BOX
-var w = container.offsetWidth //width
-var h = 500 //height
-var margin = 40
+const w = container.offsetWidth //width
+const h = 500 //height
+const margin = 40
 
 //DEFINE SCALES
-var xscale = d3.scaleLinear()
+const xscale = d3.scaleLinear()
     .domain([0, d3.max(scatterDataset, d => d[0])])
     .range([margin, w - margin])
 
-var yscale = d3.scaleLinear()
+const yscale = d3.scaleLinear()
     .domain([0, d3.max(scatterDataset, d => d[1])])
     .range([h - margin, margin])
 
-var ascale = d3.scaleSqrt()
+const ascale = d3.scaleSqrt()
     .domain([0, d3.max(scatterDataset, d => d[1])])
     .range([2, 20])
 
 //DEFINE AXES
-var xaxis = d3.axisBottom()
+const xaxis = d3.axisBottom()
     .scale(xscale)
     .ticks(6)
 
-var yaxis = d3.axisLeft()
+const yaxis = d3.axisLeft()
     .scale(yscale)
     .ticks(6)
 
-var svg = d3.select('#container')
+const svg = d3.select('#container')
     .append('svg')
     .attr('width', w)
     .attr('height', h)
@@ -93,12 +93,12 @@ svg.append('g')
 //TRANSITION
 function randomizeScatter() {
 
-    var numValues = scatterDataset.length //Count original length of dataset
-    var maxRange = Math.random() * 100 //Max range of new values
+    let numValues = scatterDataset.length //Count original length of dataset
+    let maxRange = Math.random() * 100 //Max range of new values
     scatterDataset = [] //Initialize empty array
-    for (var i = 0; i < numValues; i++) { //Loop numValues times
-        var newNumber1 = Math.random() * maxRange //New random integer
-        var newNumber2 = Math.random() * maxRange //New random integer
+    for (let i = 0; i < numValues; i++) { //Loop numValues times
+        let newNumber1 = Math.random() * maxRange //New random integer
+        let newNumber2 = Math.random() * maxRange //New random integer
         scatterDataset.push([newNumber1, newNumber2]) //Add new number to array
     }
 

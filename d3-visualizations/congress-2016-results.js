@@ -1,14 +1,14 @@
 //Width and height
-var w = container.offsetWidth
-var h = 550
+const w = container.offsetWidth
+const h = 550
 
 //define projection
-var projection = d3.geoAlbers()
+const projection = d3.geoAlbers()
     .scale(1000)
     .translate([w / 2, h / 2])
 
 //define drag behavior
-var zoom = d3.zoom()
+const zoom = d3.zoom()
     .scaleExtent([0.5, 10])
     .on('zoom', d => {
         map.style('stroke-width', 1 / d3.event.transform.k + 'px')
@@ -16,11 +16,11 @@ var zoom = d3.zoom()
     })
 
 // define path
-var path = d3.geoPath()
+const path = d3.geoPath()
     .projection(projection)
 
 //create SVG
-var svg = d3.select('#container')
+const svg = d3.select('#container')
     .append('svg')
     .attr('width', w)
     .attr('height', h)
@@ -29,7 +29,7 @@ var svg = d3.select('#container')
     .style('border-color', 'grey')
 
 //create container for all pannable/zoomable elements
-var map = svg.append('g')
+const map = svg.append('g')
 
 svg.call(zoom)
 
@@ -50,19 +50,19 @@ d3.csv('viz-data/congress_results_2016.csv', (error, data) => {
         //console.log(json)
 
         //loop through, merging ag data with map
-        for (var i = 0; i < data.length; i++) {
+        for (let i = 0; i < data.length; i++) {
 
-            var dataDistrict = data[i].state_fips + '-' + data[i].district
-            var dataDistrictWinner = data[i].winner
-            var dataDistrictWinningParty = data[i].party
-            var dataDistrictWinningMargin = parseFloat(data[i].general_perc)
-            var dataDistrictName = data[i].state + ' District ' + data[i].district
+            const dataDistrict = data[i].state_fips + '-' + data[i].district
+            const dataDistrictWinner = data[i].winner
+            const dataDistrictWinningParty = data[i].party
+            const dataDistrictWinningMargin = parseFloat(data[i].general_perc)
+            const dataDistrictName = data[i].state + ' District ' + data[i].district
 
-            var dataParty = data[i].party
+            const dataParty = data[i].party
 
-            for (var j = 0; j < json.features.length; j++) {
+            for (let j = 0; j < json.features.length; j++) {
 
-                var jsonDistrict = json.features[j].properties.STATEFP + '-' + json.features[j].properties.CD115FP
+                const jsonDistrict = json.features[j].properties.STATEFP + '-' + json.features[j].properties.CD115FP
 
                 if (dataDistrict == jsonDistrict && dataDistrictWinner == 'W') {
                     //copy the data from csv to json
@@ -114,10 +114,10 @@ d3.csv('viz-data/congress_results_2016.csv', (error, data) => {
                 thisJsonDistrictName = d3.select(this).attr('name')
                 //console.log(thisJsonDistrict);
 
-                resultsString = ''
+                let resultsString = ''
 
                 //construct each line of the tooltip
-                for (var i = 0; i < data.length; i++) {
+                for (let i = 0; i < data.length; i++) {
                     thisDataDistrict = `${data[i].state_fips}-${data[i].district}`
 
                     if (thisJsonDistrict == thisDataDistrict && data[i].candidate != 'Total Votes' && data[i].candidate != data[i - 1].candidate) {
@@ -203,7 +203,7 @@ map.append('text')
     .attr('font-size', 14)
 
 //define fill for all combo party names
-var stateFill = d => {
+const stateFill = d => {
     if (d.properties.winningParty == 'R' || d.properties.winningParty == 'R/IP' || d.properties.winningParty == 'R/TRP') { return 'rgb(235,25,28)' }
     if (d.properties.winningParty == 'D' || d.properties.winningParty == 'DFL' || d.properties.winningParty == 'D/IP' || d.properties.winningParty == 'D/R' || d.properties.winningParty == 'D/PRO/WF/IP') { return 'rgb(28,25,235)' }
     if (d.properties.winningParty == null) { return 'grey' }

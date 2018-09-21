@@ -1,17 +1,17 @@
 //Defined functions
-var w = container.offsetWidth
-var h = 300 //svg height
-var margin = { right: 50, left: 50, top: 25, bottom: 0 }
+const w = container.offsetWidth
+const h = 300 //svg height
+const margin = { right: 50, left: 50, top: 25, bottom: 0 }
 
 //properties of mouseout
-var barMouseOut = function(d) {
+const barMouseOut = function(d) {
     d3.select(this)
         .transition('orangeHover')
         .duration(250)
         .attr('fill', d => {
 
             //find cy of slider
-            var handleCy = document.getElementById('handle').getAttribute('cy')
+            const handleCy = document.getElementById('handle').getAttribute('cy')
 
             if (d3.max(barDataset, d => d.value) - y.invert(+handleCy) >= d.value) {
                 return 'orange'
@@ -25,12 +25,12 @@ var barMouseOut = function(d) {
 }
 
 //properties of mousemove
-var barMouseMove = function(d) {
+const barMouseMove = function(d) {
     d3.select(this)
         .attr('fill', 'orange')
 
-    var xpos = event.pageX
-    var ypos = event.pageY + 10
+    const xpos = event.pageX
+    const ypos = event.pageY + 10
 
     //Update the tooltip position and value
     d3.select('#tooltip')
@@ -43,7 +43,7 @@ var barMouseMove = function(d) {
     d3.select('#tooltip').classed('hidden', false)
 }
 
-var barDataset = [{ key: 0, value: 5 }, //dataset is now an array of objects.
+const barDataset = [{ key: 0, value: 5 }, //dataset is now an array of objects.
     { key: 1, value: 10 }, //Each object has a 'key' and a 'value'.
     { key: 2, value: 13 },
     { key: 3, value: 19 },
@@ -65,29 +65,29 @@ var barDataset = [{ key: 0, value: 5 }, //dataset is now an array of objects.
     { key: 19, value: 25 }
 ]
 
-var key = d => d.key
+const key = d => d.key
 
 //SCALES
 
-var x = d3.scaleBand()
+const x = d3.scaleBand()
     .domain(d3.range(barDataset.length))
     .rangeRound([0, w - margin.right])
     .paddingInner(0.05)
 
-var y = d3.scaleLinear()
+const y = d3.scaleLinear()
     .domain([0, d3.max(barDataset, d => d.value)])
     .range([0, h - margin.top])
     .clamp(true)
 
 
-var svg = d3.select('#container')
+const svg = d3.select('#container')
     .append('svg')
     .attr('width', w)
     .attr('height', h) //generate SVG element
 
 //BARS
 
-var bars = svg.selectAll('rect')
+const bars = svg.selectAll('rect')
     .data(barDataset, key)
 
 bars.enter()
@@ -102,7 +102,7 @@ bars.enter()
 
 //LABELS
 
-var text = svg.selectAll('text')
+const text = svg.selectAll('text')
     .data(barDataset, key)
 
 text.enter()
@@ -123,7 +123,7 @@ text.enter()
 
 //SLIDER
 
-var slider = svg.append('g')
+const slider = svg.append('g')
     .attr('class', 'slider')
     .attr('transform', `translate(${(w - (margin.right / 2))},${margin.top})`)
 
@@ -138,7 +138,7 @@ slider.append('line')
             slide(y.invert(d3.event.y))
 
             //find cy of slider
-            var handleCy = document.getElementById('handle').getAttribute('cy')
+            const handleCy = document.getElementById('handle').getAttribute('cy')
 
             d3.selectAll('rect')
                 .attr('fill', d => {
@@ -152,14 +152,14 @@ slider.append('line')
                 .on('mouseout', barMouseOut)
         }))
 
-var handle = slider.insert('circle', '.track-overlay')
+const handle = slider.insert('circle', '.track-overlay')
     .attr('class', 'handle')
     .attr('id', 'handle')
     .attr('r', 9)
     .attr('cy', 275)
 
 //find cy of slider
-var handleCy = document.getElementById('handle').getAttribute('cy')
+const handleCy = document.getElementById('handle').getAttribute('cy')
 //console.log(d3.max(barDataset, function(d) { return d.value }) - y.invert(handleCy))
 
 function slide(h) {
@@ -169,10 +169,10 @@ function slide(h) {
 d3.select('#add')
     .on('click', () => {
 
-        var maxValue = 40 //max value for any randomiz data
+        const maxValue = 40 //max value for any randomiz data
 
-        var newNumber = Math.floor(Math.random() * maxValue)
-        var lastKeyNumber = d3.max(barDataset, d => d.key)
+        const newNumber = Math.floor(Math.random() * maxValue)
+        const lastKeyNumber = d3.max(barDataset, d => d.key)
         barDataset.push({
             key: lastKeyNumber + 1,
             value: newNumber, //Add new number to array
@@ -182,7 +182,7 @@ d3.select('#add')
         x.domain(d3.range(barDataset.length))
         y.domain([0, d3.max(barDataset, d => d.value)])
 
-        var bars = svg.selectAll('rect') //SELECT
+        const bars = svg.selectAll('rect') //SELECT
             .data(barDataset)
 
         //Transition BARS
@@ -196,7 +196,7 @@ d3.select('#add')
             .attr('fill', function(d) {
 
                 //find cy of slider
-                var handleCy = document.getElementById('handle').getAttribute('cy')
+                const handleCy = document.getElementById('handle').getAttribute('cy')
 
                 if (d3.max(barDataset, d => d.value) - y.invert(+handleCy) >= d.value) {
                     return 'orange'
@@ -216,7 +216,7 @@ d3.select('#add')
             .attr('fill', function(d) {
 
                 //find cy of slider
-                var handleCy = document.getElementById('handle').getAttribute('cy')
+                const handleCy = document.getElementById('handle').getAttribute('cy')
 
                 if (d3.max(barDataset, d => d.value) - y.invert(+handleCy) >= d.value) {
                     return 'orange'
@@ -227,7 +227,7 @@ d3.select('#add')
 
         //TRANSITION LABELS
 
-        var text = svg.selectAll('text')
+        const text = svg.selectAll('text')
             .data(barDataset)
 
         text.enter()
@@ -268,7 +268,7 @@ d3.select('#subtract')
 
         barDataset.shift()
 
-        var bars = svg.selectAll('rect') //SELECT
+        const bars = svg.selectAll('rect') //SELECT
             .data(barDataset, key)
 
         bars.exit() //EXIT
@@ -277,7 +277,7 @@ d3.select('#subtract')
             .attr('x', -x.bandwidth()) //EXIT STAGE LEFT
             .remove()
 
-        var text = svg.selectAll('text')
+        const text = svg.selectAll('text')
             .data(barDataset, key)
 
         text.exit() //EXIT
@@ -299,7 +299,7 @@ d3.select('#subtract')
             .attr('fill', d => {
 
                 //find cy of slider
-                var handleCy = document.getElementById('handle').getAttribute('cy')
+                const handleCy = document.getElementById('handle').getAttribute('cy')
 
                 if (d3.max(barDataset, d => d.value) - y.invert(+handleCy) >= d.value) {
                     return 'orange'
@@ -325,7 +325,7 @@ d3.select('#subtract')
 d3.select('#barSlider')
     .on('mousemove', function() {
 
-        var threshold = +d3.select(this).node().value
+        const threshold = +d3.select(this).node().value
     })
 
 //Slider label

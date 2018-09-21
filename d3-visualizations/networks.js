@@ -1,11 +1,11 @@
 //Width and height
-var w = container.offsetWidth
-var h = 800
-imageSize = 35
+const w = container.offsetWidth
+const h = 800
+const imageSize = 35
 
-greyedOpacity = 0.1
+const greyedOpacity = 0.1
 
-var svg = d3.select('#container')
+const svg = d3.select('#container')
     .append('svg')
     .attr('height', h)
     .attr('width', w)
@@ -13,7 +13,7 @@ var svg = d3.select('#container')
     .style('border-style', 'solid')
     .style('border-color', 'black')
 
-var simulation = d3.forceSimulation()
+const simulation = d3.forceSimulation()
     .force('link', d3.forceLink().id(d => d.id))
     .force('charge', d3.forceManyBody().strength(-3000))
     .force('center', d3.forceCenter(w / 2, h / 2))
@@ -23,7 +23,7 @@ d3.json('viz-data/syriaNetwork.json', (error, data) => {
 
     //console.log(data)
 
-    var path = svg.append('g')
+    const path = svg.append('g')
         .selectAll('path')
         .data(data.links)
         .enter()
@@ -35,7 +35,7 @@ d3.json('viz-data/syriaNetwork.json', (error, data) => {
         .attr('marker-end', 'url(#arrowheadEnd)')
         .attr('marker-mid', 'url(#arrowheadEnd)')
 
-    var node = svg.selectAll('.node')
+    const node = svg.selectAll('.node')
         .data(data.nodes)
         .enter().append('g')
         .attr('class', 'node')
@@ -87,8 +87,8 @@ d3.json('viz-data/syriaNetwork.json', (error, data) => {
 
 
 //Legend
-wLegend = w * 0.02
-hLegend = h * 0.03
+const wLegend = w * 0.02
+const hLegend = h * 0.03
 
 svg.append('rect')
     .attr('x', wLegend)
@@ -145,29 +145,29 @@ function dragEnded(d) {
 }
 
 function linkArc(d) {
-    var dx = d.target.x - d.source.x,
+    const dx = d.target.x - d.source.x,
         dy = d.target.y - d.source.y,
         dr = Math.sqrt(dx * dx + dy * dy)
     return 'M' + d.source.x + ',' + d.source.y + 'A' + dr + ',' + dr + ' 0 0,1 ' + d.target.x + ',' + d.target.y
 }
 
-var nodeMouseOver = function(d) {
+const nodeMouseOver = function(d) {
 
-    var thisConnections = d.targets
+    const thisConnections = d.targets
     //console.log(thisConnections)
 
-    var thisType = d.id
+    const thisType = d.id
     //console.log(thisType)
 
     d3.selectAll('.node').each(function(d) {
 
-        var thisNodeType = d.id
+        const thisNodeType = d.id
         //console.log(thisType)
 
-        var isConnected = thisConnections.includes(thisNodeType)
+        const isConnected = thisConnections.includes(thisNodeType)
         //console.log(isConnected)
 
-        var node = d3.select(this)
+        const node = d3.select(this)
 
         if (isConnected == false) {
             node.transition().duration(200).style('opacity', greyedOpacity)
@@ -175,13 +175,13 @@ var nodeMouseOver = function(d) {
     })
 
     d3.selectAll('.link').each(function(d) {
-        var thisConnects = d3.select(this).attr('thisConnects')
+        const thisConnects = d3.select(this).attr('thisConnects')
         //console.log(thisConnects)
 
-        var isConnected = thisConnects.includes(thisType)
+        const isConnected = thisConnects.includes(thisType)
         //console.log(isConnected)
 
-        var path = d3.select(this)
+        const path = d3.select(this)
 
         if (isConnected == false) {
             path.transition().duration(200).style('opacity', greyedOpacity)
@@ -189,7 +189,7 @@ var nodeMouseOver = function(d) {
     })
 }
 
-var nodeMouseOut = function(d) {
+const nodeMouseOut = function(d) {
     d3.selectAll('.node').transition().duration(200).style('opacity', 1)
     d3.selectAll('.link').transition().duration(200).style('opacity', 1)
 }

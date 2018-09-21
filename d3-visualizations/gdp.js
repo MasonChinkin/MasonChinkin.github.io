@@ -1,39 +1,39 @@
 //Width and height
-margin = { top: 50, right: 40, bottom: 20, left: 50 },
-    w = container.offsetWidth
-h = 550
+const margin = { top: 50, right: 40, bottom: 20, left: 50 }
+const w = container.offsetWidth
+const h = 550
 
-var parseTime = d3.timeParse('%Y') //convert strings to dates
-var formatTime = d3.timeFormat('%Y') //date format
+const parseTime = d3.timeParse('%Y') //convert strings to dates
+const formatTime = d3.timeFormat('%Y') //date format
 
 //Function for converting CSV values from strings to Dates and numbers
-var rowConverter = (d, i, cols) => {
+const rowConverter = (d, i, cols) => {
 
-    var row = { year: parseTime(d.year) } //make new date object for each year
+    const row = { year: parseTime(d.year) } //make new date object for each year
 
-    for (var i = 1; i < cols.length; i++) { //loop for each growth type
-        var col = cols[i]
+    for (let i = 1; i < cols.length; i++) { //loop for each growth type
+        const col = cols[i]
         row[cols[i]] = +d[cols[i]] //convert from string to int
     }
     return row
 }
 
 //colors
-var colors = d3.scaleOrdinal(d3.schemeCategory10)
+const colors = d3.scaleOrdinal(d3.schemeCategory10)
 
 //for back button toggle
-var viewState = 0
+let viewState = 0
 
 //bar transition duration
-var barTransition = 750
+const barTransition = 750
 
 //define stacks
-var stack = d3.stack()
-var transitionStack = d3.stack()
-var thisStack = d3.stack()
+const stack = d3.stack()
+const transitionStack = d3.stack()
+const thisStack = d3.stack()
 
 //create svg
-var svg = d3.select('#container')
+const svg = d3.select('#container')
     .append('svg')
     .attr('width', w)
     .attr('height', h)
@@ -49,13 +49,13 @@ d3.csv('viz-data/growth_data.csv', rowConverter, (error, data) => {
         gdpLineDataset = gdpLineData
         //console.log(gdpLineDataset)
 
-        keys = dataset.columns.slice(1)
+        const keys = dataset.columns.slice(1)
         stack.keys(keys)
             .offset(d3.stackOffsetDiverging)
             .order(d3.stackOrderInsideOut)
 
         //data, stacked
-        series = stack(dataset)
+        const series = stack(dataset)
         //console.log(series)
 
         drawGdp(dataset, series, keys)
@@ -63,9 +63,9 @@ d3.csv('viz-data/growth_data.csv', rowConverter, (error, data) => {
         drawBackbutton(dataset, series, keys)
 
         //LEGEND
-        var legendVals = ['Personal Consumption', 'Gross private domestic investment', 'Net Trade', 'Government consumption and gross investment']
+        const legendVals = ['Personal Consumption', 'Gross private domestic investment', 'Net Trade', 'Government consumption and gross investment']
 
-        //var legendVals = dataset.columns.slice(1) DYNAMIC LEGEND, not using because current column headers not pretty, but necessary for the way this dynamically loads the thisType files
+        //const legendVals = dataset.columns.slice(1) DYNAMIC LEGEND, not using because current column headers not pretty, but necessary for the way this dynamically loads the thisType files
 
         drawLegend(legendVals)
     })
@@ -113,7 +113,7 @@ function drawGdp(data, series, keys) {
         .tickFormat('')
 
     //group data rows
-    var bars = svg.selectAll('#originalBars')
+    const bars = svg.selectAll('#originalBars')
         .data(series)
         .enter()
         .append('g')
@@ -122,7 +122,7 @@ function drawGdp(data, series, keys) {
         .attr('class', (d, i) => d.key)
 
     //add rect for each data value
-    var rects = bars.selectAll('rect')
+    const rects = bars.selectAll('rect')
         .data(d => d)
         .enter()
         .append('rect')
@@ -164,14 +164,14 @@ function drawGdp(data, series, keys) {
         d3.csv('viz-data/growth_data_' + thisType + '.csv', rowConverter, (error, thisGdpData) => {
             if (error) throw error
 
-            var thisDataset = thisGdpData
+            const thisDataset = thisGdpData
             //console.log(thisDataset)
 
             //Generate a new data set with all-zero values, 
             //except for this type's data for beginning of transition
-            transitionDataset = []
+            let transitionDataset = []
 
-            for (var i = 0; i < data.length; i++) {
+            for (let i = 0; i < data.length; i++) {
                 transitionDataset[i] = {
                     year: data[i].year,
                     personal_consumption: 0,
@@ -187,7 +187,7 @@ function drawGdp(data, series, keys) {
                 .offset(d3.stackOffsetDiverging)
                 .order(d3.stackOrderAscending)
 
-            var transitionSeries = transitionStack(transitionDataset)
+            const transitionSeries = transitionStack(transitionDataset)
             //console.log(transitionSeries)
 
             //remove gdp line
@@ -236,7 +236,7 @@ function drawGdp(data, series, keys) {
             //transition bars
             keys.forEach((key, key_index) => {
 
-                var bars = svg.selectAll('.bar-' + key)
+                const bars = svg.selectAll('.bar-' + key)
                     .data(transitionSeries[key_index])
                     .transition().duration(barTransition)
                     .attr('y', function(d) {
@@ -256,7 +256,7 @@ function drawGdp(data, series, keys) {
             //console.log(thisSeries)
 
             //group data rows
-            var bars = svg.selectAll('#bars')
+            const bars = svg.selectAll('#bars')
                 .data(thisSeries)
                 .enter()
                 .append('g')
@@ -265,7 +265,7 @@ function drawGdp(data, series, keys) {
                 .attr('class', (d, i) => d.key)
 
             //add rect for each data value
-            var rects = bars.selectAll('rect')
+            const rects = bars.selectAll('rect')
                 .data(d => d)
                 .enter()
                 .append('rect')
@@ -305,14 +305,14 @@ function drawGdp(data, series, keys) {
             //new legend
             d3.selectAll('.legend').classed('hidden', true)
 
-            var legendVals = thisKeys
+            const legendVals = thisKeys
 
-            //var legendVals = dataset.columns.slice(1) DYNAMIC LEGEND, not using because current column headers not pretty
+            //const legendVals = dataset.columns.slice(1) DYNAMIC LEGEND, not using because current column headers not pretty
 
-            wLegend = w * 0.55
-            hLegend = h * 0.05
+            let wLegend = w * 0.55
+            let hLegend = h * 0.05
 
-            var legend = svg.selectAll('.thisLegend')
+            const legend = svg.selectAll('.thisLegend')
                 .data(legendVals)
                 .enter()
                 .append('g')
@@ -361,7 +361,7 @@ function drawGdp(data, series, keys) {
         .style('opacity', .2)
 
     // Define the div for the tooltip
-    var tooltipDiv = d3.select('body').append('div')
+    const tooltipDiv = d3.select('body').append('div')
         .attr('class', 'tooltip')
         .style('opacity', 0)
 }
@@ -406,7 +406,7 @@ function drawThisLine(data) {
 function drawBackbutton(data, series, keys) {
 
     //Create back button
-    var backButton = svg.append('g')
+    const backButton = svg.append('g')
         .attr('id', 'backButton')
         .style('opacity', 0) //Initially hidden
         .classed('unclickable', true) //Initially not clickable
@@ -440,7 +440,7 @@ function drawBackbutton(data, series, keys) {
         //transition bars
         thisKeys.forEach((key, key_index) => {
 
-            var bars = svg.selectAll('.thisBar-' + key)
+            const bars = svg.selectAll('.thisBar-' + key)
                 .data(thisSeries[key_index])
                 .transition().duration(barTransition)
                 .attr('y', d => yScale(d[1]))
@@ -487,7 +487,7 @@ function drawBackbutton(data, series, keys) {
         //transition bars
         keys.forEach((key, key_index) => {
 
-            var bars = svg.selectAll('.bar-' + key)
+            const bars = svg.selectAll('.bar-' + key)
                 .data(series[key_index])
                 .transition().duration(barTransition)
                 .style('opacity', 1)
@@ -508,10 +508,10 @@ function drawBackbutton(data, series, keys) {
 }
 
 function drawLegend(data) {
-    wLegend = w * 0.55
-    hLegend = h * 0.05
+    let wLegend = w * 0.55
+    let hLegend = h * 0.05
 
-    var legend = svg.selectAll('.legend')
+    const legend = svg.selectAll('.legend')
         .data(data)
         .enter()
         .append('g')
@@ -535,7 +535,7 @@ function drawLegend(data) {
 
 function toggleBackButton() {
     //Select the button
-    var backButton = d3.select('#backButton')
+    const backButton = d3.select('#backButton')
 
     //Decide whether to reveal or hide it
     if (viewState == 1) {
@@ -543,13 +543,13 @@ function toggleBackButton() {
         //Reveal it
 
         //Set up dynamic button text
-        var buttonText = '&larr; Back'
+        const buttonText = '&larr; Back'
 
         //Set text
         backButton.select('text').html(buttonText)
 
         //Resize button depending on text width
-        var rectWidth = Math.round(backButton.select('text').node().getBBox().width + 16)
+        const rectWidth = Math.round(backButton.select('text').node().getBBox().width + 16)
         backButton.select('rect').attr('width', rectWidth)
 
         //Fade button in

@@ -5,7 +5,7 @@
 		[
 			[
 				"f",
-				"for\tfor (…) {…} (Improved Native For-Loop)"
+				"f\tAnonymous Function"
 			],
 			[
 				"for",
@@ -380,22 +380,36 @@
 	"buffers":
 	[
 		{
-			"contents": "<!DOCTYPE HTML>\n<!--\n  Prologue by HTML5 UP\n  html5up.net | @ajlkn\n  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)\n-->\n<html>\n\n<head>\n    <title>Mason's personal website</title>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=1000\" />\n    <!--[if lte IE 8]><script src=\"assets/js/ie/html5shiv.js\"></script><![endif]-->\n    <script type=\"text/javascript\" src=\"assets/js/d3.js\"></script>\n    <script type=\"text/javascript\" src=\"assets/js/sankey.js\"></script>\n    <script type=\"text/javascript\" src=\"assets/js/d3-simple-slider.js\"></script>\n    <!--[if lte IE 8]><link rel=\"stylesheet\" href=\"assets/css/ie8.css\" /><![endif]-->\n    <!--[if lte IE 9]><link rel=\"stylesheet\" href=\"assets/css/ie9.css\" /><![endif]-->\n    <style type=\"text/css\">\n    p {\n        fill: black;\n    }\n    .node rect {\n        fill-opacity: .9;\n        shape-rendering: crispEdges;\n    }\n    .node text {\n        pointer-events: none;\n        text-shadow: 0px 0px 2px #fff;\n        font-weight: 1000;\n    }\n\n    .link {\n        fill: none;\n        stroke: #000;\n        stroke-opacity: .4;\n    }\n\n    .line {\n        fill: none;\n        stroke-width: 3px;\n        opacity: .3;\n    }\n\n    .thisYearLine line {\n        fill: none;\n        stroke: steelblue;\n        stroke-width: 1;\n        opacity: 0.5;\n    }\n    </style>\n    <link rel=\"stylesheet\" href=\"assets/css/main.css\" />\n</head>\n\n<body>\n    <!-- Header -->\n    <div id=\"header\">\n        <div class=\"top\">\n            <!-- Logo -->\n            <div id=\"logo\">\n                <span class=\"image avatar48\"><img src=\"images/avatar.jpg\" alt=\"\" /></span>\n                <h1 id=\"title\">Mason Chinkin</h1>\n                <p>Aspiring data vizzer</p>\n            </div>\n            <!-- Nav -->\n            <nav id=\"nav\">\n                <!--\n\n                Prologue's nav expects links in one of two formats:\n\n                1. Hash link (scrolls to a different section within the page)\n\n                   <li><a href=\"#foobar\" id=\"foobar-link\" class=\"icon fa-whatever-icon-you-want skel-layers-ignoreHref\"><span class=\"label\">Foobar</span></a></li>\n\n                2. Standard link (sends the user to another page/site)\n\n                   <li><a href=\"http://foobar.tld\" id=\"foobar-link\" class=\"icon fa-whatever-icon-you-want\"><span class=\"label\">Foobar</span></a></li>\n\n              -->\n                <ul>\n                    <li><a href=\"index.html#top\" id=\"top-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-home\">Intro</span></a></li>\n                    <li><a href=\"index.html#portfolio\" id=\"portfolio-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-th\">Portfolio</span></a></li>\n                    <li><a href=\"index.html#about\" id=\"about-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-user\">About Me</span></a></li>\n                    <li><a href=\"index.html#contact\" id=\"contact-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-envelope\">Contact</span></a></li>\n                </ul>\n            </nav>\n        </div>\n        <div class=\"bottom\">\n            <!-- Social Icons -->\n            <ul class=\"icons\">\n                <!--<li><a href=\"#\" class=\"icon fa-twitter\"><span class=\"label\">Twitter</span></a></li> NEED TO MAKE ONE-->\n                <li><a href=\"https://github.com/MasonChinkin\" class=\"icon fa-github\"><span class=\"label\">Github</span></a></li>\n                <li><a href=\"#contact\" class=\"icon fa-envelope\"><span class=\"label\">Email</span></a></li>\n                <li><a href=\"https://www.linkedin.com/in/mason-chinkin/\" class=\"icon fa-linkedin\"><span class=\"label\">LinkedIn</span></a></li>\n            </ul>\n        </div>\n    </div>\n    <!-- Main -->\n    <div id=\"main\">\n        <!-- Intro -->\n        <section id=\"top\" class=\"one dark cover\">\n            <div align=\"left\" class=\"container\">\n                <footer>\n                    <a href=\"index.html#portfolio\" class=\"button scrolly\">Return to portfolio</a>\n                </footer>\n            </div>\n        </section>\n        <section id=\"portfolio\" class=\"two\" style=\"\n        line-height: 1;\">\n            <div id=\"barsContainer\" class=\"container\">\n                <h2>US Federal Budget Balance, 1968-2017</h2>\n                <h1>Hover over the categories!</h1>\n                <div id=\"slider\" class=\"container\"></div>\n            </div>\n            <div id=\"sankeyContainer\" class=\"container\">\n            </div>\n            <div id=\"linesContainer\" class=\"container\">\n            </div>\n            <div id=\"notes\" class=\"container\">\n                <!-- <p>\n    <br>\n    <font size=\"5\">XXX</font>\n</p> -->\n                <p>\n                    <font size=\"2\">* Originally under \"Mandatory\" as a negative value\n                        <br>** Technically called \"Programmatic\"\n                        <br>Source: OMB</font>\n                </p>\n            </div>\n            <script src=\"d3-visualizations/budget-dashboard.js\"></script>\n        </section>\n</body>\n<div id=\"footer\">\n    <!-- Copyright -->\n    <ul class=\"copyright\">\n        <li>Design: <a href=\"http://html5up.net\">HTML5 UP</a></li>\n    </ul>\n</div>\n<!-- Scripts -->\n<script src=\"assets/js/jquery.min.js\"></script>\n<script src=\"assets/js/jquery.scrolly.min.js\"></script>\n<script src=\"assets/js/jquery.scrollzer.min.js\"></script>\n<script src=\"assets/js/skel.min.js\"></script>\n<script src=\"assets/js/util.js\"></script>\n<!--[if lte IE 8]><script src=\"assets/js/ie/respond.min.js\"></script><![endif]-->\n<script src=\"assets/js/main.js\"></script>\n</body>\n\n</html>",
-			"file": "budget-dashboard.html",
-			"file_size": 5711,
-			"file_write_time": 131819592548000171,
+			"file": "d3-visualizations/networks.js",
 			"settings":
 			{
-				"buffer_size": 5563,
+				"buffer_size": 5105,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "d3-visualizations/budget-dashboard.js",
+			"file": "d3-visualizations/pie.js",
 			"settings":
 			{
-				"buffer_size": 27221,
+				"buffer_size": 1828,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "d3-visualizations/random-scatter.js",
+			"settings":
+			{
+				"buffer_size": 3748,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "d3-visualizations/swiss-army-bar-chart.js",
+			"settings":
+			{
+				"buffer_size": 10028,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -523,11 +537,13 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/gdp.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/congress-2016-results.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/budget-dashboard.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/budget-dashboard.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3-simple-slider.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/budget-dashboard test.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/budget-dashboard.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/budget-dashboard.js",
 		"/C/Users/Zhangkin/Desktop/D3/transition sankey help/budget-dashboard.js",
 		"/C/Users/Zhangkin/Desktop/D3/transition sankey help/README.md",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/congress-2016-map.html",
@@ -535,7 +551,6 @@
 		"/C/Users/Zhangkin/Desktop/D3/congressional map/congress-2016-results.js",
 		"/C/Users/Zhangkin/Desktop/D3/stacked bar/gdp.js",
 		"/C/Users/Zhangkin/Desktop/D3/congressional map/gdp.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/congress-2016-results.js",
 		"/C/Users/Zhangkin/Desktop/D3/congressional map/README.md",
 		"/C/Users/Zhangkin/Desktop/D3/stacked bar/README.md",
 		"/C/Users/Zhangkin/Desktop/D3/stacked bar/index.html",
@@ -579,7 +594,6 @@
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/swiss-army-bar-chart.html",
 		"/F/Downloads/csv2json.json",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/europe-trip.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/random-scatter.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Random-scatter.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/swiss-army-bar-chart.js",
@@ -654,7 +668,7 @@
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 57.0
 	},
 	"find_in_files":
 	{
@@ -668,6 +682,77 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"function(d, i) {\n        return",
+			"\"",
+			"function(d) {\n                    return",
+			"function(d) {\n                return",
+			"function(a, b) {\n                return",
+			"function(d, i) {\n                return",
+			"function(d) {\n            return",
+			"function(d) {\n                            return",
+			"'",
+			"\"",
+			"function(d) {\n        return",
+			"function(d) {\n    return",
+			"function(d) {\n                    return",
+			";",
+			"length",
+			"function(d) {\n            return",
+			"function(d) {\n        return",
+			";",
+			"'",
+			";",
+			"function(d) { return",
+			"\"",
+			"'",
+			"'translate(0,'",
+			"function(d, i) {\n                    return",
+			"function(d) {\n                        return",
+			"function(d, i) { return",
+			"function(d, i) {\n            return",
+			"function(d, i) {\n            {\n                return",
+			"function(d) {\n                    return",
+			"function(d) { return",
+			"\"",
+			"&l",
+			"function(d, i) {\n            return",
+			"function(d) { return",
+			";",
+			"return",
+			"click",
+			"this.",
+			"})",
+			"function(d) {\n            return",
+			"})",
+			"function(d, i) {\n            {\n                return",
+			"function(d, i) {\n            return",
+			"this.",
+			"function(d) {\n                    return",
+			"function(d, i) { { return",
+			"function(d, i) {\n                    return",
+			"function(d, i) { return",
+			"})",
+			"function(d) { return",
+			"&larr",
+			"back",
+			";",
+			"length",
+			";",
+			"length",
+			"'",
+			" + ",
+			"\"",
+			" + ",
+			"'",
+			"\"",
+			"}",
+			"function(d) {\n                return",
+			";",
+			"for ",
+			"for",
+			";",
+			"function(d) {",
+			";",
 			" =",
 			"highightTransition",
 			"font",
@@ -724,78 +809,7 @@
 			"viz - dat",
 			"viz-data/",
 			"drawDeficit()",
-			"drawDeficit",
-			"remove",
-			"barsContainer",
-			"viz-data/",
-			"transition",
-			"revenue",
-			"d.data.ye",
-			"year",
-			"sankeyContainer",
-			"container",
-			" container",
-			"slice",
-			"yScale",
-			"xScale",
-			"drawBars",
-			")\n",
-			"sankey",
-			"<br",
-			"xSca",
-			"ordinal",
-			"time",
-			" w",
-			"dataset",
-			"yScale",
-			"xScale",
-			"stackMin",
-			"paddingInner",
-			"margin",
-			" width",
-			"width",
-			"line",
-			"colors",
-			"color",
-			"simple",
-			"unHighlightLink",
-			"unHighlightLine",
-			"unhighlightL",
-			"oout",
-			"drawd",
-			"key",
-			"keyed",
-			"filter",
-			"mouse",
-			"hover",
-			".hover",
-			".on",
-			"color",
-			"-",
-			"Apr",
-			"12",
-			"1-May-",
-			"Apr",
-			"12",
-			"svg",
-			"console",
-			"getnode",
-			"getnodes",
-			"thisYearD",
-			"percent",
-			"font-s",
-			"parameter",
-			"parameter-value",
-			"font",
-			"background",
-			"width",
-			"sort",
-			" )",
-			"sort",
-			"csv",
-			"source",
-			"parameter-value",
-			"slice"
+			"drawDeficit"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -803,6 +817,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"'",
+			")",
+			"'",
 			"highlightTransition",
 			"`translate(${d.x},${d.y})`",
 			"'",
@@ -865,103 +882,61 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "budget-dashboard.html",
+					"file": "d3-visualizations/networks.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5563,
+						"buffer_size": 5105,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4296,
-								4296
+								3244,
+								3244
 							]
 						],
 						"settings":
 						{
-							"SL.14.region_keys":
+							"SL.34.region_keys":
 							[
-								"SL.csslint.Highlights.|c4da0cedc44fc899d465d5f1bf953c930fbaf764302c012b80299a755fd66dab|region.yellowish markup.warning.sublime_linter|32",
-								"sublime_linter.protected_regions",
-								"SL.csslint.Highlights.|1c5130ca308e0ec6460b87b0ea11a9ae25f9c8742760d086fa6ce3e55182860e|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|145e6b7085be15eb0801ed4efd9d411c107b75a6853c1e0ed91aa6a70b680ba6|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|e7c74db2af31215f869920a90880571a757ec0a93690ff25ad743728d0f5b634|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|a07cec07cb4965aed229d789e85198e6bb364130911724bc6d0f165e02e70acf|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|31c61211794fbc013d1ec22a11341aff596dfd3962dab1b7329df0aa83ffaaa2|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot"
 							],
-							"SL.16.region_keys":
-							[
-								"SL.csslint.Highlights.|e7c74db2af31215f869920a90880571a757ec0a93690ff25ad743728d0f5b634|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|1c5130ca308e0ec6460b87b0ea11a9ae25f9c8742760d086fa6ce3e55182860e|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|31c61211794fbc013d1ec22a11341aff596dfd3962dab1b7329df0aa83ffaaa2|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|a07cec07cb4965aed229d789e85198e6bb364130911724bc6d0f165e02e70acf|region.yellowish markup.warning.sublime_linter|32",
-								"sublime_linter.protected_regions",
-								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
-								"SL.csslint.Highlights.|c4da0cedc44fc899d465d5f1bf953c930fbaf764302c012b80299a755fd66dab|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|145e6b7085be15eb0801ed4efd9d411c107b75a6853c1e0ed91aa6a70b680ba6|region.yellowish markup.warning.sublime_linter|32"
-							],
-							"SL.18.region_keys":
-							[
-								"SL.csslint.Highlights.|19e2623f13fafa6878ad464cd8b6aa5d8e50a76e1f7d98cb22d0e2c665ce3734|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|2970852a498630caf04675fd6d76979d38a1423e6f812c117ec8c24394a63d31|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
-								"SL.csslint.Highlights.|244f261481bf92ff0706af305b093d7c6206cdd764c01cabe64234e2c6872edf|region.yellowish markup.warning.sublime_linter|32",
-								"sublime_linter.protected_regions",
-								"SL.csslint.Highlights.|913dcf3058fc1965f9fa9134cc46263c665a2fefe9f8d341a372bcbaa45877fd|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|d442b0039d39796d9fc60d9fc36b994263ad69e2e8c447e869cec65677a062d7|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|6769f6b1f67412e50639fd28fe88cadc1f757c9df54e4cf7253bf5a4cca76ac1|region.yellowish markup.warning.sublime_linter|32"
-							],
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1884.0,
+						"translation.y": 1890.4,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
 					"buffer": 1,
-					"file": "d3-visualizations/budget-dashboard.js",
-					"semi_transient": false,
+					"file": "d3-visualizations/pie.js",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 27221,
+						"buffer_size": 1828,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								390,
-								394
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"SL.15.region_keys":
-							[
-							],
-							"SL.19.region_keys":
-							[
-							],
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
@@ -970,7 +945,73 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "d3-visualizations/random-scatter.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3748,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1086,
+								1086
+							]
+						],
+						"settings":
+						{
+							"SL.35.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 702.4,
+						"zoom_level": 1.0
+					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "d3-visualizations/swiss-army-bar-chart.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10028,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								297,
+								297
+							]
+						],
+						"settings":
+						{
+							"SL.39.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 378.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -993,18 +1034,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.430176948828,
 			1.0
 		],
 		"rows":
@@ -1034,7 +1068,7 @@
 	"project": "index.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 106.0
 	},
 	"save_all_on_build": true,
 	"select_file":
