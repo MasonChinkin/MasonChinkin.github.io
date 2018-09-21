@@ -1,49 +1,47 @@
 //Defined functions
-var w = container.offsetWidth;
-var h = 300; //svg height
-var margin = { right: 50, left: 50, top: 25 }; //svg margin
+var w = container.offsetWidth
+var h = 300 //svg height
+var margin = { right: 50, left: 50, top: 25 } //svg margin
 
 //properties of mouseout
 var barMouseOut = function(d) {
     d3.select(this)
         .transition('orangeHover')
         .duration(250)
-        .attr('fill', function(d) {
+        .attr('fill', d => {
 
             //find cy of slider
-            var handleCy = document.getElementById("handle").getAttribute('cy');
+            var handleCy = document.getElementById('handle').getAttribute('cy')
 
-            if (d3.max(barDataset, function(d) {
-                    return d.value;
-                }) - y.invert(+handleCy) >= d.value) {
-                return 'orange';
+            if (d3.max(barDataset, d => d.value) - y.invert(+handleCy) >= d.value) {
+                return 'orange'
             } else {
-                return "rgb(0,0, " + Math.floor(y(d.value)) + ")";
+                return 'rgb(0,0, ' + Math.floor(y(d.value)) + ')'
             }
-        });
+        })
 
     //Hide the tooltip
-    d3.select("#tooltip").classed("hidden", true);
-};
+    d3.select('#tooltip').classed('hidden', true)
+}
 
 //properties of mousemove
 var barMouseMove = function(d) {
     d3.select(this)
-        .attr('fill', 'orange');
+        .attr('fill', 'orange')
 
-    var xpos = event.pageX;
-    var ypos = event.pageY + 10;
+    var xpos = event.pageX
+    var ypos = event.pageY + 10
 
     //Update the tooltip position and value
     d3.select('#tooltip')
-        .style("left", xpos + "px")
-        .style("top", ypos + "px")
+        .style('left', xpos + 'px')
+        .style('top', ypos + 'px')
         .select('#value')
-        .text(d.value);
+        .text(d.value)
 
     //Show the tooltip
-    d3.select('#tooltip').classed("hidden", false);
-};
+    d3.select('#tooltip').classed('hidden', false)
+}
 
 var barDataset = [{ key: 0, value: 5 }, //dataset is now an array of objects.
     { key: 1, value: 10 }, //Each object has a 'key' and a 'value'.
@@ -65,173 +63,149 @@ var barDataset = [{ key: 0, value: 5 }, //dataset is now an array of objects.
     { key: 17, value: 18 },
     { key: 18, value: 23 },
     { key: 19, value: 25 }
-];
+]
 
-var key = function(d) {
-    return d.key;
-};
+var key = d => d.key
 
 //SCALES
 
 var x = d3.scaleBand()
     .domain(d3.range(barDataset.length))
     .rangeRound([0, w - margin.right])
-    .paddingInner(0.05);
+    .paddingInner(0.05)
 
 var y = d3.scaleLinear()
-    .domain([0, d3.max(barDataset, function(d) {
-        return d.value;
-    })])
+    .domain([0, d3.max(barDataset, d => d.value)])
     .range([0, h - margin.top])
-    .clamp(true);
+    .clamp(true)
 
 
-var svg = d3.select("#container")
-    .append("svg")
-    .attr("width", w)
-    .attr("height", h); //generate SVG element
+var svg = d3.select('#container')
+    .append('svg')
+    .attr('width', w)
+    .attr('height', h) //generate SVG element
 
 //BARS
 
-var bars = svg.selectAll("rect")
-    .data(barDataset, key);
+var bars = svg.selectAll('rect')
+    .data(barDataset, key)
 
 bars.enter()
-    .append("rect")
-    .attr("x", function(d, i) {
-        return x(i);
+    .append('rect')
+    .attr('x', function(d, i) {
+        return x(i)
     })
-    .attr("y", function(d) {
-        return h - y(d.value);
-    })
-    .attr("width", x.bandwidth())
-    .attr("height", function(d) {
-        return y(d.value);
-    })
-    .attr('fill', function(d) {
-        return "rgb(0,0, " + Math.floor(y(d.value)) + ")";
-    })
+    .attr('y', d => h - y(d.value))
+    .attr('width', x.bandwidth())
+    .attr('height', d => y(d.value))
+    .attr('fill', d => 'rgb(0,0, ' + Math.floor(y(d.value)) + ')')
     .on('mousemove', barMouseMove)
-    .on('mouseout', barMouseOut);
+    .on('mouseout', barMouseOut)
 
 //LABELS
 
-var text = svg.selectAll("text")
-    .data(barDataset, key);
+var text = svg.selectAll('text')
+    .data(barDataset, key)
 
 text.enter()
-    .append("text")
-    .text(function(d) {
-        return d.value;
+    .append('text')
+    .text(d => d.value)
+    .attr('x', function(d, i) {
+        return x(i) + x.bandwidth() / 2
     })
-    .attr("x", function(d, i) {
-        return x(i) + x.bandwidth() / 2;
-    })
-    .attr("y", function(d) {
+    .attr('y', d => {
         if (d.value >= 6) {
-            return h - y(d.value) + 14;
-        } else { return h - y(d.value) - 4; }
+            return h - y(d.value) + 14
+        } else { return h - y(d.value) - 4 }
     })
-    .attr("class", "barLabel")
-    .attr("fill", function(d) {
+    .attr('class', 'barLabel')
+    .attr('fill', d => {
         if (d.value >= 6) {
-            return "white";
-        } else { return "black"; }
-    });
+            return 'white'
+        } else { return 'black' }
+    })
 
 //SLIDER
 
-var slider = svg.append("g")
-    .attr("class", "slider")
-    .attr("transform", "translate(" + (w - (margin.right / 2)) + "," + margin.top + ")");
+var slider = svg.append('g')
+    .attr('class', 'slider')
+    .attr('transform', `translate(${(w - (margin.right / 2))},${margin.top})`)
 
-slider.append("line")
-    .attr("class", "track")
-    .attr("y1", y.range()[0])
-    .attr("y2", y.range()[1])
-    .select(function() { return this.parentNode.appendChild(this.cloneNode(true)); })
-    .attr("class", "track-overlay")
+slider.append('line')
+    .attr('class', 'track')
+    .attr('y1', y.range()[0])
+    .attr('y2', y.range()[1])
+    .select(function() { return this.parentNode.appendChild(this.cloneNode(true)) })
+    .attr('class', 'track-overlay')
     .call(d3.drag()
-        .on("drag", function() {
-            slide(y.invert(d3.event.y));
+        .on('drag', function() {
+            slide(y.invert(d3.event.y))
 
             //find cy of slider
-            var handleCy = document.getElementById("handle").getAttribute('cy');
+            var handleCy = document.getElementById('handle').getAttribute('cy')
 
             d3.selectAll('rect')
                 .attr('fill', function(d) {
-                    if (d3.max(barDataset, function(d) {
-                            return d.value;
-                        }) - y.invert(d3.event.y) >= d.value) {
-                        return 'orange';
+                    if (d3.max(barDataset, d => d.value) - y.invert(d3.event.y) >= d.value) {
+                        return 'orange'
                     } else {
-                        return "rgb(0,0, " + Math.floor(y(d.value)) + ")";
+                        return 'rgb(0,0, ' + Math.floor(y(d.value)) + ')'
                     }
                 })
                 .on('mousemove', barMouseMove)
-                .on('mouseout', barMouseOut);
-        }));
+                .on('mouseout', barMouseOut)
+        }))
 
-var handle = slider.insert("circle", ".track-overlay")
-    .attr("class", "handle")
-    .attr("id", "handle")
-    .attr("r", 9)
-    .attr('cy', 275);
+var handle = slider.insert('circle', '.track-overlay')
+    .attr('class', 'handle')
+    .attr('id', 'handle')
+    .attr('r', 9)
+    .attr('cy', 275)
 
 //find cy of slider
-var handleCy = document.getElementById("handle").getAttribute('cy');
-//console.log(d3.max(barDataset, function(d) { return d.value; }) - y.invert(handleCy));
+var handleCy = document.getElementById('handle').getAttribute('cy')
+//console.log(d3.max(barDataset, function(d) { return d.value }) - y.invert(handleCy))
 
 function slide(h) {
-    handle.attr("cy", y(h));
+    handle.attr('cy', y(h))
 }
 
-d3.select("#add")
-    .on("click", function() {
+d3.select('#add')
+    .on('click', () => {
 
-        var maxValue = 40; //max value for any randomiz data
+        var maxValue = 40 //max value for any randomiz data
 
-        var newNumber = Math.floor(Math.random() * maxValue);
-        var lastKeyNumber = d3.max(barDataset, function(d) {
-            return d.key;
-        });
+        var newNumber = Math.floor(Math.random() * maxValue)
+        var lastKeyNumber = d3.max(barDataset, d => d.key)
         barDataset.push({
             key: lastKeyNumber + 1,
             value: newNumber, //Add new number to array
-        });
+        })
 
         //UPDATE SCALES
-        x.domain(d3.range(barDataset.length));
-        y.domain([0, d3.max(barDataset, function(d) {
-            return d.value;
-        })]);
+        x.domain(d3.range(barDataset.length))
+        y.domain([0, d3.max(barDataset, d => d.value)])
 
-        var bars = svg.selectAll("rect") //SELECT
-            .data(barDataset);
+        var bars = svg.selectAll('rect') //SELECT
+            .data(barDataset)
 
         //Transition BARS
 
         bars.enter() //ENTER
-            .append("rect")
-            .attr("x", w)
-            .attr("y", function(d) {
-                return h - y(d.value);
-            })
-            .attr("width", x.bandwidth())
-            .attr("height", function(d) {
-                return y(d.value);
-            })
+            .append('rect')
+            .attr('x', w)
+            .attr('y', d => h - y(d.value))
+            .attr('width', x.bandwidth())
+            .attr('height', d => y(d.value))
             .attr('fill', function(d) {
 
                 //find cy of slider
-                var handleCy = document.getElementById("handle").getAttribute('cy');
+                var handleCy = document.getElementById('handle').getAttribute('cy')
 
-                if (d3.max(barDataset, function(d) {
-                        return d.value;
-                    }) - y.invert(+handleCy) >= d.value) {
-                    return 'orange';
+                if (d3.max(barDataset, d => d.value) - y.invert(+handleCy) >= d.value) {
+                    return 'orange'
                 } else {
-                    return "rgb(0,0, " + Math.floor(y(d.value)) + ")";
+                    return 'rgb(0,0, ' + Math.floor(y(d.value)) + ')'
                 }
             })
             .on('mousemove', barMouseMove)
@@ -239,203 +213,143 @@ d3.select("#add")
             .merge(bars)
             .transition('barsAddBar')
             .duration(250)
-            .attr('x', function(d, i) {
-                return x(i);
-            })
-            .attr("y", function(d) {
-                return h - y(d.value);
-            })
-            .attr("width", x.bandwidth())
-            .attr("height", function(d) {
-                return y(d.value);
-            })
+            .attr('x', (d, i) => x(i))
+            .attr('y', d => h - y(d.value))
+            .attr('width', x.bandwidth())
+            .attr('height', d => y(d.value))
             .attr('fill', function(d) {
 
                 //find cy of slider
-                var handleCy = document.getElementById("handle").getAttribute('cy');
+                var handleCy = document.getElementById('handle').getAttribute('cy')
 
-                if (d3.max(barDataset, function(d) {
-                        return d.value;
-                    }) - y.invert(+handleCy) >= d.value) {
-                    return 'orange';
+                if (d3.max(barDataset, d => d.value) - y.invert(+handleCy) >= d.value) {
+                    return 'orange'
                 } else {
-                    return "rgb(0,0, " + Math.floor(y(d.value)) + ")";
+                    return 'rgb(0,0, ' + Math.floor(y(d.value)) + ')'
                 }
-            });
+            })
 
         //TRANSITION LABELS
 
-        var text = svg.selectAll("text")
-            .data(barDataset);
+        var text = svg.selectAll('text')
+            .data(barDataset)
 
         text.enter()
-            .append("text")
-            .text(function(d) {
-                return d.value;
-            })
-            .attr("x", w + (x.bandwidth() / 2))
-            .attr("y", function(d) {
+            .append('text')
+            .text(d => d.value)
+            .attr('x', w + (x.bandwidth() / 2))
+            .attr('y', d => {
                 if (d.value >= 6) {
-                    return h - y(d.value) + 14;
+                    return h - y(d.value) + 14
                 } else {
-                    return h - y(d.value) - 4;
+                    return h - y(d.value) - 4
                 }
             })
-            .attr("class", "barLabel")
-            .attr("fill", function(d) {
+            .attr('class', 'barLabel')
+            .attr('fill', d => {
                 if (d.value >= 6) {
-                    return "white";
+                    return 'white'
                 } else {
-                    return "black";
+                    return 'black'
                 }
             })
             .merge(text)
             .transition('textAddBar')
             .duration(250)
-            .text(function(d) {
-                return d.value;
-            })
-            .attr("x", function(d, i) {
-                return x(i) + x.bandwidth() / 2;
-            })
-            .attr("y", function(d) {
+            .text(d => d.value)
+            .attr('x', (d, i) => x(i) + x.bandwidth() / 2)
+            .attr('y', d => {
                 if (d.value >= 6) {
-                    return h - y(d.value) + 14;
+                    return h - y(d.value) + 14
                 } else {
-                    return h - y(d.value) - 4;
+                    return h - y(d.value) - 4
                 }
-            });
-    });
+            })
+    })
 
-d3.select("#subtract")
-    .on("click", function() {
+d3.select('#subtract')
+    .on('click', function() {
 
-        barDataset.shift();
+        barDataset.shift()
 
-        var bars = svg.selectAll("rect") //SELECT
-            .data(barDataset, key);
+        var bars = svg.selectAll('rect') //SELECT
+            .data(barDataset, key)
 
         bars.exit() //EXIT
             .transition('exitBars')
             .duration(250)
             .attr('x', -x.bandwidth()) //EXIT STAGE LEFT
-            .remove();
+            .remove()
 
-        var text = svg.selectAll("text")
-            .data(barDataset, key);
+        var text = svg.selectAll('text')
+            .data(barDataset, key)
 
         text.exit() //EXIT
             .transition()
             .duration(250)
             .attr('x', -x.bandwidth() / 2) //EXIT STAGE LEFT
-            .remove();
+            .remove()
 
         //UPDATE SCALES
-        x.domain(d3.range(barDataset.length));
-        y.domain([0, d3.max(barDataset, function(d) {
-            return d.value;
-        })]);
+        x.domain(d3.range(barDataset.length))
+        y.domain([0, d3.max(barDataset, d => d.value)])
 
         bars.transition('barsRemoveBar')
             .duration(250)
-            .attr('x', function(d, i) {
-                return x(i);
-            })
-            .attr("y", function(d) {
-                return h - y(d.value);
-            })
-            .attr("width", x.bandwidth())
-            .attr("height", function(d) {
-                return y(d.value);
-            })
-            .attr('fill', function(d) {
+            .attr('x', (d, i) => x(i))
+            .attr('y', d => h - y(d.value))
+            .attr('width', x.bandwidth())
+            .attr('height', d => y(d.value))
+            .attr('fill', d => {
 
                 //find cy of slider
-                var handleCy = document.getElementById("handle").getAttribute('cy');
+                var handleCy = document.getElementById('handle').getAttribute('cy')
 
-                if (d3.max(barDataset, function(d) {
-                        return d.value;
-                    }) - y.invert(+handleCy) >= d.value) {
-                    return 'orange';
+                if (d3.max(barDataset, d => d.value) - y.invert(+handleCy) >= d.value) {
+                    return 'orange'
                 } else {
-                    return "rgb(0,0, " + Math.floor(y(d.value)) + ")";
+                    return 'rgb(0,0, ' + Math.floor(y(d.value)) + ')'
                 }
-            });
+            })
 
         text.transition('textRemoveBar')
             .duration(250)
-            .text(function(d) {
-                return d.value;
-            })
-            .attr("x", function(d, i) {
-                return x(i) + x.bandwidth() / 2;
-            })
-            .attr("y", function(d) {
+            .text(d => d.value)
+            .attr('x', (d, i) => x(i) + x.bandwidth() / 2)
+            .attr('y', function(d) {
                 if (d.value >= 6) {
-                    return h - y(d.value) + 14;
+                    return h - y(d.value) + 14
                 } else {
-                    return h - y(d.value) - 4;
+                    return h - y(d.value) - 4
                 }
-            });
-    });
+            })
+    })
 
 //SLIDER
+d3.select('#barSlider')
+    .on('mousemove', function() {
 
-d3.select("#barSlider")
-    .on("mousemove", function() {
-
-        var threshold = +d3.select(this).node().value;
-    });
+        var threshold = +d3.select(this).node().value
+    })
 
 //Slider label
-
 function outputUpdate(vol) {
-    document.querySelector('#volume').value = vol;
+    document.querySelector('#volume').value = vol
 }
 
-d3.select("#sort")
-    .on("click", function() {
+d3.select('#sort')
+    .on('click', function() {
 
-        svg.selectAll("rect")
-            .sort(function(a, b) {
-                return d3.ascending(a.value, b.value);
-            })
+        svg.selectAll('rect')
+            .sort((a, b) => d3.ascending(a.value, b.value))
             .transition('sortBars')
             .duration(250)
-            .attr("x", function(d, i) {
-                return x(i);
-            });
+            .attr('x', (d, i) => x(i))
 
-        svg.selectAll("text")
-            .sort(function(a, b) {
-                return d3.ascending(a.value, b.value);
-            })
+        svg.selectAll('text')
+            .sort((a, b) => d3.ascending(a.value, b.value))
             .transition('sortText')
             .duration(250)
-            .attr("x", function(d, i) {
-                return x(i) + x.bandwidth() / 2;
-            });
-        barDataset.sort(function(a, b) {
-            return a.value - b.value;
-        });
-    });
-
-function getWidth() {
-    return Math.max(
-        document.body.scrollWidth,
-        document.documentElement.scrollWidth,
-        document.body.offsetWidth,
-        document.documentElement.offsetWidth,
-        document.documentElement.clientWidth
-    );
-}
-
-function getHeight() {
-    return Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight,
-        document.body.offsetHeight,
-        document.documentElement.offsetHeight,
-        document.documentElement.clientHeight
-    );
-}
+            .attr('x', (d, i) => x(i) + x.bandwidth() / 2)
+        barDataset.sort((a, b) => a.value - b.value)
+    })
