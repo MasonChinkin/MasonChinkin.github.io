@@ -41,12 +41,12 @@ var svg = d3.select('#container')
     .attr('height', h)
 
 //load data
-d3.csv('viz-data/growth_data.csv', rowConverter, (error, data) => {
+d3.csv('viz-data/growth_data.csv', rowConverter, function(error, data) {
     if (error) throw error
     dataset = data
     //console.table(dataset)
 
-    d3.csv('viz-data/growth_data_lines.csv', rowConverter, (error, gdpLineData) => {
+    d3.csv('viz-data/growth_data_lines.csv', rowConverter, function(error, gdpLineData) {
         if (error) throw error
         gdpLineDataset = gdpLineData
         //console.log(gdpLineDataset)
@@ -77,7 +77,7 @@ function drawGdp(data, series, keys) {
 
     //scales
     xScale = d3.scaleBand()
-        .domain(data.map(d => d.year))
+        .domain(data.map(function(d) { return d.year }))
         .range([margin.left, w - margin.right])
         .paddingInner(0.1)
         .paddingOuter(0.75)
@@ -127,7 +127,7 @@ function drawGdp(data, series, keys) {
 
     //add rect for each data value
     var rects = bars.selectAll('rect')
-        .data(d => d)
+        .data(function(d) { return d })
         .enter()
         .append('rect')
         .attr('x', function(d, i) {
@@ -171,7 +171,7 @@ function drawGdp(data, series, keys) {
         viewState++
         toggleBackButton()
 
-        d3.csv('viz-data/growth_data_' + thisType + '.csv', rowConverter, (error, thisGdpData) => {
+        d3.csv('viz-data/growth_data_' + thisType + '.csv', rowConverter, function(error, thisGdpData) {
             if (error) throw error
 
             var thisDataset = thisGdpData
@@ -250,8 +250,10 @@ function drawGdp(data, series, keys) {
                 var bars = svg.selectAll(".bar-" + key)
                     .data(transitionSeries[key_index])
                     .transition().duration(barTransition)
-                    .attr("y", d => yScale(d[1]))
-                    .attr("height", d => yScale(d[0]) - yScale(d[1]))
+                    .attr("y", function(d) {
+                        return yScale(d[1])
+                    })
+                    .attr("height", function(d) { return yScale(d[0]) - yScale(d[1]) })
                     .transition()
                     .style('opacity', 0)
             })
@@ -277,7 +279,7 @@ function drawGdp(data, series, keys) {
 
             //add rect for each data value
             var rects = bars.selectAll('rect')
-                .data(d => d)
+                .data(function(d) { return d })
                 .enter()
                 .append('rect')
                 .attr('x', function(d, i) {
@@ -348,6 +350,7 @@ function drawGdp(data, series, keys) {
             legend.append('text')
                 .attr("x", wLegend + 20)
                 .attr("y", hLegend + 42)
+                //.attr("dy", ".35em")
                 .text(function(d, i) {
                     return d
                 })
@@ -391,8 +394,8 @@ function drawGdp(data, series, keys) {
 function drawGdpLine(data) {
     //define line
     line = d3.line()
-        .x(d => xScale(d.year) + (xScale.bandwidth() / 2))
-        .y(d => yScale(d.gdp))
+        .x(function(d) { return xScale(d.year) + (xScale.bandwidth() / 2) })
+        .y(function(d) { return yScale(d.gdp) })
         .curve(d3.curveMonotoneX)
 
     //create line
@@ -408,8 +411,8 @@ function drawGdpLine(data) {
 function drawThisLine(data) {
     //define line
     thisLine = d3.line()
-        .x(d => xScale(d.year) + (xScale.bandwidth() / 2))
-        .y(d => yScale(d[thisType]))
+        .x(function(d) { return xScale(d.year) + (xScale.bandwidth() / 2) })
+        .y(function(d) { return yScale(d[thisType]) })
         .curve(d3.curveMonotoneX)
 
     //create line
@@ -468,7 +471,7 @@ function drawBackbutton(data, series, keys) {
                 .attr("y", function(d) {
                     return yScale(d[1])
                 })
-                .attr("height", d => yScale(d[0]) - yScale(d[1]))
+                .attr("height", function(d) { return yScale(d[0]) - yScale(d[1]) })
                 .style('opacity', 0)
         })
 
@@ -516,8 +519,10 @@ function drawBackbutton(data, series, keys) {
                 .data(series[key_index])
                 .transition().duration(barTransition)
                 .style('opacity', 1)
-                .attr("y", yScale(d[1]))
-                .attr("height", d => yScale(d[0]) - yScale(d[1]))
+                .attr("y", function(d) {
+                    return yScale(d[1])
+                })
+                .attr("height", function(d) { return yScale(d[0]) - yScale(d[1]) })
         })
 
         //original legend
@@ -603,11 +608,11 @@ function toggleBackButton() {
 }
 
 function stackMin(serie) {
-    return d3.min(serie, d => d[0])
+    return d3.min(serie, function(d) { return d[0] })
 }
 
 function stackMax(serie) {
-    return d3.max(serie, d => d[1])
+    return d3.max(serie, function(d) { return d[1] })
 }
 
 // % label for the y axis
