@@ -380,7 +380,10 @@
 	"buffers":
 	[
 		{
+			"contents": "<!DOCTYPE HTML>\n<!--\n  Prologue by HTML5 UP\n  html5up.net | @ajlkn\n  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)\n-->\n<html>\n\n<head>\n    <title>Mason's personal website</title>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=1000\" />\n    <!--[if lte IE 8]><script src=\"assets/js/ie/html5shiv.js\"></script><![endif]-->\n    <script type=\"text/javascript\" src=\"assets/js/d3.js\"></script>\n    <script type=\"text/javascript\" src=\"assets/js/sankey.js\"></script>\n    <script type=\"text/javascript\" src=\"assets/js/d3-simple-slider.js\"></script>\n    <!--[if lte IE 8]><link rel=\"stylesheet\" href=\"assets/css/ie8.css\" /><![endif]-->\n    <!--[if lte IE 9]><link rel=\"stylesheet\" href=\"assets/css/ie9.css\" /><![endif]-->\n    <style type=\"text/css\">\n    p {\n        fill: black;\n    }\n    .node rect {\n        fill-opacity: .9;\n        shape-rendering: crispEdges;\n    }\n    .node text {\n        pointer-events: none;\n        text-shadow: 0px 0px 2px #fff;\n        font-weight: 1000;\n    }\n\n    .link {\n        fill: none;\n        stroke: #000;\n        stroke-opacity: .4;\n    }\n\n    .line {\n        fill: none;\n        stroke-width: 3px;\n        opacity: .3;\n    }\n\n    .thisYearLine line {\n        fill: none;\n        stroke: steelblue;\n        stroke-width: 1;\n        opacity: 0.5;\n    }\n    </style>\n    <link rel=\"stylesheet\" href=\"assets/css/main.css\" />\n</head>\n\n<body>\n    <!-- Header -->\n    <div id=\"header\">\n        <div class=\"top\">\n            <!-- Logo -->\n            <div id=\"logo\">\n                <span class=\"image avatar48\"><img src=\"images/avatar.jpg\" alt=\"\" /></span>\n                <h1 id=\"title\">Mason Chinkin</h1>\n                <p>Aspiring data vizzer</p>\n            </div>\n            <!-- Nav -->\n            <nav id=\"nav\">\n                <!--\n\n                Prologue's nav expects links in one of two formats:\n\n                1. Hash link (scrolls to a different section within the page)\n\n                   <li><a href=\"#foobar\" id=\"foobar-link\" class=\"icon fa-whatever-icon-you-want skel-layers-ignoreHref\"><span class=\"label\">Foobar</span></a></li>\n\n                2. Standard link (sends the user to another page/site)\n\n                   <li><a href=\"http://foobar.tld\" id=\"foobar-link\" class=\"icon fa-whatever-icon-you-want\"><span class=\"label\">Foobar</span></a></li>\n\n              -->\n                <ul>\n                    <li><a href=\"index.html#top\" id=\"top-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-home\">Intro</span></a></li>\n                    <li><a href=\"index.html#portfolio\" id=\"portfolio-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-th\">Portfolio</span></a></li>\n                    <li><a href=\"index.html#about\" id=\"about-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-user\">About Me</span></a></li>\n                    <li><a href=\"index.html#contact\" id=\"contact-link\" class=\"skel-layers-ignoreHref\"><span class=\"icon fa-envelope\">Contact</span></a></li>\n                </ul>\n            </nav>\n        </div>\n        <div class=\"bottom\">\n            <!-- Social Icons -->\n            <ul class=\"icons\">\n                <!--<li><a href=\"#\" class=\"icon fa-twitter\"><span class=\"label\">Twitter</span></a></li> NEED TO MAKE ONE-->\n                <li><a href=\"https://github.com/MasonChinkin\" class=\"icon fa-github\"><span class=\"label\">Github</span></a></li>\n                <li><a href=\"#contact\" class=\"icon fa-envelope\"><span class=\"label\">Email</span></a></li>\n                <li><a href=\"https://www.linkedin.com/in/mason-chinkin/\" class=\"icon fa-linkedin\"><span class=\"label\">LinkedIn</span></a></li>\n            </ul>\n        </div>\n    </div>\n    <!-- Main -->\n    <div id=\"main\">\n        <!-- Intro -->\n        <section id=\"top\" class=\"one dark cover\">\n            <div align=\"left\" class=\"container\">\n                <footer>\n                    <a href=\"index.html#portfolio\" class=\"button scrolly\">Return to portfolio</a>\n                </footer>\n            </div>\n        </section>\n        <section id=\"portfolio\" class=\"two\" style=\"\n        line-height: 1;\">\n            <div id=\"barsContainer\" class=\"container\">\n                <h2>US Federal Budget Balance, 1968-2017</h2>\n                <h1>Hover over the categories!</h1>\n                <div id=\"slider\" class=\"container\"></div>\n            </div>\n            <div id=\"sankeyContainer\" class=\"container\">\n            </div>\n            <div id=\"linesContainer\" class=\"container\">\n            </div>\n            <div id=\"notes\" class=\"container\">\n                <!-- <p>\n    <br>\n    <font size=\"5\">XXX</font>\n</p> -->\n                <p>\n                    <font size=\"2\">* Originally under \"Mandatory\" as a negative value\n                        <br>** Technically called \"Programmatic\"\n                        <br>Source: OMB</font>\n                </p>\n            </div>\n            <script src=\"d3-visualizations/budget-dashboard.js\"></script>\n        </section>\n</body>\n<div id=\"footer\">\n    <!-- Copyright -->\n    <ul class=\"copyright\">\n        <li>Design: <a href=\"http://html5up.net\">HTML5 UP</a></li>\n    </ul>\n</div>\n<!-- Scripts -->\n<script src=\"assets/js/jquery.min.js\"></script>\n<script src=\"assets/js/jquery.scrolly.min.js\"></script>\n<script src=\"assets/js/jquery.scrollzer.min.js\"></script>\n<script src=\"assets/js/skel.min.js\"></script>\n<script src=\"assets/js/util.js\"></script>\n<!--[if lte IE 8]><script src=\"assets/js/ie/respond.min.js\"></script><![endif]-->\n<script src=\"assets/js/main.js\"></script>\n</body>\n\n</html>",
 			"file": "budget-dashboard.html",
+			"file_size": 5711,
+			"file_write_time": 131819592548000171,
 			"settings":
 			{
 				"buffer_size": 5563,
@@ -878,22 +881,22 @@
 						"selection":
 						[
 							[
-								4291,
-								4291
+								4296,
+								4296
 							]
 						],
 						"settings":
 						{
 							"SL.14.region_keys":
 							[
-								"SL.csslint.Highlights.|31c61211794fbc013d1ec22a11341aff596dfd3962dab1b7329df0aa83ffaaa2|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|1c5130ca308e0ec6460b87b0ea11a9ae25f9c8742760d086fa6ce3e55182860e|region.yellowish markup.warning.sublime_linter|32",
 								"SL.csslint.Highlights.|c4da0cedc44fc899d465d5f1bf953c930fbaf764302c012b80299a755fd66dab|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|e7c74db2af31215f869920a90880571a757ec0a93690ff25ad743728d0f5b634|region.yellowish markup.warning.sublime_linter|32",
 								"sublime_linter.protected_regions",
+								"SL.csslint.Highlights.|1c5130ca308e0ec6460b87b0ea11a9ae25f9c8742760d086fa6ce3e55182860e|region.yellowish markup.warning.sublime_linter|32",
 								"SL.csslint.Highlights.|145e6b7085be15eb0801ed4efd9d411c107b75a6853c1e0ed91aa6a70b680ba6|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
-								"SL.csslint.Highlights.|a07cec07cb4965aed229d789e85198e6bb364130911724bc6d0f165e02e70acf|region.yellowish markup.warning.sublime_linter|32"
+								"SL.csslint.Highlights.|e7c74db2af31215f869920a90880571a757ec0a93690ff25ad743728d0f5b634|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|a07cec07cb4965aed229d789e85198e6bb364130911724bc6d0f165e02e70acf|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|31c61211794fbc013d1ec22a11341aff596dfd3962dab1b7329df0aa83ffaaa2|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot"
 							],
 							"SL.16.region_keys":
 							[
