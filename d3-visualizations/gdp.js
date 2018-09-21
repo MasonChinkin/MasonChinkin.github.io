@@ -7,11 +7,9 @@ var parseTime = d3.timeParse('%Y') //convert strings to dates
 var formatTime = d3.timeFormat('%Y') //date format
 
 //Function for converting CSV values from strings to Dates and numbers
-var rowConverter = function(d, i, cols) {
+var rowConverter = (d, i, cols) => {
 
-    var row = {
-        year: parseTime(d.year), //make new date object for each year
-    }
+    var row = { year: parseTime(d.year) } //make new date object for each year
 
     for (var i = 1; i < cols.length; i++) { //loop for each growth type
         var col = cols[i]
@@ -41,12 +39,12 @@ var svg = d3.select('#container')
     .attr('height', h)
 
 //load data
-d3.csv('viz-data/growth_data.csv', rowConverter, function(error, data) {
+d3.csv('viz-data/growth_data.csv', rowConverter, (error, data) => {
     if (error) throw error
     dataset = data
     //console.table(dataset)
 
-    d3.csv('viz-data/growth_data_lines.csv', rowConverter, function(error, gdpLineData) {
+    d3.csv('viz-data/growth_data_lines.csv', rowConverter, (error, gdpLineData) => {
         if (error) throw error
         gdpLineDataset = gdpLineData
         //console.log(gdpLineDataset)
@@ -77,7 +75,7 @@ function drawGdp(data, series, keys) {
 
     //scales
     xScale = d3.scaleBand()
-        .domain(data.map(function(d) { return d.year }))
+        .domain(data.map(d => d.year))
         .range([margin.left, w - margin.right])
         .paddingInner(0.1)
         .paddingOuter(0.75)
@@ -90,7 +88,7 @@ function drawGdp(data, series, keys) {
     //Define axes
     xAxis = d3.axisBottom()
         .scale(xScale)
-        .tickValues(xScale.domain().filter(function(d, i) { return !(i % 10) }))
+        .tickValues(xScale.domain().filter((d, i) => !(i % 10)))
         .tickFormat(d3.timeFormat('%Y'))
         .tickSize(0)
 
@@ -120,25 +118,17 @@ function drawGdp(data, series, keys) {
         .enter()
         .append('g')
         .attr('id', 'originalBars')
-        .style('fill', function(d, i) { return colors(i) })
-        .attr('class', function(d, i) {
-            return d.key
-        })
+        .style('fill', (d, i) => colors(i))
+        .attr('class', (d, i) => d.key)
 
     //add rect for each data value
     var rects = bars.selectAll('rect')
-        .data(function(d) { return d })
+        .data(d => d)
         .enter()
         .append('rect')
-        .attr('x', function(d, i) {
-            return xScale(d.data.year)
-        })
-        .attr('y', function(d) {
-            return yScale(d[1])
-        })
-        .attr('height', function(d) {
-            return yScale(d[0]) - yScale(d[1])
-        })
+        .attr('x', (d, i) => xScale(d.data.year))
+        .attr('y', d => yScale(d[1]))
+        .attr('height', d => yScale(d[0]) - yScale(d[1]))
         .attr('width', xScale.bandwidth)
         .attr('id', 'indivBars')
         .attr('class', function(d, i) {
@@ -154,11 +144,11 @@ function drawGdp(data, series, keys) {
                 //.duration(200)
                 .style('opacity', .9)
 
-            tooltipDiv.html(tooltipType + '<br/>' + formatTime(d.data.year) + ': ' + d.data[tooltipType] + '%')
+            tooltipDiv.html(`${tooltipType}<br/>${formatTime(d.data.year)}: ${d.data[tooltipType]}%`)
                 .style('left', (d3.event.pageX + 5) + 'px')
                 .style('top', (d3.event.pageY - 38) + 'px')
         })
-        .on('mouseout', function(d) {
+        .on('mouseout', d => {
             tooltipDiv.transition()
                 .duration(500)
                 .style('opacity', 0)
@@ -171,7 +161,7 @@ function drawGdp(data, series, keys) {
         viewState++
         toggleBackButton()
 
-        d3.csv('viz-data/growth_data_' + thisType + '.csv', rowConverter, function(error, thisGdpData) {
+        d3.csv('viz-data/growth_data_' + thisType + '.csv', rowConverter, (error, thisGdpData) => {
             if (error) throw error
 
             var thisDataset = thisGdpData
@@ -241,11 +231,10 @@ function drawGdp(data, series, keys) {
 
             svg.select('.axis.x')
                 .transition().duration(barTransition)
-                .select('.domain').attr('transform', 'translate(' +
-                    0 + ',' + (yScale(0) - (h - margin.bottom)) + ')')
+                .select('.domain').attr('transform', `translate(0, ${(yScale(0) - (h - margin.bottom)) })`)
 
             //transition bars
-            keys.forEach(function(key, key_index) {
+            keys.forEach((key, key_index) => {
 
                 var bars = svg.selectAll('.bar-' + key)
                     .data(transitionSeries[key_index])
@@ -253,7 +242,7 @@ function drawGdp(data, series, keys) {
                     .attr('y', function(d) {
                         return yScale(d[1])
                     })
-                    .attr('height', function(d) { return yScale(d[0]) - yScale(d[1]) })
+                    .attr('height', d => yScale(d[0]) - yScale(d[1]))
                     .transition()
                     .style('opacity', 0)
             })
@@ -272,25 +261,17 @@ function drawGdp(data, series, keys) {
                 .enter()
                 .append('g')
                 .attr('id', 'bars')
-                .style('fill', function(d, i) { return colors(i) })
-                .attr('class', function(d, i) {
-                    return d.key
-                })
+                .style('fill', (d, i) => colors(i))
+                .attr('class', (d, i) => d.key)
 
             //add rect for each data value
             var rects = bars.selectAll('rect')
-                .data(function(d) { return d })
+                .data(d => d)
                 .enter()
                 .append('rect')
-                .attr('x', function(d, i) {
-                    return xScale(d.data.year)
-                })
-                .attr('y', function(d) {
-                    return yScale(d[1])
-                })
-                .attr('height', function(d) {
-                    return yScale(d[0]) - yScale(d[1])
-                })
+                .attr('x', (d, i) => xScale(d.data.year))
+                .attr('y', d => yScale(d[1]))
+                .attr('height', d => yScale(d[0]) - yScale(d[1]))
                 .attr('width', xScale.bandwidth)
                 .attr('id', 'indivBars')
                 .attr('class', function(d, i) {
@@ -305,11 +286,11 @@ function drawGdp(data, series, keys) {
                         //.duration(200)
                         .style('opacity', .9)
 
-                    tooltipDiv.html(tooltipType + '<br/>' + formatTime(d.data.year) + ': ' + d.data[tooltipType] + '%')
+                    tooltipDiv.html(`${tooltipType}<br/>${formatTime(d.data.year)}: ${d.data[tooltipType]}%`)
                         .style('left', (d3.event.pageX + 5) + 'px')
                         .style('top', (d3.event.pageY - 38) + 'px')
                 })
-                .on('mouseout', function(d) {
+                .on('mouseout', d => {
                     tooltipDiv.transition()
                         .duration(500)
                         .style('opacity', 0)
@@ -336,24 +317,19 @@ function drawGdp(data, series, keys) {
                 .enter()
                 .append('g')
                 .attr('class', 'thisLegend')
-                .attr('transform', function(d, i) { { return 'translate(0,' + i * 20 + ')' } })
+                .attr('transform', (d, i) => `translate(0,${i * 20})`)
 
             legend.append('rect')
                 .attr('x', wLegend)
                 .attr('y', hLegend + 30)
                 .attr('width', 12)
                 .attr('height', 12)
-                .style('fill', function(d, i) {
-                    return colors(i)
-                })
+                .style('fill', (d, i) => colors(i))
 
             legend.append('text')
                 .attr('x', wLegend + 20)
                 .attr('y', hLegend + 42)
-                //.attr('dy', '.35em')
-                .text(function(d, i) {
-                    return d
-                })
+                .text((d, i) => d)
                 .attr('class', 'textselected')
         })
     })
@@ -361,27 +337,26 @@ function drawGdp(data, series, keys) {
     //create axes
     svg.append('g')
         .attr('class', 'axis x')
-        .attr('transform', 'translate(0,' + (h - margin.bottom) + ')')
+        .attr('transform', `translate(0,${(h - margin.bottom)})`)
         .call(xAxis)
         .style('font-size', 14)
-        .select('.domain').attr('transform', 'translate(' +
-            0 + ',' + (yScale(0) - (h - margin.bottom)) + ')')
+        .select('.domain').attr('transform', `translate(${0},${(yScale(0) - (h - margin.bottom))})`)
 
     svg.append('g')
         .attr('class', 'axis yl')
-        .attr('transform', 'translate(' + margin.left + ',0)')
+        .attr('transform', `translate(${margin.left},0)`)
         .call(yAxisL)
         .style('font-size', 14)
 
     svg.append('g')
         .attr('class', 'axis yr')
-        .attr('transform', 'translate(' + (w - margin.right) + ',0)')
+        .attr('transform', `translate(${(w - margin.right)},0)`)
         .call(yAxisR)
         .style('font-size', 14)
 
     svg.append('g')
         .attr('class', 'axis ygrid')
-        .attr('transform', 'translate(' + margin.left + ',0)')
+        .attr('transform', `translate(${margin.left},0)`)
         .call(yAxisGrid)
         .style('opacity', .2)
 
@@ -394,8 +369,8 @@ function drawGdp(data, series, keys) {
 function drawGdpLine(data) {
     //define line
     line = d3.line()
-        .x(function(d) { return xScale(d.year) + (xScale.bandwidth() / 2) })
-        .y(function(d) { return yScale(d.gdp) })
+        .x(d => xScale(d.year) + (xScale.bandwidth() / 2))
+        .y(d => yScale(d.gdp))
         .curve(d3.curveMonotoneX)
 
     //create line
@@ -411,8 +386,8 @@ function drawGdpLine(data) {
 function drawThisLine(data) {
     //define line
     thisLine = d3.line()
-        .x(function(d) { return xScale(d.year) + (xScale.bandwidth() / 2) })
-        .y(function(d) { return yScale(d[thisType]) })
+        .x(d => xScale(d.year) + (xScale.bandwidth() / 2))
+        .y(d => yScale(d[thisType]))
         .curve(d3.curveMonotoneX)
 
     //create line
@@ -435,7 +410,7 @@ function drawBackbutton(data, series, keys) {
         .attr('id', 'backButton')
         .style('opacity', 0) //Initially hidden
         .classed('unclickable', true) //Initially not clickable
-        .attr('transform', 'translate(' + xScale.range()[0] + ',' + yScale.range()[1] + ')')
+        .attr('transform', `translate(${xScale.range()[0]},${yScale.range()[1]})`)
 
     backButton.append('rect')
         .attr('x', 15)
@@ -463,15 +438,13 @@ function drawBackbutton(data, series, keys) {
             .nice()
 
         //transition bars
-        thisKeys.forEach(function(key, key_index) {
+        thisKeys.forEach((key, key_index) => {
 
             var bars = svg.selectAll('.thisBar-' + key)
                 .data(thisSeries[key_index])
                 .transition().duration(barTransition)
-                .attr('y', function(d) {
-                    return yScale(d[1])
-                })
-                .attr('height', function(d) { return yScale(d[0]) - yScale(d[1]) })
+                .attr('y', d => yScale(d[1]))
+                .attr('height', d => yScale(d[0]) - yScale(d[1]))
                 .style('opacity', 0)
         })
 
@@ -509,24 +482,21 @@ function drawBackbutton(data, series, keys) {
 
         svg.select('.axis.x')
             .transition().duration(barTransition)
-            .select('.domain').attr('transform', 'translate(' +
-                0 + ',' + (yScale(0) - (h - margin.bottom)) + ')')
+            .select('.domain').attr('transform', `translate(${0},${(yScale(0) - (h - margin.bottom))})`)
 
         //transition bars
-        keys.forEach(function(key, key_index) {
+        keys.forEach((key, key_index) => {
 
             var bars = svg.selectAll('.bar-' + key)
                 .data(series[key_index])
                 .transition().duration(barTransition)
                 .style('opacity', 1)
-                .attr('y', function(d) {
-                    return yScale(d[1])
-                })
-                .attr('height', function(d) { return yScale(d[0]) - yScale(d[1]) })
+                .attr('y', d => yScale(d[1]))
+                .attr('height', d => yScale(d[0]) - yScale(d[1]))
         })
 
         //original legend
-        d3.selectAll('.thisLegend').remove()
+        d3.selectAll('.thisLegend').remove();
         d3.selectAll('.legend').classed('hidden', false)
 
         //remove thisLine
@@ -546,28 +516,20 @@ function drawLegend(data) {
         .enter()
         .append('g')
         .attr('class', 'legend')
-        .attr('transform', function(d, i) {
-            {
-                return 'translate(0,' + i * 20 + ')'
-            }
-        })
+        .attr('transform', (d, i) => `translate(0,${i * 20})`)
 
     legend.append('rect')
         .attr('x', wLegend)
         .attr('y', hLegend + 30)
         .attr('width', 12)
         .attr('height', 12)
-        .style('fill', function(d, i) {
-            return colors(i)
-        })
+        .style('fill', (d, i) => colors(i))
 
     legend.append('text')
         .attr('x', wLegend + 20)
         .attr('y', hLegend + 42)
         //.attr('dy', '.35em')
-        .text(function(d, i) {
-            return d
-        })
+        .text((d, i) => d)
         .attr('class', 'textselected')
 }
 
@@ -608,11 +570,11 @@ function toggleBackButton() {
 }
 
 function stackMin(serie) {
-    return d3.min(serie, function(d) { return d[0] })
+    return d3.min(serie, d => d[0])
 }
 
 function stackMax(serie) {
-    return d3.max(serie, function(d) { return d[1] })
+    return d3.max(serie, d => d[1])
 }
 
 // % label for the y axis
@@ -622,8 +584,7 @@ svg.append('text')
     .style('text-anchor', 'middle')
     .text('%')
     .attr('class', 'axis text')
-    .attr('transform', 'translate(' + margin.left / 4 + ',' +
-        h / 2 + ') rotate(0)')
+    .attr('transform', `translate(${margin.left / 4},${h / 2}) rotate(0)`)
     .style('font-weight', 'bold')
     .style('pointer-events', 'none')
 
@@ -632,6 +593,5 @@ svg.append('text')
     .style('text-anchor', 'middle')
     .attr('class', 'textselected')
     .text('Source: U.S. Bureau of Economic Analysis')
-    .attr('transform', 'translate(' + (w * 0.75) + ',' +
-        (h * 0.925) + ') rotate(0)')
+    .attr('transform', `translate(${(w * 0.75)},${(h * 0.925)}) rotate(0)`)
     .style('pointer-events', 'none')
