@@ -1,7 +1,7 @@
 //Defined functions
 var w = container.offsetWidth
 var h = 300 //svg height
-var margin = { right: 50, left: 50, top: 25 } //svg margin
+var margin = { right: 50, left: 50, top: 25, bottom: 0 }
 
 //properties of mouseout
 var barMouseOut = function(d) {
@@ -92,9 +92,7 @@ var bars = svg.selectAll('rect')
 
 bars.enter()
     .append('rect')
-    .attr('x', function(d, i) {
-        return x(i)
-    })
+    .attr('x', (d, i) => x(i))
     .attr('y', d => h - y(d.value))
     .attr('width', x.bandwidth())
     .attr('height', d => y(d.value))
@@ -110,9 +108,7 @@ var text = svg.selectAll('text')
 text.enter()
     .append('text')
     .text(d => d.value)
-    .attr('x', function(d, i) {
-        return x(i) + x.bandwidth() / 2
-    })
+    .attr('x', (d, i) => x(i) + x.bandwidth() / 2)
     .attr('y', d => {
         if (d.value >= 6) {
             return h - y(d.value) + 14
@@ -145,7 +141,7 @@ slider.append('line')
             var handleCy = document.getElementById('handle').getAttribute('cy')
 
             d3.selectAll('rect')
-                .attr('fill', function(d) {
+                .attr('fill', d => {
                     if (d3.max(barDataset, d => d.value) - y.invert(d3.event.y) >= d.value) {
                         return 'orange'
                     } else {
