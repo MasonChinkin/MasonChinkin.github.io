@@ -65,7 +65,7 @@ d3.csv('viz-data/growth_data.csv', rowConverter, function(error, data) {
         drawBackbutton(dataset, series, keys)
 
         //LEGEND
-        var legendVals = ["Personal Consumption", "Gross private domestic investment", "Net Trade", "Government consumption and gross investment"]
+        var legendVals = ['Personal Consumption', 'Gross private domestic investment', 'Net Trade', 'Government consumption and gross investment']
 
         //var legendVals = dataset.columns.slice(1) DYNAMIC LEGEND, not using because current column headers not pretty, but necessary for the way this dynamically loads the thisType files
 
@@ -112,7 +112,7 @@ function drawGdp(data, series, keys) {
         .ticks(8)
         .tickSizeOuter(0)
         .tickSizeInner(-w + margin.left + margin.right)
-        .tickFormat("")
+        .tickFormat('')
 
     //group data rows
     var bars = svg.selectAll('#originalBars')
@@ -121,7 +121,7 @@ function drawGdp(data, series, keys) {
         .append('g')
         .attr('id', 'originalBars')
         .style('fill', function(d, i) { return colors(i) })
-        .attr("class", function(d, i) {
+        .attr('class', function(d, i) {
             return d.key
         })
 
@@ -142,26 +142,26 @@ function drawGdp(data, series, keys) {
         .attr('width', xScale.bandwidth)
         .attr('id', 'indivBars')
         .attr('class', function(d, i) {
-            return "bar-" + d3.select(this.parentNode).attr('class')
+            return 'bar-' + d3.select(this.parentNode).attr('class')
         })
         .style('cursor', 'pointer')
-        .on("mousemove", function(d, i) {
+        .on('mousemove', function(d, i) {
 
             tooltipType = d3.select(this.parentNode).attr('class')
             //console.log(d.data[tooltipType])
 
             tooltipDiv.transition()
                 //.duration(200)
-                .style("opacity", .9)
+                .style('opacity', .9)
 
-            tooltipDiv.html(tooltipType + "<br/>" + formatTime(d.data.year) + ': ' + d.data[tooltipType] + '%')
-                .style("left", (d3.event.pageX + 5) + "px")
-                .style("top", (d3.event.pageY - 38) + "px")
+            tooltipDiv.html(tooltipType + '<br/>' + formatTime(d.data.year) + ': ' + d.data[tooltipType] + '%')
+                .style('left', (d3.event.pageX + 5) + 'px')
+                .style('top', (d3.event.pageY - 38) + 'px')
         })
-        .on("mouseout", function(d) {
+        .on('mouseout', function(d) {
             tooltipDiv.transition()
                 .duration(500)
-                .style("opacity", 0)
+                .style('opacity', 0)
         })
 
     rects.on('click', function(d, i) {
@@ -201,7 +201,7 @@ function drawGdp(data, series, keys) {
             //console.log(transitionSeries)
 
             //remove gdp line
-            d3.select('#line').transition().duration(barTransition / 2).style("opacity", 0)
+            d3.select('#line').transition().duration(barTransition / 2).style('opacity', 0)
 
             //update y scale
             yScale = d3.scaleLinear()
@@ -225,21 +225,21 @@ function drawGdp(data, series, keys) {
                 .ticks(8)
                 .tickSizeOuter(0)
                 .tickSizeInner(-w + margin.left + margin.right)
-                .tickFormat("")
+                .tickFormat('')
 
-            svg.select(".axis.yl")
+            svg.select('.axis.yl')
                 .transition().duration(barTransition)
                 .call(yAxisL)
 
-            svg.select(".axis.yr")
+            svg.select('.axis.yr')
                 .transition().duration(barTransition)
                 .call(yAxisR)
 
-            svg.select(".axis.ygrid")
+            svg.select('.axis.ygrid')
                 .transition().duration(barTransition)
                 .call(yAxisGrid)
 
-            svg.select(".axis.x")
+            svg.select('.axis.x')
                 .transition().duration(barTransition)
                 .select('.domain').attr('transform', 'translate(' +
                     0 + ',' + (yScale(0) - (h - margin.bottom)) + ')')
@@ -247,13 +247,13 @@ function drawGdp(data, series, keys) {
             //transition bars
             keys.forEach(function(key, key_index) {
 
-                var bars = svg.selectAll(".bar-" + key)
+                var bars = svg.selectAll('.bar-' + key)
                     .data(transitionSeries[key_index])
                     .transition().duration(barTransition)
-                    .attr("y", function(d) {
+                    .attr('y', function(d) {
                         return yScale(d[1])
                     })
-                    .attr("height", function(d) { return yScale(d[0]) - yScale(d[1]) })
+                    .attr('height', function(d) { return yScale(d[0]) - yScale(d[1]) })
                     .transition()
                     .style('opacity', 0)
             })
@@ -273,7 +273,7 @@ function drawGdp(data, series, keys) {
                 .append('g')
                 .attr('id', 'bars')
                 .style('fill', function(d, i) { return colors(i) })
-                .attr("class", function(d, i) {
+                .attr('class', function(d, i) {
                     return d.key
                 })
 
@@ -294,25 +294,25 @@ function drawGdp(data, series, keys) {
                 .attr('width', xScale.bandwidth)
                 .attr('id', 'indivBars')
                 .attr('class', function(d, i) {
-                    return "thisBar-" + d3.select(this.parentNode).attr('class')
+                    return 'thisBar-' + d3.select(this.parentNode).attr('class')
                 })
-                .on("mousemove", function(d, i) {
+                .on('mousemove', function(d, i) {
 
                     tooltipType = d3.select(this.parentNode).attr('class')
                     //console.log(d.data[tooltipType])
 
                     tooltipDiv.transition()
                         //.duration(200)
-                        .style("opacity", .9)
+                        .style('opacity', .9)
 
-                    tooltipDiv.html(tooltipType + "<br/>" + formatTime(d.data.year) + ': ' + d.data[tooltipType] + '%')
-                        .style("left", (d3.event.pageX + 5) + "px")
-                        .style("top", (d3.event.pageY - 38) + "px")
+                    tooltipDiv.html(tooltipType + '<br/>' + formatTime(d.data.year) + ': ' + d.data[tooltipType] + '%')
+                        .style('left', (d3.event.pageX + 5) + 'px')
+                        .style('top', (d3.event.pageY - 38) + 'px')
                 })
-                .on("mouseout", function(d) {
+                .on('mouseout', function(d) {
                     tooltipDiv.transition()
                         .duration(500)
-                        .style("opacity", 0)
+                        .style('opacity', 0)
                 })
                 .style('opacity', 0)
                 .transition().delay(barTransition)
@@ -335,26 +335,26 @@ function drawGdp(data, series, keys) {
                 .data(legendVals)
                 .enter()
                 .append('g')
-                .attr("class", "thisLegend")
-                .attr("transform", function(d, i) { { return "translate(0," + i * 20 + ")" } })
+                .attr('class', 'thisLegend')
+                .attr('transform', function(d, i) { { return 'translate(0,' + i * 20 + ')' } })
 
             legend.append('rect')
-                .attr("x", wLegend)
-                .attr("y", hLegend + 30)
-                .attr("width", 12)
-                .attr("height", 12)
-                .style("fill", function(d, i) {
+                .attr('x', wLegend)
+                .attr('y', hLegend + 30)
+                .attr('width', 12)
+                .attr('height', 12)
+                .style('fill', function(d, i) {
                     return colors(i)
                 })
 
             legend.append('text')
-                .attr("x", wLegend + 20)
-                .attr("y", hLegend + 42)
-                //.attr("dy", ".35em")
+                .attr('x', wLegend + 20)
+                .attr('y', hLegend + 42)
+                //.attr('dy', '.35em')
                 .text(function(d, i) {
                     return d
                 })
-                .attr("class", "textselected")
+                .attr('class', 'textselected')
         })
     })
 
@@ -386,9 +386,9 @@ function drawGdp(data, series, keys) {
         .style('opacity', .2)
 
     // Define the div for the tooltip
-    var tooltipDiv = d3.select("body").append("div")
-        .attr("class", "tooltip")
-        .style("opacity", 0)
+    var tooltipDiv = d3.select('body').append('div')
+        .attr('class', 'tooltip')
+        .style('opacity', 0)
 }
 
 function drawGdpLine(data) {
@@ -399,10 +399,10 @@ function drawGdpLine(data) {
         .curve(d3.curveMonotoneX)
 
     //create line
-    svg.append("path")
+    svg.append('path')
         .datum(data)
-        .attr("id", "line")
-        .attr("d", line)
+        .attr('id', 'line')
+        .attr('d', line)
         .style('fill', 'none')
         .style('stroke', 'black')
         .style('stroke-width', 3)
@@ -416,10 +416,10 @@ function drawThisLine(data) {
         .curve(d3.curveMonotoneX)
 
     //create line
-    svg.append("path")
+    svg.append('path')
         .datum(data)
-        .attr("id", 'thisLine')
-        .attr("d", thisLine)
+        .attr('id', 'thisLine')
+        .attr('d', thisLine)
         .style('fill', 'none')
         .style('stroke', 'black')
         .style('stroke-width', 3)
@@ -431,27 +431,27 @@ function drawThisLine(data) {
 function drawBackbutton(data, series, keys) {
 
     //Create back button
-    var backButton = svg.append("g")
-        .attr("id", "backButton")
-        .style("opacity", 0) //Initially hidden
-        .classed("unclickable", true) //Initially not clickable
-        .attr("transform", "translate(" + xScale.range()[0] + "," + yScale.range()[1] + ")")
+    var backButton = svg.append('g')
+        .attr('id', 'backButton')
+        .style('opacity', 0) //Initially hidden
+        .classed('unclickable', true) //Initially not clickable
+        .attr('transform', 'translate(' + xScale.range()[0] + ',' + yScale.range()[1] + ')')
 
-    backButton.append("rect")
-        .attr("x", 15)
-        .attr("y", -30)
-        .attr("rx", 5)
-        .attr("rx", 5)
-        .attr("width", 70)
-        .attr("height", 30)
+    backButton.append('rect')
+        .attr('x', 15)
+        .attr('y', -30)
+        .attr('rx', 5)
+        .attr('rx', 5)
+        .attr('width', 70)
+        .attr('height', 30)
 
-    backButton.append("text")
-        .attr("x", 22)
-        .attr("y", -10)
-        .html("&larr Back")
+    backButton.append('text')
+        .attr('x', 22)
+        .attr('y', -10)
+        .html('&larr; Back')
 
     //Define click behavior
-    backButton.on("click", function() {
+    backButton.on('click', function() {
 
         viewState = 0
         toggleBackButton()
@@ -465,13 +465,13 @@ function drawBackbutton(data, series, keys) {
         //transition bars
         thisKeys.forEach(function(key, key_index) {
 
-            var bars = svg.selectAll(".thisBar-" + key)
+            var bars = svg.selectAll('.thisBar-' + key)
                 .data(thisSeries[key_index])
                 .transition().duration(barTransition)
-                .attr("y", function(d) {
+                .attr('y', function(d) {
                     return yScale(d[1])
                 })
-                .attr("height", function(d) { return yScale(d[0]) - yScale(d[1]) })
+                .attr('height', function(d) { return yScale(d[0]) - yScale(d[1]) })
                 .style('opacity', 0)
         })
 
@@ -493,21 +493,21 @@ function drawBackbutton(data, series, keys) {
             .ticks(8)
             .tickSizeOuter(0)
             .tickSizeInner(-w + margin.left + margin.right)
-            .tickFormat("")
+            .tickFormat('')
 
-        svg.select(".axis.yl")
+        svg.select('.axis.yl')
             .transition().duration(barTransition)
             .call(yAxisL)
 
-        svg.select(".axis.yr")
+        svg.select('.axis.yr')
             .transition().duration(barTransition)
             .call(yAxisR)
 
-        svg.select(".axis.ygrid")
+        svg.select('.axis.ygrid')
             .transition().duration(barTransition)
             .call(yAxisGrid)
 
-        svg.select(".axis.x")
+        svg.select('.axis.x')
             .transition().duration(barTransition)
             .select('.domain').attr('transform', 'translate(' +
                 0 + ',' + (yScale(0) - (h - margin.bottom)) + ')')
@@ -515,14 +515,14 @@ function drawBackbutton(data, series, keys) {
         //transition bars
         keys.forEach(function(key, key_index) {
 
-            var bars = svg.selectAll(".bar-" + key)
+            var bars = svg.selectAll('.bar-' + key)
                 .data(series[key_index])
                 .transition().duration(barTransition)
                 .style('opacity', 1)
-                .attr("y", function(d) {
+                .attr('y', function(d) {
                     return yScale(d[1])
                 })
-                .attr("height", function(d) { return yScale(d[0]) - yScale(d[1]) })
+                .attr('height', function(d) { return yScale(d[0]) - yScale(d[1]) })
         })
 
         //original legend
@@ -533,7 +533,7 @@ function drawBackbutton(data, series, keys) {
         d3.select('#thisLine').remove()
 
         //original gdp line
-        d3.select('#line').transition().duration(barTransition * 2).style("opacity", 1)
+        d3.select('#line').transition().duration(barTransition * 2).style('opacity', 1)
     })
 }
 
@@ -545,35 +545,35 @@ function drawLegend(data) {
         .data(data)
         .enter()
         .append('g')
-        .attr("class", "legend")
-        .attr("transform", function(d, i) {
+        .attr('class', 'legend')
+        .attr('transform', function(d, i) {
             {
-                return "translate(0," + i * 20 + ")"
+                return 'translate(0,' + i * 20 + ')'
             }
         })
 
     legend.append('rect')
-        .attr("x", wLegend)
-        .attr("y", hLegend + 30)
-        .attr("width", 12)
-        .attr("height", 12)
-        .style("fill", function(d, i) {
+        .attr('x', wLegend)
+        .attr('y', hLegend + 30)
+        .attr('width', 12)
+        .attr('height', 12)
+        .style('fill', function(d, i) {
             return colors(i)
         })
 
     legend.append('text')
-        .attr("x", wLegend + 20)
-        .attr("y", hLegend + 42)
-        //.attr("dy", ".35em")
+        .attr('x', wLegend + 20)
+        .attr('y', hLegend + 42)
+        //.attr('dy', '.35em')
         .text(function(d, i) {
             return d
         })
-        .attr("class", "textselected")
+        .attr('class', 'textselected')
 }
 
 function toggleBackButton() {
     //Select the button
-    var backButton = d3.select("#backButton")
+    var backButton = d3.select('#backButton')
 
     //Decide whether to reveal or hide it
     if (viewState == 1) {
@@ -581,28 +581,28 @@ function toggleBackButton() {
         //Reveal it
 
         //Set up dynamic button text
-        var buttonText = "&larr Back"
+        var buttonText = '&larr; Back'
 
         //Set text
-        backButton.select("text").html(buttonText)
+        backButton.select('text').html(buttonText)
 
         //Resize button depending on text width
-        var rectWidth = Math.round(backButton.select("text").node().getBBox().width + 16)
-        backButton.select("rect").attr("width", rectWidth)
+        var rectWidth = Math.round(backButton.select('text').node().getBBox().width + 16)
+        backButton.select('rect').attr('width', rectWidth)
 
         //Fade button in
-        backButton.classed("unclickable", false)
+        backButton.classed('unclickable', false)
             .transition()
             .duration(500)
-            .style("opacity", 1)
+            .style('opacity', 1)
 
     } else {
 
         //Hide it
-        backButton.classed("unclickable", true)
+        backButton.classed('unclickable', true)
             .transition()
             .duration(200)
-            .style("opacity", 0)
+            .style('opacity', 0)
 
     }
 }
@@ -616,22 +616,22 @@ function stackMax(serie) {
 }
 
 // % label for the y axis
-svg.append("text")
-    //.attr("x", margin.left / 2)
-    //.attr("y", h / 2)
-    .style("text-anchor", "middle")
-    .text("%")
+svg.append('text')
+    //.attr('x', margin.left / 2)
+    //.attr('y', h / 2)
+    .style('text-anchor', 'middle')
+    .text('%')
     .attr('class', 'axis text')
-    .attr("transform", "translate(" + margin.left / 4 + "," +
-        h / 2 + ") rotate(0)")
+    .attr('transform', 'translate(' + margin.left / 4 + ',' +
+        h / 2 + ') rotate(0)')
     .style('font-weight', 'bold')
     .style('pointer-events', 'none')
 
 // source
-svg.append("text")
-    .style("text-anchor", "middle")
+svg.append('text')
+    .style('text-anchor', 'middle')
     .attr('class', 'textselected')
-    .text("Source: U.S. Bureau of Economic Analysis")
-    .attr("transform", "translate(" + (w * 0.75) + "," +
-        (h * 0.925) + ") rotate(0)")
+    .text('Source: U.S. Bureau of Economic Analysis')
+    .attr('transform', 'translate(' + (w * 0.75) + ',' +
+        (h * 0.925) + ') rotate(0)')
     .style('pointer-events', 'none')
