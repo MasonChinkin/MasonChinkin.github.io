@@ -398,10 +398,11 @@
 			}
 		},
 		{
-			"file": "d3-visualizations/budget-dashboard.js",
+			"file": "budget-dashboard.html",
 			"settings":
 			{
-				"buffer_size": 27221,
+				"buffer_size": 5574,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		}
@@ -528,6 +529,7 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Zhangkin/Saved Games/DCS/Config/Input/A-10C/joystick/T.Flight Hotas X {9C47C680-359C-11e8-8001-444553540000}.diff.lua",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/gdp.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/networks.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
@@ -654,12 +656,11 @@
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/06_area_chart.html",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/05_line_chart_labeled.html",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/04_line_chart_adjusted.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart/line_chart.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/03_line_chart_missing.html"
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart/line_chart.html"
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 27.0
 	},
 	"find_in_files":
 	{
@@ -939,29 +940,51 @@
 				},
 				{
 					"buffer": 2,
-					"file": "d3-visualizations/budget-dashboard.js",
-					"semi_transient": true,
+					"file": "budget-dashboard.html",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 27221,
+						"buffer_size": 5574,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								4250,
+								4250
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"SL.15.region_keys":
+							[
+								"SL.csslint.Highlights.|145e6b7085be15eb0801ed4efd9d411c107b75a6853c1e0ed91aa6a70b680ba6|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|c4da0cedc44fc899d465d5f1bf953c930fbaf764302c012b80299a755fd66dab|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.csslint.Highlights.|a07cec07cb4965aed229d789e85198e6bb364130911724bc6d0f165e02e70acf|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|e7c74db2af31215f869920a90880571a757ec0a93690ff25ad743728d0f5b634|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|31c61211794fbc013d1ec22a11341aff596dfd3962dab1b7329df0aa83ffaaa2|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|1c5130ca308e0ec6460b87b0ea11a9ae25f9c8742760d086fa6ce3e55182860e|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot"
+							],
+							"SL.17.region_keys":
+							[
+								"SL.csslint.Highlights.|1c5130ca308e0ec6460b87b0ea11a9ae25f9c8742760d086fa6ce3e55182860e|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|c4da0cedc44fc899d465d5f1bf953c930fbaf764302c012b80299a755fd66dab|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|145e6b7085be15eb0801ed4efd9d411c107b75a6853c1e0ed91aa6a70b680ba6|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|31c61211794fbc013d1ec22a11341aff596dfd3962dab1b7329df0aa83ffaaa2|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|a07cec07cb4965aed229d789e85198e6bb364130911724bc6d0f165e02e70acf|region.yellowish markup.warning.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
+								"SL.csslint.Highlights.|e7c74db2af31215f869920a90880571a757ec0a93690ff25ad743728d0f5b634|region.yellowish markup.warning.sublime_linter|32"
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 378.4,
+						"translation.y": 1674.4,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1021,7 +1044,7 @@
 	"project": "index.sublime-project",
 	"replace":
 	{
-		"height": 74.4
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
