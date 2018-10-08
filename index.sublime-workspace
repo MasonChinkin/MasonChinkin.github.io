@@ -4,8 +4,20 @@
 		"selected_items":
 		[
 			[
+				"pointer",
+				"pointer-events\t(reddit-front-page.html)"
+			],
+			[
+				"creat",
+				"created_utc"
+			],
+			[
+				"console",
+				"console.log\t(swiss-army-bar-chart.js)"
+			],
+			[
 				"f",
-				"f\tAnonymous Function"
+				"for\tfor (…) {…}"
 			],
 			[
 				"for",
@@ -196,10 +208,6 @@
 				"display\tproperty"
 			],
 			[
-				"console",
-				"console.log"
-			],
-			[
 				"key",
 				"key_index"
 			],
@@ -214,10 +222,6 @@
 			[
 				"outer",
 				"paddingOuter()\td3-scaleBand.paddingOuter()"
-			],
-			[
-				"pointer",
-				"pointer-events"
 			],
 			[
 				"y",
@@ -380,28 +384,19 @@
 	"buffers":
 	[
 		{
-			"file": "d3-visualizations/random-scatter.js",
+			"file": "d3-visualizations/reddit-front-page.js",
 			"settings":
 			{
-				"buffer_size": 3766,
+				"buffer_size": 4967,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "d3-visualizations/swiss-army-bar-chart.js",
+			"file": "reddit-front-page.html",
 			"settings":
 			{
-				"buffer_size": 10088,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "budget-dashboard.html",
-			"settings":
-			{
-				"buffer_size": 5574,
+				"buffer_size": 5928,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -529,15 +524,22 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/swiss-army-bar-chart.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/europe-trip.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/reddit-front-page.html",
+		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/User/.jsbeautifyrc",
+		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/swiss-army-bar-chart.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/congress-2016-results.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/us_congress_2016_lower_48.json",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/random-scatter.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/budget-dashboard.html",
 		"/C/Users/Zhangkin/Saved Games/DCS/Config/Input/A-10C/joystick/T.Flight Hotas X {9C47C680-359C-11e8-8001-444553540000}.diff.lua",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/gdp.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/networks.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/congress-2016-results.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/swiss-army-bar-chart.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/random-scatter.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/budget-dashboard.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/budget-dashboard.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3-simple-slider.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/budget-dashboard test.js",
 		"/C/Users/Zhangkin/Desktop/D3/transition sankey help/budget-dashboard.js",
@@ -587,16 +589,12 @@
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/us_budget_sankey.json",
 		"/F/Downloads/json_exp.json",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/state_budget_sankey",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/swiss-army-bar-chart.html",
 		"/F/Downloads/csv2json.json",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/europe-trip.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Random-scatter.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/stacked-area.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/pie.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/line-area-charts.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/networks.html",
-		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
-		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
 		"/C/Users/Zhangkin/Saved Games/DCS/Config/options.lua",
 		"/C/Program Files (x86)/Steam/steamapps/common/DCSWorld/Mods/aircraft/A-10C/Cockpit/Scripts/MFCD/indicator/MFCD_fonts.lua",
 		"/C/Users/Zhangkin/Desktop/New AutoHotkey Script.ahk",
@@ -631,7 +629,6 @@
 		"/F/Downloads/ne_50m_admin_0_countries.json",
 		"/F/Downloads/map.geojson",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/random-network.json",
-		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/User/.jsbeautifyrc",
 		"/F/Downloads/Forked from https___next.json-generator.com_VkbpYpuiV.json",
 		"/F/Downloads/Forked from https___next.json-generator.com_VJdXV6doV.json",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/Misc.html",
@@ -654,9 +651,7 @@
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/08_pan.html",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart/line_chart.js",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/06_area_chart.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/05_line_chart_labeled.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/04_line_chart_adjusted.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart/line_chart.html"
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/05_line_chart_labeled.html"
 	],
 	"find":
 	{
@@ -674,6 +669,26 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			";",
+			");",
+			";",
+			"all",
+			"6",
+			"value",
+			"\"",
+			"format",
+			"save",
+			"d",
+			"score",
+			" =",
+			"let ",
+			"push",
+			"Things",
+			"', ",
+			"'",
+			"\"",
+			";",
+			"key",
 			"var ",
 			"length",
 			"var ",
@@ -781,27 +796,7 @@
 			"function() {\n            return",
 			"function() {",
 			"function()",
-			"})",
-			"function(d) {\n            return",
-			"})",
-			"}",
-			"function(d) { return",
-			";",
-			"}",
-			"function",
-			"})",
-			";",
-			"})",
-			"function(d) { return",
-			" key",
-			"key",
-			"let",
-			"var ",
-			"var",
-			"color",
-			"height",
-			"viz-data/",
-			"viz - dat"
+			"})"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -875,119 +870,94 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "d3-visualizations/random-scatter.js",
+					"file": "d3-visualizations/reddit-front-page.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3766,
+						"buffer_size": 4967,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1163,
-								1128
+								3783,
+								3456
 							]
 						],
 						"settings":
 						{
+							"SL.14.region_keys":
+							[
+							],
+							"SL.20.region_keys":
+							[
+							],
+							"open_with_edit": true,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 216.0,
+						"translation.y": 864.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
 				{
 					"buffer": 1,
-					"file": "d3-visualizations/swiss-army-bar-chart.js",
+					"file": "reddit-front-page.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10088,
+						"buffer_size": 5928,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3197,
-								3197
+								979,
+								979
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "budget-dashboard.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5574,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4250,
-								4250
-							]
-						],
-						"settings":
-						{
-							"SL.15.region_keys":
-							[
-								"SL.csslint.Highlights.|145e6b7085be15eb0801ed4efd9d411c107b75a6853c1e0ed91aa6a70b680ba6|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|c4da0cedc44fc899d465d5f1bf953c930fbaf764302c012b80299a755fd66dab|region.yellowish markup.warning.sublime_linter|32",
-								"sublime_linter.protected_regions",
-								"SL.csslint.Highlights.|a07cec07cb4965aed229d789e85198e6bb364130911724bc6d0f165e02e70acf|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|e7c74db2af31215f869920a90880571a757ec0a93690ff25ad743728d0f5b634|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|31c61211794fbc013d1ec22a11341aff596dfd3962dab1b7329df0aa83ffaaa2|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|1c5130ca308e0ec6460b87b0ea11a9ae25f9c8742760d086fa6ce3e55182860e|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot"
-							],
 							"SL.17.region_keys":
 							[
-								"SL.csslint.Highlights.|1c5130ca308e0ec6460b87b0ea11a9ae25f9c8742760d086fa6ce3e55182860e|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|c4da0cedc44fc899d465d5f1bf953c930fbaf764302c012b80299a755fd66dab|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|145e6b7085be15eb0801ed4efd9d411c107b75a6853c1e0ed91aa6a70b680ba6|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|31c61211794fbc013d1ec22a11341aff596dfd3962dab1b7329df0aa83ffaaa2|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|a07cec07cb4965aed229d789e85198e6bb364130911724bc6d0f165e02e70acf|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|582824254afb187ee63ce71bd93162565d41574c1bb94715ad7ceb15f2de882a|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|8ec2a34d8cd92cb48d834b3e7dd93798ae0311c711df4a38dc41c43da4e6ab4d|region.yellowish markup.warning.sublime_linter|32",
 								"sublime_linter.protected_regions",
+								"SL.csslint.Highlights.|7619fd4f1ff965b0a526aa2cb4fe653ac5644496e38bc83187f08702b176352f|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|1eda84bbe416156663c728aedc68a563fa5f2ed5c2bbd24e1b01faa350768eb8|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|db71abc67bb0dc94cad08111517e8ba10643447409ffe534c83b9f794fe7ace3|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|460677aefd265b5aa74d6239125c480004df6898475fbed743d3a98abeb12eb2|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|fd9df21628b776438932c88b0915765494ba644ed70ad58bba98d9d8c3109ebd|region.yellowish markup.warning.sublime_linter|32",
 								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
-								"SL.csslint.Highlights.|e7c74db2af31215f869920a90880571a757ec0a93690ff25ad743728d0f5b634|region.yellowish markup.warning.sublime_linter|32"
+								"SL.csslint.Highlights.|449520a48a2ba7d5bfe2298d5566d65a730f743cd6c25d0136349b4bb81c8bdc|region.yellowish markup.warning.sublime_linter|32",
+								"SL.csslint.Highlights.|ecbc81881652585b5cbe9bd8a164e743ad885976eab9c4339396c9c19adc031f|region.yellowish markup.warning.sublime_linter|32"
 							],
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1674.4,
+						"translation.y": 54.4,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1010,11 +980,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -1082,7 +1059,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 375.0,
+	"side_bar_width": 217.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

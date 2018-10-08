@@ -12,15 +12,21 @@
     <meta name="viewport" content="width=1000" />
     <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
     <script type="text/javascript" src="assets/js/d3.js"></script>
-    <script type="text/javascript" src="assets/js/sankey.js"></script>
-    <script type="text/javascript" src="assets/js/d3-simple-slider.js"></script>
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <style type="text/css">
     .barLabel {
         text-anchor: middle;
         pointer-events: none;
-        font-size: 11px;
+        font-size: 12px;
+        font-family: sans-serif;
+        pointer-events: none;
+    }
+
+    .subLabel {
+        text-anchor: middle;
+        pointer-events: none;
+        font-size: 15px;
         font-family: sans-serif;
         pointer-events: none;
     }
@@ -38,6 +44,7 @@
         -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
         pointer-events: none;
+        max-width: 400px;
     }
 
     #tooltip.hidden {
@@ -52,19 +59,17 @@
     }
 
     #tooltip p strong {
+        margin: 0;
+        font-family: sans-serif;
+        font-size: 20px;
+        line-height: 25px;
+        text-align: left;
+        color: black;
         font-weight: bold;
     }
 
-    .box {
-        display: none;
-        width: 100%;
-    }
-
-    a:hover+.box,
-    .box:hover {
-        display: block;
-        position: relative;
-        z-index: 100;
+    #pic {
+        height: 300px;
     }
     </style>
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -126,12 +131,13 @@
         <section id="portfolio" class="two" style="
         line-height: 1;">
             <div id="container" class="container">
-                <h2>Today's Popular Reddit Posts</h2>
+                <h2>What is trending on <a href="https://www.reddit.com/r/popular">Reddit</a> right now?</h2>
             </div>
             <div id="tooltip" class="hidden">
-                <p><strong>Title: </strong><span id="Title">100</span></p>
-                <p><strong>Posted: </strong><span id="Posted">100</span></p>
-                <p><strong>Upvotes: </strong><span id="Upvotes">100</span></p>
+                <p><strong><span id="Subreddit">xxx</span></strong></p>
+                <p><strong>Title: </strong><span id="Title">xxx</span></p>
+                <p><strong>Posted: </strong><span id="Posted">xxx</span></p>
+                <p><strong>Upvotes: </strong><span id="Upvotes">xxx</span></p>
                 <p><img id="pic"></p>
             </div>
             <script src="d3-visualizations/reddit-front-page.js"></script>
