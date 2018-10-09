@@ -18,8 +18,8 @@
 
 //create svg container
 const w = container.offsetWidth
-const h = 600
-const margin = { right: 20, left: 20, top: 20, bottom: 100 }
+const h = 400
+const margin = { right: 40, left: 40, top: 60, bottom: 125 }
 
 const svg = d3.select('#container')
     .append('svg')
@@ -32,20 +32,22 @@ const svg = d3.select('#container')
 //transition times
 let hover = 250
 let changeShape = 500
+let bars = 250
 
-//number format
-const numberFormat = d3.format('.2s')
+//number/date formats
+const upsFormat = d3.format('.2s')
+const postTimeFormat = d3.timeFormat('%B %d %I:%M%p')
 
 //ranges
 let x = d3.scaleBand()
-    .rangeRound([0, w - margin.right])
+    .rangeRound([0, w])
     .paddingInner(0.05)
 
 let y = d3.scaleLinear()
     .range([0, h - margin.top])
     .clamp(true)
 
-let url = 'https://www.reddit.com/r/all.json'
+let url = 'https://www.reddit.com/r/popular.json'
 
 d3.json(url, (error, json) => {
     if (error) throw error
@@ -77,10 +79,10 @@ d3.json(url, (error, json) => {
 
 function drawBars(dataset) {
 
-    //console.log(dataset)
+    console.log(dataset)
 
     //scales
-    x.domain(d3.range(dataset.length))
+    x.domain(dataset.map(d => d.subreddit))
     y.domain([0, d3.max(dataset, d => d.ups)])
 
     //BARS
@@ -88,44 +90,87 @@ function drawBars(dataset) {
         .data(dataset)
         .enter()
         .append('rect')
-        .attr('x', (d, i) => x(i))
-        .attr('y', d => h - y(d.ups))
+        .attr('x', d => x(d.subreddit))
+        .attr('y', h) //for animation
         .attr('width', x.bandwidth())
-        .attr('height', d => y(d.ups))
+        .attr('height', d => y(0))
+        .attr('rx', 5)
+        .attr('ry', 5)
         .attr('fill', d => 'steelBlue')
         .style('cursor', 'pointer')
         .on('click', d => window.open(d.permalink))
         .on('mousemove', barMouseMove)
         .on('mouseout', barMouseOut)
+        .transition('start')
+        .duration(3000)
+        .ease(d3.easeElastic)
+        .attr('y', d => h - y(d.ups))
+        .attr('height', d => y(d.ups))
 
     //TEXT
-    const barLabel = svg.selectAll('text.barLabel')
+    const barLabel = svg.selectAll('text')
         .data(dataset)
         .enter()
         .append('text')
-        .text(d => numberFormat(d.ups))
-        .attr('x', (d, i) => x(i) + x.bandwidth() / 2)
+        .text(d => upsFormat(d.ups))
+        .attr('x', d => x(d.subreddit) + x.bandwidth() / 2)
+        .attr('y', h)
+        .attr('class', 'barLabel')
+        .transition('start')
+        .duration(3000)
+        .ease(d3.easeElastic)
         .attr('y', d => {
             if (d.ups >= 4000) {
-                return h - y(d.ups) + 14
-            } else { return h - y(d.ups) - 4 }
+                return h - y(d.ups) + 18
+            } else { return h - y(d.ups) - 5 }
         })
-        .attr('class', 'barLabel')
         .attr('fill', d => {
             if (d.ups >= 4000) {
                 return 'white'
             } else { return 'black' }
         })
 
-    // const subLabel = svg.selectAll('text.subLabel')
-    //     .data(dataset)
-    //     .enter()
-    //     .append('text')
-    //     .text(d => d.subreddit)
-    //     .attr('x', (d, i) => x(i) + x.bandwidth() / 2)
-    //     .attr('y', d => h - 50)
-    //     .attr('class', 'subLabel')
-    //     .attr('fill', 'black')
+    //title
+    svg.append('text')
+        .style('text-anchor', 'middle')
+        .text('What is trending on Reddit right now?')
+        .attr('class', 'vizTitle')
+        .attr('transform', `translate(${w / 2},${0})`)
+        .style('font-weight', 'bold')
+        .style('font-size', 40)
+        .style('pointer-events', 'none')
+
+    //x axis
+    const xAxis = d3.axisBottom()
+        .scale(x)
+        .tickSize(0)
+
+    svg.append('g')
+        .attr('class', 'xAxis')
+        .attr('transform', `translate(0,${h+15})`)
+        .call(xAxis)
+        .selectAll('text')
+        .style('font-size', 14)
+        .style("text-anchor", "start")
+        .attr("dx", "-.8em")
+        .attr("dy", ".15em")
+        .attr("transform", "rotate(45)")
+        .style('pointer-events', 'none')
+
+    d3.select('.xAxis')
+        .select('.domain')
+        .style('opacity', 0)
+
+    //y axis
+    svg.append('text')
+        .style('text-anchor', 'middle')
+        .text('Upvotes')
+        .attr('class', 'yAxis text')
+        .attr('transform', `translate(${-margin.left / 4},${h / 2}) rotate(-90)`)
+        .style('font-weight', 'bold')
+        .style('font-size', 20)
+        .style('pointer-events', 'none')
+
 }
 
 function toCircle(dataset) {
@@ -142,7 +187,7 @@ function toCircle(dataset) {
 //properties of mousemove
 const barMouseMove = function(d) {
     d3.select(this)
-        .attr('fill', 'orange')
+        .attr('fill', 'darkBlue')
 
     const xpos = event.pageX + 20
     const ypos = event.pageY - 400
@@ -159,10 +204,10 @@ const barMouseMove = function(d) {
         .text(d.title)
 
     d3.select('#Posted')
-        .text(d.created_utc)
+        .text(postTimeFormat(d.created_utc))
 
     d3.select('#Upvotes')
-        .text(numberFormat(d.ups))
+        .text(upsFormat(d.ups))
 
     d3.select('#pic')
         .attr('src', d.url)
@@ -177,6 +222,9 @@ const barMouseOut = function(d) {
         .transition()
         .duration(hover)
         .attr('fill', 'steelBlue')
+
+    d3.select('#pic')
+        .attr('src', '')
 
     //Hide the tooltip
     d3.select('#tooltip').classed('hidden', true)

@@ -4,16 +4,32 @@
 		"selected_items":
 		[
 			[
+				"console",
+				"console.log"
+			],
+			[
+				"easeB",
+				"easeBounce\td3.easeBounce"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"easeElastic",
+				"easeElastic\td3.easeElastic"
+			],
+			[
+				"tick",
+				"tickValues\t(budget-dashboard.js)"
+			],
+			[
 				"pointer",
 				"pointer-events\t(reddit-front-page.html)"
 			],
 			[
 				"creat",
 				"created_utc"
-			],
-			[
-				"console",
-				"console.log\t(swiss-army-bar-chart.js)"
 			],
 			[
 				"f",
@@ -26,10 +42,6 @@
 			[
 				"tran",
 				"transition"
-			],
-			[
-				"font",
-				"font-weight"
 			],
 			[
 				"mouse",
@@ -122,10 +134,6 @@
 			[
 				"cvs",
 				"csv_row"
-			],
-			[
-				"tick",
-				"tickFormat\t(index.html)"
 			],
 			[
 				"us",
@@ -384,19 +392,10 @@
 	"buffers":
 	[
 		{
-			"file": "d3-visualizations/reddit-front-page.js",
+			"file": "d3-visualizations/budget-dashboard.js",
 			"settings":
 			{
-				"buffer_size": 4967,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "reddit-front-page.html",
-			"settings":
-			{
-				"buffer_size": 5928,
+				"buffer_size": 27276,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -524,22 +523,24 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/gdp.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/reddit-front-page.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/reddit-front-page.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/budget-dashboard.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/random-scatter.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/swiss-army-bar-chart.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/europe-trip.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/reddit-front-page.html",
 		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
 		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/User/.jsbeautifyrc",
 		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/swiss-army-bar-chart.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/congress-2016-results.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/us_congress_2016_lower_48.json",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/random-scatter.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/budget-dashboard.html",
 		"/C/Users/Zhangkin/Saved Games/DCS/Config/Input/A-10C/joystick/T.Flight Hotas X {9C47C680-359C-11e8-8001-444553540000}.diff.lua",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/gdp.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/networks.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/budget-dashboard.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3-simple-slider.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/budget-dashboard test.js",
 		"/C/Users/Zhangkin/Desktop/D3/transition sankey help/budget-dashboard.js",
@@ -562,7 +563,6 @@
 		"/C/Users/Zhangkin/Desktop/D3/workspace/demo/index.html",
 		"/F/Downloads/subreddits_basic.meta",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/us-budget-sankey.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/us-budget-sankey.html",
 		"/C/Users/Zhangkin/Desktop/D3/multiple lines/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/line/data.csv",
@@ -650,12 +650,11 @@
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/Pan-buttons.html",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/08_pan.html",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart/line_chart.js",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/06_area_chart.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/05_line_chart_labeled.html"
+		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/06_area_chart.html"
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 40.8
 	},
 	"find_in_files":
 	{
@@ -669,6 +668,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"transition",
+			"zero",
+			"\"",
+			"%",
+			"ease",
+			"duration",
+			"numberFormat",
+			"upvoteFormat",
+			"'",
 			";",
 			");",
 			";",
@@ -787,16 +795,7 @@
 			"||",
 			"undefine",
 			"return",
-			"=>return",
-			"=> return",
-			"})",
-			"function(d, i) { return",
-			"})",
-			"function() {",
-			"function() {\n            return",
-			"function() {",
-			"function()",
-			"})"
+			"=>return"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -875,89 +874,32 @@
 			[
 				{
 					"buffer": 0,
-					"file": "d3-visualizations/reddit-front-page.js",
+					"file": "d3-visualizations/budget-dashboard.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4967,
+						"buffer_size": 27276,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3783,
-								3456
+								12957,
+								12957
 							]
 						],
 						"settings":
 						{
-							"SL.14.region_keys":
-							[
-							],
-							"SL.20.region_keys":
-							[
-							],
-							"open_with_edit": true,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 864.0,
+						"translation.y": 2943.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 1,
-					"file": "reddit-front-page.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5928,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								979,
-								979
-							]
-						],
-						"settings":
-						{
-							"SL.17.region_keys":
-							[
-								"SL.csslint.Highlights.|582824254afb187ee63ce71bd93162565d41574c1bb94715ad7ceb15f2de882a|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|8ec2a34d8cd92cb48d834b3e7dd93798ae0311c711df4a38dc41c43da4e6ab4d|region.yellowish markup.warning.sublime_linter|32",
-								"sublime_linter.protected_regions",
-								"SL.csslint.Highlights.|7619fd4f1ff965b0a526aa2cb4fe653ac5644496e38bc83187f08702b176352f|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|1eda84bbe416156663c728aedc68a563fa5f2ed5c2bbd24e1b01faa350768eb8|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|db71abc67bb0dc94cad08111517e8ba10643447409ffe534c83b9f794fe7ace3|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|460677aefd265b5aa74d6239125c480004df6898475fbed743d3a98abeb12eb2|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|fd9df21628b776438932c88b0915765494ba644ed70ad58bba98d9d8c3109ebd|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Gutter.|region.yellowish markup.warning.sublime_linter|dot",
-								"SL.csslint.Highlights.|449520a48a2ba7d5bfe2298d5566d65a730f743cd6c25d0136349b4bb81c8bdc|region.yellowish markup.warning.sublime_linter|32",
-								"SL.csslint.Highlights.|ecbc81881652585b5cbe9bd8a164e743ad885976eab9c4339396c9c19adc031f|region.yellowish markup.warning.sublime_linter|32"
-							],
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 54.4,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -980,18 +922,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":

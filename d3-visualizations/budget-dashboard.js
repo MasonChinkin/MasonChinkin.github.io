@@ -384,7 +384,7 @@ function updateSankey() {
     // transition links
     sankeySvg.selectAll('.link')
         .data(links)
-        .transition()
+        .transition('newSankey')
         .duration(newYearTransition)
         .attr('d', path)
         .style('stroke-width', d => Math.max(1, d.dy))
@@ -392,14 +392,14 @@ function updateSankey() {
     // transition nodes
     sankeySvg.selectAll('.node')
         .data(nodes)
-        .transition()
+        .transition('newSankey')
         .duration(newYearTransition)
         .attr('transform', d => `translate(${d.x},${d.y})`)
 
     // transition rectangles for the nodes
     sankeySvg.selectAll('.node rect')
         .data(nodes)
-        .transition()
+        .transition('newSankey')
         .duration(newYearTransition)
         .attr('height', d => (d.dy < 0 ? 0.1 : d.dy))
         .attr('value', d => d.value)
@@ -407,7 +407,7 @@ function updateSankey() {
     // transition title text for the nodes
     sankeySvg.selectAll('.nodeLabel')
         .data(nodes)
-        .transition()
+        .transition('newSankey')
         .duration(newYearTransition)
         .style('font-size', d => `${Math.floor(fontScale(d.value))}px`)
         .attr('y', d => d.dy / 2)
@@ -415,7 +415,7 @@ function updateSankey() {
     // transition % text for the nodes
     sankeySvg.selectAll('.nodePercent')
         .data(nodes)
-        .transition()
+        .transition('newSankey')
         .duration(newYearTransition)
         .text(d => `${format(d.value)}%`)
         .attr('y', d => d.dy / 2)
