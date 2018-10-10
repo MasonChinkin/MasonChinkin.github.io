@@ -11,7 +11,7 @@ const svg = d3.select('#container')
     .attr('transform', `translate(${margin.left},${margin.top})`)
 
 let node_radius = 5
-let num_nodes = 200
+let num_nodes = 300
 
 //colors
 const colors = d3.scaleOrdinal(d3.schemeCategory10)
@@ -19,29 +19,25 @@ const colors = d3.scaleOrdinal(d3.schemeCategory10)
 //durations
 let colorChange = 500 // delay to see color change before transition
 let changeFoci = 1000 // time to change foci
-let interval = 2000 // timer
+let interval = 1750 // timer
 
 // Foci
 const foci = {
     0: {
         x: w / 4 * 1,
         y: h / 4 * 1,
-        color: '#cc5efa'
     },
     1: {
         x: w / 4 * 3,
         y: h / 4 * 1,
-        color: '#29bf10'
     },
     2: {
         x: w / 4 * 3,
         y: h / 4 * 3,
-        color: '#23cdc7'
     },
     3: {
         x: w / 4 * 1,
         y: h / 4 * 3,
-        color: '#eb494f'
     },
 }
 
@@ -68,8 +64,7 @@ const forceY = d3.forceY((d) => foci[d.choice].y)
 //console.table(nodeData)
 
 const collisionForce = d3.forceCollide(node_radius + 1)
-    .strength(1)
-    .iterations(50)
+    .iterations(10)
 
 const simulation = d3.forceSimulation(nodeData)
     .velocityDecay(0.4)
@@ -86,7 +81,7 @@ const node = svg.append('g')
     .enter()
     .append('circle')
     .attr('r', d => d.r)
-    .style("fill", d => foci[d.choice].color)
+    .style("fill", (d, i) => colors(d.choice))
 
 d3.interval(timer, interval)
 
@@ -108,11 +103,10 @@ function timer() {
 
     node.transition()
         .duration(colorChange)
-        .style('fill', d => foci[d.choice].color)
+        .style('fill', (d, i) => colors(d.choice))
 
-    setTimeout(function() {
+    setTimeout(() =>
         simulation.nodes(nodeData)
-            .alpha(0.7)
-            .restart()
-    }, changeFoci)
+        .alpha(0.7)
+        .restart(), changeFoci)
 }
