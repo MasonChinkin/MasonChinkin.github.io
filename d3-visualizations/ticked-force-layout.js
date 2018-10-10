@@ -15,32 +15,30 @@ let padding = 1
 let cluster_padding = 10
 let num_nodes = 200
 
-let interval = 100
+//durations
+let changeFoci = 2900 // time to change foci
+let interval = 3000 // timer
 
 // Foci
 const foci = {
     'topLeft': {
         x: w / 4 * 1,
         y: h / 4 * 1,
-        prob: 0.05,
         color: '#cc5efa'
     },
     'topRight': {
         x: w / 4 * 3,
         y: h / 4 * 1,
-        prob: 0.6,
         color: '#29bf10'
     },
     'bottomLeft': {
         x: w / 4 * 1,
         y: h / 4 * 3,
-        prob: 0.05,
         color: '#23cdc7'
     },
     'bottomRight': {
         x: w / 4 * 3,
         y: h / 4 * 3,
-        prob: 0.3,
         color: '#eb494f'
     },
 }
@@ -56,56 +54,54 @@ const nodeData = d3.range(0, num_nodes).map(i => {
     }
 })
 
-//console.table(nodeData)
+const forceX = d3.forceX((d) => foci[d.choice].x)
+const forceY = d3.forceY((d) => foci[d.choice].y)
 
-const attractForce = d3.forceManyBody()
-    .strength(8)
-    .distanceMax(200)
-    .distanceMin(10)
+//console.table(nodeData)
 
 const collisionForce = d3.forceCollide(node_radius + 1)
     .strength(1)
     .iterations(50)
 
 const simulation = d3.forceSimulation(nodeData)
-    .alphaDecay(0)
-    .force('attractForce', attractForce)
-    .force('collisionForce', collisionForce)
-    .on('tick', ticked)
+    .velocityDecay(0.4)
+    .force('x', forceX)
+    .force('y', forceY)
+    .force('collide', collisionForce)
+    .nodes(nodeData)
+    .on('tick', () => node.attr('transform', (d) => `translate(${d.x},${d.y})`))
 
-const node = svg.selectAll('circle')
+const node = svg.append('g')
+    .attr('class', 'node')
+    .selectAll('circle')
     .data(nodeData)
     .enter()
     .append('circle')
     .attr('r', d => d.r)
-    .attr('cx', d => d.x)
-    .attr('cy', d => d.y)
     .style("fill", d => foci[d.choice].color)
-    .attr('opacity', 0.5)
+    .attr('opacity', 0.7)
 
 d3.interval(timer, interval)
 
 function ticked() {
-    node.attr('cx', d => d.x)
-        .attr('cy', d => d.y)
-        .style("fill", d => foci[d.choice].color)
+    node.attr('transform', (d) => `translate(${(d.x)},${(d.y)})`)
 }
 
 // Run function periodically to make things move.
 function timer() {
 
-    //console.log(getChoice)
-
-    // Random place for a node to go
     let choices = d3.keys(foci)
-    let foci_index = Math.floor(Math.random() * choices.length)
-    let choice = d3.keys(foci)[foci_index]
 
-    // Update random node
-    let random_index = Math.floor(Math.random() * nodeData.length)
-    nodeData[random_index].x = foci[choice].x
-    nodeData[random_index].y = foci[choice].y
-    nodeData[random_index].choice = choice
+    nodeData.forEach(d => {
+        let foci_index = Math.floor(Math.random() * choices.length)
+        d.choice = d3.keys(foci)[foci_index]
+    })
 
-    simulation.restart()
+    node.transition()
+        .duration(changeFoci)
+        .style('fill', d => foci[d.choice].color)
+
+    simulation.nodes(nodeData)
+        .alpha(0.7)
+        .restart()
 }
