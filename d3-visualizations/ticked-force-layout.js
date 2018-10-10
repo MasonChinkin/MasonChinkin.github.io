@@ -11,46 +11,54 @@ const svg = d3.select('#container')
     .attr('transform', `translate(${margin.left},${margin.top})`)
 
 let node_radius = 5
-let padding = 1
-let cluster_padding = 10
 let num_nodes = 200
 
+//colors
+const colors = d3.scaleOrdinal(d3.schemeCategory10)
+
 //durations
-let changeFoci = 2900 // time to change foci
-let interval = 3000 // timer
+let colorChange = 500 // delay to see color change before transition
+let changeFoci = 1000 // time to change foci
+let interval = 2000 // timer
 
 // Foci
 const foci = {
-    'topLeft': {
+    0: {
         x: w / 4 * 1,
         y: h / 4 * 1,
         color: '#cc5efa'
     },
-    'topRight': {
+    1: {
         x: w / 4 * 3,
         y: h / 4 * 1,
         color: '#29bf10'
     },
-    'bottomLeft': {
-        x: w / 4 * 1,
+    2: {
+        x: w / 4 * 3,
         y: h / 4 * 3,
         color: '#23cdc7'
     },
-    'bottomRight': {
-        x: w / 4 * 3,
+    3: {
+        x: w / 4 * 1,
         y: h / 4 * 3,
         color: '#eb494f'
     },
 }
 
 // Create node objects
-const nodeData = d3.range(0, num_nodes).map(i => {
+const nodeData = d3.range(num_nodes).map(i => {
+
+    //evenly split between foci, this randomly selects between 0 and 3
+    let max = 3
+    let min = 0
+    let randomChoice = Math.floor(Math.random() * (max - min + 1)) + min
+
     return {
         id: 'node' + i,
-        x: foci.topLeft.x + Math.random(),
-        y: foci.topLeft.y + Math.random(),
+        x: foci[randomChoice].x + Math.random(),
+        y: foci[randomChoice].y + Math.random(),
         r: node_radius,
-        choice: 'topLeft',
+        choice: randomChoice,
     }
 })
 
@@ -79,7 +87,6 @@ const node = svg.append('g')
     .append('circle')
     .attr('r', d => d.r)
     .style("fill", d => foci[d.choice].color)
-    .attr('opacity', 0.7)
 
 d3.interval(timer, interval)
 
@@ -93,15 +100,19 @@ function timer() {
     let choices = d3.keys(foci)
 
     nodeData.forEach(d => {
-        let foci_index = Math.floor(Math.random() * choices.length)
-        d.choice = d3.keys(foci)[foci_index]
+
+        if (Math.random() < 0.5) { // only affect half of nodes
+            if (d.choice < 3) { d.choice++ } else { d.choice = 0 }
+        }
     })
 
     node.transition()
-        .duration(changeFoci)
+        .duration(colorChange)
         .style('fill', d => foci[d.choice].color)
 
-    simulation.nodes(nodeData)
-        .alpha(0.7)
-        .restart()
+    setTimeout(function() {
+        simulation.nodes(nodeData)
+            .alpha(0.7)
+            .restart()
+    }, changeFoci)
 }
