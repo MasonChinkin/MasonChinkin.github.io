@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"rand",
+				"randomChoice"
+			],
+			[
+				"f",
+				"f\tAnonymous Function"
+			],
+			[
+				"node",
+				"nodeData"
+			],
+			[
 				"console",
 				"console.log"
 			],
@@ -30,10 +42,6 @@
 			[
 				"creat",
 				"created_utc"
-			],
-			[
-				"f",
-				"for\tfor (…) {…}"
 			],
 			[
 				"for",
@@ -166,10 +174,6 @@
 			[
 				"select",
 				"selectAll"
-			],
-			[
-				"node",
-				"nodeMouseOver"
 			],
 			[
 				"filter",
@@ -392,10 +396,28 @@
 	"buffers":
 	[
 		{
-			"file": "d3-visualizations/budget-dashboard.js",
+			"file": "d3-visualizations/force-clusters.js",
 			"settings":
 			{
-				"buffer_size": 27276,
+				"buffer_size": 2643,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 11217,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "force-clusters.html",
+			"settings":
+			{
+				"buffer_size": 4977,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -519,15 +541,23 @@
 	[
 		"/C/Users/Zhangkin/Desktop/D3",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations"
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js"
 	],
 	"file_history":
 	[
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/ticked-force-layout.html",
+		"/F/Downloads/moving-bubbles-tutorial/index03.html",
+		"/C/Users/Zhangkin/Desktop/D3/workspace/d3-force-cluster-test.html",
+		"/C/Users/Zhangkin/Desktop/D3/workspace/d3-force-cluster-test.js",
+		"/C/Users/Zhangkin/Desktop/D3/workspace/d3-force-cluster.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3-force-cluster.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/budget-dashboard.js",
+		"/F/Downloads/moving-bubbles-tutorial/js/d3-3-5-5.min.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/gdp.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/reddit-front-page.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/reddit-front-page.html",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/budget-dashboard.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/random-scatter.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/swiss-army-bar-chart.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
@@ -643,18 +673,11 @@
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/14_zoom_with_buttons.html",
 		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/dragging.html",
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/13_zoom_pan_buttons_fixed.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/09_pan_transition.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/10_pan_draggable.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/10_pan_draggable.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/vers1.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/Pan-buttons.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/08_pan.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/line_chart/line_chart.js",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_11/06_area_chart.html"
+		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/09_pan_transition.html"
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 29.0
 	},
 	"find_in_files":
 	{
@@ -668,6 +691,42 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"foci[i]",
+			"d => foci[d.choice].color",
+			"simulation",
+			"; ",
+			"var",
+			"'",
+			"collisionForce",
+			";",
+			"alpha",
+			"e =",
+			";",
+			"transition",
+			"alpha",
+			"cluster",
+			"foci",
+			"choice",
+			"color",
+			"cluster_padding",
+			"cluster",
+			"topLeft",
+			"timer",
+			"force",
+			"nodes",
+			";",
+			"var",
+			"\"",
+			";",
+			"})",
+			"function(d) { return",
+			"o",
+			"o,",
+			"var",
+			"'",
+			"\"",
+			"width",
+			";",
 			"transition",
 			"zero",
 			"\"",
@@ -759,43 +818,7 @@
 			"length",
 			"'",
 			" + ",
-			"\"",
-			" + ",
-			"'",
-			"\"",
-			"}",
-			"function(d) {\n                return",
-			";",
-			"for ",
-			"for",
-			";",
-			"function(d) {",
-			";",
-			" =",
-			"highightTransition",
-			"font",
-			"val",
-			"font-size",
-			"deficitType",
-			"function(d) { if",
-			"function(d)",
-			"function(d) { if",
-			"'translate(' + sankeyMargin.left + ',' + sankeyMargin.top + ')'",
-			"'translate(' + d.x + ',' + d.y + ')'",
-			"\"",
-			"function(d) { return",
-			"function(d) {\n            return",
-			"function(d) { return",
-			"function(d, i) {\n            return",
-			"var ",
-			";",
-			"this",
-			"d =>",
-			"thisyearl",
-			"||",
-			"undefine",
-			"return",
-			"=>return"
+			"\""
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -874,32 +897,102 @@
 			[
 				{
 					"buffer": 0,
-					"file": "d3-visualizations/budget-dashboard.js",
+					"file": "d3-visualizations/force-clusters.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 27276,
+						"buffer_size": 2643,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12957,
-								12957
+								1369,
+								1379
 							]
 						],
 						"settings":
 						{
+							"SL.22.region_keys":
+							[
+							],
+							"open_with_edit": true,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2943.2,
+						"translation.y": 760.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11217,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5557,
+								5557
+							]
+						],
+						"settings":
+						{
+							"SL.42.region_keys":
+							[
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2100.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "force-clusters.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4977,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4376,
+								4376
+							]
+						],
+						"settings":
+						{
+							"SL.43.region_keys":
+							[
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1260.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -907,7 +1000,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 29.0
 	},
 	"input":
 	{
@@ -956,7 +1049,7 @@
 	"project": "index.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 54.0
 	},
 	"save_all_on_build": true,
 	"select_file":

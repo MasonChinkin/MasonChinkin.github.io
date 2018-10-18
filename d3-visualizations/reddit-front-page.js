@@ -58,6 +58,7 @@ d3.json(url, (error, json) => {
     for (var i = 0; i < json.data.children.length; i++) {
 
         dataset.push({
+            id: json.data.children[i].data.id,
             ups: json.data.children[i].data.ups,
             downs: json.data.children[i].data.downs,
             author: json.data.children[i].data.author,
@@ -79,10 +80,12 @@ d3.json(url, (error, json) => {
 
 function drawBars(dataset) {
 
-    console.log(dataset)
+    //console.log(dataset)
+
+    let indices = d3.range(0, dataset.length)
 
     //scales
-    x.domain(dataset.map(d => d.subreddit))
+    x.domain(indices)
     y.domain([0, d3.max(dataset, d => d.ups)])
 
     //BARS
@@ -90,7 +93,7 @@ function drawBars(dataset) {
         .data(dataset)
         .enter()
         .append('rect')
-        .attr('x', d => x(d.subreddit))
+        .attr('x', (d, indices) => x(indices))
         .attr('y', h) //for animation
         .attr('width', x.bandwidth())
         .attr('height', d => y(0))
@@ -113,7 +116,7 @@ function drawBars(dataset) {
         .enter()
         .append('text')
         .text(d => upsFormat(d.ups))
-        .attr('x', d => x(d.subreddit) + x.bandwidth() / 2)
+        .attr('x', (d, indices) => x(indices) + x.bandwidth() / 2)
         .attr('y', h)
         .attr('class', 'barLabel')
         .transition('start')
@@ -144,6 +147,7 @@ function drawBars(dataset) {
     const xAxis = d3.axisBottom()
         .scale(x)
         .tickSize(0)
+        .tickFormat(d => dataset[d].subreddit)
 
     svg.append('g')
         .attr('class', 'xAxis')
