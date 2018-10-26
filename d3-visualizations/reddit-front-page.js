@@ -74,9 +74,10 @@ d3.json(url, (error, json) => {
 
     dataset.sort((a, b) => b.ups - a.ups)
 
-
     drawBars(dataset)
 })
+
+
 
 function drawBars(dataset) {
 
@@ -215,6 +216,11 @@ const barMouseMove = function(d) {
 
     d3.select('#pic')
         .attr('src', d.url)
+
+    //     d3.select('#pic')
+    // .attr('src', d => {
+    //     if (d.url.endsWith('.jpg') = true) { return d.url }
+    // })
 
     //Show the tooltip
     d3.select('#tooltip').classed('hidden', false)
