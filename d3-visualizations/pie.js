@@ -1,69 +1,50 @@
-    //svg size
-    var w = container.offsetWidth;
-    var h = getHeight() * 0.7;
+/* jshint asi: true, esversion: 6, unused: true, -W008, -W069, -W030 */
+//asi=semicolon, esversion=const, W008=leading decimal, W069=ex. d['year'] instead of d.year, W030= jshint expects assignment/function from ex. margin.bottom
 
-    var dataset = [5, 10, 20, 45, 6, 25];
+//svg size
+const w = container.offsetWidth
+const h = 500
 
-    var arc, arcs, color, dataset, h, innerRadius, outerRadius, pie, svg, w;
+let dataset = [5, 10, 20, 45, 6, 25]
 
-    //prep for pie layout
-    var pie = d3.pie();
+//prep for pie layout
+const pie = d3.pie()
 
-    var outerRadius = w / 2;
-    var innerRadius = w / 3;
-    var arc = d3.arc()
-        .innerRadius(innerRadius)
-        .outerRadius(outerRadius);
+const outerRadius = w / 2
+const innerRadius = w / 3
+const arc = d3.arc()
+    .innerRadius(innerRadius)
+    .outerRadius(outerRadius)
 
-    //Colors
-    var color = d3.scaleOrdinal(d3.schemeCategory10);
+//Colors
+const color = d3.scaleOrdinal(d3.schemeCategory10)
 
-    //create svg
-    var svg = d3.select('#container')
-        .append('svg')
-        .attr('height', h)
-        .attr('width', w);
+//create svg
+const svg = d3.select('#container')
+    .append('svg')
+    .attr('height', h)
+    .attr('width', w)
 
-    //create arc element
-    var arcs = svg.selectAll("g.arc")
-        .data(pie(dataset))
-        .enter()
-        .append('g')
-        .attr('class', 'g')
-        .attr("transform", "translate(" + outerRadius + ", " + outerRadius + ")");
+//create arc element
+const arcs = svg.selectAll("g.arc")
+    .data(pie(dataset))
+    .enter()
+    .append('g')
+    .attr('class', 'g')
+    .attr("transform", "translate(" + outerRadius + ", " + outerRadius + ")")
 
-    //draw arc
-    arcs.append('path')
-        .attr('fill', function(d, i) {
-            return color(i);
-        })
-        .attr('d', arc);
+//draw arc
+arcs.append('path')
+    .attr('fill', function(d, i) {
+        return color(i)
+    })
+    .attr('d', arc)
 
-    arcs.append('text')
-        .attr("transform", function(d) {
-            return "translate(" + arc.centroid(d) + ")";
-        })
-        .attr('text-anchor', 'middle')
-        .text(function(d) {
-            return d.value;
-        });
-
-    function getWidth() {
-        return Math.max(
-            document.body.scrollWidth,
-            document.documentElement.scrollWidth,
-            document.body.offsetWidth,
-            document.documentElement.offsetWidth,
-            document.documentElement.clientWidth
-        );
-    }
-
-    function getHeight() {
-        return Math.max(
-            document.body.scrollHeight,
-            document.documentElement.scrollHeight,
-            document.body.offsetHeight,
-            document.documentElement.offsetHeight,
-            document.documentElement.clientHeight
-        );
-    }
+arcs.append('text')
+    .attr("transform", function(d) {
+        return "translate(" + arc.centroid(d) + ")"
+    })
+    .attr('text-anchor', 'middle')
+    .text(function(d) {
+        return d.value
+    })

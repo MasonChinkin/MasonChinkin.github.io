@@ -1,3 +1,6 @@
+/* jshint asi: true, esversion: 6, unused: true, -W008, -W069, -W030 */
+//asi=semicolon, esversion=const, W008=leading decimal, W069=ex. d['year'] instead of d.year, W030= jshint expects assignment/function from ex. margin.bottom
+
 //Width and height
 const margin = { top: 50, right: 40, bottom: 20, left: 50 }
 const w = container.offsetWidth

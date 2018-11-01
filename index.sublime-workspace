@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"inde",
+				"indices"
+			],
+			[
 				"rand",
 				"randomChoice"
 			],
@@ -396,28 +400,13 @@
 	"buffers":
 	[
 		{
-			"file": "d3-visualizations/force-clusters.js",
+			"contents": "const fontScale = d3.scaleLinear().range([14, 22])\n\n// format variables\n// zero decimal places\nconst formatNumber = d3.format('.1f'),\n    format = d => formatNumber(d)\n\nlet key = 0 //initialize for highlighting purposes; gets redefines as 'income', 'payroll', etc on mouseover\n\n//transition times\nconst highlightTransition = 50\nconst newYearTransition = 800\n\n//starting year\nlet thisYear = 2017\n\n// load the data\nd3.csv('viz-data/us-budget-sankey-main.csv', (error, csv) => {\n    if (error) throw error\n\n    // load deficit data\n    d3.csv('viz-data/us-budget-sankey-deficit.csv', (error, deficit) => {\n        if (error) throw error\n\n        // load bars data\n        d3.csv('viz-data/us-budget-sankey-bars.csv', (error, barData) => {\n            if (error) throw error\n\n            newData(csv, deficit, thisYear)\n            drawBars(barData)\n            drawSankey()\n            drawDeficit()\n            drawSlider()\n            drawLines()\n        })\n    })\n})\n\nfunction newData(csv, deficit, thisYear) {\n    thisYearCsv = csv.filter(function(d) {\n        if (d['year'] == thisYear) { return d }\n    })\n\n    thisYearCsv.forEach(d => d.dollars = +d.dollars)\n    //console.log(thisYearCsv)\n\n    thisYearDeficit = deficit.filter(function(d) {\n        if (d['year'] == thisYear) { return d }\n    })\n    //console.log(thisYearDeficit)\n\n    //create an array to push all sources and targets, before making them unique\n    //because starting nodes are not targets and end nodes are not sources\n    arr = []\n    thisYearCsv.forEach(d => {\n        arr.push(d.source)\n        arr.push(d.target)\n    })\n\n    // create nodes array\n\n    nodes = arr.filter(onlyUnique).map((thisYearCsv, i) => {\n        return {\n            node: i,\n            name: thisYearCsv\n        }\n    })\n\n    //console.log(thisYearCsv)\n\n    // for (var i = nodes.length - 1; i >= 0; i--) {\n    //     nodes[i].value === 1\n    // }\n\n    // console.log(nodes)\n\n    // create links array\n    links = thisYearCsv.map(thisYearCsv_row => {\n        return {\n            source: getNode('source'),\n            target: getNode('target'),\n            value: +thisYearCsv_row.value,\n            type: thisYearCsv_row.type //to allow for proper keying\n        }\n\n        function getNode(type) {\n            return nodes.filter(node_object => node_object.name == thisYearCsv_row[type])[0].node\n        }\n    })\n    //console.log(links)\n\n    lineData = csv\n    lineData.forEach(d => {\n        d.year = +d.year\n        d.value = +d.value\n    })\n    //console.log(lineData)\n}\n\nfunction drawBars(barData) {\n    // set the dimensions and margins of the graph\n    barsMargin = { top: 10, right: 5, bottom: 10, left: 5 },\n        barsWidth = barsContainer.offsetWidth - barsMargin.left - barsMargin.right,\n        barsHeight = 80 - barsMargin.top - barsMargin.bottom\n\n    // append the svg object to the body of the page\n    barsSvg = d3.select('#barsContainer').append('svg')\n        .attr('width', barsWidth + barsMargin.left + barsMargin.right)\n        .attr('height', barsHeight + barsMargin.top + barsMargin.bottom)\n        .attr('class', 'barsCanvas')\n        .style('background', '#e8e8e8')\n        .append('g')\n        .attr('transform',\n            'translate(' + barsMargin.left + ',' + barsMargin.top + ')')\n\n    barData.forEach(d => d.year = +d.year)\n\n    //console.log(barData)\n\n    const stack = d3.stack()\n    const keys = barData.columns.slice(2)\n    stack.keys(keys)\n        .offset(d3.stackOffsetDiverging)\n\n    //data, stacked\n    series = stack(barData)\n    //console.log(series)\n\n    //scales\n    barsXScale = d3.scaleBand()\n        .domain(barData.map(d => d.year))\n        .range([barsMargin.left, barsWidth - barsMargin.right])\n        .paddingInner(0.1)\n        .paddingOuter(0.75)\n\n    barsYScale = d3.scaleLinear()\n        .domain([d3.min(series, stackMin), d3.max(series, stackMax)])\n        .range([barsHeight - barsMargin.bottom, barsMargin.top])\n        .nice()\n\n    //group data rows\n    const bars = barsSvg.selectAll('#bars')\n        .data(series)\n        .enter()\n        .append('g')\n        .attr('id', 'bars')\n        .attr('class', (d, i) => d.key)\n\n    //add rect for each data value\n    rects = bars.selectAll('rect')\n        .data(d => d)\n        .enter()\n        .append('rect')\n        .attr('x', (d, i) => barsXScale(d.data.year))\n        .attr('y', d => barsYScale(d[1]))\n        .attr('height', d => barsYScale(d[0]) - barsYScale(d[1]))\n        .attr('class', 'bar')\n        .attr('year', d => d.data.year)\n        .attr('width', barsXScale.bandwidth)\n        .style('fill', function(d) { if (d3.select(this.parentNode).attr('class') === 'Revenue') { return 'green' } else { return 'red' } })\n        .style('opacity', d => { if (d.data.year === thisYear) { return 0.8 } else { return 0.6 } })\n        .style('stroke', d => { if (d.data.year === thisYear) { return 'black' } })\n        .style('stroke-width', d => { if (d.data.year === thisYear) { return '2px' } })\n\n    //net line//\n\n    //define line\n    line = d3.line()\n        .x(d => barsXScale(d.year) + (barsXScale.bandwidth() / 2))\n        .y(d => barsYScale(d.Balance))\n\n    //create line\n    barsSvg.append('path')\n        .datum(barData)\n        .attr('id', 'line')\n        .attr('d', line)\n        .style('fill', 'none')\n        .style('stroke', 'black')\n        .style('stroke-width', 3)\n\n    //labels\n    barsSvg.append('text')\n        .attr('x', barsWidth / 2)\n        .attr('y', barsMargin.top * .5)\n        .attr('dy', '0em')\n        .text('Revenue/Surplus')\n        .attr('font-size', 16)\n        .attr('font-weight', 'bold')\n        .style('text-anchor', 'middle')\n\n    barsSvg.append('text')\n        .attr('x', barsWidth / 2)\n        .attr('y', barsHeight + barsMargin.bottom * .5)\n        .attr('dy', '0em')\n        .text('Spending/Deficit')\n        .attr('font-size', 16)\n        .attr('font-weight', 'bold')\n        .style('text-anchor', 'middle')\n}\n\nfunction updateBars(thisYear) {\n    const transition = 50\n\n    rects.transition()\n        .duration(transition)\n        .style('opacity', d => { if (d.data.year === thisYear) { return 0.8 } else { return 0.6 } })\n        .style('stroke', d => { if (d.data.year === thisYear) { return 'black' } })\n        .style('stroke-width', d => { if (d.data.year === thisYear) { return '2px' } })\n}\n\nfunction drawSankey() {\n\n    // set the dimensions and margins of the graph\n    sankeyMargin = { top: 30, right: 10, bottom: 10, left: 10 },\n        sankeyWidth = sankeyContainer.offsetWidth - sankeyMargin.left - sankeyMargin.right,\n        sankeyHeight = 375 - sankeyMargin.top - sankeyMargin.bottom\n\n    // append the svg object to the body of the page\n    sankeySvg = d3.select('#sankeyContainer').append('svg')\n        .attr('width', sankeyWidth + sankeyMargin.left + sankeyMargin.right)\n        .attr('height', sankeyHeight + sankeyMargin.top + sankeyMargin.bottom)\n        .attr('class', 'sankeyCanvas')\n        .style('background', '#e8e8e8')\n        .append('g')\n        .attr('transform',\n            `translate(${sankeyMargin.left},${sankeyMargin.top})`)\n\n    // Set the sankey diagram properties\n    sankey = d3.sankey()\n        .nodeWidth(60)\n        .nodePadding(20)\n        .size([sankeyWidth, sankeyHeight])\n\n    const path = sankey.link()\n\n    sankey.nodes(nodes)\n        .links(links)\n        .layout(1000)\n\n    fontScale.domain(d3.extent(nodes, d => d.value))\n\n    // add in the links\n    link = sankeySvg.append('g').selectAll('.link')\n        .data(links, d => d.id)\n        .enter().append('path')\n        .attr('class', 'link')\n        .attr('d', path)\n        .style('stroke', d => {\n            if (d.type == 'Revenue') {\n                return 'green'\n            } else if (d.type == 'Spending') {\n                return 'red'\n            } else {\n                return 'grey'\n            }\n        })\n        .style('stroke-width', d => Math.max(1, d.dy))\n        .attr('key', d => {\n            if (d.type == 'Revenue') {\n                return d.source.name.split(' ').join('_')\n            } else {\n                return d.target.name.split(' ').join('_')\n            }\n        })\n        .on('mouseover', highlight)\n\n    // add in the nodes\n    node = sankeySvg\n        .append('g')\n        .selectAll('.node')\n        .data(nodes)\n        .enter()\n        .append('g')\n        .attr('class', 'node')\n        .attr('transform', d => `translate(${d.x},${d.y})`)\n\n    // add the rectangles for the nodes\n    node.append('rect')\n        .attr('height', d => d.dy < 0 ? .1 : d.dy)\n        .attr('width', sankey.nodeWidth())\n        .attr('key', d => d.name.split(' ').join('_'))\n        .attr('value', d => d.value)\n        .attr('class', 'nodeRect')\n        .style('fill', 'lightgrey')\n        .style('opacity', 0.5)\n        .style('stroke', 'black')\n        .on('mouseover', highlight)\n\n    // title for the nodes\n    node.append('text')\n        .attr('x', -6)\n        .attr('y', d => d.dy / 2)\n        .attr('dy', '.35em')\n        .attr('text-anchor', 'end')\n        .attr('transform', null)\n        .style('font-size', d => Math.floor(fontScale(d.value)) + 'px')\n        .text(d => d.name)\n        .attr('class', 'nodeLabel')\n        .filter(d => d.x < sankeyWidth / 2)\n        .attr('x', 6 + sankey.nodeWidth())\n        .attr('text-anchor', 'start')\n\n\n    // % for the nodes\n    node.append('text')\n        .attr('text-anchor', 'middle')\n        .attr('x', 30)\n        .attr('y', d => d.dy / 2)\n        .style('font-size', 16)\n        .attr('dy', '.35em')\n        .attr('class', 'nodePercent')\n        .text(d => format(d.value) + '%')\n        .filter(d => d.value < 1 || d.node == 20) //do spending seperately to correctly show surplus\n        .style('opacity', 0)\n\n    //PERCENT OF GDP\n    sankeySvg.append('text')\n        .attr('x', 0)\n        .attr('y', -5)\n        .attr('dy', '0em')\n        .text('Percent of GDP')\n        .attr('font-size', 20)\n        .attr('font-weight', 'bold')\n        .attr('class', 'percent')\n\n    // % for spending in times of surplus using seperate data\n    node.append('text')\n        .attr('text-anchor', 'middle')\n        .attr('x', 30)\n        .attr('y', d => d.dy / 2)\n        .style('font-size', 18)\n        .attr('dy', '.35em')\n        .filter(d => d.node == 20)\n        .text(() => format(thisYearDeficit[0].spending) + '%')\n        .attr('class', 'spendingNodePercent')\n\n    // // transparent billion $ to be made visible by button\n    // node.append('text')\n    //     .attr('text-anchor', 'middle')\n    //     .attr('x', 30)\n    //     .attr('y', d => d.dy / 2)\n    //     .style('font-size', 16)\n    //     .attr('dy', '.35em')\n    //     .attr('class', 'nodeDollars')\n    //     .text(d => d.dollars)\n    //     .style('opacity', 1)   // // // hover button to change numbers to billion$\n\n    // let hoverButtonH = 25\n    // let hoverButtonW = 175\n    // let hoverButtony = -10\n\n    // sankeySvg.append('rect')\n    //     .attr('height', hoverButtonH)\n    //     .attr('width', hoverButtonW)\n    //     .attr('y', hoverButtony)\n    //     .attr('x', sankeyWidth / 2 - hoverButtonW / 2)\n    //     .style('fill', 'white')\n    //     .style('stroke', 'black')\n    //     .attr('class', 'hoverButton')\n    // // .on('mouseover', dollarButtonOn)\n    // // .on('mouseout', dollarButtonOff)\n\n    // sankeySvg.append('text')\n    //     .attr('y', hoverButtony + hoverButtonH / 2)\n    //     .attr('x', sankeyWidth / 2)\n    //     .attr('text-anchor', 'middle')\n    //     .style('font-size', 16)\n    //     .attr('dy', '.35em')\n    //     .style('pointer-events', 'none')\n    //     .style('font-weight', 'bold')\n    //     .text('Hover to see in billion $')\n}\n\nfunction updateSankey() {\n    const path = sankey.link()\n\n    sankey.nodes(nodes)\n        .links(links)\n        .layout(1000)\n\n    sankey.relayout()\n    fontScale.domain(d3.extent(nodes, d => d.value))\n\n    // transition links\n    sankeySvg.selectAll('.link')\n        .data(links)\n        .transition('newSankey')\n        .duration(newYearTransition)\n        .attr('d', path)\n        .style('stroke-width', d => Math.max(1, d.dy))\n\n    // transition nodes\n    sankeySvg.selectAll('.node')\n        .data(nodes)\n        .transition('newSankey')\n        .duration(newYearTransition)\n        .attr('transform', d => `translate(${d.x},${d.y})`)\n\n    // transition rectangles for the nodes\n    sankeySvg.selectAll('.node rect')\n        .data(nodes)\n        .transition('newSankey')\n        .duration(newYearTransition)\n        .attr('height', d => (d.dy < 0 ? 0.1 : d.dy))\n        .attr('value', d => d.value)\n\n    // transition title text for the nodes\n    sankeySvg.selectAll('.nodeLabel')\n        .data(nodes)\n        .transition('newSankey')\n        .duration(newYearTransition)\n        .style('font-size', d => `${Math.floor(fontScale(d.value))}px`)\n        .attr('y', d => d.dy / 2)\n\n    // transition % text for the nodes\n    sankeySvg.selectAll('.nodePercent')\n        .data(nodes)\n        .transition('newSankey')\n        .duration(newYearTransition)\n        .text(d => `${format(d.value)}%`)\n        .attr('y', d => d.dy / 2)\n        .style('opacity', 1)\n        .filter(d => d.value < 1 || d.node == 20) //do spending seperately to correctly show surplus\n        .style('opacity', 0)\n\n    //remove old spending %\n    sankeySvg.selectAll('.spendingNodePercent').remove()\n\n    // % for spending in times of surplus using seperate data\n    node.append('text')\n        .attr('text-anchor', 'middle')\n        .attr('x', 30)\n        .attr('y', d => d.dy / 2)\n        .style('font-size', 18)\n        .attr('dy', '.35em')\n        .filter(d => d.node == 20)\n        .text(() => format(thisYearDeficit[0].spending) + '%')\n        .attr('class', 'spendingNodePercent')\n}\n\nfunction drawDeficit() {\n\n    //remove old, if any\n    d3.selectAll('.deficit').remove()\n    d3.selectAll('.deficitLabel').remove()\n\n    //highlight deficit\n    barHeight = d3.select('rect[key=Spending]').attr('height')\n    barVal = d3.select('rect[key=Spending]').attr('value')\n    deficitVal = thisYearDeficit[0].deficit\n\n    //get deficit bar size with ratio of spending value to bar height\n    deficitBarRatio = Math.floor((barHeight * deficitVal) / barVal)\n    // console.log(barVal)\n    // console.log(deficitBarRatio)\n\n    deficitBar = d3.select('rect[key=Spending]')\n        .select(function() { return this.parentNode })\n        .append('rect')\n        .attr('height', () => {\n            if (deficitBarRatio < 0) {\n                return -deficitBarRatio\n            } else {\n                return deficitBarRatio\n            }\n        })\n        .attr('width', sankey.nodeWidth())\n        .attr('y', d => {\n            if (deficitBarRatio < 0) {\n                return d.dy + deficitBarRatio\n            } else {\n                return d.dy - deficitBarRatio\n            }\n        })\n        .style('fill', () => {\n            if (deficitBarRatio < 0) {\n                return 'red'\n            } else {\n                return 'blue'\n            }\n        })\n        .attr('class', 'deficit')\n        .style('opacity', 0)\n        .transition(newYearTransition)\n        .style('opacity', 0.8)\n\n    sankeySvg.append('text')\n        .attr('text-anchor', 'middle')\n        .attr('x', sankeyWidth / 2)\n        .attr('y', sankeyHeight * .92)\n        .style('font-size', 28)\n        .style('font-weight', 'bold')\n        .attr('class', 'deficitLabel')\n        .text(() => {\n            if (thisYearDeficit[0].deficit < 0) {\n                return format(-thisYearDeficit[0].deficit) + '% Deficit'\n            } else {\n                return format(thisYearDeficit[0].deficit) + '% Surplus'\n            }\n        })\n        .style('fill', () => {\n            if (deficitBarRatio < 0) {\n                return 'red'\n            } else {\n                return 'blue'\n            }\n        })\n        .style('opacity', 0)\n        .transition(newYearTransition)\n        .style('opacity', 0.8)\n}\n\nfunction drawSlider() {\n    //Slider\n    const slider = d3.sliderHorizontal()\n        .min(1968)\n        .max(2017)\n        .step(1)\n        .width(barsContainer.offsetWidth - 62)\n        .tickFormat(d3.format('.4'))\n        .default(2017)\n        .on('end', val => { //use end instead of onchange, is when user releases mouse\n            thisYear = val\n\n            d3.csv('viz-data/us-budget-sankey-main.csv', (error, csv) => {\n                if (error) throw error\n\n                d3.csv('viz-data/us-budget-sankey-deficit.csv', (error, deficit) => {\n                    if (error) throw error\n                    d3.select('.deficit').remove()\n                    d3.select('.deficitLabel').remove() //remove deficit for transition\n\n                    //update\n                    newData(csv, deficit, thisYear)\n                    updateSankey()\n                    setTimeout(function() { drawDeficit() }, newYearTransition)\n                })\n            })\n        })\n        .on('onchange', val => { //use end instead of onchange, is when user releases mouse\n            let thisYear = val\n\n            //update\n            updateBars(thisYear)\n            updateThisYearLine(thisYear)\n        })\n\n    const g = d3.select('div#slider').append('svg')\n        .attr('width', barsContainer.offsetWidth)\n        .attr('height', 90)\n        .append('g')\n        .attr('transform', 'translate(30,30)')\n\n    g.call(slider)\n    d3.selectAll('#slider')\n        .style('font-size', 20)\n}\n\nfunction drawLines() {\n    //seperate datasets filtered by type\n    const revLineData = lineData.filter(d => d.type == 'Revenue')\n    const spendLineData = lineData.filter(d => d.type == 'Spending')\n    //console.log(revLineData)\n    //console.log(spendLineData)\n\n    const revDataNested = d3.nest()\n        .key(d => d.source)\n        .entries(revLineData)\n\n    const spendDataNested = d3.nest()\n        .key(d => d.target)\n        .entries(spendLineData)\n    //console.log(revDataNested)\n    //console.log(spendDataNested)\n\n    //Dimensions\n    lineMargin = { top: 20, right: 20, bottom: 10, left: 20, middle: 20 },\n        lineWidth = linesContainer.offsetWidth - lineMargin.left - lineMargin.right,\n        lineHeight = 140 - lineMargin.top - lineMargin.bottom\n\n    lineSvg = d3.select('#linesContainer').append('svg')\n        .attr('width', lineWidth + lineMargin.left + lineMargin.right)\n        .attr('height', lineHeight + lineMargin.top + lineMargin.bottom)\n        .style('background', '#e8e8e8')\n        .append('g')\n        .attr('transform', 'translate(' + lineMargin.left + ',' + lineMargin.top + ')')\n\n    // set the domain and range\n    revLineX = d3.scaleBand()\n        .domain(revLineData.map(d => d.year))\n        .range([lineMargin.left, lineWidth / 2 - lineMargin.middle])\n\n    spendLineX = d3.scaleBand()\n        .domain(spendLineData.map(d => d.year))\n        .range([lineWidth / 2 + lineMargin.middle, lineWidth - lineMargin.right])\n\n    lineY = d3.scaleLinear()\n        .domain([0, d3.max(revLineData, d => d.value)])\n        .range([lineHeight - lineMargin.bottom, lineMargin.top])\n\n    // define the line\n    const revLine = d3.line()\n        .x(d => revLineX(d.year))\n        .y(d => lineY(d.value))\n\n    const spendLine = d3.line()\n        .x(d => spendLineX(d.year))\n        .y(d => lineY(d.value))\n\n    // revenue lines\n    const revLines = lineSvg.selectAll('lineNode')\n        .data(revDataNested)\n        .enter().append('g')\n        .attr('class', 'lineNode')\n        .attr('key', d => d.key.split(' ').join('_'))\n\n    revLines.append('path')\n        .attr('class', d => 'line ' + d.key)\n        .attr('d', d => revLine(d.values))\n        .attr('key', d => d.key.split(' ').join('_'))\n        .style('opacity', 0.2)\n        .style('stroke', 'green')\n        .on('mouseover', highlight)\n\n    // revenue lines\n    const spendLines = lineSvg.selectAll('lineNode')\n        .data(spendDataNested)\n        .enter().append('g')\n        .attr('class', 'lineNode')\n        .attr('key', d => d.key.split(' ').join('_'))\n\n    spendLines.append('path')\n        .attr('class', d => 'line ' + d.key)\n        .attr('d', d => spendLine(d.values))\n        .attr('key', d => d.key.split(' ').join('_'))\n        .style('opacity', 0.2)\n        .style('stroke', 'red')\n        .on('mouseover', highlight)\n\n    //headers\n    lineSvg.append('text')\n        .attr('x', lineWidth * .25)\n        .attr('y', lineMargin.top / 4)\n        .style('text-anchor', 'middle')\n        .attr('font-size', 20)\n        .attr('font-weight', 'bold')\n        .attr('class', 'lineTitle')\n        .text('Revenue')\n\n    lineSvg.append('text')\n        .attr('x', lineWidth * .75)\n        .attr('y', lineMargin.top / 4)\n        .style('text-anchor', 'middle')\n        .attr('font-size', 20)\n        .attr('font-weight', 'bold')\n        .attr('class', 'lineTitle')\n        .text('Spending')\n\n    //Define axes\n    const revXAxis = d3.axisBottom()\n        .scale(revLineX)\n        .tickValues(revLineX.domain().filter((d, i) => i === 0 || i === 49)) //first and last year\n        .tickSize(0)\n\n    const spendXAxis = d3.axisBottom()\n        .scale(spendLineX)\n        .tickValues(revLineX.domain().filter((d, i) => i === 0 || i === 49))\n        .tickSize(0)\n\n    //create axes\n    lineSvg.append('g')\n        .attr('class', 'revAxis x')\n        .attr('transform', 'translate(-7,' + (lineHeight - lineMargin.bottom) + ')')\n        .call(revXAxis)\n        .style('font-size', 12)\n        .style('font-weight', 'bold')\n        .select('.domain')\n        .style('opacity', 0)\n\n    //create axes\n    lineSvg.append('g')\n        .attr('class', 'spendAxis x')\n        .attr('transform', 'translate(-7,' + (lineHeight - lineMargin.bottom) + ')')\n        .call(spendXAxis)\n        .style('font-size', 12)\n        .style('font-weight', 'bold')\n        .select('.domain')\n        .style('opacity', 0)\n\n    //lines and labels indicating current year\n    lineSvg.append('g')\n        .attr('class', 'thisYearLine rev')\n        .append('line')\n        .attr('x1', revLineX(thisYear))\n        .attr('x2', revLineX(thisYear))\n        .attr('y1', lineMargin.top)\n        .attr('y2', lineHeight - lineMargin.bottom)\n\n    d3.select('.thisYearLine.rev')\n        .append('text')\n        .text(d => thisYear)\n        .attr('x', revLineX(thisYear))\n        .attr('y', lineHeight + lineMargin.bottom * .2)\n        .style('font-size', 14)\n        .style('text-anchor', 'middle')\n        .style('font-weight', 'bold')\n        .style('opacity', 0)\n\n    lineSvg.append('g')\n        .attr('class', 'thisYearLine spend')\n        .append('line')\n        .attr('x1', spendLineX(thisYear))\n        .attr('x2', spendLineX(thisYear))\n        .attr('y1', lineMargin.top)\n        .attr('y2', lineHeight - lineMargin.bottom)\n\n    d3.select('.thisYearLine.spend')\n        .append('text')\n        .text(d => thisYear)\n        .attr('x', spendLineX(thisYear))\n        .attr('y', lineHeight + lineMargin.bottom * .2)\n        .style('font-size', 14)\n        .style('text-anchor', 'middle')\n        .style('font-weight', 'bold')\n        .style('opacity', 0)\n}\n\nfunction updateThisYearLine(thisYear) {\n\n    //line indicating current year\n    d3.select('.thisYearLine.rev line')\n        .attr('x1', revLineX(thisYear))\n        .attr('x2', revLineX(thisYear))\n\n    d3.select('.thisYearLine.rev text')\n        .text(d => thisYear)\n        .attr('x', revLineX(thisYear))\n        .style('opacity', d => { if (thisYear == 1968 || thisYear == 2017) { return 0 } else { return 1 } })\n\n    d3.select('.thisYearLine.spend line')\n        .attr('x1', spendLineX(thisYear))\n        .attr('x2', spendLineX(thisYear))\n\n    d3.select('.thisYearLine.spend text')\n        .text(d => thisYear)\n        .attr('x', spendLineX(thisYear))\n        .style('opacity', d => { if (thisYear == 1968 || thisYear == 2017) { return 0 } else { return 1 } });\n\n    (function(d) {\n        if (key != 0) {\n            d3.selectAll('.lineLabel').remove()\n\n            d3.selectAll('.lineNode').filter(function(d, i) { return d3.select(this).attr('key') == key })\n                .append('g')\n                .selectAll('text')\n                .data(lineLabelData)\n                .enter()\n                .append('text')\n                .filter(function(d, i) { return i === 0 || i === (lineLabelData.length - 1) || d.year === thisYear })\n                .attr('x', function(d, i) { if (d.type == 'Revenue') { return revLineX(d.year) } else { return spendLineX(d.year) } })\n                .attr('y', d => lineY(d.value) - 14)\n                .text((d, i) => formatNumber(d.value))\n                .attr('class', 'lineLabel')\n                .style('text-anchor', 'middle')\n                .attr('font-size', 14)\n                .style('fill', 'black')\n                .attr('font-weight', 'bold')\n        }\n    })()\n}\n\nfunction highlight() {\n    key = d3.select(this).attr('key')\n    //console.log(key)\n\n    lineLabelData = lineData.filter(d => d.source.split(' ').join('_') == key || d.target.split(' ').join('_') == key)\n\n    d3.selectAll('.line')\n        .filter(function(d) { return d3.select(this).attr('key') == key })\n        .transition()\n        .duration(highlightTransition)\n        .style('opacity', 1)\n\n    d3.selectAll('.line')\n        .filter(function(d) { return d3.select(this).attr('key') != key })\n        .transition()\n        .duration(highlightTransition)\n        .style('opacity', 0.2)\n\n    d3.selectAll('.link')\n        .filter(function(d) { return d3.select(this).attr('key') == key })\n        .transition()\n        .duration(highlightTransition)\n        .style('stroke-opacity', 0.7)\n\n    d3.selectAll('.link')\n        .filter(function(d) { return d3.select(this).attr('key') != key })\n        .transition()\n        .duration(highlightTransition)\n        .style('stroke-opacity', 0.4)\n\n    d3.selectAll('.nodeRect')\n        .filter(function(d) { return d3.select(this).attr('key') == key })\n        .transition()\n        .duration(highlightTransition)\n        .style('opacity', 1)\n\n    d3.selectAll('.nodeRect')\n        .filter(function(d) { return d3.select(this).attr('key') != key })\n        .transition()\n        .duration(highlightTransition)\n        .style('opacity', 0.5)\n\n    //data points\n    d3.selectAll('.lineLabel').remove()\n\n    d3.selectAll('.lineNode').filter(function(d, i) { return d3.select(this).attr('key') == key })\n        .append('g')\n        .selectAll('text')\n        .data(lineLabelData)\n        .enter()\n\n        .append('text')\n        .filter((d, i) => i === 0 || i === (lineLabelData.length - 1) || d.year === thisYear)\n        .attr('x', function(d, i) { if (d.type == 'Revenue') { return revLineX(d.year) } else { return spendLineX(d.year) } })\n        .attr('y', d => lineY(d.value) - 14)\n        .text(function(d, i) { return formatNumber(d.value) })\n        .attr('class', 'lineLabel')\n        .style('text-anchor', 'middle')\n        .attr('font-size', 14)\n        .style('fill', 'black')\n        .attr('font-weight', 'bold')\n}\n\n// function hoverButtonOn() {\n//     d3.select('.nodePercent')\n//         .transition()\n//         .duration(highlightTransition)\n//         .style('opacity', 0)\n// }\n\nfunction onlyUnique(value, index, self) {\n    return self.indexOf(value) === index\n}\n\nfunction stackMin(serie) {\n    return d3.min(serie, d => d[0])\n}\n\nfunction stackMax(serie) {\n    return d3.max(serie, d => d[1])\n}",
+			"file": "d3-visualizations/budget-dashboard.js",
+			"file_size": 28127,
+			"file_write_time": 131855047257870352,
 			"settings":
 			{
-				"buffer_size": 2643,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 11217,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "force-clusters.html",
-			"settings":
-			{
-				"buffer_size": 4977,
+				"buffer_size": 27276,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -435,6 +424,30 @@
 		"selected_items":
 		[
 			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: remo",
+				"Package Control: Remove Package"
+			],
+			[
 				"package",
 				"Package Control: Remove Package"
 			],
@@ -445,10 +458,6 @@
 			[
 				"enable",
 				"Package Control: Enable Package"
-			],
-			[
-				"Package Control: ",
-				"Package Control: Disable Package"
 			],
 			[
 				"package control ",
@@ -542,29 +551,37 @@
 		"/C/Users/Zhangkin/Desktop/D3",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js"
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations"
 	],
 	"file_history":
 	[
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/d3.jshintrc",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/budget-dashboard.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/main.css",
+		"/F/Downloads/test.md",
+		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
+		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
+		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/User/.jsbeautifyrc",
+		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/User/Emmet.sublime-settings",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/force-clusters.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/reddit-front-page.js",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/force-clusters.html",
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/ticked-force-layout.html",
 		"/F/Downloads/moving-bubbles-tutorial/index03.html",
 		"/C/Users/Zhangkin/Desktop/D3/workspace/d3-force-cluster-test.html",
 		"/C/Users/Zhangkin/Desktop/D3/workspace/d3-force-cluster-test.js",
 		"/C/Users/Zhangkin/Desktop/D3/workspace/d3-force-cluster.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3-force-cluster.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/budget-dashboard.js",
 		"/F/Downloads/moving-bubbles-tutorial/js/d3-3-5-5.min.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/gdp.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/reddit-front-page.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/reddit-front-page.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/random-scatter.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/swiss-army-bar-chart.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/europe-trip.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/europe-trip.html",
-		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
-		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/User/.jsbeautifyrc",
-		"/C/Users/Zhangkin/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc.defaults.json",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/swiss-army-bar-chart.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/congress-2016-results.js",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/viz-data/us_congress_2016_lower_48.json",
@@ -611,7 +628,6 @@
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/d3-visualizations/sankey-slider.js",
 		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa376.46970/d3-simple-slider.min.js",
 		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa376.46482/d3-simple-slider.min.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/css/main.css",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/assets/js/d3-annotation.min.js",
 		"/C/Users/Zhangkin/Desktop/D3/workspace/demo sankey/us-budget-sankey.js",
 		"/C/Users/Zhangkin/Desktop/D3/workspace/demo sankey/index.html",
@@ -667,13 +683,7 @@
 		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_16/04_types_only.html",
 		"/C/Users/Zhangkin/AppData/Local/Temp/Rar$DRa9580.49170/index.html",
 		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.js",
-		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/17_labels.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/16_combo_zoom_pan.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/14_zoom_with_buttons.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/dragging.html",
-		"/C/Users/Zhangkin/Desktop/D3/d3-book-2.0.1/chapter_14/13_zoom_pan_buttons_fixed.html",
-		"/C/Users/Zhangkin/Desktop/D3/D3.js-book-work-plus/Geomapping/09_pan_transition.html"
+		"/C/Users/Zhangkin/Desktop/D3/MasonChinkin.github.io/bars-add-sub.html"
 	],
 	"find":
 	{
@@ -691,6 +701,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"save",
+			"json",
 			"foci[i]",
 			"d => foci[d.choice].color",
 			"simulation",
@@ -816,9 +828,7 @@
 			"length",
 			";",
 			"length",
-			"'",
-			" + ",
-			"\""
+			"'"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -897,102 +907,198 @@
 			[
 				{
 					"buffer": 0,
-					"file": "d3-visualizations/force-clusters.js",
+					"file": "d3-visualizations/budget-dashboard.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2643,
+						"buffer_size": 27276,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1369,
-								1379
+								811,
+								811
 							]
 						],
 						"settings":
 						{
-							"SL.22.region_keys":
+							"SL.15.region_keys":
 							[
 							],
-							"open_with_edit": true,
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										814,
+										815
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"region.yellowish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										791,
+										792
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 760.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11217,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5557,
-								5557
-							]
-						],
-						"settings":
-						{
-							"SL.42.region_keys":
-							[
-							],
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2100.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "force-clusters.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4977,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4376,
-								4376
-							]
-						],
-						"settings":
-						{
-							"SL.43.region_keys":
-							[
-							],
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1260.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
