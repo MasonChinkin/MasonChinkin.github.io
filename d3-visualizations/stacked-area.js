@@ -23,7 +23,7 @@ const rowConverter = function(d, i, cols) {
 
     //loop for each vehicle
     for (let i = 1; i < cols.length; i++) {
-        let col = cols[i];
+        let col = cols[i]
 
         //if value exists...
         if (d[cols[i]]) {

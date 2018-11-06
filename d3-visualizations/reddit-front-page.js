@@ -1,4 +1,4 @@
-/* jshint asi: true, esversion: 6, unused: true, -W008, -W069, -W030 */
+/* jshint asi: true, esversion: 6, -W008, -W069, -W030 */
 //asi=semicolon, esversion=const, W008=leading decimal, W069=ex. d['year'] instead of d.year, W030= jshint expects assignment/function from ex. margin.bottom
 
 // useful APIs following json.data.children[j].data
@@ -37,6 +37,10 @@ let hover = 250
 let changeShape = 500
 let bars = 250
 
+//colors
+let barFill = 'steelBlue'
+let barHighlight = 'darkBlue'
+
 //number/date formats
 const upsFormat = d3.format('.2s')
 const postTimeFormat = d3.timeFormat('%B %d %I:%M%p')
@@ -71,7 +75,7 @@ d3.json(url, (error, json) => {
             score: json.data.children[i].data.score,
             subreddit: json.data.children[i].data.subreddit_name_prefixed,
             title: json.data.children[i].data.title,
-            url: json.data.children[i].data.url,
+            url: usableUrl(json.data.children[i].data.url),
         })
     }
 
@@ -103,7 +107,7 @@ function drawBars(dataset) {
         .attr('height', d => y(0))
         .attr('rx', 5)
         .attr('ry', 5)
-        .attr('fill', d => 'steelBlue')
+        .attr('fill', barFill)
         .style('cursor', 'pointer')
         .on('click', d => window.open(d.permalink))
         .on('mousemove', barMouseMove)
@@ -195,7 +199,7 @@ function toCircle(dataset) {
 //properties of mousemove
 const barMouseMove = function(d) {
     d3.select(this)
-        .attr('fill', 'darkBlue')
+        .attr('fill', barHighlight)
 
     const xpos = event.pageX + 20
     const ypos = event.pageY - 400
@@ -220,11 +224,6 @@ const barMouseMove = function(d) {
     d3.select('#pic')
         .attr('src', d.url)
 
-    //     d3.select('#pic')
-    // .attr('src', d => {
-    //     if (d.url.endsWith('.jpg') = true) { return d.url }
-    // })
-
     //Show the tooltip
     d3.select('#tooltip').classed('hidden', false)
 }
@@ -234,11 +233,16 @@ const barMouseOut = function(d) {
     d3.select(this)
         .transition()
         .duration(hover)
-        .attr('fill', 'steelBlue')
+        .attr('fill', barFill)
 
     d3.select('#pic')
         .attr('src', '')
 
     //Hide the tooltip
     d3.select('#tooltip').classed('hidden', true)
+}
+
+//function to only include urls that can be previewed (jpgs)
+function usableUrl(url) {
+    if (url.endsWith('.jpg') == true) { return url }
 }
