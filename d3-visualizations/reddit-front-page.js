@@ -22,7 +22,12 @@
 //create svg container
 const w = container.offsetWidth
 const h = 400
-const margin = { right: 40, left: 40, top: 60, bottom: 125 }
+const margin = {
+    right: 40,
+    left: 40,
+    top: 60,
+    bottom: 125
+}
 
 const svg = d3.select('#container')
     .append('svg')
@@ -133,12 +138,16 @@ function drawBars(dataset) {
         .attr('y', d => {
             if (d.ups >= 4000) {
                 return h - y(d.ups) + 18
-            } else { return h - y(d.ups) - 5 }
+            } else {
+                return h - y(d.ups) - 5
+            }
         })
         .attr('fill', d => {
             if (d.ups >= 4000) {
                 return 'white'
-            } else { return 'black' }
+            } else {
+                return 'black'
+            }
         })
 
     //title
@@ -197,7 +206,7 @@ function toCircle(dataset) {
 }
 
 //properties of mousemove
-const barMouseMove = function(d) {
+const barMouseMove = function (d) {
     d3.select(this)
         .attr('fill', barHighlight)
 
@@ -229,7 +238,7 @@ const barMouseMove = function(d) {
 }
 
 //properties of mouseout
-const barMouseOut = function(d) {
+const barMouseOut = function (d) {
     d3.select(this)
         .transition()
         .duration(hover)
@@ -244,5 +253,7 @@ const barMouseOut = function(d) {
 
 //function to only include urls that can be previewed (jpgs)
 function usableUrl(url) {
-    if (url.endsWith('.jpg') == true) { return url }
+    if (url.endsWith('.jpg') == true) {
+        return url
+    }
 }

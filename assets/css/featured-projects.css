@@ -1,0 +1,87 @@
+.project {
+  padding: 1em 0;
+  border-top: 1px solid lightgrey;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-flex {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* for linked screenshots */
+.project-flex>a {
+  border: none
+}
+
+.project-header>h1 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.project-screenshot {
+  height: 200px;
+  margin-right: 1em;
+}
+
+.project-description {
+  font-size: 0.9em;
+  line-height: 1.2em;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.project-icons {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.icon-pair {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 1em;
+  line-height: 0;
+}
+
+.icon-pair h2 {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-bottom: 0.1em;
+}
+
+.icon-pair i {
+  font-size: 2em;
+  line-height: 1em;
+}
+
+.icon-pair img {
+  height: 2em;
+  line-height: 1em;
+}
+
+.project-header {
+  margin-right: 1.4em
+}
+
+.demo-link {
+  color: blueviolet;
+  font-weight: bold;
+}
+
+.link-seperator {
+  margin: 0 0.4em;
+}

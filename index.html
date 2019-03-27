@@ -7,215 +7,398 @@
 <html>
 
 <head>
-    <title>Mason's personal website</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+  <title>Mason Chinkin's personal website</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/featured-projects.css" />
+  <link rel="stylesheet"
+    href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 </head>
 
 <body>
-    <!-- Header -->
-    <div id="header">
-        <div class="top">
-            <!-- Logo -->
-            <div id="logo">
-                <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
-                <h1 id="title">Mason Chinkin</h1>
-                <p>Aspiring data vizzer</p>
-            </div>
-            <!-- Nav -->
-            <nav id="nav">
-                <!--
-
-                                Prologue's nav expects links in one of two formats:
-
-                                1. Hash link (scrolls to a different section within the page)
-
-                                   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
-
-                                2. Standard link (sends the user to another page/site)
-
-                                   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
-
-                            -->
-                <ul>
-                    <li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
-                    <li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
-                    <li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
-                    <li><a href="#contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="bottom">
-            <!-- Social Icons -->
-            <ul class="icons">
-                <!--<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li> NEED TO MAKE ONE-->
-                <li><a href="https://github.com/MasonChinkin" class="icon fa-github"><span class="label">Github</span></a></li>
-                <li><a href="#contact" class="icon fa-envelope"><span class="label">Email</span></a></li>
-                <li><a href="https://www.linkedin.com/in/mason-chinkin/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-            </ul>
-        </div>
-    </div>
-    <!-- Main -->
-    <div id="main">
-        <!-- Intro -->
-        <section id="top" class="one dark cover">
-            <div align="left" class="container">
-                <header>
-                    <h2 class="alt">Hello! Thank you for visiting my site.</h2>
-                    <p>My experience crafting data driven narratives at the US Treasury
-                        <br /> Department in DC sparked a passion for visualizing data.
-                        <br /> I have moved back to my native Bay Area to pursue a career
-                        <br /> as a visualization engineer. I am currently building a
-                        <br /> full-stack skillset at App Academy.
-                        <br />
-                        <br />Here is an obligatory, insightful quote about data viz:
-                        <br />"The line must be drawn <i>here</i>! This far, no further!"
-                        <br />- Jean-Luc Picard</p>
-                </header>
-                <footer>
-                    <a href="#portfolio" class="button scrolly">Portfolio</a>
-                    <a href="#about" class="button scrolly" left="20px">About Me</a>
-                    <a href="#contact" class="button scrolly" left="20px">Contact Me</a>
-                </footer>
-            </div>
-        </section>
-        <!-- Portfolio -->
-        <section id="portfolio" class="two">
-            <div class="container">
-                <header>
-                    <h2>D3.js Examples</h2>
-                </header>
-                <div class="row">
-                    <div class="4u 12u$(mobile)">
-                        <article class="item">
-                            <a href="budget-dashboard.html#barsContainer" class="image fit"><img src="images/budget-dashboard.jpg" alt="" /></a>
-                            <header>
-                                <h3>Federal Budget Dashboard</h3>
-                            </header>
-                        </article>
-                        <article class="item">
-                            <a href="networks.html#portfolio" class="image fit"><img src="images/network.jpg" alt="" /></a>
-                            <header>
-                                <h3>The Diplomatic Web in Syria</h3>
-                            </header>
-                        </article>
-                        <article class="item">
-                            <a href="force-clusters.html#portfolio" class="image fit"><img src="images/force-clusters.jpg" alt="" /></a>
-                            <header>
-                                <h3>Playing with Force-Clusters</h3>
-                            </header>
-                        </article>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <article class="item">
-                            <a href="congress-2016-map.html#portfolio" class="image fit"><img src="images/congress-map.jpg" alt="" /></a>
-                            <header>
-                                <h3>Tooltipped Congressional Election Results</h3>
-                            </header>
-                        </article>
-                        <article class="item">
-                            <a href="europe-trip.html#portfolio" class="image fit"><img src="images/europe-trip.jpg" alt="" /></a>
-                            <header>
-                                <h3>2017 Backpacking Trip</h3>
-                            </header>
-                        </article>
-                        <article class="item">
-                            <a href="swiss-army-bar-chart.html#portfolio" class="image fit"><img src="images/bars.jpg" alt="" /></a>
-                            <header>
-                                <h3>The Useless Swiss-Army Bar Chart</h3>
-                            </header>
-                        </article>
-                    </div>
-                    <div class="4u 12u$(mobile)">
-                        <article class="item">
-                            <a href="gdp.html#portfolio" class="image fit"><img src="images/gdp.jpg" alt="" /></a>
-                            <header>
-                                <h3>Interactive Breakdown of US GDP Growth</h3>
-                            </header>
-                        </article>
-                        <article class="item">
-                            <a href="reddit-front-page.html#portfolio" class="image fit"><img src="images/reddit-front-page.jpg" alt="" /></a>
-                            <header>
-                                <h3>What's trending on Reddit?</h3>
-                            </header>
-                        </article>
-                        <article class="item">
-                            <a href="Random-scatter.html#portfolio" class="image fit"><img src="images/scatter.jpg" alt="" /></a>
-                            <header>
-                                <h3>Randomized Scatterplot</h3>
-                            </header>
-                        </article>
-                        <article class="item">
-                            <a href="line-area-charts.html#portfolio" class="image fit"><img src="images/area-chart.jpg" alt="" /></a>
-                            <header>
-                                <h3>Line/Area Charts</h3>
-                            </header>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- About Me -->
-        <section id="about" class="three">
-            <div class="container">
-                <header>
-                    <h2>About Me</h2>
-                </header>
-                <a href="#" class="image featured"><img src="images/about_me.png" alt="" /></a>
-                <p align="left">I like food.
-                    <br>
-                    <br>But also: I am a Visualization Engineer with skills in user experience, visual design, and telling data-driven narratives, with a deep passion for visualizing data across d3.js and Tableau.</p>
-            </div>
-        </section>
-        <!-- Contact -->
-        <section id="contact" class="four">
-            <div class="container">
-                <header>
-                    <h2>Contact</h2>
-                </header>
-                <p>
-                    <p>Please reach out! You can use the form below or email me directly at Mason.Chinkin@gmail.com. I am also active on
-                        <a href="https://www.linkedin.com/in/mason-chinkin/"><strong>LinkedIn</strong></a> and
-                        <a href="https://github.com/MasonChinkin"><strong>Github</a>.</p>
-                    <form method="post" action="https://formspree.io/mason.chinkin@gmail.com">
-                        <div class="row">
-                            <div class="6u 12u$(mobile)">
-                                <input type="text" name="name" placeholder="Your Name" />
-                            </div>
-                            <div class="6u$ 12u$(mobile)">
-                                <input type="email" name="_replyto" placeholder="Your Email" />
-                            </div>
-                            <div class="12u$">
-                                <textarea name="message" placeholder="Message"></textarea>
-                            </div>
-                            <div class="12u$">
-                                <input type="submit" value="Send" />
-                            </div>
-                        </div>
-                    </form>
-            </div>
-        </section>
-    </div>
-    <!-- Footer -->
-    <div id="footer">
-        <!-- Copyright -->
-        <ul class="copyright">
-            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+  <!-- Header -->
+  <div id="header">
+    <div class="top">
+      <!-- Logo -->
+      <div id="logo">
+        <span class="image avatar48"><img src="images/avatar.jpg"
+            alt="" /></span>
+        <h1 id="title">Mason Chinkin</h1>
+        <p>Full Stack Dev and Data Vizzer</p>
+      </div>
+      <!-- Nav -->
+      <nav id="nav">
+        <ul>
+          <li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span
+                class="icon fa-home">Intro</span></a></li>
+          <li><a href="#featured-projects" id="portfolio-link"
+              class="skel-layers-ignoreHref"><span class="icon fa-th">Featured
+                Projects</span></a></li>
+          <li><a href="#d3-projects" id="portfolio-link"
+              class="skel-layers-ignoreHref"><span class="icon fa-th">d3.js
+                Projects</span></a></li>
+          <li><a href="#about" id="about-link"
+              class="skel-layers-ignoreHref"><span class="icon fa-user">About
+                Me</span></a></li>
+          <li><a href="#contact" id="contact-link"
+              class="skel-layers-ignoreHref"><span
+                class="icon fa-envelope">Contact</span></a></li>
         </ul>
+      </nav>
     </div>
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.scrollzer.min.js"></script>
-    <script src="assets/js/skel.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-    <script src="assets/js/main.js"></script>
-    <script type="text/javascript" src="assets/js/d3.js"></script>
+    <div class="bottom">
+      <!-- Social Icons -->
+      <ul class="icons">
+        <!--<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li> NEED TO MAKE ONE-->
+        <li><a href="https://github.com/MasonChinkin"
+            class="icon fa-github"><span class="label">Github</span></a></li>
+        <li><a href="#contact" class="icon fa-envelope"><span
+              class="label">Email</span></a></li>
+        <li><a href="https://www.linkedin.com/in/mason-chinkin/"
+            class="icon fa-linkedin"><span class="label">LinkedIn</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Main -->
+  <div id="main">
+    <!-- Intro -->
+    <section id="top" class="one dark cover">
+      <div align="left" class="container">
+        <header>
+          <h2 class="alt">Mason Chinkin</h2>
+          <p>Economist-turned full stack developer. Have built apps with Ruby on
+            Rails + PostgreSQL and Node.js + MongoDB backends connecting to a
+            React + Redux front end.</p>
+          <p>Also love d3.js and all things data visualization.</p>
+          <p>My favorite quote about data viz: "The line must be drawn
+            <i>here</i>! This far, no further!" - Jean-Luc Picard</p>
+        </header>
+        <footer>
+          <a href="#featured-projects" class="button scrolly">Portfolio</a>
+          <a href="#about" class="button scrolly">About Me</a>
+          <a href="#contact" class="button scrolly">Contact Me</a>
+        </footer>
+      </div>
+    </section>
+    <!-- Featured Projects -->
+    <section id="featured-projects" class="two">
+      <div class="container">
+        <header>
+          <h2>Featured Projects</h2>
+        </header>
+        <div class='project'>
+          <div class="project-header">
+            <h1>AvailableFlatSurface</h1>
+            <div class="link-wrapper">
+              <a class="demo-link"
+                href="https://available-flat-surface.herokuapp.com/#/">Link</a>
+              <span class="link-seperator">|</span>
+              <a class="demo-link"
+                href="https://github.com/MasonChinkin/availableFlatSurface">Repo</a>
+            </div>
+          </div>
+
+          <div class='project-flex'>
+            <a href="https://available-flat-surface.herokuapp.com/#/">
+              <img class="project-screenshot"
+                src="images/availableflatsurface.png" alt="project screenshot">
+            </a>
+            <div class="project-details">
+              <p class='project-description'>A clone of
+                OpenTable using a react/redux front end calling to a
+                rails/PostgreSQL backend hosted on Heroku.
+
+                The user can search restaurants, make reservations, save and
+                review restaurants (coming soon), and see their save and
+                reservation history on their profile.</p>
+              <div class='project-icons'>
+                <div class="icon-pair">
+                  <h2>Rails</h2>
+                  <i class="devicon-rails-plain colored"></i>
+                </div>
+                <div class="icon-pair">
+                  <h2>PostgreSQL</h2>
+                  <i class="devicon-postgresql-plain colored"></i>
+                </div>
+                <div class="icon-pair">
+                  <h2>React</h2>
+                  <i class="devicon-react-original colored"></i>
+                </div>
+                <div class="icon-pair">
+                  <h2>Redux</h2>
+                  <img
+                    src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png"
+                    alt="redux logo">
+                </div>
+                <div class="icon-pair">
+                  <h2>AWS</h2>
+                  <i class="devicon-amazonwebservices-original colored"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='project'>
+          <div class="project-header">
+            <h1>MyPhotoJourney</h1>
+            <div class="link-wrapper">
+              <a class="demo-link"
+                href="https://myphotojourney.herokuapp.com/#/">Link</a>
+              <span class="link-seperator">|</span>
+              <a class="demo-link"
+                href="https://github.com/MasonChinkin/MyPhotoJourney">Repo</a>
+            </div>
+          </div>
+          <div class='project-flex'>
+            <a href="https://myphotojourney.herokuapp.com/#/">
+              <img class="project-screenshot" src="images/myphotojourney.png"
+                alt="project screenshot">
+            </a>
+            <div class="project-details">
+              <p class='project-description'>A MERN full stack
+                app that lets you upload photos from a trip, visualize them on a
+                map, and share it for all to see!
+
+                Built by a team of four. We are continuing to round out its
+                features.</p>
+              <div class='project-icons'>
+                <div class="icon-pair">
+                  <h2>Node</h2>
+                  <i class="devicon-nodejs-plain colored"></i>
+                </div>
+                <div class="icon-pair">
+                  <h2>MongoDB</h2>
+                  <i class="devicon-mongodb-plain colored"></i>
+                </div>
+                <div class="icon-pair">
+                  <h2>Express</h2>
+                  <i class="devicon-express-original colored"></i>
+                </div>
+                <div class="icon-pair">
+                  <h2>D3</h2>
+                  <i class="devicon-d3js-plain colored"></i>
+                </div>
+                <div class="icon-pair">
+                  <h2>React</h2>
+                  <i class="devicon-react-original colored"></i>
+                </div>
+                <div class="icon-pair">
+                  <h2>Redux</h2>
+                  <img
+                    src="https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png"
+                    alt="redux logo">
+                </div>
+                <div class="icon-pair">
+                  <h2>AWS</h2>
+                  <i class="devicon-amazonwebservices-original colored"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='project'>
+          <div class="project-header">
+            <h1>Reddit Visualizations</h1>
+            <div class="link-wrapper">
+              <a class="demo-link"
+                href="https://masonchinkin.github.io/redditVisualization/">Link</a>
+              <span class="link-seperator">|</span>
+              <a class="demo-link"
+                href="https://github.com/MasonChinkin/redditVisualization">Repo</a>
+            </div>
+          </div>
+          <div class='project-flex'>
+            <a href="https://masonchinkin.github.io/redditVisualization/"">
+              <img class=" project-screenshot"
+              src="images/redditvisualizations.png" alt="project screenshot">
+            </a>
+            <div class="project-details">
+              <p class='project-description'>This project is meant to highlight
+                vanilla JavaScript skills without the help of React/Redux. I
+                decided to have some fun visualizing the JSON data one can fetch
+                by putting '.json' at the end of most reddit URLs.</p>
+              <div class='project-icons'>
+                <div class="icon-pair">
+                  <h2>Javascript</h2>
+                  <i class="devicon-javascript-plain colored"></i>
+                </div>
+                <div class="icon-pair">
+                  <h2>D3</h2>
+                  <i class="devicon-d3js-plain colored"></i>
+                </div>
+                <div class="icon-pair">
+                  <h2>HTML5</h2>
+                  <i class="devicon-html5-plain colored"></i>
+                </div>
+                <div class="icon-pair">
+                  <h2>CSS3</h2>
+                  <i class="devicon-css3-plain colored"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='project'>
+          <div class="project-header">
+            <h1>Federal Budget Sankey</h1>
+            <div class="link-wrapper">
+              <a class="demo-link"
+                href="https://masonchinkin.github.io/budgetSankey/">Link</a>
+              <span class="link-seperator">|</span>
+              <a class="demo-link"
+                href="https://github.com/MasonChinkin/budgetSankey">Repo</a>
+            </div>
+          </div>
+          <div class='project-flex'>
+            <a href="https://masonchinkin.github.io/budgetSankey/">
+              <img class="project-screenshot" src="images/budget-dashboard.jpg"
+                alt="project screenshot">
+            </a>
+            <div class="project-details">
+              <p class='project-description'>WIP</p>
+              <div class='project-icons'>
+                <div class="icon-pair">
+                  <h2>Javascript</h2>
+                  <i class="devicon-javascript-plain colored"></i>
+                </div>
+                <div class="icon-pair">
+                  <h2>D3</h2>
+                  <i class="devicon-d3js-plain colored"></i>
+                </div>
+                <div class="icon-pair">
+                  <h2>HTML5</h2>
+                  <i class="devicon-html5-plain colored"></i>
+                </div>
+                <div class="icon-pair">
+                  <h2>CSS3</h2>
+                  <i class="devicon-css3-plain colored"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- d3.js Projects -->
+    <section id="d3-projects" class="three">
+      <div class="container">
+        <header>
+          <h2>D3.js Projects</h2>
+        </header>
+        <div class="row">
+          <div class="4u 12u$(mobile)">
+            <article class="item">
+              <a href="networks.html#portfolio" class="image fit"><img
+                  src="images/network.jpg" alt="" /></a>
+              <header>
+                <h3>The Diplomatic Web in Syria</h3>
+              </header>
+            </article>
+            <article class="item">
+              <a href="force-clusters.html#portfolio" class="image fit"><img
+                  src="images/force-clusters.jpg" alt="" /></a>
+              <header>
+                <h3>Playing with Force-Clusters</h3>
+              </header>
+            </article>
+          </div>
+          <div class="4u 12u$(mobile)">
+            <article class="item">
+              <a href="congress-2016-map.html#portfolio" class="image fit"><img
+                  src="images/congress-map.jpg" alt="" /></a>
+              <header>
+                <h3>Tooltipped Congressional Election Results</h3>
+              </header>
+            </article>
+            <article class="item">
+              <a href="swiss-army-bar-chart.html#portfolio"
+                class="image fit"><img src="images/bars.jpg" alt="" /></a>
+              <header>
+                <h3>The Useless Swiss-Army Bar Chart</h3>
+              </header>
+            </article>
+          </div>
+          <div class="4u 12u$(mobile)">
+            <article class="item">
+              <a href="gdp.html#portfolio" class="image fit"><img
+                  src="images/gdp.jpg" alt="" /></a>
+              <header>
+                <h3>Interactive Breakdown of US GDP Growth</h3>
+              </header>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Me -->
+    <section id="about" class="two">
+      <div class="container">
+        <header>
+          <h2>About Me</h2>
+        </header>
+        <a href="#" class="image featured"><img src="images/about_me.png"
+            alt="" /></a>
+        <p align="left">I like food.
+          <br>
+          <br>But also: After several years as an economist writing about
+          complex problems, I decided I would rather make the tools that help
+          people tell their story or simply make sense of it. As a full stack
+          developer, I have built apps with Ruby on Rails + PostgreSQL and
+          Node.js + MongoDB backends connecting to a React + Redux front end.
+
+          Separately, I love making shiny, beautiful, and useful data
+          visualizations with d3.js.</p>
+      </div>
+    </section>
+    <!-- Contact -->
+    <section id="contact" class="three">
+      <div class="container">
+        <header>
+          <h2>Contact</h2>
+        </header>
+        <p>
+          <p>Please reach out! You can use the form below or email me directly
+            at Mason.Chinkin@gmail.com. I am also active on
+            <a
+              href="https://www.linkedin.com/in/mason-chinkin/"><strong>LinkedIn</strong></a>
+            and
+            <a href="https://github.com/MasonChinkin"><strong>Github</a>.</p>
+          <form method="post"
+            action="https://formspree.io/mason.chinkin@gmail.com">
+            <div class="row">
+              <div class="6u 12u$(mobile)">
+                <input type="text" name="name" placeholder="Your Name" />
+              </div>
+              <div class="6u$ 12u$(mobile)">
+                <input type="email" name="_replyto" placeholder="Your Email" />
+              </div>
+              <div class="12u$">
+                <textarea name="message" placeholder="Message"></textarea>
+              </div>
+              <div class="12u$">
+                <input type="submit" value="Send" />
+              </div>
+            </div>
+          </form>
+      </div>
+    </section>
+  </div>
+  <!-- Footer -->
+  <div id="footer">
+    <!-- Copyright -->
+    <ul class="copyright">
+      <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+  </div>
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/jquery.scrollzer.min.js"></script>
+  <script src="assets/js/skel.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>

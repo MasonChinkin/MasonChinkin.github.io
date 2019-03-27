@@ -1,4 +1,3 @@
 
-*.sublime-workspace
-*.sublime-project
+.DS_Store
 d3-visualizations/swiss-army-bar-chart.js

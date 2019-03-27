@@ -104,7 +104,7 @@ d3.csv('viz-data/trip.csv', (data) => {
     })
 })
 
-const bubbleMouseMove = function(d) {
+const bubbleMouseMove = function (d) {
     d3.select(this)
         .transition('orangeHover')
         .duration(75)
@@ -138,7 +138,7 @@ const bubbleMouseMove = function(d) {
 }
 
 //properties of mouseout
-const bubbleMouseOut = function(d) {
+const bubbleMouseOut = function (d) {
     d3.select(this)
         .transition('orangeHover')
         .duration(250)

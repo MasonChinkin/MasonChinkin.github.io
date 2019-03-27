@@ -1706,7 +1706,7 @@ h5,
 h6 {
     font-weight: 300;
     color: black;
-    line-height: 1.5em;
+    line-height: 1em;
 }
 
 h3 {
@@ -1735,10 +1735,12 @@ h6 a strong {
 h2 {
     font-size: 2em;
     letter-spacing: -1px;
+    font-weight: bold;
+    opacity: 1;
 }
 
 h2.alt {
-    color: white;
+    color: white !important;
 }
 
 h2.alt strong {
@@ -1848,6 +1850,7 @@ article:last-child {
 
 #top p {
     color: white;
+    width: 60%;
 }
 
 /* Image */
@@ -2561,7 +2564,6 @@ body.header-visible #header {
     h2 {
         font-size: 1.5em;
         letter-spacing: 0;
-        font-weight: 300;
     }
 
     .container {
