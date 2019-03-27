@@ -86,3 +86,8 @@
 .link-seperator {
   margin: 0 0.4em;
 }
+
+/* was inheriting extra height from somewhere */
+.link-wrapper {
+  line-height: 0;
+}
