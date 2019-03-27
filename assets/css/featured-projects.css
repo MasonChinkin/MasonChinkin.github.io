@@ -21,19 +21,20 @@
   justify-content: flex-start;
 }
 
-/* for linked screenshots */
-.project-flex>a {
-  border: none
-}
-
 .project-header>h1 {
   font-size: 1em;
   font-weight: bold;
 }
 
+/* for linked screenshots */
+.project-flex>a {
+  border: none;
+}
+
 .project-screenshot {
   height: 200px;
   margin-right: 1em;
+  vertical-align: bottom;
 }
 
 .project-description {
