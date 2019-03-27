@@ -32,13 +32,13 @@
 }
 
 .project-screenshot {
-  height: 200px;
+  height: 8em;
   margin-right: 1em;
   vertical-align: bottom;
 }
 
 .project-description {
-  font-size: 0.9em;
+  font-size: 0.75em;
   line-height: 1.2em;
   margin-block-start: 0;
   margin-block-end: 0;
