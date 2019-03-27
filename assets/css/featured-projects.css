@@ -47,6 +47,7 @@
 .project-icons {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .icon-pair {
