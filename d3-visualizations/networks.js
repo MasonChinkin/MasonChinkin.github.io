@@ -3,7 +3,7 @@
 
 //Width and height
 const w = container.offsetWidth
-const h = 800
+const h = 675
 const imageSize = 35
 
 const greyedOpacity = 0.1
@@ -13,12 +13,10 @@ const svg = d3.select('#container')
     .attr('height', h)
     .attr('width', w)
     .style('background', '#e8e8e8')
-    .style('border-style', 'solid')
-    .style('border-color', 'black')
 
 const simulation = d3.forceSimulation()
     .force('link', d3.forceLink().id(d => d.id))
-    .force('charge', d3.forceManyBody().strength(-3000))
+    .force('charge', d3.forceManyBody().strength(-2000))
     .force('center', d3.forceCenter(w / 2, h / 2))
 
 d3.json('viz-data/syriaNetwork.json', (error, data) => {
@@ -78,7 +76,7 @@ d3.json('viz-data/syriaNetwork.json', (error, data) => {
         .text(d => d.id)
 
     simulation.nodes(data.nodes)
-        .on('tick', function() {
+        .on('tick', function () {
             path.attr('d', linkArc)
 
             node.attr('transform', d => `translate(${d.x},${d.y})`)
@@ -135,7 +133,6 @@ function dragStarted(d) {
     d.fy = d3.event.y
 }
 
-
 function dragged(d) {
     d.fx = Math.max(imageSize / 2, Math.min(w - imageSize / 2, d3.event.x))
     d.fy = Math.max(imageSize / 2, Math.min(h - imageSize - 10, d3.event.y))
@@ -154,7 +151,7 @@ function linkArc(d) {
     return 'M' + d.source.x + ',' + d.source.y + 'A' + dr + ',' + dr + ' 0 0,1 ' + d.target.x + ',' + d.target.y
 }
 
-const nodeMouseOver = function(d) {
+const nodeMouseOver = function (d) {
 
     const thisConnections = d.targets
     //console.log(thisConnections)
@@ -162,7 +159,7 @@ const nodeMouseOver = function(d) {
     const thisType = d.id
     //console.log(thisType)
 
-    d3.selectAll('.node').each(function(d) {
+    d3.selectAll('.node').each(function (d) {
 
         const thisNodeType = d.id
         //console.log(thisType)
@@ -177,7 +174,7 @@ const nodeMouseOver = function(d) {
         }
     })
 
-    d3.selectAll('.link').each(function(d) {
+    d3.selectAll('.link').each(function (d) {
         const thisConnects = d3.select(this).attr('thisConnects')
         //console.log(thisConnects)
 
@@ -192,7 +189,7 @@ const nodeMouseOver = function(d) {
     })
 }
 
-const nodeMouseOut = function(d) {
+const nodeMouseOut = function (d) {
     d3.selectAll('.node').transition().duration(200).style('opacity', 1)
     d3.selectAll('.link').transition().duration(200).style('opacity', 1)
 }
