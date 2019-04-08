@@ -2706,3 +2706,10 @@ body.header-visible #header {
     border-left: 1px solid rgba(0, 0, 0, .1);
     margin-left: -1px;
 }
+
+/* project text */
+.visualization p {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    margin: 0.5em 0;
+}
