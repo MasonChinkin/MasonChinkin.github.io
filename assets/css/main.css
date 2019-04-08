@@ -2710,6 +2710,10 @@ body.header-visible #header {
 /* project text */
 .visualization p {
     font-size: 0.9em;
-    line-height: 1.5em;
+    line-height: 1.4em;
     margin: 0.5em 0;
+}
+
+.visualization h2 {
+    font-size: 1.4em;
 }
