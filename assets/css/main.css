@@ -2095,12 +2095,22 @@ button:active,
 /* Item */
 
 .item {
-    box-shadow: 0 0.05em 0.15em 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    bottom: 0;
+    position: relative;
+    transition: all 0.3s;
     margin-bottom: 40px;
 }
 
+.item:hover {
+    position: relative;
+    bottom: 10px;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s;
+}
+
 .item header {
-    background: #fff;
+    background: rgb(226, 226, 226);
     margin: 0;
     padding: 1em 0 1em 0;
     font-size: 0.8em;
@@ -2108,6 +2118,7 @@ button:active,
 
 .item header h3 {
     font-size: 1em;
+    cursor: pointer;
 }
 
 /* Icons */
